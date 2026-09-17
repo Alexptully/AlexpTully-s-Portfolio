@@ -1,33 +1,80 @@
+import { site } from "@/content/site";
+import { contactBand, homeHero, homeSources, nowAndNext, projects } from "@/content/projects";
+import type { Project } from "@/content/types";
 import { Container } from "@/components/layout/Container";
-import { Prose } from "@/components/content/Prose";
+import { Sources } from "@/components/content/Sources";
+import { Hero } from "@/components/home/Hero";
+import { LineupRow } from "@/components/home/LineupRow";
+import { NowAndNext } from "@/components/home/NowAndNext";
+import { ContactBand } from "@/components/home/ContactBand";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 /**
- * Temporary placeholder so the shell can be seen with real type on it. WP4 replaces this
- * file with the home page (design-spec §5). Copy below is the §5.2 h1 and role line
- * (sources: résumé; root CLAUDE.md; AntiCam deck founder slide).
+ * 1-based footnote number of a project's proof stat in the home Sources list. Source objects
+ * are shared by reference for exactly this lookup (wp1 handoff). A proof whose source is not
+ * in the list would print an uncited figure, so the build fails instead.
+ */
+function footnoteFor(project: Project): number {
+  const n = homeSources.indexOf(project.proof.source) + 1;
+  if (n === 0) {
+    throw new Error(`homeSources is missing the proof source for "${project.slug}"`);
+  }
+  return n;
+}
+
+/** Person + WebSite (design-spec §14). Absolute URLs only once `site.siteUrl` is known. */
+function structuredData() {
+  const url = site.siteUrl ?? undefined;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        name: site.name,
+        alternateName: site.fullName,
+        description: site.metaDescription,
+        email: `mailto:${site.email}`,
+        url,
+        // Tully Tech is Alex's company (résumé; root CLAUDE.md); its site is the one public link.
+        worksFor: { "@type": "Organization", name: "Tully Tech", url: site.website.href },
+        // TODO(alex): open question 3 — social links, if any, go here.
+        sameAs: [],
+      },
+      {
+        "@type": "WebSite",
+        name: site.name,
+        description: site.metaDescription,
+        url,
+      },
+    ],
+  };
+}
+
+/**
+ * Home (design-spec §5): hero, the four-row lineup, "Now and next", the contact band, then
+ * Sources as the last section inside `<main>`. The layout owns `<main id="content">` and the
+ * shared footer. Every word and image reference comes from the content files.
  */
 export default function Home() {
   return (
-    <Container as="section" className="pt-16 pb-24 lg:pt-24">
-      <div className="lg:grid lg:grid-cols-12 lg:gap-x-5">
-        <div className="lg:col-span-7">
-          <h1 className="type-display">
-            I&rsquo;m Alex Tully. I design and build hardware: a privacy wearable, a low-cost
-            prosthetic arm, competition robots, and a CAD tool for clay.
-          </h1>
-          <p className="type-role mt-6">Founder, Tully Tech. Sole designer and builder of AntiCam.</p>
-        </div>
-      </div>
+    <>
+      <Hero mode={site.heroMode} hero={homeHero} />
 
-      <div id="work" className="mt-24 border-t border-border pt-16">
-        <h2 className="type-title">Work</h2>
-        <Prose className="mt-6">
-          <p>
-            The lineup goes here: AntiCam, the low-cost prosthetic arm, robotics, and CeraPiper,
-            each as a plate with a spec sheet.
-          </p>
-        </Prose>
-      </div>
-    </Container>
+      <Container as="section" id="work" className="space-y-10 md:space-y-16">
+        {projects.map((project) => (
+          <LineupRow key={project.slug} project={project} footnote={footnoteFor(project)} />
+        ))}
+      </Container>
+
+      <NowAndNext data={nowAndNext} />
+
+      <ContactBand {...contactBand} />
+
+      <Container className="mt-20 md:mt-32">
+        <Sources sources={homeSources} />
+      </Container>
+
+      <JsonLd data={structuredData()} />
+    </>
   );
 }

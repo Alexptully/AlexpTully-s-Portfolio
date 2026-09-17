@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Alex Tully">
+  <!--
+    The site's mark (design-spec §2.1, §14): a lens ring on the page background with the
+    AntiCam emitter blowing it out. Geometry only, no lettering, and only tokens for colour:
+    --bg #0B0E13, --border-strong #5A6473, --accent #FF3B6F.
+  -->
+  <rect width="32" height="32" rx="7" fill="#0B0E13"/>
+  <circle cx="16" cy="16" r="10" fill="none" stroke="#5A6473" stroke-width="2"/>
+  <circle cx="16" cy="16" r="4.75" fill="#FF3B6F"/>
+</svg>

@@ -1,0 +1,187 @@
+import type { Metadata } from "next";
+import { about } from "@/content/about";
+import { site } from "@/content/site";
+import type { Source } from "@/content/types";
+import { Container } from "@/components/layout/Container";
+import { Prose } from "@/components/content/Prose";
+import { Sources } from "@/components/content/Sources";
+import { Timeline } from "@/components/content/Timeline";
+import { AwardsList } from "@/components/content/AwardsList";
+import { AboutSection } from "@/components/about/AboutSection";
+import { ContactBlock } from "@/components/about/ContactBlock";
+import { SmallerPieces } from "@/components/about/SmallerPieces";
+import {
+  BacklinkAnchors,
+  Footnoted,
+  footnoteOwners,
+  type FootnoteBlock,
+} from "@/components/about/Footnoted";
+
+export const metadata: Metadata = {
+  title: about.title,
+  description: about.bio[0],
+  alternates: { canonical: "/about" },
+  openGraph: {
+    type: "profile",
+    title: about.title,
+    description: about.bio[0],
+    url: "/about",
+    siteName: site.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: about.title,
+    description: about.bio[0],
+  },
+};
+
+/* ---------------------------------------------------------------- citations */
+
+/** 1-based position of a source in this page's Sources list; 0 when it is not in it. */
+function indexOf(source: Source): number {
+  return about.sources.indexOf(source) + 1;
+}
+
+/**
+ * Same, for a source the copy does not mark with a superscript. Matched on the citation's
+ * own `claim`, not on any rendered words, and 0 (no marker) if the claim is ever reworded —
+ * the page loses a marker rather than pointing at the wrong source.
+ * TODO(wp1): move these four markers into the copy in `src/content/about.ts` as superscripts
+ * and delete this lookup. The asks are written up in the wp6 handoff.
+ */
+function indexOfClaim(prefix: string): number {
+  return about.sources.findIndex((source) => source.claim?.startsWith(prefix)) + 1;
+}
+
+const METHOD = indexOfClaim("Prototype in wood");
+const COST_CEILING = indexOfClaim("A production cost ceiling");
+const LIMITS = indexOfClaim("Stating a product");
+const TRAINING = indexOfClaim("Rookie training");
+
+/** The outreach line about rookie training, which the TRAINING citation backs. */
+const ROOKIE_LINE = about.outreach.lines.findIndex((line) => /rookie/i.test(line));
+
+/*
+ * Every run of prose on the page, in render order. `footnoteOwners` gives the first marker
+ * of each index the `id="ref-N"` anchor, so ids stay unique and the Sources list's
+ * "Back to text" links all resolve.
+ */
+// Paragraph 2 states the method, the cost ceiling and the habit of naming limits; those are
+// exactly the claims sources 9–11 carry, and the copy prints no marker for them.
+const bioBlocks: FootnoteBlock[] = about.bio.map((text, i) => ({
+  key: `bio-${i}`,
+  text,
+  extra: i === 1 ? [METHOD, COST_CEILING, LIMITS] : undefined,
+}));
+
+const toolBlocks: FootnoteBlock[] = about.tools.lines.map((text, i) => ({
+  key: `tools-${i}`,
+  text,
+  // The résumé backs all three lines; the marker sits once, at the end of the last.
+  extra: i === about.tools.lines.length - 1 ? [indexOf(about.tools.source)] : undefined,
+}));
+
+const outreachBlocks: FootnoteBlock[] = about.outreach.lines.map((text, i) => ({
+  key: `outreach-${i}`,
+  text,
+  extra: i === ROOKIE_LINE ? [TRAINING] : undefined,
+}));
+
+/** Keys here must match the ones `SmallerPieces` renders. */
+const pieceBlocks: FootnoteBlock[] = about.smallerPieces.items.map((item) => ({
+  key: `piece-${item.id}`,
+  text: item.description,
+}));
+
+const BLOCKS: FootnoteBlock[] = [...bioBlocks, ...toolBlocks, ...outreachBlocks, ...pieceBlocks];
+
+const owners = footnoteOwners(BLOCKS);
+
+/*
+ * The timeline's markers carry no back-link id (a `Stat` elsewhere could cite the same
+ * source), and the awards records name their source in words rather than with a marker. So
+ * any source cited only there gets its `ref-N` anchor at the head of that section, and
+ * "Back to text" lands on the list that makes the claim.
+ */
+const unowned = about.sources.map((_, i) => i + 1).filter((n) => !owners.has(n));
+const inTimeline = new Set(about.timeline.rows.map((row) => indexOf(row.source)));
+const inAwards = new Set(about.awards.records.map((award) => indexOf(award.source)));
+const timelineAnchors = unowned.filter((n) => inTimeline.has(n));
+const awardsAnchors = unowned.filter((n) => !inTimeline.has(n) && inAwards.has(n));
+const orphanAnchors = unowned.filter((n) => !inTimeline.has(n) && !inAwards.has(n));
+
+/* -------------------------------------------------------------------- page */
+
+/**
+ * /about (design-spec §8): bio, dated timeline, awards as records, tools, teaching and
+ * outreach, smaller pieces, the contact block, then Sources as the last section inside
+ * `<main>`. Text-led: content sits in columns 1–8 at 1440 with the prose at the 34 rem
+ * measure, one column on phone. No canvas and no motion on this route.
+ */
+export default function AboutPage() {
+  return (
+    <Container className="pt-10 pb-4 lg:pt-16">
+      {/* Columns 1–8 of the 1200 grid: 8 × 80 px + 7 × 20 px gaps. */}
+      <div className="lg:max-w-[780px]">
+        <h1 className="type-display">{about.title}</h1>
+
+        <Prose className="mt-8">
+          {about.bio.map((text, i) => (
+            <p key={text.slice(0, 32)}>
+              <Footnoted block={bioBlocks[i]} owners={owners} />
+            </p>
+          ))}
+        </Prose>
+
+        <AboutSection id={about.timeline.id} heading={about.timeline.heading}>
+          <BacklinkAnchors indices={timelineAnchors} />
+          <Timeline rows={about.timeline.rows} sources={about.sources} termWidth="11rem" />
+        </AboutSection>
+
+        <AboutSection id={about.awards.id} heading={about.awards.heading}>
+          <BacklinkAnchors indices={awardsAnchors} />
+          <AwardsList awards={about.awards.records} />
+        </AboutSection>
+
+        <AboutSection id="tools" heading={about.tools.heading}>
+          <ul className="type-body measure space-y-3">
+            {about.tools.lines.map((line, i) => (
+              <li key={line}>
+                <Footnoted block={toolBlocks[i]} owners={owners} />
+              </li>
+            ))}
+          </ul>
+        </AboutSection>
+
+        <AboutSection id="teaching-and-outreach" heading={about.outreach.heading}>
+          <ul className="type-body measure space-y-3">
+            {about.outreach.lines.map((line, i) => (
+              <li key={line}>
+                <Footnoted block={outreachBlocks[i]} owners={owners} />
+              </li>
+            ))}
+          </ul>
+        </AboutSection>
+
+        <AboutSection id={about.smallerPieces.id} heading={about.smallerPieces.heading}>
+          <SmallerPieces
+            data={about.smallerPieces}
+            extendedMemory={about.extendedMemory}
+            owners={owners}
+          />
+        </AboutSection>
+
+        <AboutSection id="contact" heading={about.contact.heading}>
+          <ContactBlock lines={about.contact.lines} />
+        </AboutSection>
+
+        {/* A source nothing on the page marks: its back-link lands on the Sources list itself. */}
+        <BacklinkAnchors indices={orphanAnchors} />
+
+        <div className="mt-16 md:mt-24">
+          <Sources sources={about.sources} />
+        </div>
+      </div>
+    </Container>
+  );
+}

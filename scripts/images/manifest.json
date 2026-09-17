@@ -1,0 +1,689 @@
+{
+  "spec": "content/notes/design-spec.md §12.2 — one row per output id.",
+  "notes": [
+    "crop is in source pixels (left, top, width, height). Boxes were verified against each page image and tightened from the spec estimates so that no slide text or neighbouring tile bleeds in; the tightened value is authoritative.",
+    "width is a ceiling: the output is never scaled past the native crop width.",
+    "ground: dark = level the near-black ground onto --bg #0B0E13 (measured ground level -> token, 255 stays 255); light = level the border median to --plate-light #E6E7E9; photo = keep the photograph's own ground.",
+    "cleared: false means the file is built into the QA directory for review and is NOT written to public/."
+  ],
+  "defaults": {
+    "bg": "#0B0E13",
+    "plateLight": "#E6E7E9",
+    "jpgQuality": 90,
+    "webpQuality": 90,
+    "avifQuality": 62
+  },
+  "items": [
+    {
+      "id": "ac-01-v1-led-face",
+      "slug": "anticam",
+      "src": "content/source/anticam/camera-blinder-presentation/pages/page-12.jpg",
+      "crop": {
+        "left": 748,
+        "top": 492,
+        "width": 474,
+        "height": 428
+      },
+      "width": 474,
+      "ground": "light",
+      "usage": "home hero (photo mode), AntiCam case hero",
+      "alt": "AntiCam V1 pin seen from the emitter side: a white plate with a 3-by-3 grid of emitters glowing magenta, inside a textured black rim and maroon body"
+    },
+    {
+      "id": "ac-02-v1-lid-side",
+      "slug": "anticam",
+      "src": "content/source/anticam/camera-blinder-presentation/pages/page-12.jpg",
+      "crop": {
+        "left": 185,
+        "top": 582,
+        "width": 486,
+        "height": 354
+      },
+      "width": 486,
+      "ground": "light",
+      "usage": "AntiCam contact sheet, \"Final V1\"",
+      "alt": "AntiCam V1 pin from the lid side: a blue lid with the Tully Tech mark engraved, black rim, maroon body"
+    },
+    {
+      "id": "ac-03-test2-glow",
+      "slug": "anticam",
+      "src": "content/source/anticam/camera-blinder-presentation/pages/page-09.jpg",
+      "crop": {
+        "left": 175,
+        "top": 311,
+        "width": 519,
+        "height": 527
+      },
+      "width": 519,
+      "ground": "photo",
+      "usage": "AntiCam lab note; fallback plate for the before/after compare",
+      "alt": "A lit COB LED module photographed by a phone: a bright white square in a wide magenta halo on a dark wall"
+    },
+    {
+      "id": "ac-04-ring-on",
+      "slug": "anticam",
+      "src": "content/source/anticam/camera-blinder-presentation/pages/page-15.jpg",
+      "crop": {
+        "left": 128,
+        "top": 330,
+        "width": 1013,
+        "height": 568
+      },
+      "width": 960,
+      "ground": "photo",
+      "cleared": false,
+      "note": "TODO(alex): clearance — residential street and a person in shot. Held out of public/ until cleared (open question 2).",
+      "usage": "home diptych (lower frame), AntiCam before/after compare",
+      "alt": "Ring doorbell night-vision frame, 7 June 2023: a street at night, a figure on the steps washed out to a glowing orb where the face would be"
+    },
+    {
+      "id": "ac-05-ring-off",
+      "slug": "anticam",
+      "src": "content/source/anticam/camera-blinder-presentation/pages/page-16.jpg",
+      "crop": {
+        "left": 400,
+        "top": 190,
+        "width": 888,
+        "height": 500
+      },
+      "width": 888,
+      "ground": "photo",
+      "cleared": false,
+      "note": "TODO(alex): clearance — residential street (open question 2). Held out of public/.",
+      "usage": "home diptych (upper frame), AntiCam before/after compare",
+      "alt": "The same street from the same Ring doorbell in colour night mode, device off: parked cars, a lit tree, no glow"
+    },
+    {
+      "id": "ac-06-v2-colorways",
+      "slug": "anticam",
+      "src": "content/source/anticam/camera-blinder-presentation/pages/page-15.jpg",
+      "crop": {
+        "left": 526,
+        "top": 56,
+        "width": 700,
+        "height": 232
+      },
+      "width": 700,
+      "ground": "light",
+      "usage": "home AntiCam plate (fallback while the Ring frames are uncleared); contact sheet \"Final V2\"",
+      "alt": "Three AntiCam V2 pins side by side: white, dark gray and navy, each with a clear top showing the emitter module"
+    },
+    {
+      "id": "ac-07-v2-flatlay",
+      "slug": "anticam",
+      "src": "content/source/anticam/camera-blinder-presentation/pages/page-13.jpg",
+      "crop": {
+        "left": 36,
+        "top": 342,
+        "width": 619,
+        "height": 464
+      },
+      "width": 619,
+      "ground": "light",
+      "usage": "version ledger V4 tile, contact sheet, canvas reference",
+      "alt": "Six clear laser-cut acrylic plates for the AntiCam V2 pin laid flat: the LED plate with its module, a plate with four coin cells and a slide switch, spacer plates and the engraved lid"
+    },
+    {
+      "id": "ac-08-cob-module-hand",
+      "slug": "anticam",
+      "src": "content/source/anticam/camera-blinder-presentation/pages/page-14.jpg",
+      "crop": {
+        "left": 768,
+        "top": 158,
+        "width": 320,
+        "height": 320
+      },
+      "width": 320,
+      "ground": "photo",
+      "usage": "AntiCam \"How it works\" card",
+      "alt": "A hand holding the 10 W-class COB LED module: white ceramic body, 3-by-3 emitter grid, metal solder tabs"
+    },
+    {
+      "id": "ac-09-mdf-laser-bed",
+      "slug": "anticam",
+      "src": "content/source/anticam/camera-blinder-presentation/pages/page-10.jpg",
+      "crop": {
+        "left": 435,
+        "top": 338,
+        "width": 717,
+        "height": 510
+      },
+      "width": 717,
+      "ground": "photo",
+      "usage": "version ledger V2 tile, contact sheet",
+      "alt": "Laser-cut MDF plates for the second prototype on the laser bed, Tully Tech engraved"
+    },
+    {
+      "id": "ac-10-laser-engraving",
+      "slug": "anticam",
+      "src": "content/source/anticam/camera-blinder-presentation/pages/page-10.jpg",
+      "crop": {
+        "left": 649,
+        "top": 31,
+        "width": 511,
+        "height": 287
+      },
+      "width": 511,
+      "ground": "photo",
+      "usage": "AntiCam process card",
+      "alt": "A laser cutter head engraving the Tully Tech mark through blue masking tape"
+    },
+    {
+      "id": "ac-11-nine-cell-plate",
+      "slug": "anticam",
+      "src": "content/source/anticam/camera-blinder-presentation/pages/page-11.jpg",
+      "crop": {
+        "left": 891,
+        "top": 227,
+        "width": 363,
+        "height": 346
+      },
+      "width": 363,
+      "ground": "photo",
+      "usage": "version ledger V3 tile, contact sheet",
+      "alt": "A clear acrylic plate carrying nine coin cells joined by solder links and wire"
+    },
+    {
+      "id": "ac-12-copper-tape-plate",
+      "slug": "anticam",
+      "src": "content/source/anticam/camera-blinder-presentation/pages/page-11.jpg",
+      "crop": {
+        "left": 560,
+        "top": 64,
+        "width": 317,
+        "height": 270
+      },
+      "width": 317,
+      "ground": "photo",
+      "usage": "AntiCam contact sheet",
+      "alt": "A battery plate with coin cells, copper-tape bus bars and soldered leads"
+    },
+    {
+      "id": "ac-13-v1-first-carrier",
+      "slug": "anticam",
+      "src": "content/source/anticam/camera-blinder-presentation/pages/page-08.jpg",
+      "crop": {
+        "left": 374,
+        "top": 620,
+        "width": 273,
+        "height": 235
+      },
+      "width": 273,
+      "ground": "photo",
+      "usage": "version ledger V1 tile, contact sheet \"First prototype\"",
+      "alt": "The first prototype: a navy laser-cut disc with the COB module seated in a cross-shaped cutout, its white ceramic body around a yellow phosphor face"
+    },
+    {
+      "id": "ac-14-cap-brim",
+      "slug": "anticam",
+      "src": "content/source/anticam/camera-blinder-presentation/pages/page-17.jpg",
+      "crop": {
+        "left": 513,
+        "top": 491,
+        "width": 241,
+        "height": 335
+      },
+      "width": 241,
+      "ground": "light",
+      "cleared": false,
+      "note": "TODO(alex): the cap images on this slide look like stock product photographs with the emitters composited in; confirm this is a real prototype and that the base photograph may be published (open question 2). Held out of public/.",
+      "usage": "AntiCam contact sheet \"Cap V2\"",
+      "alt": "The underside of a black cap brim with about six small LEDs set into a reflective lining"
+    },
+    {
+      "id": "ac-15-v2-parts-angled",
+      "slug": "anticam",
+      "src": "content/source/anticam/camera-blinder-presentation/pages/page-14.jpg",
+      "crop": {
+        "left": 112,
+        "top": 260,
+        "width": 467,
+        "height": 296
+      },
+      "width": 467,
+      "ground": "photo",
+      "usage": "AntiCam process card",
+      "alt": "The V2 clear acrylic parts laid out at an angle: cells and switch plate, LED plate, cutout plates, engraved lid",
+      "note": "Reclassified from light to photo: the measured border median is #8A8680, a mid-grey table, not the white or light grey that §12.1 defines as a light ground. Levelling it to --plate-light washed the acrylic out, so it keeps its own ground on a dark plate."
+    },
+    {
+      "id": "ac-16-light-test",
+      "slug": "anticam",
+      "src": "content/source/anticam/camera-blinder-presentation/pages/page-07.jpg",
+      "crop": {
+        "left": 68,
+        "top": 258,
+        "width": 1128,
+        "height": 624
+      },
+      "width": 160,
+      "ground": "photo",
+      "note": "Deeply out of focus in the source; usable only as the small \"Light test\" ledger tile at 160 px. TODO(alex): a sharp photograph of the first light test would replace it.",
+      "usage": "version ledger \"Light test\" tile only",
+      "alt": "Out-of-focus alligator-clip leads on a wooden bench during the first light test"
+    },
+    {
+      "id": "pa-01-arm-ghosted",
+      "slug": "prosthetic-arm",
+      "src": "content/source/prosthetic-arm/design-brief/pages/page-10.jpg",
+      "crop": {
+        "left": 688,
+        "top": 222,
+        "width": 668,
+        "height": 500
+      },
+      "width": 668,
+      "ground": "dark",
+      "usage": "home plate, prosthetic-arm case hero",
+      "alt": "Render of the prosthetic arm with a translucent forearm: a stack of servos, gears and a circuit board visible inside, white fingers above"
+    },
+    {
+      "id": "pa-02-arm-exploded-build",
+      "slug": "prosthetic-arm",
+      "src": "content/source/prosthetic-arm/design-brief/pages/page-14.jpg",
+      "crop": {
+        "left": 160,
+        "top": 255,
+        "width": 1175,
+        "height": 450
+      },
+      "width": 960,
+      "ground": "light",
+      "usage": "version ledger \"Final build\" tile, process plate",
+      "alt": "The physical arm exploded on a light gray tray: white printed palm and fingers, glossy black forearm and wrist collar, loose knuckle caps and pins"
+    },
+    {
+      "id": "pa-03-arm-cad-exploded",
+      "slug": "prosthetic-arm",
+      "src": "content/source/prosthetic-arm/design-brief/pages/page-12.jpg",
+      "crop": {
+        "left": 60,
+        "top": 230,
+        "width": 850,
+        "height": 515
+      },
+      "width": 850,
+      "ground": "dark",
+      "usage": "version ledger \"Parametric CAD\" tile, process",
+      "alt": "Exploded parametric CAD of the arm with construction sketches, datum lines and constraint points"
+    },
+    {
+      "id": "pa-04-arm-profile",
+      "slug": "prosthetic-arm",
+      "src": "content/source/prosthetic-arm/design-brief/pages/page-08.jpg",
+      "crop": {
+        "left": 0,
+        "top": 533,
+        "width": 846,
+        "height": 252
+      },
+      "width": 846,
+      "ground": "dark",
+      "usage": "case process band, flush left in its plate",
+      "alt": "Profile render of the finished arm: glossy black conical forearm and five white printed fingers extended flat"
+    },
+    {
+      "id": "pa-05-forearm-open",
+      "slug": "prosthetic-arm",
+      "src": "content/source/prosthetic-arm/design-brief/pages/page-08.jpg",
+      "crop": {
+        "left": 1033,
+        "top": 44,
+        "width": 283,
+        "height": 709
+      },
+      "width": 283,
+      "ground": "dark",
+      "note": "TODO(alex): the slide baked a white cut-out outline around this photograph, and it cannot be removed automatically — the object's own black glove and white hand both meet that outline. A re-render or the original photograph would fix it (open question 14). The near-black ground is still levelled onto --bg so the crop edge itself vanishes.",
+      "usage": "prosthetic-arm case card",
+      "alt": "The physical forearm standing upright with its shell opened: stacked black servos, red and black wiring, a green Arduino-style board, the white hand on top"
+    },
+    {
+      "id": "pa-06-finger-bent-annotated",
+      "slug": "prosthetic-arm",
+      "src": "content/source/prosthetic-arm/design-brief/pages/page-07.jpg",
+      "crop": {
+        "left": 1038,
+        "top": 350,
+        "width": 314,
+        "height": 266
+      },
+      "width": 314,
+      "ground": "dark",
+      "usage": "\"How it works\" card; the red and blue cord annotations are kept",
+      "alt": "A bent printed finger with the elastic cord path traced in red outside the bend and the Kevlar cord path in blue inside"
+    },
+    {
+      "id": "pa-07-finger-exploded-strip",
+      "slug": "prosthetic-arm",
+      "src": "content/source/prosthetic-arm/design-brief/pages/page-07.jpg",
+      "crop": {
+        "left": 62,
+        "top": 566,
+        "width": 700,
+        "height": 186
+      },
+      "width": 700,
+      "ground": "dark",
+      "usage": "version ledger \"Finger prints\" alternate tile",
+      "alt": "Six printed finger pieces and two pin rods laid in a row"
+    },
+    {
+      "id": "pa-09-gray-hand-print",
+      "slug": "prosthetic-arm",
+      "src": "content/source/prosthetic-arm/design-brief/pages/page-06.jpg",
+      "crop": {
+        "left": 1102,
+        "top": 123,
+        "width": 246,
+        "height": 348
+      },
+      "width": 246,
+      "ground": "dark",
+      "usage": "version ledger \"Finger prints\" tile",
+      "alt": "An assembled gray 3D-printed hand, back view, fingers extended, print lines visible"
+    },
+    {
+      "id": "pa-10-hand-back-black",
+      "slug": "prosthetic-arm",
+      "src": "content/source/prosthetic-arm/design-brief/pages/page-10.jpg",
+      "crop": {
+        "left": 118,
+        "top": 222,
+        "width": 478,
+        "height": 500
+      },
+      "width": 478,
+      "ground": "dark",
+      "usage": "prosthetic-arm case process",
+      "alt": "The finished black printed hand seen from the back, five segmented fingers"
+    },
+    {
+      "id": "rb-01-monty-render-white",
+      "slug": "robotics",
+      "src": "content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png",
+      "crop": {
+        "left": 452,
+        "top": 240,
+        "width": 388,
+        "height": 378
+      },
+      "width": 388,
+      "ground": "light",
+      "usage": "home robotics plate",
+      "alt": "Team CAD render of Monty: blue and silver chassis with Voronoi-cut side plates and a turreted launcher on top"
+    },
+    {
+      "id": "rb-02-monty-render-poster",
+      "slug": "robotics",
+      "src": "content/source/robotics/posters/poster-deck/pages/page-13.jpg",
+      "crop": {
+        "left": 135,
+        "top": 540,
+        "width": 400,
+        "height": 360
+      },
+      "width": 400,
+      "ground": "light",
+      "usage": "robotics case hero",
+      "alt": "Team CAD render of Monty from the front three-quarter, intake rollers at the front, turret above"
+    },
+    {
+      "id": "rb-03-wooden-prototype",
+      "slug": "robotics",
+      "src": "content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png",
+      "crop": {
+        "left": 55,
+        "top": 265,
+        "width": 195,
+        "height": 160
+      },
+      "width": 195,
+      "ground": "photo",
+      "usage": "intake version ledger tile",
+      "alt": "A first-iteration robot built entirely from wooden plates, blue subsystem parts fitted"
+    },
+    {
+      "id": "rb-04-transfer-render",
+      "slug": "robotics",
+      "src": "content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-3.png",
+      "crop": {
+        "left": 380,
+        "top": 300,
+        "width": 320,
+        "height": 360
+      },
+      "width": 320,
+      "ground": "light",
+      "usage": "Monti section card",
+      "alt": "Render of the transfer: three purple artifacts in a silver Voronoi frame with a tubing roller"
+    },
+    {
+      "id": "rb-05-launcher-render",
+      "slug": "robotics",
+      "src": "content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-4.png",
+      "crop": {
+        "left": 370,
+        "top": 330,
+        "width": 340,
+        "height": 390
+      },
+      "width": 340,
+      "ground": "light",
+      "usage": "Monti section card",
+      "alt": "Render of the launcher: blue turret ring, adjustable hood and a weighted flywheel"
+    },
+    {
+      "id": "rb-06-swerve-chassis",
+      "slug": "robotics",
+      "src": "content/source/portfolio/02-swerve-drive.jpg",
+      "crop": {
+        "left": 554,
+        "top": 55,
+        "width": 374,
+        "height": 231
+      },
+      "width": 374,
+      "ground": "dark",
+      "usage": "robotics filmstrip, Swerve Drive section plate",
+      "alt": "Swerve drive chassis: four corner modules with toothed belts and bevel gears on a silver frame"
+    },
+    {
+      "id": "rb-07-swerve-module",
+      "slug": "robotics",
+      "src": "content/source/portfolio/02-swerve-drive.jpg",
+      "crop": {
+        "left": 354,
+        "top": 334,
+        "width": 214,
+        "height": 170
+      },
+      "width": 214,
+      "ground": "dark",
+      "usage": "Swerve Drive section card",
+      "alt": "One swerve module: a wheel under a belt-driven steering plate with its motor"
+    },
+    {
+      "id": "rb-08-monti-portfolio-render",
+      "slug": "robotics",
+      "src": "content/source/portfolio/01-monti-robot.jpg",
+      "crop": {
+        "left": 686,
+        "top": 5,
+        "width": 278,
+        "height": 245
+      },
+      "width": 278,
+      "ground": "dark",
+      "usage": "robotics filmstrip, Monti section plate",
+      "alt": "Monti render: blue Voronoi side plates and a turreted launcher"
+    },
+    {
+      "id": "rb-09-honu-render",
+      "slug": "robotics",
+      "src": "content/source/portfolio/03-honu-robot.jpg",
+      "crop": {
+        "left": 684,
+        "top": 14,
+        "width": 254,
+        "height": 192
+      },
+      "width": 254,
+      "ground": "dark",
+      "usage": "robotics filmstrip, Honu section plate",
+      "alt": "Honu: a green lattice chassis with a lift tower and gripper head"
+    },
+    {
+      "id": "rb-10-scorpion-render",
+      "slug": "robotics",
+      "src": "content/source/portfolio/05-scorpion-robot.jpg",
+      "crop": {
+        "left": 645,
+        "top": 48,
+        "width": 225,
+        "height": 183
+      },
+      "width": 225,
+      "ground": "light",
+      "usage": "robotics filmstrip, Scorpion section plate",
+      "alt": "Scorpion on mecanum wheels with its scissor lift raised"
+    },
+    {
+      "id": "rb-11-scorpion-lift-drawing",
+      "slug": "robotics",
+      "src": "content/source/portfolio/05-scorpion-robot.jpg",
+      "crop": {
+        "left": 541,
+        "top": 357,
+        "width": 183,
+        "height": 153
+      },
+      "width": 183,
+      "ground": "dark",
+      "usage": "Scorpion section card",
+      "alt": "Line drawing of the scissor lift: crossed beams with a motor at the base"
+    },
+    {
+      "id": "rb-12-ball-drive",
+      "slug": "robotics",
+      "src": "content/source/portfolio/04-ball-drive.jpg",
+      "crop": {
+        "left": 565,
+        "top": 15,
+        "width": 390,
+        "height": 220
+      },
+      "width": 390,
+      "ground": "dark",
+      "usage": "robotics filmstrip, Ball-Drive section plate",
+      "alt": "Ball-Drive chassis: four ball modules in a blue frame engraved 17253 Tritonics"
+    },
+    {
+      "id": "rb-13-intake-v1",
+      "slug": "robotics",
+      "src": "content/source/robotics/posters/poster-deck/pages/page-15.jpg",
+      "crop": {
+        "left": 700,
+        "top": 540,
+        "width": 160,
+        "height": 120
+      },
+      "width": 160,
+      "ground": "light",
+      "usage": "intake version ledger V1 tile",
+      "alt": "Gray flat-ramp intake plate, version 1"
+    },
+    {
+      "id": "rb-14-intake-v2",
+      "slug": "robotics",
+      "src": "content/source/robotics/posters/poster-deck/pages/page-15.jpg",
+      "crop": {
+        "left": 700,
+        "top": 680,
+        "width": 160,
+        "height": 140
+      },
+      "width": 160,
+      "ground": "light",
+      "usage": "intake version ledger V2 tile",
+      "alt": "Light-blue intake ramp with three vectoring slots, version 2"
+    },
+    {
+      "id": "rb-15-intake-v3",
+      "slug": "robotics",
+      "src": "content/source/robotics/posters/poster-deck/pages/page-15.jpg",
+      "crop": {
+        "left": 700,
+        "top": 820,
+        "width": 160,
+        "height": 140
+      },
+      "width": 160,
+      "ground": "light",
+      "usage": "intake version ledger V3 tile",
+      "alt": "Dark-blue intake ramp with a centred U-shaped transfer port, version 3"
+    },
+    {
+      "id": "rb-16-intake-three",
+      "slug": "robotics",
+      "src": "content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-2.png",
+      "crop": {
+        "left": 60,
+        "top": 208,
+        "width": 255,
+        "height": 157
+      },
+      "width": 255,
+      "ground": "light",
+      "usage": "Monti section card",
+      "alt": "The sorting intake holding three artifacts, one green and two purple"
+    },
+    {
+      "id": "er-01-electric-road-model",
+      "slug": "about",
+      "src": "content/source/portfolio/06-electric-road.jpg",
+      "crop": {
+        "left": 600,
+        "top": 210,
+        "width": 330,
+        "height": 140
+      },
+      "width": 330,
+      "ground": "photo",
+      "usage": "smaller pieces on /about (displayed at 200 px)",
+      "alt": "The scaled Electric Road test model: hand-wound copper coils on a blue mat, a green receiver board and a breadboard"
+    },
+    {
+      "id": "er-02-electric-road-render",
+      "slug": "about",
+      "src": "content/source/portfolio/06-electric-road.jpg",
+      "crop": {
+        "left": 595,
+        "top": 5,
+        "width": 325,
+        "height": 198
+      },
+      "width": 325,
+      "ground": "dark",
+      "usage": "smaller pieces on /about (displayed at 200 px)",
+      "alt": "Concept render: a gray road with a purple car and roadside pillars topped with solar panels carrying coil disks"
+    },
+    {
+      "id": "ou-01-ewaste",
+      "slug": "about",
+      "src": "content/source/portfolio/07-community-events.jpg",
+      "crop": {
+        "left": 800,
+        "top": 255,
+        "width": 110,
+        "height": 235
+      },
+      "width": 110,
+      "ground": "photo",
+      "cleared": false,
+      "note": "TODO(alex): not used on the site. Only 110 px of usable source and no clearance; needs a higher-resolution original and permission (open questions 2 and 14). Held out of public/.",
+      "usage": "not used until a higher-resolution original and clearance exist",
+      "alt": "Alex crouching beside black e-waste collection bins"
+    }
+  ]
+}

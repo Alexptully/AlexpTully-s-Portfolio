@@ -1,83 +1,522 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
+/*
+  Design tokens (design-spec.md §2). Hex is the canonical anchor; the oklch value
+  keeps the hue if a tint is ever derived. One theme, dark, on every route.
+*/
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  /* §2.1 core */
+  --bg: #0b0e13; /* oklch(0.163 0.012 260.6) */
+  --surface: #151a22; /* oklch(0.216 0.018 259.7) */
+  --border: #232b36; /* oklch(0.286 0.023 256.4) */
+  --border-strong: #5a6473; /* oklch(0.500 0.027 258.4) */
+  --ink: #f3efe7; /* oklch(0.953 0.011 84.6) */
+  --muted: #98a2ae; /* oklch(0.708 0.021 252.9) */
+  --quiet: #7b848f; /* oklch(0.610 0.020 253.4) */
+  --accent: #ff3b6f; /* oklch(0.664 0.230 11.3) */
+  --accent-text: #ff7a9c; /* oklch(0.743 0.164 5.8) */
+  --plate-light: #e6e7e9; /* oklch(0.928 0.003 264.5) */
+  --ink-dark: #0b0e13; /* oklch(0.163 0.012 260.6) */
+
+  /* §2.2 content-only: never a link, border, heading or background */
+  --render-blue: #4878c0; /* oklch(0.573 0.123 258.3) */
+  --honu-green: #487830; /* oklch(0.521 0.116 136.5) */
+  --clay: #9a9087; /* oklch(0.659 0.018 64.5) */
+  --paper: #e9e4d8; /* oklch(0.919 0.017 88.0) */
+  --paper-ink: #1a1f27; /* oklch(0.238 0.017 259.8) */
+  --pin-body: #1c2230; /* oklch(0.253 0.028 266.4) */
+  --pin-rim: #0e1014; /* oklch(0.173 0.009 264.3) */
+  --led-module: #d9d6cc; /* oklch(0.876 0.014 93.0) */
+  --emitter-off: #3a0f1c; /* oklch(0.226 0.075 9.6) */
+
+  /* §2.3 spacing (4 px base) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-24: 96px;
+  --s-32: 128px;
+
+  /* §2.3 radius, layout */
+  --r-plate: 16px;
+  --r-photo: 2px;
+  --r-control: 6px;
+  --container: 1200px;
+  --gutter: 16px;
+  --hairline: 1px solid var(--border);
+
+  /* §11.2 easing for user-driven state changes */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
+@media (min-width: 640px) {
+  :root {
+    --gutter: 24px;
   }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --gutter: 48px;
+  }
+}
+
+/* §2.5 Tailwind v4 mapping */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-quiet: var(--quiet);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+  --color-plate-light: var(--plate-light);
+  --color-ink-dark: var(--ink-dark);
+  --color-render-blue: var(--render-blue);
+  --color-honu-green: var(--honu-green);
+  --color-clay: var(--clay);
+  --color-paper: var(--paper);
+  --color-paper-ink: var(--paper-ink);
+  --font-sans: var(--font-host), ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --radius-plate: 16px;
+  --radius-photo: 2px;
+  --radius-control: 6px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+   --------------------------------------------------------------------------- */
+@layer base {
+  html {
+    color-scheme: dark;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 100%;
+    scrollbar-color: var(--border-strong) var(--bg);
+    caret-color: var(--accent);
+    accent-color: var(--accent);
+    -webkit-text-size-adjust: 100%;
+    /* §11.9: anchors jump; no smooth scrolling */
+    scroll-behavior: auto;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    background: var(--bg);
+    color: var(--ink);
+    /* §3.2 body: 17 px below 768, 18 px from 768 */
+    font-size: 17px;
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: 0.003em;
+    text-wrap: pretty;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (min-width: 768px) {
+    body {
+      font-size: 18px;
+      line-height: 1.55;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+    font-weight: inherit;
+    font-size: inherit;
+  }
+
+  /* §3.1 no italics, no all caps, tabular figures wherever numbers align */
+  em,
+  i,
+  cite,
+  address {
+    font-style: normal;
+  }
+
+  dl,
+  table,
+  time,
+  sup {
+    font-variant-numeric: tabular-nums;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 150ms var(--ease-out);
+  }
+
+  /* §2.3 focus: the only place pink touches a control boundary */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: color-mix(in oklch, var(--accent) 25%, transparent);
+    color: var(--ink);
+  }
+
+  /* §13 anchor targets clear the masthead */
+  [id] {
+    scroll-margin-top: 72px;
+  }
+
+  img,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+  }
+
+  hr {
+    border: 0;
+    border-top: var(--hairline);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Type roles (design-spec.md §3.2). Utilities so variants work (md:type-title).
+   --------------------------------------------------------------------------- */
+@utility type-display {
+  font-size: clamp(2.5rem, 1.386rem + 4.571vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+@utility type-title {
+  font-size: clamp(2rem, 1.536rem + 1.905vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+@utility type-heading {
+  font-size: clamp(1.25rem, 1.157rem + 0.381vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+@utility type-lead {
+  font-size: clamp(1.125rem, 1.079rem + 0.19vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0;
+  color: var(--ink);
+}
+
+@utility type-body {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.003em;
+  color: var(--ink);
+  @media (min-width: 768px) {
+    font-size: 18px;
+    line-height: 1.55;
+  }
+}
+
+/* Spec value, ledger cell: body size, tabular figures */
+@utility type-value {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+/* Role line ("My role" value) */
+@utility type-role {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--ink);
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+/* Caption, spec label, index description */
+@utility type-caption {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+
+/* Footnote, source, small print: never smaller, never darker than --quiet */
+@utility type-footnote {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0;
+  color: var(--quiet);
+  font-variant-numeric: tabular-nums;
+}
+
+@utility type-nav {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--ink);
+}
+
+@utility type-button {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--ink);
+}
+
+/* Body and lead measure (§3.2) */
+@utility measure {
+  max-width: 34rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Links. Ink underlines are the default; the pink underline is a light, used
+   at most once per viewport (§1.2, §2.1).
+   --------------------------------------------------------------------------- */
+@utility link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--border-strong);
+  transition: text-decoration-color 150ms var(--ease-out);
+  &:hover,
+  &:focus-visible {
+    text-decoration-color: var(--ink);
+  }
+}
+
+@utility link-quiet {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 150ms var(--ease-out);
+  &:hover,
+  &:focus-visible {
+    text-decoration-color: var(--ink);
+  }
+}
+
+@utility link-accent {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--accent);
+}
+
+/* Masthead item: no underline at rest, ink on hover, 2 px pink when current */
+@utility nav-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 150ms var(--ease-out);
+  &:hover,
+  &:focus-visible {
+    text-decoration-color: var(--ink);
+  }
+  &[aria-current] {
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--accent);
+  }
+}
+
+/* Superscript footnote marker (§3.2): real <sup><a>, underlined on hover/focus only */
+@utility footnote-mark {
+  font-size: 0.7em;
+  line-height: 0;
+  vertical-align: super;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 150ms var(--ease-out);
+  &:hover,
+  &:focus-visible {
+    text-decoration-color: var(--ink);
+  }
+}
+
+/* Container (§2.3): 1200 content width, gutters 16 / 24 / 48 */
+@utility container-site {
+  width: 100%;
+  max-width: calc(var(--container) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Skip link: first focusable element, visible on focus only */
+@utility skip-link {
+  position: absolute;
+  top: var(--s-2);
+  left: var(--s-2);
+  z-index: 50;
+  padding: var(--s-3) var(--s-4);
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: var(--r-control);
+  transform: translateY(calc(-100% - var(--s-4)));
+  &:focus-visible {
+    transform: none;
+  }
+}
+
+/* Native range inputs (§13): 20 px thumb, 44 px hit area, surface track */
+@utility range-input {
+  appearance: none;
+  width: 100%;
+  height: 44px;
+  background: transparent;
+  cursor: pointer;
+  &::-webkit-slider-runnable-track {
+    height: 4px;
+    background: var(--surface);
+    border-radius: 2px;
+  }
+  &::-moz-range-track {
+    height: 4px;
+    background: var(--surface);
+    border-radius: 2px;
+  }
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    margin-top: -8px;
+    border-radius: 50%;
+    background: var(--ink);
+    border: 1px solid var(--border-strong);
+    transition: transform 100ms var(--ease-out);
+  }
+  &::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--ink);
+    border: 1px solid var(--border-strong);
+    transition: transform 100ms var(--ease-out);
+  }
+  &:active::-webkit-slider-thumb {
+    transform: scale(1.1);
+  }
+  &:active::-moz-range-thumb {
+    transform: scale(1.1);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Reduced motion (tech-notes (a).9, spec §11.6)
+   --------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+
+  *,
+  ::before,
+  ::after {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Print (§11.10): paper white, ink black, canvas hidden, SVG posters shown,
+   light plate grounds kept, Sources printed.
+   --------------------------------------------------------------------------- */
+@media print {
+  :root {
+    --bg: #ffffff;
+    --surface: #f2f2f2;
+    --border: #d0d0d0;
+    --border-strong: #707070;
+    --ink: #000000;
+    --muted: #333333;
+    --quiet: #444444;
+    --accent: #000000;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  canvas,
+  [data-print="hide"] {
+    display: none !important;
+  }
+
+  [data-print="show"] {
+    display: block !important;
+  }
+
+  a {
+    text-decoration-color: currentColor;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: var(--quiet);
+  }
+
+  a[href^="#"]::after,
+  a[href^="mailto:"]::after {
+    content: none;
+  }
+
+  header,
+  footer,
+  section,
+  article,
+  figure {
+    break-inside: avoid;
   }
 }

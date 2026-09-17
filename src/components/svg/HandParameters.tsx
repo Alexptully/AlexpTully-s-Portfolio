@@ -7,8 +7,9 @@ import { cn } from "@/lib/utils";
  *
  * The hand is built from exact primitives — stadia for the digits, a rounded rectangle for the
  * palm — so it reads as a measurement drawing and never pretends to be an illustration of a hand.
- * Dimensions sit outside the part where drafting convention puts them; each is numbered on the
- * drawing and named underneath, so the long parameter names stay at reading size.
+ * Two conventions carry the meaning: a girth is drawn as the arc the tape follows around the
+ * part, a length as an arrow between extension lines outside it. Each is numbered on the drawing
+ * and named underneath, so the long parameter names stay at reading size.
  *
  * TODO(alex): in the brief, the "palm length" arrow reads horizontal at source resolution. It is
  * drawn here as the vertical wrist-crease-to-finger-root dimension, which is what the name means.
@@ -16,7 +17,7 @@ import { cn } from "@/lib/utils";
  */
 
 export type HandParameterLabels = {
-  /** 1: measured around the palm; drawn as the across-the-palm dimension the brief uses. */
+  /** 1: measured around the palm, drawn as the arc the tape follows across it. */
   handCircumference: string;
   /** 2: wrist crease to the tip of digit 3. */
   handLength: string;
@@ -37,7 +38,7 @@ export type HandParametersProps = {
   title: string;
   /** The longer description an assistive technology reads after the name. */
   desc: string;
-  /** Labels for digits 1 to 5, in that order. Keep them short: they are drawn at the fingertips. */
+  /** Labels for digits 1 to 5, in that order. Keep them short: each is set along its own digit. */
   digitLabels: [string, string, string, string, string];
   parameters: HandParameterLabels;
   maxWidth?: number;
@@ -54,11 +55,12 @@ const HAIRLINE = { vectorEffect: "non-scaling-stroke" } as const;
 const PALM = { x: 90, y: 222, w: 152, h: 140, r: 26 };
 const KNUCKLE_Y = 250;
 const CREASE_Y = 362;
+/** The four fingers, drawn far-to-near in x. `label` indexes `digitLabels`. */
 const DIGITS = [
-  { x: 166, w: 32, top: 100 }, // digit 3, the longest
-  { x: 130, w: 30, top: 118 },
-  { x: 204, w: 30, top: 124 },
-  { x: 96, w: 28, top: 158 },
+  { x: 166, w: 32, top: 100, label: 2 }, // digit 3, the longest
+  { x: 130, w: 30, top: 118, label: 3 },
+  { x: 204, w: 30, top: 124, label: 1 },
+  { x: 96, w: 28, top: 158, label: 4 },
 ];
 const WRIST = { x: 118, y: CREASE_Y, w: 96, h: 68, r: 14 };
 /** The thumb's own frame: base at the palm's lower right, laid out along its local -y axis. */
@@ -71,6 +73,8 @@ const thumbPoint = (along: number) => ({
   x: THUMB.originX + THUMB_DIR.x * along,
   y: THUMB.originY + THUMB_DIR.y * along,
 });
+/** Where the thumb's label starts: just beyond its tip, running on with the thumb. */
+const THUMB_LABEL = thumbPoint(THUMB.len + 12);
 
 /** A dimension line with an arrowhead at each end. */
 function Dim({ x1, y1, x2, y2 }: { x1: number; y1: number; x2: number; y2: number }) {
@@ -194,22 +198,30 @@ export function HandParameters({
           {...HAIRLINE}
         />
 
-        {/* Digit labels. */}
-        <text x={318} y={238} fill={LINE} fontSize={14} textAnchor="middle" stroke="none">
+        {/* Digit labels, set along each digit's own axis so neighbouring names never collide. */}
+        <text
+          x={0}
+          y={5}
+          transform={`translate(${THUMB_LABEL.x} ${THUMB_LABEL.y}) rotate(${THUMB.angle - 90})`}
+          fill={LINE}
+          fontSize={14}
+          stroke="none"
+        >
           {digitLabels[0]}
         </text>
-        <text x={219} y={112} fill={LINE} fontSize={14} textAnchor="middle" stroke="none">
-          {digitLabels[1]}
-        </text>
-        <text x={182} y={88} fill={LINE} fontSize={14} textAnchor="middle" stroke="none">
-          {digitLabels[2]}
-        </text>
-        <text x={145} y={106} fill={LINE} fontSize={14} textAnchor="middle" stroke="none">
-          {digitLabels[3]}
-        </text>
-        <text x={110} y={146} fill={LINE} fontSize={14} textAnchor="middle" stroke="none">
-          {digitLabels[4]}
-        </text>
+        {DIGITS.map((d) => (
+          <text
+            key={d.x}
+            x={0}
+            y={5}
+            transform={`translate(${d.x + d.w / 2} ${d.top - 12}) rotate(-90)`}
+            fill={LINE}
+            fontSize={14}
+            stroke="none"
+          >
+            {digitLabels[d.label]}
+          </text>
+        ))}
 
         {/* Extension lines for the two length dimensions. */}
         <path
@@ -220,12 +232,16 @@ export function HandParameters({
           {...HAIRLINE}
         />
 
-        {/* 2 hand length, 3 palm length, 1 hand circumference. */}
+        {/* 2 hand length and 3 palm length: the two straight dimensions. */}
         <Dim x1={44} y1={100} x2={44} y2={CREASE_Y} />
         <Dim x1={68} y1={KNUCKLE_Y} x2={68} y2={CREASE_Y} />
-        <Dim x1={PALM.x} y1={306} x2={PALM.x + PALM.w} y2={306} />
 
-        {/* 4 wrist, 5 finger root, 6 interphalangeal, 7 distal interphalangeal. */}
+        {/* Girths are drawn as the arc the tape follows: 1 palm, 4 wrist, 5, 6, 7. */}
+        <path
+          d={`M${PALM.x + 4} 314 Q166 298 ${PALM.x + PALM.w - 4} 314`}
+          stroke={DIM}
+          {...HAIRLINE}
+        />
         <path
           d={`M${WRIST.x + 2} 392 Q${WRIST.x + WRIST.w / 2} 378 ${WRIST.x + WRIST.w - 2} 392`}
           stroke={DIM}

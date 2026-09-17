@@ -95,12 +95,15 @@ const EXT = scale(AXIS, LENGTH);
 const NEAR: Pt = [213, 450];
 const FAR = move(NEAR, EXT);
 
-const RIB_R = R * 1.14;
-const RIB_EXT = scale(AXIS, LENGTH * 0.05);
-const RIB_AT = [0.52, 0.38, 0.24, 0.1]; // drawn far to near, so each rib occludes the last
+/** Ribs stand only slightly proud, so a close pitch reads as increments and not as a telescope. */
+const RIB_R = R * 1.08;
+const RIB_EXT = scale(AXIS, LENGTH * 0.028);
+/** Rib increments, evenly spaced along the run and drawn far to near so each occludes the last. */
+const RIB_AT = [0.88, 0.76, 0.5, 0.38, 0.26, 0.14];
 
 const SOCKET_R = R * 1.19;
-const SOCKET_EXT = scale(AXIS, -LENGTH * 0.09);
+/** Shallow enough that the floor of the recess stays visible through the mouth. */
+const SOCKET_EXT = scale(AXIS, -LENGTH * 0.042);
 
 const PLUG_R = R * 0.72;
 const PLUG_EXT = scale(AXIS, LENGTH * 0.09);
@@ -129,6 +132,23 @@ const LINE = "var(--muted)";
 /** `vector-effect` is not an inherited property, so every drawn path carries it. */
 const HAIRLINE = { vectorEffect: "non-scaling-stroke" } as const;
 
+/** The mouth of the socket: the plane the plug of the next pipe enters. */
+const MOUTH = move(NEAR, SOCKET_EXT);
+const ribsBeyond = RIB_AT.filter((t) => t > BRANCH_AT);
+const ribsNear = RIB_AT.filter((t) => t <= BRANCH_AT);
+
+/** One rib increment: its outward face, its collar, and the pipe re-emerging from it. */
+function Rib({ t }: { t: number }) {
+  const at = move(NEAR, scale(EXT, t));
+  return (
+    <g>
+      <path d={tube(at, ribSection, RIB_EXT)} fill={BODY_FILL} {...HAIRLINE} />
+      <path d={ring(at, ribSection)} fill={FACE_FILL} {...HAIRLINE} />
+      <path d={ring(at, section)} fill={BODY_FILL} {...HAIRLINE} />
+    </g>
+  );
+}
+
 export type HexPipeProps = {
   /** Accessible name of the figure. */
   title: string;
@@ -144,6 +164,7 @@ export type HexPipeProps = {
 export function HexPipe({ title, desc, maxWidth = 960, id = "hexpipe", className }: HexPipeProps) {
   const titleId = `${id}-title`;
   const descId = `${id}-desc`;
+  const mouthId = `${id}-mouth`;
   return (
     <svg
       viewBox="0 0 960 620"
@@ -158,35 +179,44 @@ export function HexPipe({ title, desc, maxWidth = 960, id = "hexpipe", className
     >
       <title id={titleId}>{title}</title>
       <desc id={descId}>{desc}</desc>
+      <defs>
+        {/* Everything inside the socket is seen through its mouth, so the mouth is the clip. */}
+        <clipPath id={mouthId}>
+          <path d={ring(MOUTH, plugSection)} />
+        </clipPath>
+      </defs>
       {/* Drawn far to near, so the painter's order does the hidden-line work. */}
       <g>
-        {/* The plug end of the connector. */}
+        {/* The plug end of the connector, behind the pipe's far rim. */}
         <path d={tube(FAR, plugSection, PLUG_EXT)} fill={BODY_FILL} {...HAIRLINE} />
         {/* The pipe itself. */}
         <path d={tube(NEAR, section, EXT)} fill={BODY_FILL} {...HAIRLINE} />
+        {/* Ribs beyond the branch. */}
+        {ribsBeyond.map((t) => (
+          <Rib key={t} t={t} />
+        ))}
         {/* The hex hole the branch carves in the host, then the branch standing in it. */}
         <path d={ring(BRANCH_SEAT, branchSection)} fill={HOLE_FILL} {...HAIRLINE} />
         <path d={tube(BRANCH_SEAT, branchSection, BRANCH_EXT)} fill={BODY_FILL} {...HAIRLINE} />
         <path d={ring(BRANCH_TOP, branchSection)} fill={FACE_FILL} {...HAIRLINE} />
         <path d={ring(BRANCH_TOP, branchBore)} fill={HOLE_FILL} {...HAIRLINE} />
-        {/* Rib increments. */}
-        {RIB_AT.map((t) => {
-          const at = move(NEAR, scale(EXT, t));
-          return (
-            <g key={t}>
-              <path d={tube(at, ribSection, RIB_EXT)} fill={BODY_FILL} {...HAIRLINE} />
-              <path d={ring(at, ribSection)} fill={FACE_FILL} {...HAIRLINE} />
-              <path d={ring(at, section)} fill={BODY_FILL} {...HAIRLINE} />
-            </g>
-          );
-        })}
-        {/* The near end: profile, bore, and the socket end of the connector over it. */}
+        {/* Ribs between the branch and the socket. */}
+        {ribsNear.map((t) => (
+          <Rib key={t} t={t} />
+        ))}
+        {/* The near end of the pipe: end face and through bore. */}
         <path d={ring(NEAR, section)} fill={FACE_FILL} {...HAIRLINE} />
         <path d={ring(NEAR, bore)} fill={HOLE_FILL} {...HAIRLINE} />
+        {/* The socket end of the connector: a collar standing proud of that face. */}
         <path d={tube(NEAR, socketSection, SOCKET_EXT)} fill={BODY_FILL} {...HAIRLINE} />
-        <path d={ring(move(NEAR, SOCKET_EXT), socketSection)} fill={FACE_FILL} {...HAIRLINE} />
-        <path d={ring(move(NEAR, SOCKET_EXT), section)} fill={HOLE_FILL} {...HAIRLINE} />
-        <path d={ring(move(NEAR, SOCKET_EXT), bore)} fill={FACE_FILL} {...HAIRLINE} />
+        <path d={ring(MOUTH, socketSection)} fill={FACE_FILL} {...HAIRLINE} />
+        {/* Looking in: the recess wall, its floor at the pipe's face, and the bore through it. */}
+        <g clipPath={`url(#${mouthId})`}>
+          <rect x={0} y={0} width={960} height={620} fill={BODY_FILL} stroke="none" />
+          <path d={ring(NEAR, plugSection)} fill={FACE_FILL} {...HAIRLINE} />
+          <path d={ring(NEAR, bore)} fill={HOLE_FILL} {...HAIRLINE} />
+        </g>
+        <path d={ring(MOUTH, plugSection)} {...HAIRLINE} />
       </g>
     </svg>
   );

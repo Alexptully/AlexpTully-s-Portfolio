@@ -5,22 +5,34 @@
  *   node scripts/images/build.mjs [--only=<slug|id>] [--dry] [--qa=<dir>]
  *
  * Reads scripts/images/manifest.json (the §12.2 table as data), crops each source
- * page image, levels or keys its ground, and writes `<id>.jpg` (quality 90, the
- * static-import source for next/image) plus `<id>.webp` and `<id>.avif` next to it
- * in `public/images/<slug>/`.
+ * page image, levels or keys its ground, sets the crop on a ground-coloured canvas of
+ * the declared aspect, and writes `<id>.jpg` (quality 90, the static-import source for
+ * next/image) plus `<id>.webp` and `<id>.avif` next to it in `public/images/<slug>/`.
  *
  * Rules implemented here (all from §12.1):
- *   - Never scale a crop past its native pixel width. `width` in the manifest is a
- *     ceiling, not a target: the output width is min(manifest width, crop width).
+ *   - Never scale a crop past its native pixel width. The canvas is always at least as
+ *     large as the crop, so the final resize is a downscale or 1:1 — never an enlargement.
+ *   - `out` is the size `src/content/*.ts` declares for the id (`ImageRef.width/height`).
+ *     Every published file comes out at exactly that size, so `next/image` renders it at
+ *     its natural aspect and the `Plate` max-width rule holds.
+ *   - The crop itself is chosen to contain the object and nothing else: no slide text, no
+ *     neighbouring tile, no panel border. Where the clean crop does not have the declared
+ *     aspect, the difference is made up with ground-coloured padding (see groundCanvas),
+ *     never by stretching or by widening the crop into the slide.
  *   - `ground: "dark"`  — level the near-black ground onto --bg #0B0E13 so the crop edge
  *     vanishes on a dark plate, mapping the measured ground level to the token and
  *     leaving 255 at 255 (see liftGround). Turn it off per item with `"key": false`.
+ *     Padding is --bg, so it is the same colour as the levelled ground.
  *   - `ground: "light"` — level the crop so its border median becomes --plate-light
  *     #E6E7E9, so every light plate shares one tone. Default levelling is a per-channel
  *     offset (`linear(1, target - median)`): it neutralises the slide's colour cast and
  *     moves the ground onto the token without touching contrast. `"level": "gain"`
- *     (linear(target/median, 0)) and `"level": "none"` are available per item.
+ *     (linear(target/median, 0)) and `"level": "none"` are available per item. Padding is
+ *     --plate-light.
  *   - `ground: "photo"` — a photograph that keeps its own ground: no key, no levelling.
+ *     Padding is the crop's own border median, so it only ever disappears when that ground
+ *     really is flat (black slide, black card); every photo pad is checked on the contact
+ *     sheet.
  *   - The border median of every crop is sampled and printed, and stored in
  *     public/images/index.json, so the ground choice is data rather than eyeballing.
  *
@@ -30,7 +42,7 @@
  * that references one of these ids renders a declared fallback (§4.3), so nothing breaks.
  *
  * Also writes:
- *   public/images/index.json   every output's final native width/height (for WP1)
+ *   public/images/index.json   every output's final width/height (WP1/WP3 read this)
  *   <qa>/contact-sheet.html    one tile per output, for visual inspection
  */
 import sharp from "sharp";
@@ -120,6 +132,92 @@ function liftGround(rgbRaw, width, height, blackPoint, bg) {
   return out;
 }
 
+/**
+ * Erase the white stroke a slide cut-out carries around its silhouette (§12.2, pa-05).
+ *
+ * The background is found by flooding inward from the crop edge through everything that is
+ * still at ground level, and every bright pixel within `distance` of that flood is taken to
+ * be stroke rather than object and set back to the ground colour. It only ever touches a
+ * band that the background already surrounds, so an interior highlight is never eaten.
+ */
+function trimHalo(rgbRaw, width, height, bg, { distance = 6, threshold = 225, groundTol = 48 } = {}) {
+  const n = width * height;
+  const lum = new Uint8Array(n);
+  for (let i = 0; i < n; i++) {
+    lum[i] = Math.round((rgbRaw[i * 3] * 299 + rgbRaw[i * 3 + 1] * 587 + rgbRaw[i * 3 + 2] * 114) / 1000);
+  }
+  const bgLum = Math.round((bg[0] * 299 + bg[1] * 587 + bg[2] * 114) / 1000);
+  const dist = new Int16Array(n).fill(-1);
+  const queue = new Int32Array(n);
+  let head = 0;
+  let tail = 0;
+  const push = (i) => {
+    if (dist[i] === -1 && lum[i] <= bgLum + groundTol) {
+      dist[i] = 0;
+      queue[tail++] = i;
+    }
+  };
+  for (let x = 0; x < width; x++) {
+    push(x);
+    push((height - 1) * width + x);
+  }
+  for (let y = 0; y < height; y++) {
+    push(y * width);
+    push(y * width + width - 1);
+  }
+  // Flood the ground, then keep walking `distance` steps into whatever bounds it.
+  while (head < tail) {
+    const i = queue[head++];
+    const d = dist[i];
+    const x = i % width;
+    const y = (i - x) / width;
+    for (const [dx, dy] of [
+      [1, 0],
+      [-1, 0],
+      [0, 1],
+      [0, -1],
+    ]) {
+      const nx = x + dx;
+      const ny = y + dy;
+      if (nx < 0 || ny < 0 || nx >= width || ny >= height) continue;
+      const j = ny * width + nx;
+      if (dist[j] !== -1) continue;
+      const isGround = lum[j] <= bgLum + groundTol;
+      if (isGround && d === 0) {
+        dist[j] = 0;
+        queue[tail++] = j;
+      } else if (!isGround && d < distance) {
+        dist[j] = d + 1;
+        queue[tail++] = j;
+      }
+    }
+  }
+  let wiped = 0;
+  for (let i = 0; i < n; i++) {
+    if (dist[i] > 0 && lum[i] >= threshold) {
+      rgbRaw[i * 3] = bg[0];
+      rgbRaw[i * 3 + 1] = bg[1];
+      rgbRaw[i * 3 + 2] = bg[2];
+      wiped++;
+    }
+  }
+  return wiped;
+}
+
+/**
+ * The canvas the crop is centred on before the final downscale.
+ *
+ * It carries the declared aspect, is never smaller than the crop (so the object is never
+ * enlarged) and is never smaller than the declared pixel size (so the last step is a
+ * downscale or a straight copy). The leftover is ground colour, which is the same tone the
+ * levelled crop edge already is, so the seam does not exist.
+ */
+function groundCanvas(cropW, cropH, outW, outH) {
+  const width = Math.max(cropW, outW, Math.round((cropH * outW) / outH));
+  const height = Math.max(cropH, outH, Math.round((width * outH) / outW));
+  return { width, height: Math.max(height, Math.round((width * outH) / outW)) };
+}
+
 const publicIndex = [];
 const sheet = [];
 let built = 0;
@@ -128,27 +226,30 @@ let skipped = 0;
 console.log(
   [
     "id".padEnd(28),
-    "native".padEnd(11),
+    "crop".padEnd(11),
+    "canvas".padEnd(11),
     "out".padEnd(11),
     "ground".padEnd(6),
     "border".padEnd(9),
     "dest",
   ].join(" "),
 );
-console.log("-".repeat(104));
+console.log("-".repeat(112));
 
 for (const item of manifest.items) {
   if (only && item.slug !== only && item.id !== only) continue;
 
   const srcPath = path.join(ROOT, item.src);
-  const source = sharp(srcPath, { failOn: "none" }).rotate();
-  const meta = await source.metadata();
+  const meta = await sharp(srcPath, { failOn: "none" }).rotate().metadata();
 
   const left = Math.max(0, Math.round(item.crop.left));
   const top = Math.max(0, Math.round(item.crop.top));
   const width = Math.min(meta.width - left, Math.round(item.crop.width));
   const height = Math.min(meta.height - top, Math.round(item.crop.height));
   if (width <= 0 || height <= 0) throw new Error(`${item.id}: crop falls outside ${item.src}`);
+  if (width !== Math.round(item.crop.width) || height !== Math.round(item.crop.height)) {
+    throw new Error(`${item.id}: crop runs past the edge of ${item.src} (${meta.width}x${meta.height})`);
+  }
 
   let raw = await sharp(srcPath, { failOn: "none" })
     .rotate()
@@ -161,8 +262,10 @@ for (const item of manifest.items) {
   const ring = Math.max(2, Math.round(Math.min(width, height) * 0.02));
   const medianRgb = borderMedian(raw, width, height, ring);
 
+  let haloWiped = 0;
   if (item.ground === "dark" && item.key !== false) {
     raw = liftGround(raw, width, height, medianRgb, BG);
+    if (item.haloTrim) haloWiped = trimHalo(raw, width, height, BG, item.haloTrim);
   } else if (item.ground === "light" && item.level !== "none") {
     const mode = item.level ?? "offset";
     const pipe = sharp(raw, { raw: { width, height, channels: 3 } });
@@ -179,8 +282,26 @@ for (const item of manifest.items) {
     raw = await levelled.raw().toBuffer();
   }
 
-  const outWidth = Math.min(item.width ?? width, width);
-  const outHeight = Math.round((height * outWidth) / width);
+  const outWidth = Math.round(item.out.width);
+  const outHeight = Math.round(item.out.height);
+  const canvas = groundCanvas(width, height, outWidth, outHeight);
+  const padChoice =
+    item.pad ?? (item.ground === "dark" ? "bg" : item.ground === "light" ? "plateLight" : "median");
+  const padColour = padChoice === "bg" ? BG : padChoice === "plateLight" ? PLATE_LIGHT : medianRgb;
+  const padX = canvas.width - width;
+  const padY = canvas.height - height;
+
+  let plated = sharp(raw, { raw: { width, height, channels: 3 } });
+  if (padX > 0 || padY > 0) {
+    plated = plated.extend({
+      left: Math.floor(padX / 2),
+      right: Math.ceil(padX / 2),
+      top: Math.floor(padY / 2),
+      bottom: Math.ceil(padY / 2),
+      background: { r: padColour[0], g: padColour[1], b: padColour[2] },
+    });
+  }
+  const platedRaw = await plated.raw().toBuffer();
 
   const cleared = item.cleared !== false;
   const destDir = cleared
@@ -195,8 +316,10 @@ for (const item of manifest.items) {
     if (cleared) files.push(`/images/${item.slug}/${item.id}.${fmt}`);
     if (dry) continue;
     await fs.mkdir(destDir, { recursive: true });
-    let pipe = sharp(raw, { raw: { width, height, channels: 3 } }).resize({
+    let pipe = sharp(platedRaw, { raw: { width: canvas.width, height: canvas.height, channels: 3 } }).resize({
       width: outWidth,
+      height: outHeight,
+      fit: "fill",
       withoutEnlargement: true,
       kernel: "lanczos3",
     });
@@ -217,18 +340,21 @@ for (const item of manifest.items) {
     cleared,
     width: outWidth,
     height: outHeight,
-    nativeCropWidth: width,
-    nativeCropHeight: height,
+    cropWidth: width,
+    cropHeight: height,
+    canvasWidth: canvas.width,
+    canvasHeight: canvas.height,
     borderMedian: rgbToHex(medianRgb),
     files,
     alt: item.alt,
     usage: item.usage,
     src: item.src,
     crop: { left, top, width, height },
+    ...(haloWiped ? { haloTrimmedPixels: haloWiped } : {}),
     ...(item.note ? { note: item.note } : {}),
   });
 
-  sheet.push({ ...item, cleared, outWidth, outHeight, width, height, medianRgb, diskFiles });
+  sheet.push({ ...item, cleared, outWidth, outHeight, canvas, width, height, medianRgb, diskFiles });
   if (cleared) built++;
   else skipped++;
 
@@ -236,16 +362,18 @@ for (const item of manifest.items) {
     [
       item.id.padEnd(28),
       `${width}x${height}`.padEnd(11),
+      `${canvas.width}x${canvas.height}`.padEnd(11),
       `${outWidth}x${outHeight}`.padEnd(11),
       item.ground.padEnd(6),
       rgbToHex(medianRgb).padEnd(9),
-      cleared ? `public/images/${item.slug}/` : `QA only (cleared: false)`,
+      (cleared ? `public/images/${item.slug}/` : `QA only (cleared: false)`) +
+        (haloWiped ? `  halo trim: ${haloWiped} px` : ""),
     ].join(" "),
   );
 }
 
 if (!dry && only) {
-  console.log("-".repeat(104));
+  console.log("-".repeat(112));
   console.log("--only is set: public/images/index.json and the contact sheet were left alone.");
   console.log("Run the script with no --only before finishing, so both cover every id.");
 } else if (!dry) {
@@ -268,7 +396,7 @@ if (!dry && only) {
   await fs.writeFile(path.join(QA_DIR, "contact-sheet.html"), contactSheet(sheet), "utf8");
 }
 
-console.log("-".repeat(104));
+console.log("-".repeat(112));
 console.log(
   `${built} published to public/images, ${skipped} held in ${path.join(QA_DIR, "uncleared")} (cleared: false).`,
 );
@@ -305,7 +433,8 @@ function contactSheet(rows) {
               </div>
               <figcaption>
                 <b>${esc(r.id)}</b>
-                <span class="meta">${r.outWidth}&times;${r.outHeight} px &middot; native ${r.width}&times;${r.height}
+                <span class="meta">${r.outWidth}&times;${r.outHeight} px &middot; crop ${r.width}&times;${r.height}
+                  &middot; canvas ${r.canvas.width}&times;${r.canvas.height}
                   &middot; ground <i>${esc(r.ground)}</i> &middot; border
                   <span class="chip" style="background:${rgbToHex(r.medianRgb)}"></span>${rgbToHex(r.medianRgb)}</span>
                 <span class="meta">${esc(r.usage)}</span>
@@ -377,7 +506,8 @@ function contactSheet(rows) {
   <div class="wrap">
     <h1>WP2 contact sheet</h1>
     <p class="lede">Every output of <code>scripts/images/build.mjs</code>, on the plate ground it is
-      destined for. Tiles are shown at their native output width, never scaled up.</p>
+      destined for. Tiles are shown at their declared output width, which is the width
+      <code>src/content</code> records for the id.</p>
     <p class="lede">A pink dashed plate marks <code>cleared: false</code>: the file is built here for
       review only and is not written into <code>public/</code>.</p>
     ${sections}

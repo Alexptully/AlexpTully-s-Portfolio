@@ -47,6 +47,22 @@ function blockHeight(layer: ArchitectureLayer): number {
   return 34 + 22 + (detail > 0 ? 20 + (detail - 1) * 18 : 0) + 20;
 }
 
+type PlacedLayer = { layer: ArchitectureLayer; top: number; height: number };
+
+/**
+ * Stack the blocks top to bottom, leaving `GAP` for the arrow between neighbours. Pure: the
+ * running offset lives in the accumulator, never in a variable the render closes over.
+ */
+function place(layers: ArchitectureLayer[]): { placed: PlacedLayer[]; height: number } {
+  const placed = layers.reduce<PlacedLayer[]>((acc, layer) => {
+    const last = acc[acc.length - 1];
+    const top = last ? last.top + last.height + GAP : INSET;
+    return [...acc, { layer, top, height: blockHeight(layer) }];
+  }, []);
+  const last = placed[placed.length - 1];
+  return { placed, height: (last ? last.top + last.height : INSET) + INSET };
+}
+
 export function Architecture({
   title,
   desc,
@@ -59,14 +75,7 @@ export function Architecture({
   const titleId = `${id}-title`;
   const descId = `${id}-desc`;
 
-  let y = INSET;
-  const placed = layers.map((layer, i) => {
-    const height = blockHeight(layer);
-    const top = y;
-    y += height + (i < layers.length - 1 ? GAP : 0);
-    return { layer, top, height };
-  });
-  const height = y + INSET;
+  const { placed, height } = place(layers);
 
   return (
     <svg

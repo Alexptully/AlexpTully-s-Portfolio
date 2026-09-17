@@ -7,9 +7,15 @@ import { cn } from "@/lib/utils";
  * the scene's chunk downloads, what stays if WebGL fails or the frame-time guard trips, what the
  * reduced-motion and print states show, and the backdrop behind the transparent canvas.
  *
- * It fills the hero's 4:3 box on `--bg` and uses the §2.2 canvas materials, so the poster and the
- * scene are the same object in two media. It carries no copy: the hero's caption says what it is.
- * Pass `title` and `desc` only where the poster stands alone as the figure.
+ * It fills the hero's 4:3 box on `--bg`. Every part is sized from the same unit as the scene's
+ * geometry table and painted with the same §2.2 material tokens, so the poster and the scene are
+ * the same object in two media and the cross-fade between them does not jump. The light is the
+ * scene's light, built from tokens only: a key wash from the upper left (`--plate-light`), the
+ * shade it leaves at the lower right (`--bg`), and the pink the emitters throw onto the plate,
+ * the bezel and the room (`--accent`).
+ *
+ * It carries no copy: the hero's caption says what it is. Pass `title` and `desc` only where the
+ * poster stands alone as the figure.
  */
 
 export type PinPosterProps = {
@@ -22,21 +28,29 @@ export type PinPosterProps = {
   className?: string;
 };
 
-const CENTER = { x: 480, y: 360 };
-/** The pin's 42 mm width, in drawing units. */
-const UNIT = 440;
-const RIM = UNIT;
-const BODY = UNIT * 0.92;
-const PLATE = UNIT * 0.71;
-const MODULE = UNIT * 0.36;
-const PITCH = UNIT * 0.1;
-const EMITTER = UNIT * 0.032;
+const BOX = { w: 960, h: 720 };
+const CENTER = { x: BOX.w / 2, y: BOX.h / 2 };
+/**
+ * The pin's 42 mm width, in drawing units. Every part below is a multiple of it, as in §10.1.
+ * Sized so the pin covers the same share of the box as it does through the scene camera
+ * (fov 30 at z 4.2, object at z 0.2: 2 · 4 · tan 15° ≈ 2.14 units tall), so the canvas can
+ * cross-fade in over the poster without the object jumping size.
+ */
+const UNIT = 336;
+const RIM = UNIT * 1.06;
+const BODY = UNIT * 0.98;
+const PLATE = UNIT * 0.78;
+const MODULE = UNIT * 0.3;
+const WELL = MODULE * 0.86;
+const PITCH = UNIT * 0.085;
+const EMITTER = UNIT * 0.028;
 
-const square = (size: number) => ({
+const square = (size: number, radius: number) => ({
   x: CENTER.x - size / 2,
   y: CENTER.y - size / 2,
   width: size,
   height: size,
+  rx: radius,
 });
 
 const EMITTERS = [-1, 0, 1].flatMap((row) =>
@@ -51,9 +65,16 @@ export function PinPoster({ title, desc, id = "pin-poster", className }: PinPost
   const titleId = `${id}-title`;
   const descId = `${id}-desc`;
   const labelled = Boolean(title);
+  /** The key and its shade are painted over each part, so one gradient serves every surface. */
+  const lit = (size: number, radius: number) => (
+    <>
+      <rect {...square(size, radius)} fill={`url(#${id}-key)`} />
+      <rect {...square(size, radius)} fill={`url(#${id}-shade)`} />
+    </>
+  );
   return (
     <svg
-      viewBox="0 0 960 720"
+      viewBox={`0 0 ${BOX.w} ${BOX.h}`}
       className={cn("h-full w-full", className)}
       preserveAspectRatio="xMidYMid meet"
       {...(labelled
@@ -63,14 +84,30 @@ export function PinPoster({ title, desc, id = "pin-poster", className }: PinPost
       {labelled ? <title id={titleId}>{title}</title> : null}
       {labelled && desc ? <desc id={descId}>{desc}</desc> : null}
       <defs>
-        <radialGradient id={`${id}-spill`}>
-          <stop offset="0%" stopColor="var(--accent)" stopOpacity={0.5} />
-          <stop offset="45%" stopColor="var(--accent)" stopOpacity={0.14} />
+        {/* The light the emitters throw into the room behind the pin. */}
+        <radialGradient id={`${id}-room`}>
+          <stop offset="0%" stopColor="var(--accent)" stopOpacity={0.34} />
+          <stop offset="45%" stopColor="var(--accent)" stopOpacity={0.1} />
           <stop offset="100%" stopColor="var(--accent)" stopOpacity={0} />
         </radialGradient>
+        {/* The key light, upper left, and the shade it leaves at the lower right. */}
+        <linearGradient id={`${id}-key`} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="var(--plate-light)" stopOpacity={0.14} />
+          <stop offset="62%" stopColor="var(--plate-light)" stopOpacity={0} />
+        </linearGradient>
+        <linearGradient id={`${id}-shade`} x1="1" y1="1" x2="0" y2="0">
+          <stop offset="0%" stopColor="var(--bg)" stopOpacity={0.34} />
+          <stop offset="58%" stopColor="var(--bg)" stopOpacity={0} />
+        </linearGradient>
+        {/* Pink spilling from the array onto the plate and the bezel. */}
+        <radialGradient id={`${id}-wash`}>
+          <stop offset="0%" stopColor="var(--accent)" stopOpacity={0.17} />
+          <stop offset="100%" stopColor="var(--accent)" stopOpacity={0} />
+        </radialGradient>
+        {/* The bloom a sensor records over the array. */}
         <radialGradient id={`${id}-glare`}>
-          <stop offset="0%" stopColor="var(--accent)" stopOpacity={0.85} />
-          <stop offset="55%" stopColor="var(--accent)" stopOpacity={0.2} />
+          <stop offset="0%" stopColor="var(--accent)" stopOpacity={0.6} />
+          <stop offset="38%" stopColor="var(--accent)" stopOpacity={0.16} />
           <stop offset="100%" stopColor="var(--accent)" stopOpacity={0} />
         </radialGradient>
         <radialGradient id={`${id}-emitter`}>
@@ -79,31 +116,28 @@ export function PinPoster({ title, desc, id = "pin-poster", className }: PinPost
         </radialGradient>
       </defs>
 
-      <rect x={0} y={0} width={960} height={720} fill="var(--bg)" />
-      {/* The light the emitters throw into the room. */}
-      <circle cx={CENTER.x} cy={CENTER.y} r={430} fill={`url(#${id}-spill)`} />
+      <rect x={0} y={0} width={BOX.w} height={BOX.h} fill="var(--bg)" />
+      <circle cx={CENTER.x} cy={CENTER.y} r={470} fill={`url(#${id}-room)`} />
 
-      {/* Rim, body, plate: the pin as three stacked plates. */}
-      <rect {...square(RIM)} rx={UNIT * 0.17} fill="var(--pin-rim)" />
-      <rect {...square(BODY)} rx={UNIT * 0.15} fill="var(--pin-body)" />
-      <rect {...square(PLATE)} rx={UNIT * 0.11} fill="var(--plate-light)" />
-      {/* Two fixing points in the plate, as on the built module. */}
-      <circle cx={CENTER.x - PLATE * 0.34} cy={CENTER.y - PLATE * 0.34} r={UNIT * 0.018} fill="var(--pin-rim)" fillOpacity={0.55} />
-      <circle cx={CENTER.x + PLATE * 0.34} cy={CENTER.y + PLATE * 0.34} r={UNIT * 0.018} fill="var(--pin-rim)" fillOpacity={0.55} />
+      {/* Rim, body, plate: the pin as three stacked plates, each taking the same light. */}
+      <rect {...square(RIM, UNIT * 0.14)} fill="var(--pin-rim)" />
+      {lit(RIM, UNIT * 0.14)}
+      <rect {...square(BODY, UNIT * 0.12)} fill="var(--pin-body)" />
+      {lit(BODY, UNIT * 0.12)}
+      <rect {...square(PLATE, UNIT * 0.06)} fill="var(--plate-light)" />
+      <rect {...square(PLATE, UNIT * 0.06)} fill={`url(#${id}-shade)`} />
 
-      {/* The COB module and its nine infrared emitters, lit. */}
-      <rect {...square(MODULE)} rx={UNIT * 0.02} fill="var(--led-module)" />
-      <rect
-        {...square(MODULE * 0.86)}
-        rx={UNIT * 0.012}
-        fill="var(--emitter-off)"
-        fillOpacity={0.9}
-      />
+      {/* The pink the array spills back over the object it sits in. */}
+      <circle cx={CENTER.x} cy={CENTER.y} r={UNIT * 0.55} fill={`url(#${id}-wash)`} />
+
+      {/* The COB module, its well and the nine infrared emitters, lit. */}
+      <rect {...square(MODULE, UNIT * 0.02)} fill="var(--led-module)" />
+      {lit(MODULE, UNIT * 0.02)}
+      <rect {...square(WELL, UNIT * 0.012)} fill="var(--emitter-off)" />
       {EMITTERS.map((e) => (
         <circle key={e.key} cx={e.cx} cy={e.cy} r={EMITTER} fill={`url(#${id}-emitter)`} />
       ))}
-      {/* The bloom a sensor records over the array. */}
-      <circle cx={CENTER.x} cy={CENTER.y} r={UNIT * 0.4} fill={`url(#${id}-glare)`} />
+      <circle cx={CENTER.x} cy={CENTER.y} r={UNIT * 0.44} fill={`url(#${id}-glare)`} />
     </svg>
   );
 }

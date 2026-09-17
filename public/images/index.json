@@ -11,11 +11,13 @@
       "slug": "anticam",
       "ground": "light",
       "cleared": true,
-      "width": 474,
-      "height": 428,
-      "nativeCropWidth": 474,
-      "nativeCropHeight": 428,
-      "borderMedian": "#EBEDF1",
+      "width": 500,
+      "height": 475,
+      "cropWidth": 469,
+      "cropHeight": 402,
+      "canvasWidth": 500,
+      "canvasHeight": 475,
+      "borderMedian": "#EDEDF1",
       "files": [
         "/images/anticam/ac-01-v1-led-face.jpg",
         "/images/anticam/ac-01-v1-led-face.webp",
@@ -25,10 +27,10 @@
       "usage": "home hero (photo mode), AntiCam case hero",
       "src": "content/source/anticam/camera-blinder-presentation/pages/page-12.jpg",
       "crop": {
-        "left": 748,
-        "top": 492,
-        "width": 474,
-        "height": 428
+        "left": 738,
+        "top": 506,
+        "width": 469,
+        "height": 402
       }
     },
     {
@@ -36,11 +38,13 @@
       "slug": "anticam",
       "ground": "light",
       "cleared": true,
-      "width": 486,
-      "height": 354,
-      "nativeCropWidth": 486,
-      "nativeCropHeight": 354,
-      "borderMedian": "#EEEFF3",
+      "width": 490,
+      "height": 380,
+      "cropWidth": 470,
+      "cropHeight": 340,
+      "canvasWidth": 490,
+      "canvasHeight": 380,
+      "borderMedian": "#EDEEF2",
       "files": [
         "/images/anticam/ac-02-v1-lid-side.jpg",
         "/images/anticam/ac-02-v1-lid-side.webp",
@@ -50,10 +54,10 @@
       "usage": "AntiCam contact sheet, \"Final V1\"",
       "src": "content/source/anticam/camera-blinder-presentation/pages/page-12.jpg",
       "crop": {
-        "left": 185,
-        "top": 582,
-        "width": 486,
-        "height": 354
+        "left": 192,
+        "top": 592,
+        "width": 470,
+        "height": 340
       }
     },
     {
@@ -61,10 +65,12 @@
       "slug": "anticam",
       "ground": "photo",
       "cleared": true,
-      "width": 519,
-      "height": 527,
-      "nativeCropWidth": 519,
-      "nativeCropHeight": 527,
+      "width": 520,
+      "height": 525,
+      "cropWidth": 520,
+      "cropHeight": 525,
+      "canvasWidth": 520,
+      "canvasHeight": 525,
       "borderMedian": "#733068",
       "files": [
         "/images/anticam/ac-03-test2-glow.jpg",
@@ -77,8 +83,8 @@
       "crop": {
         "left": 175,
         "top": 311,
-        "width": 519,
-        "height": 527
+        "width": 520,
+        "height": 525
       }
     },
     {
@@ -87,9 +93,11 @@
       "ground": "photo",
       "cleared": false,
       "width": 960,
-      "height": 538,
-      "nativeCropWidth": 1013,
-      "nativeCropHeight": 568,
+      "height": 541,
+      "cropWidth": 1013,
+      "cropHeight": 568,
+      "canvasWidth": 1013,
+      "canvasHeight": 571,
       "borderMedian": "#303030",
       "files": [],
       "alt": "Ring doorbell night-vision frame, 7 June 2023: a street at night, a figure on the steps washed out to a glowing orb where the face would be",
@@ -110,8 +118,10 @@
       "cleared": false,
       "width": 888,
       "height": 500,
-      "nativeCropWidth": 888,
-      "nativeCropHeight": 500,
+      "cropWidth": 888,
+      "cropHeight": 500,
+      "canvasWidth": 888,
+      "canvasHeight": 500,
       "borderMedian": "#644321",
       "files": [],
       "alt": "The same street from the same Ring doorbell in colour night mode, device off: parked cars, a lit tree, no glow",
@@ -130,10 +140,12 @@
       "slug": "anticam",
       "ground": "light",
       "cleared": true,
-      "width": 700,
-      "height": 232,
-      "nativeCropWidth": 700,
-      "nativeCropHeight": 232,
+      "width": 690,
+      "height": 240,
+      "cropWidth": 700,
+      "cropHeight": 232,
+      "canvasWidth": 700,
+      "canvasHeight": 243,
       "borderMedian": "#E4E6EA",
       "files": [
         "/images/anticam/ac-06-v2-colorways.jpg",
@@ -155,10 +167,12 @@
       "slug": "anticam",
       "ground": "light",
       "cleared": true,
-      "width": 619,
-      "height": 464,
-      "nativeCropWidth": 619,
-      "nativeCropHeight": 464,
+      "width": 620,
+      "height": 460,
+      "cropWidth": 619,
+      "cropHeight": 464,
+      "canvasWidth": 625,
+      "canvasHeight": 464,
       "borderMedian": "#BBC0BC",
       "files": [
         "/images/anticam/ac-07-v2-flatlay.jpg",
@@ -180,10 +194,12 @@
       "slug": "anticam",
       "ground": "photo",
       "cleared": true,
-      "width": 320,
-      "height": 320,
-      "nativeCropWidth": 320,
-      "nativeCropHeight": 320,
+      "width": 300,
+      "height": 300,
+      "cropWidth": 320,
+      "cropHeight": 320,
+      "canvasWidth": 320,
+      "canvasHeight": 320,
       "borderMedian": "#C0A687",
       "files": [
         "/images/anticam/ac-08-cob-module-hand.jpg",
@@ -205,11 +221,13 @@
       "slug": "anticam",
       "ground": "photo",
       "cleared": true,
-      "width": 717,
-      "height": 510,
-      "nativeCropWidth": 717,
-      "nativeCropHeight": 510,
-      "borderMedian": "#434240",
+      "width": 715,
+      "height": 505,
+      "cropWidth": 715,
+      "cropHeight": 505,
+      "canvasWidth": 715,
+      "canvasHeight": 505,
+      "borderMedian": "#43423F",
       "files": [
         "/images/anticam/ac-09-mdf-laser-bed.jpg",
         "/images/anticam/ac-09-mdf-laser-bed.webp",
@@ -220,9 +238,9 @@
       "src": "content/source/anticam/camera-blinder-presentation/pages/page-10.jpg",
       "crop": {
         "left": 435,
-        "top": 338,
-        "width": 717,
-        "height": 510
+        "top": 340,
+        "width": 715,
+        "height": 505
       }
     },
     {
@@ -230,11 +248,13 @@
       "slug": "anticam",
       "ground": "photo",
       "cleared": true,
-      "width": 511,
-      "height": 287,
-      "nativeCropWidth": 511,
-      "nativeCropHeight": 287,
-      "borderMedian": "#7D8594",
+      "width": 520,
+      "height": 285,
+      "cropWidth": 520,
+      "cropHeight": 285,
+      "canvasWidth": 520,
+      "canvasHeight": 285,
+      "borderMedian": "#8492B5",
       "files": [
         "/images/anticam/ac-10-laser-engraving.jpg",
         "/images/anticam/ac-10-laser-engraving.webp",
@@ -244,10 +264,10 @@
       "usage": "AntiCam process card",
       "src": "content/source/anticam/camera-blinder-presentation/pages/page-10.jpg",
       "crop": {
-        "left": 649,
-        "top": 31,
-        "width": 511,
-        "height": 287
+        "left": 656,
+        "top": 32,
+        "width": 520,
+        "height": 285
       }
     },
     {
@@ -255,10 +275,12 @@
       "slug": "anticam",
       "ground": "photo",
       "cleared": true,
-      "width": 363,
-      "height": 346,
-      "nativeCropWidth": 363,
-      "nativeCropHeight": 346,
+      "width": 360,
+      "height": 345,
+      "cropWidth": 363,
+      "cropHeight": 346,
+      "canvasWidth": 363,
+      "canvasHeight": 348,
       "borderMedian": "#AA9E8B",
       "files": [
         "/images/anticam/ac-11-nine-cell-plate.jpg",
@@ -280,11 +302,13 @@
       "slug": "anticam",
       "ground": "photo",
       "cleared": true,
-      "width": 317,
+      "width": 325,
       "height": 270,
-      "nativeCropWidth": 317,
-      "nativeCropHeight": 270,
-      "borderMedian": "#E3C28E",
+      "cropWidth": 321,
+      "cropHeight": 270,
+      "canvasWidth": 325,
+      "canvasHeight": 270,
+      "borderMedian": "#E4C793",
       "files": [
         "/images/anticam/ac-12-copper-tape-plate.jpg",
         "/images/anticam/ac-12-copper-tape-plate.webp",
@@ -294,9 +318,9 @@
       "usage": "AntiCam contact sheet",
       "src": "content/source/anticam/camera-blinder-presentation/pages/page-11.jpg",
       "crop": {
-        "left": 560,
+        "left": 556,
         "top": 64,
-        "width": 317,
+        "width": 321,
         "height": 270
       }
     },
@@ -305,11 +329,13 @@
       "slug": "anticam",
       "ground": "photo",
       "cleared": true,
-      "width": 273,
-      "height": 235,
-      "nativeCropWidth": 273,
-      "nativeCropHeight": 235,
-      "borderMedian": "#8B887D",
+      "width": 265,
+      "height": 240,
+      "cropWidth": 265,
+      "cropHeight": 240,
+      "canvasWidth": 265,
+      "canvasHeight": 240,
+      "borderMedian": "#9E9A8D",
       "files": [
         "/images/anticam/ac-13-v1-first-carrier.jpg",
         "/images/anticam/ac-13-v1-first-carrier.webp",
@@ -321,19 +347,21 @@
       "crop": {
         "left": 374,
         "top": 620,
-        "width": 273,
-        "height": 235
+        "width": 265,
+        "height": 240
       }
     },
     {
       "id": "ac-14-cap-brim",
       "slug": "anticam",
-      "ground": "light",
+      "ground": "photo",
       "cleared": false,
-      "width": 241,
-      "height": 335,
-      "nativeCropWidth": 241,
-      "nativeCropHeight": 335,
+      "width": 300,
+      "height": 365,
+      "cropWidth": 241,
+      "cropHeight": 335,
+      "canvasWidth": 300,
+      "canvasHeight": 365,
       "borderMedian": "#FEFEFE",
       "files": [],
       "alt": "The underside of a black cap brim with about six small LEDs set into a reflective lining",
@@ -352,10 +380,12 @@
       "slug": "anticam",
       "ground": "photo",
       "cleared": true,
-      "width": 467,
-      "height": 296,
-      "nativeCropWidth": 467,
-      "nativeCropHeight": 296,
+      "width": 470,
+      "height": 295,
+      "cropWidth": 467,
+      "cropHeight": 296,
+      "canvasWidth": 472,
+      "canvasHeight": 296,
       "borderMedian": "#888580",
       "files": [
         "/images/anticam/ac-15-v2-parts-angled.jpg",
@@ -377,17 +407,15 @@
       "id": "ac-16-light-test",
       "slug": "anticam",
       "ground": "photo",
-      "cleared": true,
+      "cleared": false,
       "width": 160,
       "height": 89,
-      "nativeCropWidth": 1128,
-      "nativeCropHeight": 624,
+      "cropWidth": 1128,
+      "cropHeight": 624,
+      "canvasWidth": 1128,
+      "canvasHeight": 627,
       "borderMedian": "#CDB08C",
-      "files": [
-        "/images/anticam/ac-16-light-test.jpg",
-        "/images/anticam/ac-16-light-test.webp",
-        "/images/anticam/ac-16-light-test.avif"
-      ],
+      "files": [],
       "alt": "Out-of-focus alligator-clip leads on a wooden bench during the first light test",
       "usage": "version ledger \"Light test\" tile only",
       "src": "content/source/anticam/camera-blinder-presentation/pages/page-07.jpg",
@@ -404,10 +432,12 @@
       "slug": "about",
       "ground": "photo",
       "cleared": true,
-      "width": 330,
-      "height": 140,
-      "nativeCropWidth": 330,
-      "nativeCropHeight": 140,
+      "width": 325,
+      "height": 150,
+      "cropWidth": 232,
+      "cropHeight": 133,
+      "canvasWidth": 325,
+      "canvasHeight": 150,
       "borderMedian": "#000000",
       "files": [
         "/images/about/er-01-electric-road-model.jpg",
@@ -418,10 +448,10 @@
       "usage": "smaller pieces on /about (displayed at 200 px)",
       "src": "content/source/portfolio/06-electric-road.jpg",
       "crop": {
-        "left": 600,
-        "top": 210,
-        "width": 330,
-        "height": 140
+        "left": 627,
+        "top": 212,
+        "width": 232,
+        "height": 133
       }
     },
     {
@@ -429,10 +459,12 @@
       "slug": "about",
       "ground": "dark",
       "cleared": true,
-      "width": 325,
-      "height": 198,
-      "nativeCropWidth": 325,
-      "nativeCropHeight": 198,
+      "width": 320,
+      "height": 195,
+      "cropWidth": 232,
+      "cropHeight": 198,
+      "canvasWidth": 325,
+      "canvasHeight": 198,
       "borderMedian": "#000000",
       "files": [
         "/images/about/er-02-electric-road-render.jpg",
@@ -443,9 +475,9 @@
       "usage": "smaller pieces on /about (displayed at 200 px)",
       "src": "content/source/portfolio/06-electric-road.jpg",
       "crop": {
-        "left": 595,
-        "top": 5,
-        "width": 325,
+        "left": 597,
+        "top": 7,
+        "width": 232,
         "height": 198
       }
     },
@@ -456,8 +488,10 @@
       "cleared": false,
       "width": 110,
       "height": 235,
-      "nativeCropWidth": 110,
-      "nativeCropHeight": 235,
+      "cropWidth": 110,
+      "cropHeight": 235,
+      "canvasWidth": 110,
+      "canvasHeight": 235,
       "borderMedian": "#020307",
       "files": [],
       "alt": "Alex crouching beside black e-waste collection bins",
@@ -476,10 +510,12 @@
       "slug": "prosthetic-arm",
       "ground": "dark",
       "cleared": true,
-      "width": 668,
-      "height": 500,
-      "nativeCropWidth": 668,
-      "nativeCropHeight": 500,
+      "width": 641,
+      "height": 468,
+      "cropWidth": 668,
+      "cropHeight": 500,
+      "canvasWidth": 685,
+      "canvasHeight": 500,
       "borderMedian": "#000000",
       "files": [
         "/images/prosthetic-arm/pa-01-arm-ghosted.jpg",
@@ -502,9 +538,11 @@
       "ground": "light",
       "cleared": true,
       "width": 960,
-      "height": 368,
-      "nativeCropWidth": 1175,
-      "nativeCropHeight": 450,
+      "height": 393,
+      "cropWidth": 1175,
+      "cropHeight": 450,
+      "canvasWidth": 1175,
+      "canvasHeight": 481,
       "borderMedian": "#CACACA",
       "files": [
         "/images/prosthetic-arm/pa-02-arm-exploded-build.jpg",
@@ -526,10 +564,12 @@
       "slug": "prosthetic-arm",
       "ground": "dark",
       "cleared": true,
-      "width": 850,
-      "height": 515,
-      "nativeCropWidth": 850,
-      "nativeCropHeight": 515,
+      "width": 860,
+      "height": 502,
+      "cropWidth": 850,
+      "cropHeight": 515,
+      "canvasWidth": 882,
+      "canvasHeight": 515,
       "borderMedian": "#000000",
       "files": [
         "/images/prosthetic-arm/pa-03-arm-cad-exploded.jpg",
@@ -551,10 +591,12 @@
       "slug": "prosthetic-arm",
       "ground": "dark",
       "cleared": true,
-      "width": 846,
-      "height": 252,
-      "nativeCropWidth": 846,
-      "nativeCropHeight": 252,
+      "width": 841,
+      "height": 222,
+      "cropWidth": 846,
+      "cropHeight": 252,
+      "canvasWidth": 955,
+      "canvasHeight": 252,
       "borderMedian": "#000000",
       "files": [
         "/images/prosthetic-arm/pa-04-arm-profile.jpg",
@@ -576,10 +618,12 @@
       "slug": "prosthetic-arm",
       "ground": "dark",
       "cleared": true,
-      "width": 283,
-      "height": 709,
-      "nativeCropWidth": 283,
-      "nativeCropHeight": 709,
+      "width": 274,
+      "height": 700,
+      "cropWidth": 283,
+      "cropHeight": 709,
+      "canvasWidth": 283,
+      "canvasHeight": 723,
       "borderMedian": "#000000",
       "files": [
         "/images/prosthetic-arm/pa-05-forearm-open.jpg",
@@ -595,17 +639,20 @@
         "width": 283,
         "height": 709
       },
-      "note": "TODO(alex): the slide baked a white cut-out outline around this photograph, and it cannot be removed automatically — the object's own black glove and white hand both meet that outline. A re-render or the original photograph would fix it (open question 14). The near-black ground is still levelled onto --bg so the crop edge itself vanishes."
+      "haloTrimmedPixels": 11351,
+      "note": "The source is a slide cut-out with a white stroke around its silhouette (§12.2 asks for it to be masked); haloTrim erases the stroke where the ground surrounds it."
     },
     {
       "id": "pa-06-finger-bent-annotated",
       "slug": "prosthetic-arm",
       "ground": "dark",
       "cleared": true,
-      "width": 314,
-      "height": 266,
-      "nativeCropWidth": 314,
-      "nativeCropHeight": 266,
+      "width": 330,
+      "height": 270,
+      "cropWidth": 314,
+      "cropHeight": 266,
+      "canvasWidth": 330,
+      "canvasHeight": 270,
       "borderMedian": "#000000",
       "files": [
         "/images/prosthetic-arm/pa-06-finger-bent-annotated.jpg",
@@ -628,9 +675,11 @@
       "ground": "dark",
       "cleared": true,
       "width": 700,
-      "height": 186,
-      "nativeCropWidth": 700,
-      "nativeCropHeight": 186,
+      "height": 180,
+      "cropWidth": 700,
+      "cropHeight": 186,
+      "canvasWidth": 723,
+      "canvasHeight": 186,
       "borderMedian": "#000000",
       "files": [
         "/images/prosthetic-arm/pa-07-finger-exploded-strip.jpg",
@@ -652,10 +701,12 @@
       "slug": "prosthetic-arm",
       "ground": "dark",
       "cleared": true,
-      "width": 246,
-      "height": 348,
-      "nativeCropWidth": 246,
-      "nativeCropHeight": 348,
+      "width": 241,
+      "height": 342,
+      "cropWidth": 246,
+      "cropHeight": 348,
+      "canvasWidth": 246,
+      "canvasHeight": 349,
       "borderMedian": "#000000",
       "files": [
         "/images/prosthetic-arm/pa-09-gray-hand-print.jpg",
@@ -677,10 +728,12 @@
       "slug": "prosthetic-arm",
       "ground": "dark",
       "cleared": true,
-      "width": 478,
-      "height": 500,
-      "nativeCropWidth": 478,
-      "nativeCropHeight": 500,
+      "width": 510,
+      "height": 535,
+      "cropWidth": 478,
+      "cropHeight": 500,
+      "canvasWidth": 510,
+      "canvasHeight": 535,
       "borderMedian": "#000000",
       "files": [
         "/images/prosthetic-arm/pa-10-hand-back-black.jpg",
@@ -702,11 +755,13 @@
       "slug": "robotics",
       "ground": "light",
       "cleared": true,
-      "width": 388,
-      "height": 378,
-      "nativeCropWidth": 388,
-      "nativeCropHeight": 378,
-      "borderMedian": "#FFFFFF",
+      "width": 176,
+      "height": 296,
+      "cropWidth": 176,
+      "cropHeight": 296,
+      "canvasWidth": 176,
+      "canvasHeight": 296,
+      "borderMedian": "#979AA2",
       "files": [
         "/images/robotics/rb-01-monty-render-white.jpg",
         "/images/robotics/rb-01-monty-render-white.webp",
@@ -714,12 +769,12 @@
       ],
       "alt": "Team CAD render of Monty: blue and silver chassis with Voronoi-cut side plates and a turreted launcher on top",
       "usage": "home robotics plate",
-      "src": "content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png",
+      "src": "content/source/robotics/posters/poster-deck/pages/page-13.jpg",
       "crop": {
-        "left": 452,
-        "top": 240,
-        "width": 388,
-        "height": 378
+        "left": 256,
+        "top": 524,
+        "width": 176,
+        "height": 296
       }
     },
     {
@@ -727,11 +782,13 @@
       "slug": "robotics",
       "ground": "light",
       "cleared": true,
-      "width": 400,
-      "height": 360,
-      "nativeCropWidth": 400,
-      "nativeCropHeight": 360,
-      "borderMedian": "#E1E5EA",
+      "width": 179,
+      "height": 278,
+      "cropWidth": 179,
+      "cropHeight": 278,
+      "canvasWidth": 179,
+      "canvasHeight": 278,
+      "borderMedian": "#95969E",
       "files": [
         "/images/robotics/rb-02-monty-render-poster.jpg",
         "/images/robotics/rb-02-monty-render-poster.webp",
@@ -739,12 +796,12 @@
       ],
       "alt": "Team CAD render of Monty from the front three-quarter, intake rollers at the front, turret above",
       "usage": "robotics case hero",
-      "src": "content/source/robotics/posters/poster-deck/pages/page-13.jpg",
+      "src": "content/source/robotics/posters/poster-deck/pages/page-14.jpg",
       "crop": {
-        "left": 135,
-        "top": 540,
-        "width": 400,
-        "height": 360
+        "left": 180,
+        "top": 558,
+        "width": 179,
+        "height": 278
       }
     },
     {
@@ -754,8 +811,10 @@
       "cleared": true,
       "width": 195,
       "height": 160,
-      "nativeCropWidth": 195,
-      "nativeCropHeight": 160,
+      "cropWidth": 170,
+      "cropHeight": 152,
+      "canvasWidth": 195,
+      "canvasHeight": 160,
       "borderMedian": "#FFFFFF",
       "files": [
         "/images/robotics/rb-03-wooden-prototype.jpg",
@@ -766,10 +825,10 @@
       "usage": "intake version ledger tile",
       "src": "content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png",
       "crop": {
-        "left": 55,
-        "top": 265,
-        "width": 195,
-        "height": 160
+        "left": 70,
+        "top": 266,
+        "width": 170,
+        "height": 152
       }
     },
     {
@@ -777,10 +836,12 @@
       "slug": "robotics",
       "ground": "light",
       "cleared": true,
-      "width": 320,
-      "height": 360,
-      "nativeCropWidth": 320,
-      "nativeCropHeight": 360,
+      "width": 288,
+      "height": 290,
+      "cropWidth": 288,
+      "cropHeight": 290,
+      "canvasWidth": 288,
+      "canvasHeight": 290,
       "borderMedian": "#FFFFFF",
       "files": [
         "/images/robotics/rb-04-transfer-render.jpg",
@@ -791,10 +852,10 @@
       "usage": "Monti section card",
       "src": "content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-3.png",
       "crop": {
-        "left": 380,
-        "top": 300,
-        "width": 320,
-        "height": 360
+        "left": 406,
+        "top": 330,
+        "width": 288,
+        "height": 290
       }
     },
     {
@@ -803,9 +864,11 @@
       "ground": "light",
       "cleared": true,
       "width": 340,
-      "height": 390,
-      "nativeCropWidth": 340,
-      "nativeCropHeight": 390,
+      "height": 228,
+      "cropWidth": 346,
+      "cropHeight": 232,
+      "canvasWidth": 346,
+      "canvasHeight": 232,
       "borderMedian": "#FFFFFF",
       "files": [
         "/images/robotics/rb-05-launcher-render.jpg",
@@ -816,10 +879,10 @@
       "usage": "Monti section card",
       "src": "content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-4.png",
       "crop": {
-        "left": 370,
-        "top": 330,
-        "width": 340,
-        "height": 390
+        "left": 368,
+        "top": 363,
+        "width": 346,
+        "height": 232
       }
     },
     {
@@ -827,10 +890,12 @@
       "slug": "robotics",
       "ground": "dark",
       "cleared": true,
-      "width": 374,
-      "height": 231,
-      "nativeCropWidth": 374,
-      "nativeCropHeight": 231,
+      "width": 400,
+      "height": 285,
+      "cropWidth": 374,
+      "cropHeight": 231,
+      "canvasWidth": 400,
+      "canvasHeight": 285,
       "borderMedian": "#000000",
       "files": [
         "/images/robotics/rb-06-swerve-chassis.jpg",
@@ -852,10 +917,12 @@
       "slug": "robotics",
       "ground": "dark",
       "cleared": true,
-      "width": 214,
-      "height": 170,
-      "nativeCropWidth": 214,
-      "nativeCropHeight": 170,
+      "width": 230,
+      "height": 200,
+      "cropWidth": 230,
+      "cropHeight": 198,
+      "canvasWidth": 230,
+      "canvasHeight": 200,
       "borderMedian": "#000000",
       "files": [
         "/images/robotics/rb-07-swerve-module.jpg",
@@ -866,10 +933,10 @@
       "usage": "Swerve Drive section card",
       "src": "content/source/portfolio/02-swerve-drive.jpg",
       "crop": {
-        "left": 354,
-        "top": 334,
-        "width": 214,
-        "height": 170
+        "left": 352,
+        "top": 352,
+        "width": 230,
+        "height": 198
       }
     },
     {
@@ -877,10 +944,12 @@
       "slug": "robotics",
       "ground": "dark",
       "cleared": true,
-      "width": 278,
-      "height": 245,
-      "nativeCropWidth": 278,
-      "nativeCropHeight": 245,
+      "width": 295,
+      "height": 240,
+      "cropWidth": 282,
+      "cropHeight": 232,
+      "canvasWidth": 295,
+      "canvasHeight": 240,
       "borderMedian": "#000000",
       "files": [
         "/images/robotics/rb-08-monti-portfolio-render.jpg",
@@ -891,10 +960,10 @@
       "usage": "robotics filmstrip, Monti section plate",
       "src": "content/source/portfolio/01-monti-robot.jpg",
       "crop": {
-        "left": 686,
-        "top": 5,
-        "width": 278,
-        "height": 245
+        "left": 674,
+        "top": 4,
+        "width": 282,
+        "height": 232
       }
     },
     {
@@ -902,10 +971,12 @@
       "slug": "robotics",
       "ground": "dark",
       "cleared": true,
-      "width": 254,
-      "height": 192,
-      "nativeCropWidth": 254,
-      "nativeCropHeight": 192,
+      "width": 270,
+      "height": 235,
+      "cropWidth": 270,
+      "cropHeight": 232,
+      "canvasWidth": 270,
+      "canvasHeight": 235,
       "borderMedian": "#000000",
       "files": [
         "/images/robotics/rb-09-honu-render.jpg",
@@ -916,10 +987,10 @@
       "usage": "robotics filmstrip, Honu section plate",
       "src": "content/source/portfolio/03-honu-robot.jpg",
       "crop": {
-        "left": 684,
-        "top": 14,
-        "width": 254,
-        "height": 192
+        "left": 666,
+        "top": 8,
+        "width": 270,
+        "height": 232
       }
     },
     {
@@ -927,10 +998,12 @@
       "slug": "robotics",
       "ground": "light",
       "cleared": true,
-      "width": 225,
-      "height": 183,
-      "nativeCropWidth": 225,
-      "nativeCropHeight": 183,
+      "width": 258,
+      "height": 210,
+      "cropWidth": 229,
+      "cropHeight": 186,
+      "canvasWidth": 258,
+      "canvasHeight": 210,
       "borderMedian": "#FFFFFF",
       "files": [
         "/images/robotics/rb-10-scorpion-render.jpg",
@@ -941,10 +1014,10 @@
       "usage": "robotics filmstrip, Scorpion section plate",
       "src": "content/source/portfolio/05-scorpion-robot.jpg",
       "crop": {
-        "left": 645,
-        "top": 48,
-        "width": 225,
-        "height": 183
+        "left": 644,
+        "top": 47,
+        "width": 229,
+        "height": 186
       }
     },
     {
@@ -952,11 +1025,13 @@
       "slug": "robotics",
       "ground": "dark",
       "cleared": true,
-      "width": 183,
-      "height": 153,
-      "nativeCropWidth": 183,
-      "nativeCropHeight": 153,
-      "borderMedian": "#030303",
+      "width": 200,
+      "height": 170,
+      "cropWidth": 179,
+      "cropHeight": 156,
+      "canvasWidth": 200,
+      "canvasHeight": 170,
+      "borderMedian": "#010101",
       "files": [
         "/images/robotics/rb-11-scorpion-lift-drawing.jpg",
         "/images/robotics/rb-11-scorpion-lift-drawing.webp",
@@ -966,10 +1041,10 @@
       "usage": "Scorpion section card",
       "src": "content/source/portfolio/05-scorpion-robot.jpg",
       "crop": {
-        "left": 541,
-        "top": 357,
-        "width": 183,
-        "height": 153
+        "left": 534,
+        "top": 348,
+        "width": 179,
+        "height": 156
       }
     },
     {
@@ -979,8 +1054,10 @@
       "cleared": true,
       "width": 390,
       "height": 220,
-      "nativeCropWidth": 390,
-      "nativeCropHeight": 220,
+      "cropWidth": 390,
+      "cropHeight": 220,
+      "canvasWidth": 390,
+      "canvasHeight": 220,
       "borderMedian": "#000000",
       "files": [
         "/images/robotics/rb-12-ball-drive.jpg",
@@ -991,8 +1068,8 @@
       "usage": "robotics filmstrip, Ball-Drive section plate",
       "src": "content/source/portfolio/04-ball-drive.jpg",
       "crop": {
-        "left": 565,
-        "top": 15,
+        "left": 553,
+        "top": 5,
         "width": 390,
         "height": 220
       }
@@ -1004,9 +1081,11 @@
       "cleared": true,
       "width": 160,
       "height": 120,
-      "nativeCropWidth": 160,
-      "nativeCropHeight": 120,
-      "borderMedian": "#EEEEEE",
+      "cropWidth": 133,
+      "cropHeight": 110,
+      "canvasWidth": 160,
+      "canvasHeight": 120,
+      "borderMedian": "#ECECEC",
       "files": [
         "/images/robotics/rb-13-intake-v1.jpg",
         "/images/robotics/rb-13-intake-v1.webp",
@@ -1016,10 +1095,10 @@
       "usage": "intake version ledger V1 tile",
       "src": "content/source/robotics/posters/poster-deck/pages/page-15.jpg",
       "crop": {
-        "left": 700,
-        "top": 540,
-        "width": 160,
-        "height": 120
+        "left": 706,
+        "top": 543,
+        "width": 133,
+        "height": 110
       }
     },
     {
@@ -1029,9 +1108,11 @@
       "cleared": true,
       "width": 160,
       "height": 140,
-      "nativeCropWidth": 160,
-      "nativeCropHeight": 140,
-      "borderMedian": "#EEEEEE",
+      "cropWidth": 133,
+      "cropHeight": 137,
+      "canvasWidth": 160,
+      "canvasHeight": 140,
+      "borderMedian": "#ECECEC",
       "files": [
         "/images/robotics/rb-14-intake-v2.jpg",
         "/images/robotics/rb-14-intake-v2.webp",
@@ -1041,10 +1122,10 @@
       "usage": "intake version ledger V2 tile",
       "src": "content/source/robotics/posters/poster-deck/pages/page-15.jpg",
       "crop": {
-        "left": 700,
-        "top": 680,
-        "width": 160,
-        "height": 140
+        "left": 710,
+        "top": 683,
+        "width": 133,
+        "height": 137
       }
     },
     {
@@ -1054,9 +1135,11 @@
       "cleared": true,
       "width": 160,
       "height": 140,
-      "nativeCropWidth": 160,
-      "nativeCropHeight": 140,
-      "borderMedian": "#EDEEEE",
+      "cropWidth": 156,
+      "cropHeight": 100,
+      "canvasWidth": 160,
+      "canvasHeight": 140,
+      "borderMedian": "#4A75A5",
       "files": [
         "/images/robotics/rb-15-intake-v3.jpg",
         "/images/robotics/rb-15-intake-v3.webp",
@@ -1066,10 +1149,10 @@
       "usage": "intake version ledger V3 tile",
       "src": "content/source/robotics/posters/poster-deck/pages/page-15.jpg",
       "crop": {
-        "left": 700,
-        "top": 820,
-        "width": 160,
-        "height": 140
+        "left": 689,
+        "top": 845,
+        "width": 156,
+        "height": 100
       }
     },
     {
@@ -1079,9 +1162,11 @@
       "cleared": true,
       "width": 255,
       "height": 157,
-      "nativeCropWidth": 255,
-      "nativeCropHeight": 157,
-      "borderMedian": "#353639",
+      "cropWidth": 235,
+      "cropHeight": 147,
+      "canvasWidth": 255,
+      "canvasHeight": 157,
+      "borderMedian": "#3D3E43",
       "files": [
         "/images/robotics/rb-16-intake-three.jpg",
         "/images/robotics/rb-16-intake-three.webp",
@@ -1091,10 +1176,10 @@
       "usage": "Monti section card",
       "src": "content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-2.png",
       "crop": {
-        "left": 60,
-        "top": 208,
-        "width": 255,
-        "height": 157
+        "left": 68,
+        "top": 213,
+        "width": 235,
+        "height": 147
       }
     }
   ]

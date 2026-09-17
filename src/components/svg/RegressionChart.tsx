@@ -41,7 +41,8 @@ export type RegressionChartProps = {
 
 const W = 420;
 const H = 300;
-const PAD = { top: 18, right: 18, bottom: 54, left: 62 };
+/** Left padding carries the axis title and the widest tick number side by side, not stacked. */
+const PAD = { top: 18, right: 18, bottom: 54, left: 82 };
 const PLOT = {
   x: PAD.left,
   y: PAD.top,
@@ -184,7 +185,7 @@ export function RegressionChart({
         <text
           x={0}
           y={0}
-          transform={`translate(16 ${PLOT.y + PLOT.h / 2}) rotate(-90)`}
+          transform={`translate(15 ${PLOT.y + PLOT.h / 2}) rotate(-90)`}
           fill={LINE}
           fontSize={14}
           textAnchor="middle"

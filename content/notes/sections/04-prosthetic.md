@@ -16,6 +16,10 @@ term, or version number on any of its 16 slides.
 content/source/essays/college-essays-private.txt#L2794-L2797;
 content/source/prosthetic-arm/design-brief/text.md)
 
+**Name:** Alex's own materials title it "Affordable Prosthetic Arm" (design brief
+title slide) and "Prosthetic Arm: Affordable & Adaptable" (résumé).
+(content/source/prosthetic-arm/design-brief/text.md#page-1; content/source/resume/resume-current.png)
+
 **One line:** A 3D-printable lower-arm prosthetic — hand and forearm — built from off-the-shelf
 parts, driven by servos through tendon-style cords, controlled by a myoelectric sensor, and sized
 to the wearer from hand measurements.
@@ -52,8 +56,8 @@ to the wearer from hand measurements.
   Prototyping, and Testing. (content/source/prosthetic-arm/design-brief/text.md#page-6)
 - The CAD is parametric and was created from average hand sizing.
   (content/source/prosthetic-arm/design-brief/text.md#page-6)
-- Individual mechanisms were prototyped separately before integration, and prototypes were put
-  through strength, grip, actuation, and functionality tests.
+- Individual mechanisms were prototyped separately, and prototypes were put through strength, grip,
+  actuation, and functionality tests.
   (content/source/prosthetic-arm/design-brief/text.md#page-6)
 - The ideation panel is a hand-drawn sketch sheet: a labeled "Current design" finger side view with
   Elastic Retraction Band, String and Servo callouts; side and front finger studies annotated for
@@ -86,9 +90,10 @@ to the wearer from hand measurements.
 - The photographed forearm, shell opened, shows a stack of servos with visible gearheads, red and
   black power wiring, a green Arduino-style board at the base, and cable routing up into the hand.
   (content/source/prosthetic-arm/design-brief/pages/page-08.jpg#page-8)
-- The final design is rendered two ways: a dark, matte-finish hand seen from the back with visible
-  joint pins and cord channels, and a ghosted view of the whole arm in which the servo stack, gear
-  faces and control board are visible through a translucent forearm cone closed by a flat end cap.
+- The final design is shown two ways: a photo of the dark printed hand from the back with visible
+  joint pins and cord channels (the same image used in the page 6 "Testing" panel — do not publish both),
+  and a ghosted render of the whole arm in which the servo stack, gear faces and control board are
+  visible through a translucent forearm cone closed by a flat end cap.
   (content/source/prosthetic-arm/design-brief/pages/page-10.jpg#page-10)
 
 **Myoelectric control**
@@ -225,10 +230,10 @@ and the first three do not match the brief's numbers.
 
 - Root CLAUDE.md states the goal as partnering with manufacturers and organizations to reach
   underserved communities. (CLAUDE.md — Featured work)
-- Per the private drafts, remaining work is refining controls, improving size automation, and
-  finishing calculations, and the stated next goal is partnering to bring low-cost versions to
-  people who need them.
-  (content/source/essays/college-essays-private.txt#L2739-L2741, #L2794-L2797)
+- Per the private drafts, the work still open is control tuning and the sizing automation, plus some
+  calculations; the stated next step is finding partners for low-cost production. (fact only; do not
+  reuse the drafts' wording)
+  (content/source/essays/college-essays-private.txt#L2739-L2741, #L2794-L2797, #L3278)
 
 ---
 
@@ -238,29 +243,30 @@ and the first three do not match the brief's numbers.
 Each line below is a neutral fact, recorded so the site can be checked against it.
 
 - Alex's interest in prosthetics began at a middle-school summer engineering program that included a
-  prosthetics lab tour. (content/source/essays/college-essays-private.txt#L2660-L2664)
+  prosthetics lab tour. (content/source/essays/college-essays-private.txt#L3250-L3254, #L3694-L3698)
 - Alex cold-contacted a professor at Stevens Institute of Technology to ask to work in his lab.
   (content/source/essays/college-essays-private.txt#L2513)
 - One draft names that professor as Long Wang.
   (content/source/essays/college-essays-private.txt#L2513)
-- In the lab Alex analyzed existing prosthetic designs, prototyped improvements, and tested
-  mechanical function. (content/source/essays/college-essays-private.txt#L2726-L2732)
+- In the lab Alex studied prosthetic designs already on the market, built improved versions of his
+  own, and bench-tested how they moved. (content/source/essays/college-essays-private.txt#L2731-L2732 —
+  fact only; do not reuse the drafts' wording)
 - The project first targeted a prosthetic hand and later changed scope to a full arm.
   (content/source/essays/college-essays-private.txt#L3266-L3270)
-- The stated reason for the scope change was that an arm needs custom sizing.
-  (content/source/essays/college-essays-private.txt#L3266-L3270)
+- The stated reason for the scope change was that producing and distributing prosthetic hands was too
+  complicated to be accessible; custom sizing is described as the arm's new constraint, which Alex
+  answered with digital resizing. (content/source/essays/college-essays-private.txt#L3266-L3271, #L2732-L2733)
 - Alex learned a new CAD package from his robotics team's lead coder to get past a limit in the
   resizing automation. (content/source/essays/college-essays-private.txt#L3273-L3278)
 - Development continued through Avenues' Mastery Program after the Stevens summer.
   (content/source/essays/college-essays-private.txt#L2794-L2797)
-- Software named for this work in the drafts is Fusion, Bambu, and nTop.
-  (content/source/essays/college-essays-private.txt#L3676)
+- The drafts' generic portfolio-video checklist lists Fusion, Bambu and nTop as Alex's software
+  (#L3666-L3679, not prosthetic-specific); the prosthetic-arm outline names only nTop (#L3690), and the
+  brief names only nTop Automate (design-brief/text.md#page-13).
 - **Origin story is unresolved.** Three drafts give three mutually exclusive origin accounts for the
-  project — a grandfather with cerebral palsy, a veteran at a shelter, and a stranger at a food
-  pantry — all attached to the same follow-on facts, and a fourth framing attributes the origin to
-  the prosthetics lab tour with no personal incident. Nothing from this cluster may appear on the
-  site until Alex picks one. (content/source/essays/college-essays-private.txt#L2721-L2725,
-  #L2784-L2787, #L6365-L6369, #L2660-L2664)
+  project — three different personal origin incidents, each attached to the same follow-on facts, plus a
+  fourth framing with no personal incident. Details are in the private drafts only and are deliberately
+  not restated here; ask Alex which one is real. (content/source/essays/college-essays-private.txt)
 
 ---
 
@@ -279,11 +285,11 @@ crops are small; ask Alex for the original renders and photos before building th
   shows the whole product and its internals at once. Crop inside the rounded card frame to drop the
   border. **Use:** page hero.
 - `content/source/prosthetic-arm/design-brief/pages/page-14.jpg` — the physical build fully exploded
-  on a light gray card: matte white printed palm shell, glossy black finger assembly, black wrist
-  collar and circular end plate, and loose knuckle caps, pin rods, joint blocks and finger segments
-  scattered either side. The clearest proof of modularity and the only light-background image in
-  the brief; it will need handling against a dark site. **Use:** hero alternative, or the modularity
-  section.
+  on a light gray card: matte white printed palm shell, glossy black finger assembly, a white wrist
+  collar, a black circular end plate, and loose knuckle caps, pin rods, joint blocks and finger
+  segments scattered either side. The clearest proof of modularity and the only light-background
+  image of the build in the brief; it will need handling against a dark site. **Use:** hero
+  alternative, or the modularity section.
 - `content/source/prosthetic-arm/design-brief/pages/page-08.jpg` (lower-left) — wide profile render
   of the finished arm: black forearm cone, black wrist and palm, five white printed fingers extended
   flat. It bleeds off the left edge of the slide, so the elbow end is cut; usable as a right-aligned
@@ -307,8 +313,8 @@ crops are small; ask Alex for the original renders and photos before building th
 - `content/source/prosthetic-arm/design-brief/pages/page-08.jpg` (right side, full height) — photo
   of the physical forearm standing upright with its shell opened: servo stack with visible
   gearheads, red and black wiring, a green Arduino-style board with a blue component at the base,
-  cable routing in the hand above, and the white palm assembly on top. The best "real hardware, real
-  electronics" photo in the brief. It is a background-removed cut-out with a residual white halo
+  cable routing in the hand above, and the black printed hand with its white thumb on top. The best
+  "real hardware, real electronics" photo in the brief. It is a background-removed cut-out with a residual white halo
   that needs masking. **Use:** the electronics section.
 
 **Process and prototypes**
@@ -366,8 +372,7 @@ crops are small; ask Alex for the original renders and photos before building th
 
 - `content/source/prosthetic-arm/design-brief/pages/page-01.jpg` — title slide, grayscale photo of a
   printed hand, palm up, fingers curled, with a wrist cuff of three dark rings. That cuff does not
-  match the forearm on pages 8, 10 or 14, so provenance is unconfirmed; the headline type is also
-  baked over the upper part of the photo.
+  match the forearm on pages 8, 10 or 14, so provenance is unconfirmed.
 - `content/source/prosthetic-arm/design-brief/pages/page-09.jpg` (white card, right two-thirds) —
   third-party product photos of red muscle-sensor breakout boards plus a screenshot of ROBOTIS
   Dynamixel example code. Not Alex's hardware or firmware.
@@ -409,7 +414,9 @@ and words it "Of those people", while the Problem slide restates it against over
 content/source/prosthetic-arm/design-brief/text.md#page-3)
 
 TODO(alex): Prototype count — the résumé and activity list say 90+ prototypes, the private drafts
-also cite a 76th design and "over 90 CAD models", and the brief gives no count at all. Confirm the
+also cite a 76th design (#L3273) and "dozens of prototypes" before the first full hand design (#L3263) —
+"over 90 cads" (#L3671) is in a generic per-project video checklist, not a prosthetic figure — and the
+brief gives no count at all. Confirm the
 number to publish and what it counts: CAD iterations, printed parts, complete arms, or all three.
 (content/source/resume/resume-current.png;
 content/source/essays/college-essays-private.txt#L1710-L1711, #L3273, #L3671)
@@ -457,11 +464,10 @@ only partner named in the brief, and the site should not imply a relationship th
 (content/source/prosthetic-arm/design-brief/text.md#page-15)
 
 TODO(alex): Which origin story is the true one, and may it be published? The private drafts give
-three mutually exclusive versions — a grandfather with cerebral palsy, a veteran at a shelter, a
-stranger at a food pantry — plus a fourth framing with no personal incident. If the family version is
-the real one, confirm you are comfortable with a relative's medical condition on a public site.
-(content/source/essays/college-essays-private.txt#L2721-L2725, #L2784-L2787, #L6365-L6369,
-#L2660-L2664)
+three mutually exclusive personal-incident versions plus a fourth framing with no personal incident.
+Details are deliberately not restated here (see 4.4); if a family-medical version is the real one,
+confirm you are comfortable with a relative's medical condition on a public site.
+(content/source/essays/college-essays-private.txt)
 
 TODO(alex): Are there photos or video of the arm being worn or operated by a person, or of a finger
 or hand actuating? Every image in the brief is a bench shot, a render, or a component — nothing shows

@@ -17,7 +17,7 @@ the corrected spelling is what should reach the site.
 - The launcher's variables (compression, angle, wheel size) are defined in a single master sketch, and the transfer and intake are modelled in the same Onshape part studio, entirely parametric (content/source/robotics/posters/poster-f.png).
 - CeraPiper's design layer is built as custom parametric features inside Onshape using FeatureScript (content/source/cerapiper/README.md).
 - Alex learned a new CAD package from his robotics team's lead coder in order to get past a software ceiling on the prosthetic arm's resizing automation (content/source/essays/college-essays-private.txt#L3273-L3278).
-- TODO(alex): The résumé lists SolidWorks first, but SolidWorks appears in no other source file; Onshape, Fusion, and nTop are the tools the project sources actually document. Confirm the CAD list and its order for the site.
+- TODO(alex): The résumé lists SolidWorks first; outside the résumé it appears only on the AntiCam founder slide (content/source/anticam/pitch-deck-build.js#L557), while Onshape, Fusion, and nTop are the tools the project sources actually document. Confirm the CAD list and its order for the site.
 
 ### 8.2 Simulation and analysis
 
@@ -35,14 +35,14 @@ the corrected spelling is what should reach the site.
 - The CeraPiper CAD tool Alex worked on as a research intern is built from an Onshape/FeatureScript design layer, Python/Flask translation middleware, and Arduino C++ firmware (content/source/cerapiper/README.md; content/source/resume/resume-current.png).
 - CeraPiper's middleware queries the Onshape feature tree through the REST API, reconstructs the assembly as a directed graph, traverses it depth-first, and serializes a JSON "Function Stack" (content/source/cerapiper/README.md).
 - CeraPiper's frontend is a p5.js client using WEBGL and 2D rendering (content/source/cerapiper/README.md).
-- CeraPiper's documented dependencies: Arduino Uno, Arduino IDE 2.3.3, ArduinoJson 7.4.2, Python 3, Flask 3.1.1, Requests, NetworkX, python-dotenv, Waitress (content/source/cerapiper/README.md).
+- CeraPiper's documented dependencies: Arduino Uno, Arduino IDE 2.3.3, ArduinoJson 7.4.2, Python 3, Flask 3.1.1, PySerial 3.5, Requests, NetworkX, python-dotenv, Waitress (content/source/cerapiper/README.md).
 - TODO(alex): CeraPiper is a team research project; confirm which layers of that stack Alex personally wrote before the site attributes any of them to him (content/source/cerapiper/README.md).
 
 ### 8.4 Web
 
 - Coded 8 commercial sites (content/source/resume/resume-current.png).
 - Built the AntiCam website and launch strategy (content/source/resume/resume-current.png).
-- Built and launched a public countdown website at chickenparmlunch.splashthat.com for his school's cafeteria menu; the school's food services team now coordinates with him before publishing each month's menu (content/source/essays/college-essays-private.txt#L202-L215).
+- Built and launched a public countdown website at chickenparmlunch.splashthat.com for his school's cafeteria menu; school food services has since involved him in menu announcements (content/source/essays/college-essays-private.txt#L202-L215).
 - The robotics team's FTC MicroFunding site (microfunding.tritonics.org) is credited on the team roster to teammate Milind A, not to Alex (content/source/robotics/championships-presentation/slide-e.jpg; content/source/robotics/championships-presentation/slide-b.png).
 - TODO(alex): Which 8 commercial sites, for whom, and are any of them linkable or screenshot-able for the site? No source names them (content/source/resume/resume-current.png).
 - TODO(alex): Is chickenparmlunch.splashthat.com still live, and should it appear as a shipped project? (content/source/essays/college-essays-private.txt#L202-L215)
@@ -52,7 +52,7 @@ the corrected spelling is what should reach the site.
 - Electronics listed on the résumé: Raspberry Pi, Arduino sensors (content/source/resume/resume-current.png — printed as "ELECTONICS"; the typo must not be copied).
 - Led electrical design, documentation, and mentoring on his FTC team (content/source/resume/resume-current.png).
 - Manages team strategy, the electrical system, and operations as DECODE-season captain (content/source/robotics/championships-presentation/slide-e.jpg; content/source/robotics/posters/poster-a.png).
-- Designed a charging circuit for AntiCam after an early prototype drew more current than its battery could supply (content/source/essays/college-essays-private.txt#L4573-L4576).
+- Taught himself soldering and basic electronics, then sought help designing a charging circuit for AntiCam after an early prototype drew more power than its battery could supply (content/source/essays/college-essays-private.txt#L4575-L4578).
 - Built an equivalent circuit out of diodes when a specialized transistor was unavailable (content/source/essays/college-essays-private.txt#L4576-L4581).
 - AntiCam uses optical components and circuitry that emit infrared light to block cameras (content/source/resume/resume-current.png).
 - The AntiCam cap build specifies a light-detection system for flashes to trigger the infrared LEDs, plus a safe recharging system and an accompanying circuit diagram for manufacture (content/source/anticam/mastery-learning-plan/text.md#page-1).
@@ -75,7 +75,7 @@ the corrected spelling is what should reach the site.
 - IDEA program training covers 3D CAD/printing, design thinking, rapid prototyping, fabrication, and shop safety (content/source/resume/resume-current.png).
 - The IDEA Club's activities also included laser cutting, CNC, and makerspace safety training (content/source/essays/college-essays-private.txt#L1538-L1552).
 - Mentored by Cornell Tech staff on machining and part fabrication, and ran a 3D printing workshop there (content/source/essays/college-essays-private.txt#L4402-L4408).
-- The teacher who ran the school iLab taught Alex CAD, design software, and the shop tools (content/source/essays/college-essays-private.txt#L6490-L6492).
+- The teacher who ran the school iLab taught Alex to catch mistakes before they happened; his Mastery instructors taught him new design software and how to use the machines (content/source/essays/college-essays-private.txt#L6490-L6492; content/source/essays/college-essays-private.txt#L6670-L6671; content/source/essays/college-essays-private.txt#L6732).
 - A laser-cut wooden cipher wheel was produced for the team's outreach modules (content/source/robotics/championships-presentation/slide-d.png).
 - CeraPiper's fabrication backend drives a custom ceramic printer: an Arduino maps primitives to motor steps and actuator outputs, regulates the clay pug mill feed rate, and drives a shape-shifting die (content/source/cerapiper/README.md).
 
@@ -83,9 +83,9 @@ the corrected spelling is what should reach the site.
 
 - Design work products listed on the résumé: robotics components, prosthetics, wearable technology (content/source/resume/resume-current.png).
 - Design process used on the robot: Goals → Brainstorm → CAD → Test → Prototype → Optimize → Repeat; rookies follow Design → CAD → Build → Test → Iterate (content/source/robotics/posters/poster-f.png; content/source/robotics/posters/poster-a.png).
-- Biomimicry is a named design method in Alex's own projects, including scorpion-inspired tail mechanics and coral-patterned Voronoi chassis geometry used for strength (content/source/essays/college-essays-private.txt#L4983-L4984).
+- Biomimicry is a named design method in Alex's own projects: a tail mechanism modelled on a scorpion, and a chassis whose Voronoi cut-outs follow coral geometry for strength (content/source/essays/college-essays-private.txt#L4983-L4984).
 - Modularity and repairability are treated as design goals in their own right: the prosthetic arm snaps together from interchangeable modules, and Monti is designed to be repaired and disassembled within seconds without screws (content/source/essays/college-essays-private.txt#L5661-L5665; content/source/portfolio/01-monti-robot.jpg#page-1).
-- Cost ceilings are used as design constraints: the prosthetic arm targets under $100 and AntiCam's three formats are all planned under $100 (content/source/resume/resume-current.png; content/source/anticam/pitch-deck-outline.md).
+- Cost ceilings are used as design constraints: the prosthetic arm targets under $100, and the two wearable AntiCam formats are priced under $100 (pin $30–45, cap $40–65) with the room unit at $100+ (content/source/resume/resume-current.png; content/source/anticam/pitch-deck-outline.md).
 - Prototype counts are how iteration is tracked: 90+ prosthetic arm prototypes; 30+ AntiCam prototypes across four major iterations; 5 full robot design iterations (content/source/resume/resume-current.png; content/source/robotics/posters/poster-f.png).
 
 ### 8.9 Business, product, and communication skills
@@ -131,6 +131,7 @@ say who wrote each one, so the site must not claim them as Alex's own work witho
 | 90+ prosthetic arm prototypes | Iteration practice | (content/source/resume/resume-current.png) | none given in source |
 | 30+ AntiCam prototypes and four major iterations | Iteration practice | (content/source/resume/resume-current.png) | none given in source |
 | Prosthetic arm buildable for under $100 | Cost-as-constraint | (content/source/resume/resume-current.png) | none given in source |
+| TODO(alex): the design brief's product requirement is "costs <$200 to produce" (content/source/prosthetic-arm/design-brief/text.md#page-5) while the résumé says <$100 — confirm which figure to publish | Cost-as-constraint | — | — |
 | 5 full robot design iterations | Design process | (content/source/robotics/posters/poster-f.png) | none given in source |
 | 200+ launcher trials analyzed | Analysis practice | (content/source/robotics/posters/poster-f.png) | none given in source |
 | Launcher compression optimized to 8 mm | Analysis practice | (content/source/robotics/posters/poster-f.png) | none given in source |

@@ -1,5 +1,5 @@
 # Content map: Alex Tully portfolio
-Generated from content/source by the content-map workflow. This file is the single source for all site copy; every fact carries its source. Do not edit content/source; edit this file and note the change in section 12.
+Generated from content/source by the content-map workflow. This file is the single source for all site copy; every fact carries its source. Do not edit content/source; edit the files in content/notes/sections/ and re-run the assembly.
 
 Content map, part 1 of the section set. Every fact below carries its source in parentheses.
 Sources are repo-relative paths; `#page-N` / `#LNNN` point at the page or line inside the file.
@@ -20,8 +20,8 @@ one-clause facts only — no essay wording is reproduced anywhere in this file.
 
 - The résumé header tagline reads: "Adaptable problem solver with design, coding, and leadership experience. Passionate about product design, engineering, and entrepreneurship." (content/source/resume/resume-current.png; identical on content/source/resume/resume-older.png).
 - He describes himself on the résumé as "Founder & innovator of tech startup" in the Tully Tech section (content/source/resume/resume-current.png).
-- In his private application drafts his three self-descriptors are kind, creative, and problem-solver, and his stated dream job is founder of a tech startup (content/source/essays/college-essays-private.txt#L3614-L3620).
-- His stated career goal in those drafts is to found a physical product-based technology company (content/source/essays/college-essays-private.txt#L3422-L3424).
+- In his private application drafts his three self-descriptors are kind, creative, and problem-solver (content/source/essays/college-essays-private.txt#L172-L174), and his stated dream job is founder of a tech startup (content/source/essays/college-essays-private.txt#L3075-L3076).
+- His stated career goal in those drafts is to found a physical product-based technology company (content/source/essays/college-essays-private.txt#L3417-L3418; content/source/essays/college-essays-private.txt#L3442-L3443).
 
 ### 1.3 Contact (publishable and not)
 
@@ -50,11 +50,11 @@ one-clause facts only — no essay wording is reproduced anywhere in this file.
 - The prosthetic arm and the Electric Road project were both carried out through the Mastery Program (CLAUDE.md; content/source/essays/college-essays-private.txt#L5766-L5768; content/source/portfolio/06-electric-road.jpg#page-1).
 - The AntiCam cap build ran as a Mastery Learning System project for 2025–2026 (content/source/anticam/mastery-learning-plan/text.md#page-1).
 - New York University (NYC), AB Calculus, Summer 2025 (content/source/resume/resume-current.png).
-- USC, starting fall 2026: Iovine and Young Academy, Arts, Technology and the Business of Innovation (CLAUDE.md — the root CLAUDE.md is the only source for this; neither résumé mentions USC).
+- USC, starting fall 2026: Iovine and Young Academy, Arts, Technology and the Business of Innovation (CLAUDE.md; corroborated on the AntiCam founder slide, which lists "USC Iovine and Young Academy, Class of 2030" — content/source/anticam/pitch-deck-build.js#L548; neither résumé mentions USC).
 - Fall 2026: TroyLabs BUILD, the USC student accelerator, PM division, advanced robotics (CLAUDE.md — root CLAUDE.md is the only source; neither résumé mentions TroyLabs BUILD).
 - The AntiCam pitch deck outline is written as a TroyLabs BUILD application for Fall 2026, which corroborates that the BUILD application exists but not the enrollment outcome (content/source/anticam/pitch-deck-outline.md).
 - Alex's private drafts record admission to the USC Iovine and Young Academy with a Faculty Scholarship (content/source/essays/college-essays-private.txt#L136-L141).
-- TODO(alex): Confirm USC / Iovine and Young Academy enrollment (fall 2026) and TroyLabs BUILD PM division for publication. Neither appears on either résumé, so the site currently relies on root CLAUDE.md alone; the only corroboration is a private draft.
+- TODO(alex): Confirm USC / Iovine and Young Academy enrollment (fall 2026) and TroyLabs BUILD PM division for publication. Neither appears on either résumé; corroboration is the AntiCam founder slide (content/source/anticam/pitch-deck-build.js#L548) and a private draft.
 - TODO(alex): Confirm whether the USC Iovine and Young Faculty Scholarship should be listed as an award on the site.
 
 ### 1.5 Main influence
@@ -75,7 +75,9 @@ personal privacy wearable, and a solar road that charges electric cars in motion
 Stevens Institute of Technology (summer 2024), a selective intern at Octura, a Bank of America
 partner (summer 2024), an NYU Tandon cybersecurity program student who won its hackathon (2023),
 and a Take the World Forward fellow with Harvard College, MIT Solv[ED], and Learn with Leaders
-(2021–2022) (content/source/resume/resume-current.png). In FIRST Tech Challenge robotics he is
+(2021–2022) (content/source/resume/resume-current.png). He is a summer 2026 research intern at
+CeraPiper (Cornell Tech x Technion), developing CAD and slicing software for a custom ceramic
+printer (content/source/resume/resume-current.png). In FIRST Tech Challenge robotics he is
 captain and operations lead, and led electrical design, documentation, and mentoring for a team
 that was twice NYC Champion on the Inspire Award and placed second for the Think Award at the
 World Championship (content/source/resume/resume-current.png;
@@ -104,24 +106,24 @@ TODO(alex) line in §2.5.
 
 | When | What | Alex's role / context | Source |
 |---|---|---|---|
-| 2nd grade | Took apart old flip phones; began acting as informal tech support for teachers' smartboards and computers | Self-taught | (content/source/essays/college-essays-private.txt#L3419-L3421) |
+| 2nd grade | Took apart old flip phones; informal tech support for teachers' smartboards and computers since elementary school | Self-taught | (content/source/essays/college-essays-private.txt#L3440-L3441) |
 | 3rd grade | Alex's Magnets and Stickers — custom magnets and stickers for classmates | Founder | (content/source/essays/college-essays-private.txt#L3411-L3413) |
 | 4th grade | Locos Logos — logo and business-card design; still taking projects as of the drafts | Founder | (content/source/essays/college-essays-private.txt#L3414-L3416) |
 | 5th grade | Cookie Road — edible cookie dough push pops sold after school; earned $2,000 | Founder | (content/source/essays/college-essays-private.txt#L3436-L3438) |
 | Middle school, ended with COVID (~2020) | Void Electronics — handheld game consoles built from Altoids tins and Raspberry Pis | Co-founder | (content/source/essays/college-essays-private.txt#L3443-L3448) |
-| Middle school summer program | Toured a prosthetics lab; recorded as the origin of the prosthetics interest | Student | (content/source/essays/college-essays-private.txt#L2660-L2664) |
+| Middle school summer program | Toured a prosthetics lab (one draft gives this as the start of the prosthetics interest; another gives watching his grandfather with cerebral palsy) | Student | (content/source/essays/college-essays-private.txt#L3250-L3251; content/source/essays/college-essays-private.txt#L2655-L2658) |
 | Middle school | No robotics, coding, or engineering offered at his middle school; taught himself with one classmate | Self-taught | (content/source/essays/college-essays-private.txt#L4395-L4400) |
 | 2021–2022 | Take the World Forward fellowship — Harvard College, MIT Solv[ED], and Learn with Leaders (online) | Fellow; mentored by industry experts | (content/source/resume/resume-current.png) |
 | 9th grade (freshman January term) | First AntiCam proof-of-concept prototype built and tested in the school iLab | Builder | (content/source/essays/college-essays-private.txt#L4569; content/source/essays/college-essays-private.txt#L6664-L6668) |
 | 9th grade | Avenues Athletics Aviator Award for varsity tennis leadership (school level) | Award recipient | (content/source/essays/college-essays-private.txt#L1798-L1800) |
-| End of 9th grade | Selected as one of four students on the faculty–student wellbeing council following a five-school study | Faculty-selected student representative | (content/source/essays/college-essays-private.txt#L4692-L4696; content/source/essays/college-essays-private.txt#L2555-L2585) |
+| End of 9th grade | Selected as one of four students on the faculty–student wellbeing council following a five-school study | Faculty-selected student representative | (content/source/essays/college-essays-private.txt#L2555-L2564) |
 | Start of 10th grade | Two-day wellbeing mini-conference; presented the student perspective on 1,200+ survey responses | Student representative | (content/source/essays/college-essays-private.txt#L2117-L2124) |
 | 10th grade | Entrepreneurship Award, a multi-campus innovation and leadership honor (school level) | Award recipient | (content/source/essays/college-essays-private.txt#L1795-L1797) |
 | 2023 | NYU Tandon School of Engineering (NYC), Cyber Security for Computer Science program; wrote and presented a cybersecurity research paper to leading firms; won the hackathon | Program student | (content/source/resume/resume-current.png) |
 | Summer 2024 | Stevens Institute of Technology — designed and fabricated a prosthetic arm under faculty supervision; researched prosthetics design, construction, costs, and the physics of human motion and rhythm | Research Assistant | (content/source/resume/resume-current.png) |
 | Summer 2024 (drafts say "summer after sophomore year") | Same Stevens lab work, under Professor Long Wang; built finger actuation components, then integrated myoelectric sensors | Research intern | (content/source/essays/college-essays-private.txt#L2513; content/source/essays/college-essays-private.txt#L3255-L3262) |
 | Summer 2024 | Octura, a Bank of America partner (NYC) — shadowed CEO, product, and legal leads; built and tested CLO models; analyzed market data; joined investor calls and site visits | Selective Internship | (content/source/resume/resume-current.png) |
-| 11th grade | 2nd Place Think Award (engineering portfolio) at the FIRST Tech Challenge World Championship — the school's first Worlds placement | Team member | (content/source/essays/college-essays-private.txt#L1785-L1787; content/source/essays/college-essays-private.txt#L2521-L2522) |
+| 11th grade | 2nd Place Think Award (engineering portfolio) at the FIRST Tech Challenge World Championship — the school's first Worlds placement | Team member | (content/source/essays/college-essays-private.txt#L1785-L1787; content/source/essays/college-essays-private.txt#L2221; content/source/essays/college-essays-private.txt#L2673) |
 | 11th grade | College Board National Hispanic Recognition Program Scholar (national) | Award recipient | (content/source/essays/college-essays-private.txt#L1788-L1790) |
 | Grades 10–12 | FIRST Robotics NYC Champion twice and Inspire Award winner twice | Team member; captain in later years | (content/source/essays/college-essays-private.txt#L1791-L1794) |
 | May 11, 2025 | "Ethics of Tully Tech" essay written for American Studies: World and English | Author | (content/source/anticam/ethics-of-tully-tech/text.md#page-1) |
@@ -151,15 +153,17 @@ but never team numbers. No source in the repo ties a team number to a calendar s
 
 | Season / year | Team | Robot or system | Alex's role | Source |
 |---|---|---|---|---|
-| Undated | FTC #14712 | Swerve Drive (FTC-scale swerve drivetrain; competed at NYC-FIRST's Robot-in-2-Days signature event) | Electrical Lead | (content/source/portfolio/02-swerve-drive.jpg#page-1) |
+| Undated | FTC #14712 | Swerve Drive (FTC-scale swerve drivetrain; the page claims the team's drive is 30% more efficient than any other FTC drivetrain — a team claim, not Alex's alone; competed at NYC-FIRST's Robot-in-2-Days signature event) | Electrical Lead | (content/source/portfolio/02-swerve-drive.jpg#page-1) |
 | Undated | FTC #14712 | Honu Robot (belt-driven wheels, 3-axis intake) | Electrical Lead | (content/source/portfolio/03-honu-robot.jpg#page-1) |
 | Undated | FTC #17253 (Tritonics) | Scorpion Robot (motor-driven scissor lift) | Fabrication Lead; the page also says he designed the robot | (content/source/portfolio/05-scorpion-robot.jpg#page-1) |
 | Undated | FTC #17253 (Tritonics) | Ball-Drive (four two-axis balls replacing wheels; designed with a Master Sketch) | Ops Lead / Captain | (content/source/portfolio/04-ball-drive.jpg#page-1) |
 | Undated; "Season Still Ongoing" when the page was made | FTC #17253 (Tritonics) | Monti Robot (modular, screwless; custom pathing software with Simons Foundation PhD researchers) | Captain | (content/source/portfolio/01-monti-robot.jpg#page-1) |
-| FTC DECODE season (no year printed) | FTC #17253 (Tritonics) | Robot MONTY; team of 15 (9 returning + 6 rookies), 100% student-led, no team mentors | Captain, Y4 (fourth year); Operations Team; manages team strategy, electrical system and operations | (content/source/robotics/championships-presentation/slide-e.jpg; content/source/robotics/posters/poster-a.png) |
+| FTC DECODE season (no year printed) | FTC #17253 (Tritonics) | Robot MONTY; roster lists 9 returning members and 6 rookies; 100% student-led, no team mentors | Captain, Y4 (fourth year); Operations Team; manages team strategy, electrical system and operations | (content/source/robotics/championships-presentation/slide-e.jpg; content/source/robotics/posters/poster-a.png; content/source/robotics/championships-presentation/slide-c.png) |
 | Grades 9–12 | FIRST Tech Challenge (team number not stated in this source) | ~20 hrs/week, 40 weeks/year | Team Captain and Operations Lead; previously Mechanical/Electrical Lead | (content/source/essays/college-essays-private.txt#L1513-L1530) |
 | Undated (drafts) | FIRST Tech Challenge | Alternate role title used in other drafts | Head of Fabrication, Electrical, and Operations | (content/source/essays/college-essays-private.txt#L3903; content/source/essays/college-essays-private.txt#L4783) |
 | Undated | FIRST Robotics (team not specified) | Led electrical design, documentation and mentoring for a 2x NYC Champion (Inspire Award) and Worlds (Think Award, 2nd) team | FTC Captain & Ops Lead | (content/source/resume/resume-current.png) |
+
+TODO(alex): team size is stated nowhere — slide-f.jpg says "7 → 14 members" and poster-a.png's "15" counts new students recruited into FIRST, not the competition roster size.
 
 Season events and results recorded without a year:
 
@@ -170,7 +174,7 @@ Season events and results recorded without a year:
 - DECODE season awards: Inspire 1st (Qualifier 3), Inspire 2nd (Qualifier 1), Inspire 3rd (Qualifier 9), Sustain Award (Super Qualifier 2) (content/source/robotics/championships-presentation/slide-e.jpg; content/source/robotics/posters/poster-a.png; content/source/robotics/posters/poster-deck/text.md#L121).
 - Alex's team competed at Cornell Tech's Robot-in-2-Days as one of five selected teams, for the FTC Into the Deep season (content/source/essays/college-essays-private.txt#L4096-L4098).
 - Two previously separate robotics teams merged, and the swerve drive was built as the joint summer project afterward (content/source/essays/college-essays-private.txt#L4083-L4094; content/source/essays/college-essays-private.txt#L4386-L4388).
-- At the World Championship the team's robot arrived damaged and Alex handled one of the electrical repairs on the convention-hall floor (content/source/essays/college-essays-private.txt#L4738-L4742).
+- The team's robot was damaged in transit to the World Championship; Alex repaired part of its electrical system on site before competition (content/source/essays/college-essays-private.txt#L4740-L4742).
 - Through robotics Alex was at Cornell Tech on Roosevelt Island most weekends and ran a 3D printing workshop there (content/source/essays/college-essays-private.txt#L4402-L4408).
 - Alex's DECODE-season card states his goal was strong documentation, marked achieved, and that he is proudest of recruiting and training rookies (content/source/robotics/championships-presentation/slide-e.jpg).
 
@@ -183,14 +187,14 @@ Season events and results recorded without a year:
 | Stated as "over the past two years" in the 2025–2026 project plan | Tully Tech / AntiCam work to date | Founder | (content/source/anticam/mastery-learning-plan/text.md#page-1) |
 | Grades 9–12, ~2 hrs/week, 32 weeks/year | IDEA Club — Innovative Design, Engineering & Automotive: rapid prototyping, laser cutting, design-thinking projects, CAD, CNC, makerspace safety training | Co-Founder and Lead | (content/source/essays/college-essays-private.txt#L1538-L1552) |
 | Undated | "Innovative Design & Engineering": co-founded a program to train 70+ students in 3D CAD/printing, design thinking, rapid prototyping, fabrication, and shop safety | Co-founder | (content/source/resume/resume-current.png) |
-| Grades 9–12 | Multi-state STEM outreach (Hour of Code and robotics, grades N–10) | Program Lead and Coding/Robotics Instructor | (content/source/essays/college-essays-private.txt#L1564-L1577) |
+| Grades not stated in source (drafts elsewhere say "the past 3 years") | Multi-state STEM outreach (Hour of Code and robotics, grades N–10) | Program Lead and Coding/Robotics Instructor | (content/source/essays/college-essays-private.txt#L1564-L1577; content/source/essays/college-essays-private.txt#L4371) |
 | Weekly / twice weekly, undated | Hudson Guild after-school robotics programs for younger students | Instructor | (content/source/portfolio/07-community-events.jpg#page-1; content/source/essays/college-essays-private.txt#L4371-L4372) |
 | Undated; present tense on the page | School e-waste drive (40+ lbs collected), being expanded city-wide with the NYC Department of Sanitation | Organizer | (content/source/portfolio/07-community-events.jpg#page-1) |
 | Grades 9–11, ~3 hrs/week (up to 8 at peak) | NYC E-Waste Education & Collection Initiative | Program Expansion Co-Chair | (content/source/essays/college-essays-private.txt#L1586-L1604) |
 | Grades 9–12 | Latin American Student Union (LASU) cultural events and fundraising | Cultural Event Planner and Fundraiser | (content/source/essays/college-essays-private.txt#L1609-L1620) |
 | Four years | Fencing and tennis varsity athlete; epee team captain | Team Captain | (content/source/essays/college-essays-private.txt#L1650-L1668) |
 | Three years, starting end of 9th grade, ~1 hr/week, 12 weeks/year | School wellbeing council (Challenge Success), monthly meetings with faculty and administration | Faculty-selected student representative | (content/source/essays/college-essays-private.txt#L1736-L1752) |
-| DECODE season (undated) | Two-week Tritonics summer FTC camp; new FTC team #32706 (Tic-Tac Tech) launched and mentored; FTC MicroFunding site launched after a 50% mid-season budget cut | Captain (site itself credited to teammate Milind A) | (content/source/robotics/championships-presentation/slide-b.png; content/source/robotics/championships-presentation/slide-f.jpg; content/source/robotics/championships-presentation/slide-e.jpg) |
+| DECODE season (undated) | Two-week Tritonics summer FTC camp; new FTC team #32706 (Tic-Tac Tech) launched and mentored; FTC MicroFunding site launched after a 50% mid-season budget cut | Captain (site itself credited to teammate Milind A) | (content/source/robotics/championships-presentation/slide-b.png; content/source/robotics/championships-presentation/slide-c.png; content/source/robotics/championships-presentation/slide-d.png; content/source/robotics/championships-presentation/slide-f.jpg; content/source/robotics/posters/poster-a.png) |
 
 ### 2.4 Season calendar used by the robotics team (repeating, not a one-off)
 
@@ -204,15 +208,16 @@ Season events and results recorded without a year:
 - TODO(alex): Order of the two teams — was #14712 (electrical lead) before #17253 (captain)? Root CLAUDE.md implies mechanical/electrical lead came earlier, but no source states the order.
 - TODO(alex): Which FTC team (#17253 or #14712) each award belongs to, and in which year. The résumé sidebar's "2x NYC Champion (Inspire Award) & Worlds (Think Award, 2nd)" names no team, and the private drafts never use team numbers (content/source/resume/resume-current.png).
 - TODO(alex): Monti's page says "Season Still Ongoing" — what were the final results for that season? (content/source/portfolio/01-monti-robot.jpg#page-1)
-- TODO(alex): Root CLAUDE.md claims 2x Worlds qualifier; the résumé and the portfolio pages together document one NYC 1st place and one Worlds appearance (Honu, #14712). Confirm the second qualification and its year.
+- TODO(alex): Root CLAUDE.md and the private activity list (content/source/essays/college-essays-private.txt#L1517-L1518) both claim 2x Worlds qualifier; the résumé and portfolio pages together document one NYC 1st place and one Worlds appearance (Honu, #14712). Confirm the second qualification and its year.
 - TODO(alex): Root CLAUDE.md says the rebuilt rookie team "placed third in New York"; the DECODE pages list Inspire 3rd at Qualifier 9 and a Sustain Award at Super Qualifier 2 but no New York third place. Which event is meant?
-- TODO(alex): Root CLAUDE.md describes an 80+ member club while the DECODE pages show a 14–15 member competition team; clarify what the 80+ counts (content/source/robotics/championships-presentation/slide-e.jpg).
+- TODO(alex): Root CLAUDE.md and the private activity list (content/source/essays/college-essays-private.txt#L1518-L1519) describe an 80+ member club while the DECODE pages show a 14–15 member competition team; clarify what the 80+ counts (content/source/robotics/championships-presentation/slide-e.jpg).
 - TODO(alex): Robotics team merge date — drafts variously place it in sophomore year and in the spring before junior year (content/source/essays/college-essays-private.txt#L4083; content/source/essays/college-essays-private.txt#L4207).
 - TODO(alex): Confirm whether the Stevens research work and the Octura internship happened in the same summer; the résumé dates both to Summer 2024 (content/source/resume/resume-current.png).
 - TODO(alex): Confirm the spelling and description of the finance internship — the résumé says "OCTURA, Bank of America Partner"; the private drafts spell it "Octora" and describe it as a CLO trading startup. The résumé spelling is used here per the content rules (content/source/resume/resume-current.png; content/source/essays/college-essays-private.txt#L1720-L1730).
 - TODO(alex): Confirm the CLO expansion (collateralized loan obligation?) before the term is used on the site (content/source/resume/resume-current.png).
 - TODO(alex): Tully Tech's founding date and legal status are not stated on the résumé; the private drafts give grades 9–12 and the 2025–2026 project plan says "over the past two years" (content/source/resume/resume-current.png; content/source/anticam/mastery-learning-plan/text.md#page-1).
 - TODO(alex): AntiCam duration is inconsistent across sources — the pitch outline and root CLAUDE.md say two years, the 2025–2026 Mastery plan says "over the past two years", and the ninth-grade first prototype implies three or more years by senior year (content/source/anticam/pitch-deck-outline.md; content/source/anticam/mastery-learning-plan/text.md#page-1; content/source/essays/college-essays-private.txt#L4569).
+- TODO(alex): the AntiCam Mastery plan's own timeline runs 2/11/25 to a 5/6/25 final deliverable, but its sponsor sign-offs are dated 10/30/2025 and 3/29/2026 and the file is labelled 2025–2026; confirm the project's real term (content/source/anticam/mastery-learning-plan/text.md#page-3).
 - TODO(alex): IDEA program — confirm the acronym's full expansion for the site (the private drafts give "Innovative Design, Engineering & Automotive"; the résumé sidebar says "Innovative Design & Engineering") and the founding year (content/source/resume/resume-current.png; content/source/essays/college-essays-private.txt#L1538-L1552).
 - TODO(alex): Is Alex a named author on the CeraPiper CAD paper submitted to SCF? The résumé is forward-looking and the site must not imply acceptance (content/source/resume/resume-current.png; CLAUDE.md).
 - TODO(alex): Confirm whether the National Hispanic Recognition Scholar award, the school Entrepreneurship Award, and the Aviator Award should appear on the site; all three come only from private drafts (content/source/essays/college-essays-private.txt#L1788-L1800).
@@ -223,9 +228,10 @@ Season events and results recorded without a year:
 
 ## 3. Featured: AntiCam
 
-**Role:** Founder, Tully Tech — sole designer, builder and author of every AntiCam document in
-`content/source/anticam/`. (content/source/resume/resume-current.png — "TULLY TECH - SELECT
-INVENTIONS / Founder & innovator of tech startup."; content/source/anticam/pitch-deck-build.js#L8 —
+**Role:** Founder, Tully Tech — author of the AntiCam documents in `content/source/anticam/` (deck
+metadata, first-person project plan and essay). No source states he worked alone; drop "sole".
+(content/source/resume/resume-current.png — "TULLY TECH - SELECT
+INVENTIONS / Founder & innovator of tech startup."; content/source/anticam/pitch-deck-build.js#L8-L9 —
 `pres.author = 'Alexander Tully'`, `pres.company = 'Tully Tech'`)
 
 **Dates:** Stated as two years of work in both the 2025 Mastery plan and the Fall 2026 pitch deck;
@@ -281,8 +287,8 @@ content/source/resume/resume-current.png)
   (content/source/anticam/pitch-deck-build.js#L403)
 - Cap, $40–65: the flagship, 360° coverage, retro-reflective lining, flash detection.
   (content/source/anticam/pitch-deck-build.js#L404)
-- Room Unit, $100+: whole-room coverage for rentals and hotel rooms, described as next in line and
-  rendered in the deck as an LED-grid glyph because no prototype photo exists for it.
+- Room Unit, $100+: whole-room coverage for rentals and hotel rooms, described as next in line; the
+  deck carries no photo for it and draws an LED-grid glyph instead.
   (content/source/anticam/pitch-deck-build.js#L405)
 - The same four-tier price ladder appears in the earlier Camera Blinder deck: small clip-on $30–45
   (one side), hat/band $40–65 (360º), higher-quality clip-on $30–40 (multiple sides), room device
@@ -291,6 +297,10 @@ content/source/resume/resume-current.png)
 - Planned channels: direct at tullytech.com, then Amazon and Etsy, then creator and
   travel-community partnerships.
   (content/source/anticam/pitch-deck-build.js#L428)
+- The same channel plan appears in the earlier Camera Blinder deck — own website, Amazon, Etsy and
+  other online stores, promoted through social media, Google and YouTube ads — alongside its stated
+  process of research → prototyping → production and distribution.
+  (content/source/anticam/camera-blinder-presentation/text.md#page-4, #page-5, #page-6)
 
 **Legal and harmless by physics**
 
@@ -320,14 +330,14 @@ content/source/resume/resume-current.png)
   are all listed as planned work, not completed work.
   (content/source/anticam/pitch-deck-build.js#L581)
 - Earlier prototypes were built from laser-cut wood/MDF and acrylic plates, 3D-printed cases,
-  hand-soldered coin-cell packs joined with copper tape, and a 10W-class COB LED module with a 3×3
-  grid of emitter chips. (content/source/anticam/camera-blinder-presentation/pages/page-10.jpg,
+  hand-soldered coin-cell packs joined with copper tape, and a COB LED module with a 3×3 grid of
+  emitter chips (no source gives its wattage). (content/source/anticam/camera-blinder-presentation/pages/page-10.jpg,
   page-11.jpg, page-13.jpg, page-14.jpg)
 - V2 added a physical slide switch on the battery plate beside four coin cells, and the V2 stack is
   six laser-cut clear acrylic plates inside a two-tier 3D-printed case, shown in white, dark gray
   and navy. (content/source/anticam/camera-blinder-presentation/pages/page-13.jpg, page-15.jpg)
-- The Tully Tech logo is laser-engraved into prototype lids from the second prototype onward.
-  (content/source/anticam/camera-blinder-presentation/pages/page-12.jpg, page-13.jpg)
+- The Tully Tech logo is laser-engraved into prototype lids on the second prototype and on V1 and V2.
+  (content/source/anticam/camera-blinder-presentation/pages/page-10.jpg, page-12.jpg, page-13.jpg)
 
 **Testing**
 
@@ -352,7 +362,7 @@ content/source/resume/resume-current.png)
   (content/source/anticam/pitch-deck-build.js#L308-L313)
 - The Mastery plan names the same communities in Alex's own words: travelers securing private
   rentals, parents, and high-profile individuals facing invasive paparazzi.
-  (content/source/anticam/mastery-learning-plan/text.md#page-2)
+  (content/source/anticam/mastery-learning-plan/text.md#page-2, #page-3)
 - The stated reason travelers come first: dim indoor rooms are where IR saturation is strongest and
   the pin already works there; travel forums are a dense, reachable channel; a rented bedroom is the
   least controversial place to be invisible.
@@ -372,8 +382,8 @@ content/source/resume/resume-current.png)
   doorbell-camera test passed. (content/source/anticam/pitch-deck-build.js#L461)
 - The Mastery Learning System project (2/11/25–5/6/25) set the cap as its final deliverable: a
   working baseball-cap AntiCam with flash light-detection triggering the IR lights, retroreflective
-  material in the hat lining, a safe recharging system, a comfortable design, and an accompanying
-  circuit diagram for recreation and manufacture.
+  material in the hat lining, proper lighting conditions for activation, a safe recharging system, a
+  comfortable design, and an accompanying circuit diagram for recreation and manufacture.
   (content/source/anticam/mastery-learning-plan/text.md#page-1, #page-3)
 - In that plan Alex states every prototype to that point was unusable for consumers, either lacking
   functionality or having an impractical design, and names the four problems the project set out to
@@ -418,8 +428,9 @@ estimate / derived figure / TBD.
 **Derived market sizing** — arithmetic on the sourced numbers above, not itself a cited statistic.
 (content/source/anticam/pitch-deck-build.js#L274-L276)
 
-- TAM: 61M people → $3.4B at a $55 device. ($55 is the midpoint of the Cap price range; the deck
-  notes its bars are not to scale.)
+- TAM: 61M people → $3.4B at a $55 device. ($55 is the figure the deck uses and calls the midpoint
+  of the Cap price range, though the midpoint of $40–65 is $52.50 — TODO(alex): confirm the $55
+  device price before any TAM/SAM/SOM number is published; the deck notes its bars are not to scale.)
 - SAM: 35M people, the 58% of 61M who worry → $1.9B.
 - SOM: 35K units, stated as 1 in 1,000 of the SAM over three years → ~$1.9M in first sales.
   **Founder assumption — no external source.**
@@ -454,8 +465,9 @@ statistics without a source**
   (content/source/anticam/pitch-deck-build.js#L214)
 - All statistics in the ethics essay (70 captures/day; 18,000 NYC cameras; 60% worried;
   one-quarter have found cameras) are **off-limits** under the root CLAUDE.md rule. Where they
-  overlap with the outline, the outline's sourced versions differ — e.g. the essay's 18,000 NYC
-  cameras vs. Comparitech's 70,882. (content/source/anticam/ethics-of-tully-tech/text.md#page-5,
+  overlap with the outline, the outline's sourced versions differ — e.g. the essay's 18,000
+  facial-recognition cameras in NYC, which is not the same count as Comparitech's 70,882
+  surveillance cameras. (content/source/anticam/ethics-of-tully-tech/text.md#page-5,
   #page-6)
 
 ---
@@ -465,7 +477,8 @@ statistics without a source**
 Source: `content/source/anticam/ethics-of-tully-tech/text.md`, a 9-page essay dated May 11, 2025.
 
 **Do not quote or closely paraphrase any sentence from this essay on the site.** It is school
-coursework containing typos, uncited statistics and lay legal assertions. Use the argument points
+coursework containing typos, statistics cited to popular sources outside the approved list (KDVR
+2018, Safe Home) plus one uncited figure, and lay legal assertions. Use the argument points
 and vocabulary below, rewritten. The essay contains no images.
 
 *Neutral facts about the document*
@@ -474,8 +487,8 @@ and vocabulary below, rewritten. The essay contains no images.
   (content/source/anticam/ethics-of-tully-tech/text.md#page-1)
 - The deck lists "Ethics & legality research, 2025" as completed traction.
   (content/source/anticam/pitch-deck-build.js#L461)
-- In the essay Alex refers to himself as the founder and frames release ethics as a founder's
-  responsibility. (content/source/anticam/ethics-of-tully-tech/text.md#page-9)
+- The essay frames release ethics as "the founder's responsibility", in the third person; it never
+  self-identifies Alex as the founder. (content/source/anticam/ethics-of-tully-tech/text.md#page-9)
 
 *Argument points available to the site (ideas, not sentences)*
 
@@ -517,7 +530,7 @@ and vocabulary below, rewritten. The essay contains no images.
 physics; legal by design; light, not radio; physics, not patterns; blinds the camera, not the
 network; built to protect people, not to hide crimes; honest about limits; control when you're
 seen; privacy you can wear.
-(content/source/anticam/pitch-deck-build.js#L104, #L172, #L502, #L522, #L524)
+(content/source/anticam/pitch-deck-build.js#L104, #L172, #L501, #L502, #L522, #L524, #L525, #L612)
 
 *Do not publish as legal advice.* The essay's assertion that no law currently prohibits creating or
 using the device is an unsourced student opinion. The site should describe the mechanism — light
@@ -541,17 +554,18 @@ only, no radio emission, no jamming, no damage — and let the reader draw the i
 **Build steps documented photographically in the Camera Blinder deck**
 (content/source/anticam/camera-blinder-presentation/text.md#page-7 through #page-17)
 
-1. Light Test 1 — bench test of the LED on alligator-clip leads. (page-07.jpg)
+1. Light Test 1 — out-of-focus photo of alligator-clip leads and component bags; no LED visible. Not
+   usable as a test image. (page-07.jpg)
 2. First Prototype — laser-cut discs, a clear disc holding four coin cells, a 3D-printed ring
    battery holder, a COB LED module. (page-08.jpg)
 3. Test 2 — the LED lit and photographed, reading magenta to the camera, powered from a bench
    supply. (page-09.jpg)
 4. Second Prototype — laser-cut MDF plates with the Tully Tech logo engraved, cut on a laser
    cutter. (page-10.jpg)
-5. Third Prototype — layered acrylic with nine hand-soldered coin cells joined by copper tape.
-   (page-11.jpg)
+5. Third Prototype — layered acrylic with ten hand-soldered coin cells (4 + 4 + 2) wire-linked, plus
+   a separate plate with copper-tape bus bars. (page-11.jpg)
 6. Final Prototype V1 — 3D-printed case with a black rim and maroon body, engraved frosted acrylic
-   lid, LED face glowing pink to the camera. (page-12.jpg)
+   lid, emitter face showing rows of magenta IR dies (unlit). (page-12.jpg)
 7. Process V2 — six clear laser-cut acrylic plates, four coin cells plus a slide switch, engraved
    lid. (page-13.jpg, page-14.jpg)
 8. Final Prototype V2 — two-tier 3D-printed cases in white, dark gray and navy. (page-15.jpg)
@@ -585,8 +599,9 @@ None of these are cleared for publication yet — see the image TODO(alex) lines
 **Hero candidates**
 
 - `content/source/anticam/camera-blinder-presentation/pages/page-12.jpg` — Final Prototype V1, LED
-  face: white plate, emitter dots glowing magenta, black rim, maroon body, isolated on a light
-  background (right-upper region of the page). The strongest product-plus-IR-glow shot.
+  face: white plate, rows of magenta IR emitter dies (unlit), black rim, maroon body, isolated on a
+  light background (right-upper region of the page). The strongest clean product shot; page-09.jpg
+  is the only real IR-glow shot.
   **Use:** page hero, or the AntiCam card on the home page.
 - `content/source/anticam/camera-blinder-presentation/pages/page-09.jpg` — the lit COB LED seen by
   a camera as a bright magenta square inside a pink halo (left half of the page). Abstract, no
@@ -625,7 +640,7 @@ None of these are cleared for publication yet — see the image TODO(alex) lines
 - `content/source/anticam/camera-blinder-presentation/pages/page-10.jpg` — the Second Prototype
   flat-lay of laser-cut MDF plates, plus the laser cutter engraving the Tully Tech logo.
   **Use:** fabrication card in the timeline.
-- `content/source/anticam/camera-blinder-presentation/pages/page-11.jpg` — the nine-coin-cell
+- `content/source/anticam/camera-blinder-presentation/pages/page-11.jpg` — the ten-coin-cell
   battery plate with copper-tape bus bars and soldered links. **Use:** the "hand-built" detail in
   the timeline.
 - `content/source/anticam/camera-blinder-presentation/pages/page-08.jpg` — the First Prototype
@@ -635,10 +650,10 @@ None of these are cleared for publication yet — see the image TODO(alex) lines
 
 - `content/source/anticam/camera-blinder-presentation/pages/page-15.jpg` (top row) — the three V2
   pin cases, white / dark gray / navy. **Use:** the Pin card.
-- `content/source/anticam/camera-blinder-presentation/pages/page-02.jpg` (bottom-right) — the
-  red/maroon room-unit prototype with pink-glowing emitter rows. **Use:** the Room Unit card. This
-  is the only room-unit photo anywhere in the sources, and the slide does not label it — confirm
-  with Alex first.
+- `content/source/anticam/camera-blinder-presentation/pages/page-02.jpg` (bottom-right) — the same
+  Final Prototype V1 pin unit shown on page-12.jpg, placed beside the "Room Device" caption. It is
+  NOT a room-unit prototype; there is no room-unit photo in any source. Do not use it as the Room
+  Unit card.
 
 **Reference only, do not publish**
 
@@ -714,7 +729,7 @@ power, battery run time, or range for any version. The near-IR "700 to 1,000 nan
 uncited speaker notes. Provide real numbers or the mechanism copy stays qualitative.
 (content/source/anticam/pitch-deck-build.js#L214)
 
-TODO(alex): Battery details — coin-cell type (LR44?), four cells in V1/V2 versus nine in the third
+TODO(alex): Battery details — coin-cell type (LR44?), four cells in V1/V2 versus ten in the third
 prototype, and run time per version.
 (content/source/anticam/camera-blinder-presentation/pages/page-08.jpg, page-11.jpg)
 
@@ -800,6 +815,10 @@ term, or version number on any of its 16 slides.
 content/source/essays/college-essays-private.txt#L2794-L2797;
 content/source/prosthetic-arm/design-brief/text.md)
 
+**Name:** Alex's own materials title it "Affordable Prosthetic Arm" (design brief
+title slide) and "Prosthetic Arm: Affordable & Adaptable" (résumé).
+(content/source/prosthetic-arm/design-brief/text.md#page-1; content/source/resume/resume-current.png)
+
 **One line:** A 3D-printable lower-arm prosthetic — hand and forearm — built from off-the-shelf
 parts, driven by servos through tendon-style cords, controlled by a myoelectric sensor, and sized
 to the wearer from hand measurements.
@@ -836,8 +855,8 @@ to the wearer from hand measurements.
   Prototyping, and Testing. (content/source/prosthetic-arm/design-brief/text.md#page-6)
 - The CAD is parametric and was created from average hand sizing.
   (content/source/prosthetic-arm/design-brief/text.md#page-6)
-- Individual mechanisms were prototyped separately before integration, and prototypes were put
-  through strength, grip, actuation, and functionality tests.
+- Individual mechanisms were prototyped separately, and prototypes were put through strength, grip,
+  actuation, and functionality tests.
   (content/source/prosthetic-arm/design-brief/text.md#page-6)
 - The ideation panel is a hand-drawn sketch sheet: a labeled "Current design" finger side view with
   Elastic Retraction Band, String and Servo callouts; side and front finger studies annotated for
@@ -870,9 +889,10 @@ to the wearer from hand measurements.
 - The photographed forearm, shell opened, shows a stack of servos with visible gearheads, red and
   black power wiring, a green Arduino-style board at the base, and cable routing up into the hand.
   (content/source/prosthetic-arm/design-brief/pages/page-08.jpg#page-8)
-- The final design is rendered two ways: a dark, matte-finish hand seen from the back with visible
-  joint pins and cord channels, and a ghosted view of the whole arm in which the servo stack, gear
-  faces and control board are visible through a translucent forearm cone closed by a flat end cap.
+- The final design is shown two ways: a photo of the dark printed hand from the back with visible
+  joint pins and cord channels (the same image used in the page 6 "Testing" panel — do not publish both),
+  and a ghosted render of the whole arm in which the servo stack, gear faces and control board are
+  visible through a translucent forearm cone closed by a flat end cap.
   (content/source/prosthetic-arm/design-brief/pages/page-10.jpg#page-10)
 
 **Myoelectric control**
@@ -1009,10 +1029,10 @@ and the first three do not match the brief's numbers.
 
 - Root CLAUDE.md states the goal as partnering with manufacturers and organizations to reach
   underserved communities. (CLAUDE.md — Featured work)
-- Per the private drafts, remaining work is refining controls, improving size automation, and
-  finishing calculations, and the stated next goal is partnering to bring low-cost versions to
-  people who need them.
-  (content/source/essays/college-essays-private.txt#L2739-L2741, #L2794-L2797)
+- Per the private drafts, the work still open is control tuning and the sizing automation, plus some
+  calculations; the stated next step is finding partners for low-cost production. (fact only; do not
+  reuse the drafts' wording)
+  (content/source/essays/college-essays-private.txt#L2739-L2741, #L2794-L2797, #L3278)
 
 ---
 
@@ -1022,29 +1042,30 @@ and the first three do not match the brief's numbers.
 Each line below is a neutral fact, recorded so the site can be checked against it.
 
 - Alex's interest in prosthetics began at a middle-school summer engineering program that included a
-  prosthetics lab tour. (content/source/essays/college-essays-private.txt#L2660-L2664)
+  prosthetics lab tour. (content/source/essays/college-essays-private.txt#L3250-L3254, #L3694-L3698)
 - Alex cold-contacted a professor at Stevens Institute of Technology to ask to work in his lab.
   (content/source/essays/college-essays-private.txt#L2513)
 - One draft names that professor as Long Wang.
   (content/source/essays/college-essays-private.txt#L2513)
-- In the lab Alex analyzed existing prosthetic designs, prototyped improvements, and tested
-  mechanical function. (content/source/essays/college-essays-private.txt#L2726-L2732)
+- In the lab Alex studied prosthetic designs already on the market, built improved versions of his
+  own, and bench-tested how they moved. (content/source/essays/college-essays-private.txt#L2731-L2732 —
+  fact only; do not reuse the drafts' wording)
 - The project first targeted a prosthetic hand and later changed scope to a full arm.
   (content/source/essays/college-essays-private.txt#L3266-L3270)
-- The stated reason for the scope change was that an arm needs custom sizing.
-  (content/source/essays/college-essays-private.txt#L3266-L3270)
+- The stated reason for the scope change was that producing and distributing prosthetic hands was too
+  complicated to be accessible; custom sizing is described as the arm's new constraint, which Alex
+  answered with digital resizing. (content/source/essays/college-essays-private.txt#L3266-L3271, #L2732-L2733)
 - Alex learned a new CAD package from his robotics team's lead coder to get past a limit in the
   resizing automation. (content/source/essays/college-essays-private.txt#L3273-L3278)
 - Development continued through Avenues' Mastery Program after the Stevens summer.
   (content/source/essays/college-essays-private.txt#L2794-L2797)
-- Software named for this work in the drafts is Fusion, Bambu, and nTop.
-  (content/source/essays/college-essays-private.txt#L3676)
+- The drafts' generic portfolio-video checklist lists Fusion, Bambu and nTop as Alex's software
+  (#L3666-L3679, not prosthetic-specific); the prosthetic-arm outline names only nTop (#L3690), and the
+  brief names only nTop Automate (design-brief/text.md#page-13).
 - **Origin story is unresolved.** Three drafts give three mutually exclusive origin accounts for the
-  project — a grandfather with cerebral palsy, a veteran at a shelter, and a stranger at a food
-  pantry — all attached to the same follow-on facts, and a fourth framing attributes the origin to
-  the prosthetics lab tour with no personal incident. Nothing from this cluster may appear on the
-  site until Alex picks one. (content/source/essays/college-essays-private.txt#L2721-L2725,
-  #L2784-L2787, #L6365-L6369, #L2660-L2664)
+  project — three different personal origin incidents, each attached to the same follow-on facts, plus a
+  fourth framing with no personal incident. Details are in the private drafts only and are deliberately
+  not restated here; ask Alex which one is real. (content/source/essays/college-essays-private.txt)
 
 ---
 
@@ -1063,11 +1084,11 @@ crops are small; ask Alex for the original renders and photos before building th
   shows the whole product and its internals at once. Crop inside the rounded card frame to drop the
   border. **Use:** page hero.
 - `content/source/prosthetic-arm/design-brief/pages/page-14.jpg` — the physical build fully exploded
-  on a light gray card: matte white printed palm shell, glossy black finger assembly, black wrist
-  collar and circular end plate, and loose knuckle caps, pin rods, joint blocks and finger segments
-  scattered either side. The clearest proof of modularity and the only light-background image in
-  the brief; it will need handling against a dark site. **Use:** hero alternative, or the modularity
-  section.
+  on a light gray card: matte white printed palm shell, glossy black finger assembly, a white wrist
+  collar, a black circular end plate, and loose knuckle caps, pin rods, joint blocks and finger
+  segments scattered either side. The clearest proof of modularity and the only light-background
+  image of the build in the brief; it will need handling against a dark site. **Use:** hero
+  alternative, or the modularity section.
 - `content/source/prosthetic-arm/design-brief/pages/page-08.jpg` (lower-left) — wide profile render
   of the finished arm: black forearm cone, black wrist and palm, five white printed fingers extended
   flat. It bleeds off the left edge of the slide, so the elbow end is cut; usable as a right-aligned
@@ -1091,8 +1112,8 @@ crops are small; ask Alex for the original renders and photos before building th
 - `content/source/prosthetic-arm/design-brief/pages/page-08.jpg` (right side, full height) — photo
   of the physical forearm standing upright with its shell opened: servo stack with visible
   gearheads, red and black wiring, a green Arduino-style board with a blue component at the base,
-  cable routing in the hand above, and the white palm assembly on top. The best "real hardware, real
-  electronics" photo in the brief. It is a background-removed cut-out with a residual white halo
+  cable routing in the hand above, and the black printed hand with its white thumb on top. The best
+  "real hardware, real electronics" photo in the brief. It is a background-removed cut-out with a residual white halo
   that needs masking. **Use:** the electronics section.
 
 **Process and prototypes**
@@ -1150,8 +1171,7 @@ crops are small; ask Alex for the original renders and photos before building th
 
 - `content/source/prosthetic-arm/design-brief/pages/page-01.jpg` — title slide, grayscale photo of a
   printed hand, palm up, fingers curled, with a wrist cuff of three dark rings. That cuff does not
-  match the forearm on pages 8, 10 or 14, so provenance is unconfirmed; the headline type is also
-  baked over the upper part of the photo.
+  match the forearm on pages 8, 10 or 14, so provenance is unconfirmed.
 - `content/source/prosthetic-arm/design-brief/pages/page-09.jpg` (white card, right two-thirds) —
   third-party product photos of red muscle-sensor breakout boards plus a screenshot of ROBOTIS
   Dynamixel example code. Not Alex's hardware or firmware.
@@ -1193,7 +1213,9 @@ and words it "Of those people", while the Problem slide restates it against over
 content/source/prosthetic-arm/design-brief/text.md#page-3)
 
 TODO(alex): Prototype count — the résumé and activity list say 90+ prototypes, the private drafts
-also cite a 76th design and "over 90 CAD models", and the brief gives no count at all. Confirm the
+also cite a 76th design (#L3273) and "dozens of prototypes" before the first full hand design (#L3263) —
+"over 90 cads" (#L3671) is in a generic per-project video checklist, not a prosthetic figure — and the
+brief gives no count at all. Confirm the
 number to publish and what it counts: CAD iterations, printed parts, complete arms, or all three.
 (content/source/resume/resume-current.png;
 content/source/essays/college-essays-private.txt#L1710-L1711, #L3273, #L3671)
@@ -1241,11 +1263,10 @@ only partner named in the brief, and the site should not imply a relationship th
 (content/source/prosthetic-arm/design-brief/text.md#page-15)
 
 TODO(alex): Which origin story is the true one, and may it be published? The private drafts give
-three mutually exclusive versions — a grandfather with cerebral palsy, a veteran at a shelter, a
-stranger at a food pantry — plus a fourth framing with no personal incident. If the family version is
-the real one, confirm you are comfortable with a relative's medical condition on a public site.
-(content/source/essays/college-essays-private.txt#L2721-L2725, #L2784-L2787, #L6365-L6369,
-#L2660-L2664)
+three mutually exclusive personal-incident versions plus a fourth framing with no personal incident.
+Details are deliberately not restated here (see 4.4); if a family-medical version is the real one,
+confirm you are comfortable with a relative's medical condition on a public site.
+(content/source/essays/college-essays-private.txt)
 
 TODO(alex): Are there photos or video of the arm being worn or operated by a person, or of a finger
 or hand actuating? Every image in the brief is a bench shot, a render, or a component — nothing shows
@@ -1312,9 +1333,12 @@ content/source/robotics/championships-presentation/slide-e.jpg).
   "17253 TRITONICS" and appears as a wordmark on every Tritonics portfolio and poster page
   (content/source/portfolio/04-ball-drive.jpg#page-1;
   content/source/robotics/tritonics-portfolio/tritonics-portfolio.png#P5).
-- The team name derives from Triton, Neptune's moon; the mascot is a three-headed hydra holding a
-  trident (content/source/robotics/championships-presentation/slide-a.png;
-  content/source/robotics/posters/poster-deck/text.md#page-14).
+- The team is named after Triton, called "our team's namesake moon" (content/source/robotics/championships-presentation/slide-a.png)
+  and "our team namesake" for the robot's wave aesthetics (content/source/robotics/posters/poster-deck/text.md#page-14).
+  A multi-headed hydra with a trident is used as team artwork alongside the "Hydra" sustainability
+  model (content/source/robotics/championships-presentation/slide-c.png; content/source/robotics/posters/poster-d.png).
+  TODO(alex): no source states that Triton is Neptune's moon or calls the hydra the team mascot —
+  confirm before either goes on the site.
 - Tritonics is described as a 100% student-led, co-educational team with no team mentors
   (content/source/robotics/championships-presentation/slide-e.jpg;
   content/source/robotics/championships-presentation/slide-c.png;
@@ -1335,9 +1359,12 @@ content/source/robotics/championships-presentation/slide-e.jpg).
   content/source/essays/college-essays-private.txt#L4783).
 - Per his private drafts the robotics commitment averaged about 20 hours per week across 40 weeks
   a year, in grades 9–12 (content/source/essays/college-essays-private.txt#L1526-L1530).
-- Alex's name appears on exactly one page in the entire Tritonics document set (the roster). No
-  Tritonics engineering-portfolio page, poster or slide names any student against any subsystem
-  (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10).
+- Alex is named only on the team roster, which is reprinted on four files (content/source/robotics/championships-presentation/slide-e.jpg;
+  content/source/robotics/posters/poster-a.png; content/source/robotics/posters/poster-c.jpg;
+  content/source/robotics/posters/poster-deck/text.md#page-3). Apart from that roster, which does
+  assign students to subsystems, no Tritonics engineering-portfolio page names any student against
+  any subsystem (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10 through
+  nyc-champs-portfolio-6.png#P15).
 - TODO(alex): The portfolio pages give no order for the two teams. Root CLAUDE.md implies the
   electrical-lead work on #14712 came earlier and the #17253 captaincy later (CLAUDE.md), but no
   source states it. Confirm the order and the seasons.
@@ -1365,14 +1392,12 @@ content/source/robotics/championships-presentation/slide-e.jpg).
 - The Sustain data page counts **15 defined roles**, averaging 3 cross-functional tags each, with
   2–4 trained members on every critical subsystem
   (content/source/robotics/posters/poster-deck/text.md#page-17).
-- The six rookies named on the roster are Naresa B (Designer), Kerala B (Fabrication), Emma R
-  (Scout), Grayson H (CADer), Chris B (3D Modeling) and Rina W (Software), all Y1
+- The roster lists nine returning members (captain Y4, design lead Y3, outreach Y3, mech lead Y4,
+  fabrication Y2, build Y3, software lead Y2, code specialist Y2, CAD Y2) and six Y1 rookies
+  (designer, fabrication, scout, CADer, 3D modeling, software)
   (content/source/robotics/championships-presentation/slide-e.jpg;
-  content/source/robotics/posters/poster-deck/text.md#page-3).
-- The nine returning members are Alex T (Captain, Y4), Alexa F (Design Lead, Y3), Taran A
-  (Outreach, Y3), Martin G (Mech Lead, Y4), Tarik W (Fabrication, Y2), Leland C (Build, Y3), Noah G
-  (Software Lead, Y2), Milind A (Code Specialist, Y2) and Ayrton K (CAD, Y2)
-  (content/source/robotics/posters/poster-deck/text.md#page-3).
+  content/source/robotics/posters/poster-deck/text.md#page-3). Names are left out of these notes
+  pending clearance; read them from the source file if needed.
 - TODO(alex): Reconcile "80+ member club" (CLAUDE.md; essays) with the 14–15 person Tritonics team
   (content/source/robotics/championships-presentation/slide-e.jpg). Confirm what the 80+ counts —
   the school robotics program across all five teams? — so the site does not imply an 80-person
@@ -1405,7 +1430,7 @@ content/source/robotics/championships-presentation/slide-e.jpg).
 | No awards listed | Ball-Drive, FTC #17253 | (content/source/portfolio/04-ball-drive.jpg#page-1) |
 | No awards listed; competed at NYC-FIRST's signature event Robot-in-2-Days | Swerve Drive, FTC #14712 | (content/source/portfolio/02-swerve-drive.jpg#page-1) |
 
-**The DECODE season awards strip, printed on every Tritonics poster and slide header:**
+**The DECODE season awards strip, printed on all four Tritonics posters and on the team-structure slide:**
 
 - Inspire 1st Award at Qualifier 3; Inspire 2nd Award at Qualifier 1; Inspire 3rd Award at
   Qualifier 9; Sustain Award at Super Qualifier 2
@@ -1421,7 +1446,7 @@ content/source/robotics/championships-presentation/slide-e.jpg).
 - Alex's private drafts record the Worlds Think Award at 2nd place in grade 11 and describe it as
   the first time his school had ever placed at the World Championship
   (content/source/essays/college-essays-private.txt#L1785-L1787;
-  content/source/essays/college-essays-private.txt#L2521-L2522).
+  content/source/essays/college-essays-private.txt#L2669-L2674).
 - Those drafts also record NYC Champion twice and Inspire Award twice, spanning grades 10–12
   (content/source/essays/college-essays-private.txt#L1791-L1794), and a later season in which the
   team took the top Inspire Award at all three NYC qualifiers — 1st, 2nd and 3rd — and advanced to
@@ -1445,7 +1470,8 @@ content/source/robotics/championships-presentation/slide-e.jpg).
   "third in New York" refers to, and its exact name, before it goes on the site.
 - TODO(alex): The résumé supports "2x NYC Champion" and one Worlds appearance
   (content/source/resume/resume-current.png); root CLAUDE.md claims "2x Worlds qualifier"
-  (CLAUDE.md), and the portfolio pages document only one NYC first place and one Worlds appearance
+  (CLAUDE.md) and Alex's private drafts record "2x NYC Champion • 2x Worlds Qualifier"
+  (content/source/essays/college-essays-private.txt#L1515-L1518), and the portfolio pages document only one NYC first place and one Worlds appearance
   (content/source/portfolio/03-honu-robot.jpg#page-1). Confirm the second NYC championship and the
   second Worlds qualification, with team number and year.
 - TODO(alex): Honu's award list carries both "Inspire Award 1st" and "4 Time Inspire Award 2nd"
@@ -1479,8 +1505,10 @@ content/source/robotics/championships-presentation/slide-e.jpg).
   preferred source is silent. Confirm the canonical spelling for the site.
 - TODO(alex): Which FTC season — game name and year — does each robot belong to? No portfolio page
   carries a date, season name or year (content/source/portfolio/01-monti-robot.jpg#page-1 through
-  content/source/portfolio/05-scorpion-robot.jpg#page-1). The only season named anywhere is DECODE,
-  on the Tritonics headers (content/source/robotics/posters/poster-deck/text.md#page-1).
+  content/source/portfolio/05-scorpion-robot.jpg#page-1). The only seasons named anywhere are DECODE,
+  on the Tritonics headers (content/source/robotics/posters/poster-deck/text.md#page-1), and INTO THE
+  DEEP, which Alex's private drafts tie to the Cornell Tech Robot-in-2-Days build and the Swerve
+  Drive year (content/source/essays/college-essays-private.txt#L4386-L4388).
 - TODO(alex): Scorpion is credited two ways on one page — "an FTC Competition Robot that I
   designed" alongside "My Role: Fabrication Lead"
   (content/source/portfolio/05-scorpion-robot.jpg#page-1). Decide how to phrase the credit.
@@ -1489,7 +1517,10 @@ content/source/robotics/championships-presentation/slide-e.jpg).
   page describes it as a fully unique motion system developed by Tritonics that was rejected for
   the season chassis as oversized and not modular
   (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10).
-- TODO(alex): Robot-in-2-Days — which year, and what was the result beyond "successfully competed"?
+- Robot-in-2-Days was held at Cornell Tech; per Alex's private drafts the team was one of five
+  selected and built a functioning robot in 36 hours, in the INTO THE DEEP season
+  (content/source/essays/college-essays-private.txt#L4093-L4095; #L4386). TODO(alex): confirm the
+  year and whether the 36-hour / 1-of-5 framing may be published.
   (content/source/portfolio/02-swerve-drive.jpg#page-1)
 
 ### 5.5 Robot detail: Monti / Monty (FTC #17253, Alex as Captain)
@@ -1551,7 +1582,7 @@ content/source/robotics/championships-presentation/slide-e.jpg).
   (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10;
   content/source/robotics/posters/poster-deck/text.md#page-13).
 - Polycarbonate bumpers increase static and collision resistance
-  (content/source/robotics/posters/poster-deck/text.md#page-13).
+  (content/source/robotics/posters/poster-deck/text.md#page-12).
 - Ergonomic carry handles with TPU grips are placed over the center of mass, after the team
   struggled to lift the robot (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10).
 
@@ -1682,8 +1713,9 @@ this subsection is the team's work (content/source/robotics/tritonics-portfolio/
   sorted close, 45 artifacts with +3 sorted far
   (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10).
 - The poster deck's TeleOp figures: 15 cycles per match, 3 artifacts per cycle, 45 artifacts
-  maximum, 195 points potential, 75 ms inter-shot spacing
-  (content/source/robotics/posters/poster-deck/text.md#page-10).
+  maximum and 195 points potential (content/source/robotics/posters/poster-deck/text.md#page-10);
+  the Innovate page adds 75 ms inter-shot spacing, a transfer path shortened by 50% and an 80%
+  jam-rate reduction (content/source/robotics/posters/poster-deck/text.md#page-15).
 - TODO(alex): Autonomous numbers differ between pages — "57 points +1 ranking point, far zone 9
   artifacts" (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10) versus
   "57 points +2 ranking points, far zone 18 artifacts"
@@ -1723,7 +1755,7 @@ this subsection is the team's work (content/source/robotics/tritonics-portfolio/
   made" and says it was developed in conjunction with another team
   (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10).
 - Per Alex's private drafts, the swerve drive was built as a summer cross-team project after two
-  robotics teams merged (content/source/essays/college-essays-private.txt#L4386-L4388).
+  robotics teams merged (content/source/essays/college-essays-private.txt#L4083-L4093).
 - **Ball-Drive (FTC #17253, Alex as Ops Lead / Captain)** — four two-axis balls replace wheels,
   allowing more efficient and accurate field positioning; the team used a Master Sketch so parts
   stay linked and the model is parametric (content/source/portfolio/04-ball-drive.jpg#page-1).
@@ -1774,8 +1806,8 @@ All software facts below come from team-authored pages that name no student
   **Kalman filter** — rotation from Limelight + IMU, position from odometry + Limelight
   (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-5.png#P14;
   content/source/robotics/posters/poster-d.png).
-- The Limelight also enables sorting via an Obelisk scan of the game's AprilTag element
-  (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-5.png#P14).
+- The Limelight also enables sorting via an "Obelisk scan" (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-5.png#P14).
+  TODO(alex): confirm what the Obelisk is before the site explains it.
 - Reported reliability: 98% AprilTag lock, 100% odometry availability, path deviation reduced to
   ±0.2 cm, turret correction every 50 ms
   (content/source/robotics/posters/poster-deck/text.md#page-10).
@@ -1808,9 +1840,11 @@ All software facts below come from team-authored pages that name no student
 - The driver button map on a PS4-style controller: flush out artifacts; reset odometry; load
   artifacts into transfer; launch/unload artifacts sequence; movement on the left stick; rotation on
   the right stick (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-6.png#P15).
-- The team uses a non-linear joystick curve — printed as a cubic x³ = y on the engineering
-  portfolio — in place of the linear curve most teams use, for precise low-speed driving
-  (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-6.png#P15).
+- The team uses a non-linear joystick curve — printed as x⁵ = y against the linear x = y that the
+  poster labels "What most teams use" — for precise low-speed driving
+  (content/source/robotics/posters/poster-d.png; content/source/robotics/posters/poster-deck/text.md#page-2).
+  The same graphic on content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-6.png#P15 is
+  too low-resolution to read the exponent.
 - The robot is single-driver (content/source/robotics/posters/poster-deck/text.md#page-10).
 
 **PEREGRINE — custom autonomous pathing**
@@ -1851,10 +1885,6 @@ All software facts below come from team-authored pages that name no student
   (content/source/robotics/posters/poster-deck/text.md#page-10;
   content/source/robotics/posters/poster-deck/text.md#page-2). Confirm whether PEREGRINE is the
   team's engine or a library it replaced.
-- TODO(alex): The joystick curve is printed as cubic (x³) on the engineering portfolio
-  (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-6.png#P15) and as x⁵ on the
-  Control poster (content/source/robotics/posters/poster-d.png). Confirm the exponent.
-
 ### 5.9 Team structure, rebuild and sustainability
 
 - The team lost 50% of its members — its experienced leaders — to graduation, and rebuilt the
@@ -2060,7 +2090,10 @@ All software facts below come from team-authored pages that name no student
 - Sustained-engagement partners: 5 FLL teams weekly; Ghana FTC monthly; Blackfoot Reserve FLL teams
   monthly plus fundraising; Team Tic-Tac Tech #32706; Bosworth FTC #21377; Hour of Code (30+
   sessions); All Saints NJ monthly; a senior center, ongoing; FDAVII STEM Lab weekly
-  (content/source/robotics/championships-presentation/slide-d.png).
+  (content/source/robotics/championships-presentation/slide-d.png). The deck also names the
+  Philippines alongside Ghana under international teams engaged, which likely accounts for the
+  "2 sustained international partnerships" (content/source/robotics/posters/poster-deck/text.md#page-5;
+  #page-8).
 - Hudson Guild appears in the team documents only as a named nonprofit partner, with no program
   detail (content/source/robotics/posters/poster-deck/text.md#page-8;
   content/source/robotics/posters/poster-deck/text.md#page-5).
@@ -2116,7 +2149,10 @@ All software facts below come from team-authored pages that name no student
   content/source/robotics/posters/poster-deck/text.md#page-8). Confirm the correct name.
 - TODO(alex): E-waste city-wide expansion with the NYC Department of Sanitation — planned or
   launched? (content/source/portfolio/07-community-events.jpg#page-1)
-- TODO(alex): Hudson Guild — how many weeks, how many students, over what period?
+- Per Alex's private drafts the Hudson Guild programme ran once or twice a week after school for
+  lower-income students, across about three years of outreach
+  (content/source/essays/college-essays-private.txt#L4371-L4373). TODO(alex): confirm the number of
+  students and the exact period before publishing.
   (content/source/portfolio/07-community-events.jpg#page-1)
 - TODO(alex): New mentors are given as 28 on the Reach planning page and 24 on the recruitment page
   (content/source/robotics/championships-presentation/slide-d.png vs
@@ -2284,11 +2320,10 @@ Missing source material
   outreach content. Are they available?
 - TODO(alex): Slides P5 and P6 of the championship presentation are missing; the numbering jumps
   from P4 to P7 (content/source/robotics/championships-presentation/).
-- **TODO(alex): Two robotics reference URLs could not be reached from this build environment —
-  https://www.martin-gendell.com/ftc-robotics and https://arelypeckham.com/work/first-robotics.
-  Both fail at the outbound proxy (403 on CONNECT), so nothing from either page has been used here.
-  If either is a teammate's write-up of these same seasons, it may resolve the season dates, team
-  numbers and award attributions above; please either confirm the facts directly or paste the
+- **TODO(alex): Two web pages that may be teammates' write-ups of these seasons were unreachable
+  from this build environment (403 on CONNECT at the outbound proxy), so nothing from either has
+  been used. Alex has the URLs; if either covers these seasons it may resolve the season dates,
+  team numbers and award attributions above — please confirm the facts directly or paste the
   relevant text into `content/source/`.**
 
 Claims that need a source before publication
@@ -2308,10 +2343,10 @@ Writing and presentation
 
 - TODO(alex): Robot name spelling, Monti vs Monty — see §5.4.
 - TODO(alex): Source typos that must not be reproduced on the site: "Robot -in-2-Days" spacing and
-  "will all actions" for "with" (content/source/portfolio/02-swerve-drive.jpg#page-1;
-  content/source/portfolio/01-monti-robot.jpg#page-1); "software(designed" missing a space
-  (content/source/portfolio/01-monti-robot.jpg#page-1); "Accesories" and British "Organised"
-  (content/source/portfolio/07-community-events.jpg#page-1).
+  "will all actions" for "with" (content/source/portfolio/02-swerve-drive.jpg#page-1 for the spacing;
+  content/source/portfolio/03-honu-robot.jpg#page-1 for "will all actions"); "software(designed"
+  missing a space (content/source/portfolio/01-monti-robot.jpg#page-1); "Accesories" and British
+  "Organised" (content/source/portfolio/07-community-events.jpg#page-1).
 - TODO(alex): Decide whether the site names the team publicly as Tritonics #17253 and #14712, or
   refers to them generically (content/source/portfolio/04-ball-drive.jpg#page-1).
 
@@ -2348,7 +2383,7 @@ Supporting:
 24. `content/source/robotics/posters/poster-f.png` — Design poster (process, 5 iterations, launcher/transfer)
 25. `content/source/robotics/posters/poster-deck/text.md` — 30-page working deck; pages 1–3, 5, 7, 8, 10, 12–17, 28, 29 carry the facts cited here
 26. `content/source/robotics/posters/poster-deck/pages/page-13.jpg`, `page-15.jpg`, `page-16.jpg`, `page-25.jpg` — renders, ramp iterations, Gantt dates
-27. `CLAUDE.md` (root) — the only source for "80+ member club", "2x Worlds qualifier", "third in New York", "trained 50+ students", and CAD tutorials in seven languages
+27. `CLAUDE.md` (root) — the only source for "third in New York"; "80+ member club", "2x Worlds qualifier", "trained 50+ students" and the seven-language CAD tutorials are also corroborated in `content/source/essays/college-essays-private.txt` (L1515-L1524, L4101)
 
 Confirmation only, never quoted:
 
@@ -2378,6 +2413,9 @@ hollow ceramic pipes that assemble into structures which cool a space by evapora
 **Name to publish:** CeraPiper, one word, as the project's own README spells it. The résumé writes it
 "Cera Piper"; the résumé also misspells Cornell as "Conell" in the body text.
 (content/source/cerapiper/README.md#about-the-project; content/source/resume/resume-current.png)
+The README prose spells the tool "CeraPiper", but the repository, the live-site URLs, and the app's
+own title bar all read "CeraPipes" / "cerapipe" — so any link label on the site will differ from the
+project name; see the name-spelling TODO in 6.10.
 
 ---
 
@@ -2396,21 +2434,25 @@ hollow ceramic pipes that assemble into structures which cool a space by evapora
 
 **What the project documents say**
 
-- Neither `content/source/cerapiper/README.md` nor the paper draft contains the strings "Alex",
-  "Tully", "Cornell", "Technion", or "intern" — verified by whole-file grep across both files
+- "Tully", "Cornell" and "Technion" appear nowhere in either `content/source/cerapiper/README.md` or
+  the paper draft; "Alex" occurs only inside other researchers' names in the draft's bibliography
+  (Alexander Teibrich, Jason Alexander) and "intern" only inside words like "internal" and
+  "International" — verified by whole-file grep across both files
   (content/source/cerapiper/README.md; content/source/cerapiper/user-study-paper/text.md).
 - The README has no authors, contributors, or acknowledgments section; its only attribution is to the
   Matter of Tech Lab (content/source/cerapiper/README.md#contact).
 - The paper draft's byline is "Anonymous Author(s)", because the draft is under anonymous review, so
   no author list exists in the file to check against
   (content/source/cerapiper/user-study-paper/text.md#page-1).
-- The only human names anywhere in this source group are the authors of the earlier, published CAM
-  paper: Ofer Berman, Ethan Zhi Ming Seiz, and Thijs Roumen. Alex is not among them
-  (content/source/cerapiper/user-study-paper/text.md#page-16, reference [10]).
+- The only human names attached to the project itself are the authors of the earlier, published CAM
+  paper: Ofer Berman, Ethan Zhi Ming Seiz, and Thijs Roumen. Alex is not among them. (The draft's
+  bibliography names dozens of unrelated researchers, and the README names Benoit Blanchon as the
+  ArduinoJson author; the README's "ofer mode" setting is the only in-project echo of a named
+  person.) (content/source/cerapiper/user-study-paper/text.md#page-16, reference [10]).
 - The only institution named in the CeraPiper sources is the Matter of Tech Lab. The paper draft
   refers to the authors' university without naming it, and redacts the interview language as a
   placeholder for review (content/source/cerapiper/README.md#contact;
-  content/source/cerapiper/user-study-paper/text.md#page-10, #page-18).
+  content/source/cerapiper/user-study-paper/text.md#page-9, #page-10).
 - The README describes the whole system as one piece of work and attributes no component to any
   individual (content/source/cerapiper/README.md#implementation).
 
@@ -2531,7 +2573,8 @@ is the clearest structure for a technical section on the site.
   single axis (content/source/cerapiper/README.md#from-cam-to-cad).
 - The README's framing of why the CAD layer exists: that interface made the process "controllable,
   but not designable" — makers reasoned about extrusion parameters in isolation and could not compose
-  or evaluate the assembled object. This is public README wording, not paper wording, and is the
+  or evaluate the assembled object. This is README wording, not paper wording (whether the README's
+  repository is public is unconfirmed — see the repo-visibility TODO in 6.10), and is the
   cleanest one-line explanation available for the site
   (content/source/cerapiper/README.md#from-cam-to-cad).
 - The current tool recompiles that CAM workflow into a CAD one: each machine parameter is
@@ -2558,7 +2601,7 @@ into a two-column block on the site. All values below are README values.
 
 ---
 
-### 6.4 Numbers and constraints (all publishable, all from the README)
+### 6.4 Numbers and constraints (all from the README; the two evaluation figures are not yet publishable)
 
 | Figure | What it is | Source |
 |---|---|---|
@@ -2571,17 +2614,15 @@ into a two-column block on the site. All values below are README values.
 | 9 | Toggleable blueprint layers | (content/source/cerapiper/README.md#the-paper-blueprint) |
 | 3 | Software layers (Onshape/FeatureScript, Python/Flask, Arduino C++) | (content/source/cerapiper/README.md#implementation) |
 | 3 | Kinds of design-time constraint (hard, corrective, advisory) | (content/source/cerapiper/README.md#implementation) |
-| ~8–10% | Elevated relative humidity achieved by prototypes | (content/source/cerapiper/README.md#about-the-project; external citation https://doi.org/10.1145/3745778.3766644) |
-| 1.85 L / 60 hours | Water evaporated by prototypes | (content/source/cerapiper/README.md#about-the-project; external citation https://doi.org/10.1145/3745778.3766644) |
+| ~8–10% | Elevated relative humidity achieved by prototypes | (content/source/cerapiper/README.md#about-the-project — README does not name the source of this figure; DOI attribution unconfirmed, see TODO in 6.10) |
+| 1.85 L / 60 hours | Water evaporated by prototypes | (content/source/cerapiper/README.md#about-the-project — README does not name the source of this figure; DOI attribution unconfirmed, see TODO in 6.10) |
 | 1 API request | Typical Onshape requests per import after Version 2.1, down from one per part | (content/source/cerapiper/README.md#roadmap) |
 
 - The README attributes the humidity and evaporation figures to technical evaluations of the
   underlying process, which also demonstrated repeatable geometric fidelity and measurable
-  temperature reductions. Those evaluations belong to the earlier CAM work published at ACM SCF 2025,
-  so the citation for both figures is that paper's DOI
-  (content/source/cerapiper/README.md#about-the-project;
-  https://doi.org/10.1145/3745778.3766644). See TODO(alex) in 6.10 — the exact numbers have not been
-  checked against the published paper itself.
+  temperature reductions. The README does not say where those evaluations were reported, so the site
+  cannot footnote them to the SCF 2025 paper until Alex confirms it (see TODO in 6.10)
+  (content/source/cerapiper/README.md#about-the-project).
 - The README gives no temperature-reduction number, only the word "measurable", so the site must not
   state one (content/source/cerapiper/README.md#about-the-project).
 
@@ -2604,7 +2645,8 @@ into a two-column block on the site. All values below are README values.
 - Frontend: a p5.js (WEBGL + 2D) client — `geometry_builder.js`, `tabs.js` (per-bed tabs and the
   printable paper blueprint), `components.js`, `paperControls.js`, `utils.js`, `constants.js`,
   `state.js`, `primitiveSchema.js`, `stackManager.js`, `stackIntegration.js`, `ui.js`, `buttons.js`;
-  templates use a bento layout (`index.html`, `header.html`, `settings.html`)
+  templates: `index.html` (the main editor, a bento layout of 3D + Components and 2D + Paper Sheet
+  Layers), `header.html` (shared toolbar), `settings.html` (kiln/conveyor configuration)
   (content/source/cerapiper/README.md#file-structure).
 
 ---
@@ -2752,8 +2794,9 @@ the `figures/` directory does not) — ask Alex to supply these first:
 | `content/source/cerapiper/figures/cad_interface.png` | The interface: bed tab bar, straight/curved 3D viewport, Components panel, interactive bed blueprint | The single best "what the tool looks like" image |
 | `content/source/cerapiper/figures/primitive_shots.png` | Example primitives: tools, 3D preview, 2D cross-section, curve and connector primitives | Small supporting grid, or a detail strip |
 
-(All five: content/source/cerapiper/README.md — markdown reference-link definitions at end of file,
-plus the figure captions in #about-the-project, #implementation, and #usage. Absence from disk
+(All five: content/source/cerapiper/README.md — `teaser_v2.png` from the inline <img> in the project
+header, the other four from the markdown reference-link definitions at end of file, plus the figure
+captions in #about-the-project, #implementation, and #usage. Absence from disk
 verified by `find content/source/cerapiper -type f`.)
 
 **Do not publish — reference only.** These are pages of the draft under anonymous review. They are
@@ -2813,7 +2856,7 @@ TODO(alex): How should the affiliation read — "Matter of Tech Lab", "Cornell T
 Technion", or all three? The résumé says Cornell Tech x Technion; the CeraPiper sources name only the
 Matter of Tech Lab, and the paper draft refers to the authors' university without naming it.
 (content/source/resume/resume-current.png; content/source/cerapiper/README.md#contact;
-content/source/cerapiper/user-study-paper/text.md#page-10)
+content/source/cerapiper/user-study-paper/text.md#page-9)
 
 TODO(alex): Study size conflict. The README reports a study with eight designers and makers (all
 eight on design intent, seven of eight on the CAD-versus-machine question); the draft under review
@@ -2854,7 +2897,9 @@ available in this source group. Is there a photo, or should the site drop the wo
 
 TODO(alex): Name spelling — the site will use "CeraPiper" (the project README's spelling) rather than
 the résumé's "Cera Piper". Confirm. Note also that the résumé body misspells Cornell as "Conell" and
-that typo must not be carried into any site copy.
+that typo must not be carried into any site copy. Note further that the repository
+(github.com/matteroftech/CeraPipes), the live-site URLs, and the app's own title bar all read
+"CeraPipes" / "cerapipe" rather than "CeraPiper" — decide which spelling any on-site link label uses.
 (content/source/resume/resume-current.png; content/source/cerapiper/README.md)
 
 TODO(alex): The résumé calls the work "CAD and slicing software", while the README frames it as a CAD
@@ -2894,8 +2939,8 @@ has no source anywhere in the repo except root CLAUDE.md itself; see §7.4.
 ### 7.1 Electric Road (individual Mastery project)
 
 **Role:** Individual project. Alex's own portfolio page labels it a Mastery Project and prints
-"Individual Project" where the other six pages print a team role
-(content/source/portfolio/06-electric-road.jpg#page-1). The page uses first person for the build: it
+"Individual Project" where the five robot pages print a team role under "My Role:" (the outreach
+page, 07, prints no role at all) (content/source/portfolio/06-electric-road.jpg#page-1). The page uses first person for the build: it
 states that he built the scaled testing model (content/source/portfolio/06-electric-road.jpg#page-1).
 The résumé lists it under "Tully Tech – Select Inventions", where Alex is described as founder and
 innovator of the startup (content/source/resume/resume-current.png).
@@ -2938,8 +2983,9 @@ embedded with wireless charging coils — demonstrated with a scaled testing mod
   content/source/portfolio/07-community-events.jpg).
 - No measured number of any kind appears on the page: no power figure, no speed, no efficiency, no
   transfer distance, no coil count in text (content/source/portfolio/06-electric-road.jpg#page-1).
-- No award, no "Key Innovation(s)" label box, and no "Of Note" line appears on this page, unlike
-  pages 1, 3, and 5 (content/source/portfolio/06-electric-road.jpg#page-1).
+- No award list and no "Key Innovation(s)" label box appears on this page, unlike pages 1, 3 and 5,
+  and no "Of Note" line, unlike page 2 (content/source/portfolio/06-electric-road.jpg#page-1;
+  content/source/portfolio/02-swerve-drive.jpg#page-1).
 
 #### Statistics
 
@@ -3083,9 +3129,10 @@ the activity in grades 9 through 12 at roughly two hours a week over thirty-two 
 
 ### 7.3 Outreach
 
-**Role:** Mixed, and it matters. On his own portfolio page Alex uses first person for the Hour of
-Code curriculum and the e-waste drive, and describes running the Hudson Guild programs
-(content/source/portfolio/07-community-events.jpg#page-1). On the Tritonics team documents the same
+**Role:** Mixed, and it matters. His own portfolio page describes all three programmes in
+subjectless first-person fragments ("Ran programs weekly…", "Organised and Ran over 20 workshops…",
+"Organised in school e-waste drive…"); the only explicit "I" on the page is the e-waste city-wide
+expansion line (content/source/portfolio/07-community-events.jpg#page-1). On the Tritonics team documents the same
 outreach programs are presented as team work, and one of them — the micro-funding website — is
 credited by name to a teammate (content/source/robotics/championships-presentation/slide-e.jpg). The
 team's roster card for Alex describes his role as managing team strategy, the electrical system, and
@@ -3095,8 +3142,12 @@ below.
 
 **Dates:** No outreach source in the repo carries a calendar year
 (content/source/portfolio/07-community-events.jpg#page-1;
-content/source/robotics/championships-presentation/slide-d.png). Alex's private drafts put the
-outreach work in grades 9 through 12 (content/source/essays/college-essays-private.txt#L1564-L1577).
+content/source/robotics/championships-presentation/slide-d.png). Alex's private drafts date only
+individual entries: the e-waste initiative to grades 9–11
+(content/source/essays/college-essays-private.txt#L1599) and describe "a lot of outreach over the
+past 3 years" starting with Hudson Guild
+(content/source/essays/college-essays-private.txt#L4370-L4371). TODO(alex): grade span for the other
+outreach programmes.
 
 ---
 
@@ -3142,8 +3193,8 @@ are minors — see the clearance TODO in §7.3.7.
   first-person source, since the résumé does not mention Hour of Code at all
   (content/source/resume/resume-current.png).
 - **30+ sessions.** Source: the Tritonics Reach planning slide and the Reach poster, describing the
-  team's programme (content/source/robotics/championships-presentation/slide-d.png#P7). No external
-  citation in the source.
+  team's programme (content/source/robotics/championships-presentation/slide-d.png#P7;
+  content/source/robotics/posters/poster-b.png). No external citation in the source.
 - **40+ Hour of Code sessions led.** Source: Alex's private drafts, activity list
   (content/source/essays/college-essays-private.txt#L1573). Confirmation only; not for publication.
 - **13 one-hour sessions.** Source: an earlier note in the same private file
@@ -3178,10 +3229,11 @@ photo appears on the team's Reach slide, showing children at laptops with an ins
   content/source/robotics/posters/poster-deck/text.md; the remaining robotics files are images and
   are listed in §7.7).
 - Alex's private drafts add, as neutral facts, that the drive began locally and involved advertising,
-  sorting, cleaning, donating, and recycling, with a cross-school competition in progress
-  (content/source/essays/college-essays-private.txt#L64-L67), and that the second-year expansion
-  covered 200+ organisations in partnership with NYC Sanitation, local officials, and media
-  (content/source/essays/college-essays-private.txt#L1586-L1598).
+  and handled the collected material through to donation or recycling, and had a cross-school
+  competition planned (content/source/essays/college-essays-private.txt#L64-L65), and that the
+  second-year expansion covered 200+ organisations in partnership with NYC Sanitation, local
+  officials, and media, and that he is listed there as "Co-Chair" who "Co-led" that year-two
+  expansion (content/source/essays/college-essays-private.txt#L1586-L1596).
 
 **Statistics.**
 
@@ -3220,11 +3272,15 @@ photo appears on the team's Reach slide, showing children at laptops with an ins
   content/source/robotics/posters/poster-deck/text.md).
 - Alex's private drafts corroborate the count of seven languages, and tie the tutorials' origin to
   collaboration with under-resourced public school teams at a Cornell Tech Robot-in-2-Days event
-  (content/source/essays/college-essays-private.txt#L4098-L4101;
+  (content/source/essays/college-essays-private.txt#L4099-L4102;
   content/source/essays/college-essays-private.txt#L277-L279).
+- Credit: both corroborating passages use "we" — the tutorials are described as developed and shared
+  by the team after a collaboration, not by Alex alone
+  (content/source/essays/college-essays-private.txt#L4101-L4102; #L276-L278). No source names Alex as
+  their author.
 
 **Statistics.** **Seven languages.** Sources: root CLAUDE.md (CLAUDE.md), corroborated in Alex's
-private drafts (content/source/essays/college-essays-private.txt#L4101;
+private drafts (content/source/essays/college-essays-private.txt#L4102;
 content/source/essays/college-essays-private.txt#L277). No external citation exists, and there is no
 public artefact in the repo to link to.
 
@@ -3265,10 +3321,9 @@ he took part in — see the TODO in §7.3.7.
 
 - Root CLAUDE.md states that the platform helped robotics teams in Ukraine, Ghana, and the Blackfeet
   Reservation (CLAUDE.md — Smaller pieces).
-- Alex's private drafts corroborate all three, describing a micro-funding platform that connects
-  robotics teams with their local communities and naming teams in Ukraine, Ghana, and Montana's
-  Blackfeet Reservation as the ones helped to raise funds
-  (content/source/essays/college-essays-private.txt#L277-L279).
+- Alex's private drafts corroborate all three recipients, naming teams in Ukraine, Ghana, and
+  Montana's Blackfeet Reservation as having been helped to raise funds through the platform
+  (content/source/essays/college-essays-private.txt#L277-L280).
 - The team documents corroborate Ghana and the Blackfoot community but not Ukraine: the Reach
   planning slide lists "Ghana FTC (monthly)" and "Blackfoot Reserve FLL Teams (monthly +
   fundraising)" under sustained engagement
@@ -3281,12 +3336,18 @@ he took part in — see the TODO in §7.3.7.
   (content/source/robotics/posters/poster-deck/text.md#page-8), while page 29 of the same deck spells
   it "Blackfoot" (content/source/robotics/posters/poster-deck/text.md#page-29) and root CLAUDE.md
   spells it "Blackfeet" (CLAUDE.md). See the TODO in §7.3.7.
+- The team's Reach slide records that this season the team helped introduce and launch FIRST
+  programs in a Montana reservation community, Accra (Ghana), and local underserved NJ communities,
+  where FIRST programs did not previously exist, supporting team formation and fundraising
+  (content/source/robotics/championships-presentation/slide-b.png#P8) — so the reservation work is
+  at least partly programme-building, not only micro-funding.
 
 **Statistics.**
 
 - **$1,000 raised for a Ukraine robotics team.** Source: the older résumé's Community Engagement
   section (content/source/resume/resume-older.png). No external citation in the source. This is the
-  résumé figure and therefore the one to publish. See §7.3.6.
+  résumé figure, but it is on the superseded résumé only — the current résumé drops it, so it must
+  not be published before Alex confirms. See §7.3.6.
 - **$2k raised to send a Ukrainian team to the World Championship.** Source: Alex's private drafts
   (content/source/essays/college-essays-private.txt#L68-L69). Confirmation only; not for publication,
   and it conflicts with the résumé's $1,000 — see the TODO in §7.3.7.
@@ -3309,7 +3370,8 @@ he took part in — see the TODO in §7.3.7.
 #### 7.3.6 The older résumé's community numbers
 
 These four lines appear only in the "COMMUNITY ENGAGEMENT (Quantifiable Impact)" section of the older
-résumé, which the current résumé drops in order to make room for the CeraPiper entry
+résumé. The current résumé drops that section and adds the CeraPiper entry; no source says the two
+changes are related
 (content/source/resume/resume-older.png; content/source/resume/resume-current.png). Everything else
 on the two pages is otherwise identical (content/source/resume/resume-older.png;
 content/source/resume/resume-current.png). None of the four carries an external citation in the
@@ -3469,10 +3531,10 @@ Ranked by usefulness. Every one of these is a crop out of a slide or a résumé,
 none is hero-scale without a higher-resolution original from Alex.
 
 1. **Electric Road concept render** — roadside solar pillars, coil disks, purple car on a marked
-   road. Approximately 320×195 px at x 595–915, y 5–200
+   road. Approximately 200×180 px at x 608–809, y 21–202
    (content/source/portfolio/06-electric-road.jpg#page-1). Best card image for Electric Road.
 2. **Electric Road scaled test model photo** — copper coils, receiver board, breadboard on a blue
-   mat. Approximately 325×150 px at x 605–930, y 205–355
+   mat. Approximately 215×125 px at x 636–853, y 219–341
    (content/source/portfolio/06-electric-road.jpg#page-1). The proof-of-build image, and the only
    physical-prototype photo in the portfolio set.
 3. **Electric Road in-vehicle coil diagram** — white line art, car from above with a concentric
@@ -3663,7 +3725,7 @@ the corrected spelling is what should reach the site.
 - The launcher's variables (compression, angle, wheel size) are defined in a single master sketch, and the transfer and intake are modelled in the same Onshape part studio, entirely parametric (content/source/robotics/posters/poster-f.png).
 - CeraPiper's design layer is built as custom parametric features inside Onshape using FeatureScript (content/source/cerapiper/README.md).
 - Alex learned a new CAD package from his robotics team's lead coder in order to get past a software ceiling on the prosthetic arm's resizing automation (content/source/essays/college-essays-private.txt#L3273-L3278).
-- TODO(alex): The résumé lists SolidWorks first, but SolidWorks appears in no other source file; Onshape, Fusion, and nTop are the tools the project sources actually document. Confirm the CAD list and its order for the site.
+- TODO(alex): The résumé lists SolidWorks first; outside the résumé it appears only on the AntiCam founder slide (content/source/anticam/pitch-deck-build.js#L557), while Onshape, Fusion, and nTop are the tools the project sources actually document. Confirm the CAD list and its order for the site.
 
 ### 8.2 Simulation and analysis
 
@@ -3681,14 +3743,14 @@ the corrected spelling is what should reach the site.
 - The CeraPiper CAD tool Alex worked on as a research intern is built from an Onshape/FeatureScript design layer, Python/Flask translation middleware, and Arduino C++ firmware (content/source/cerapiper/README.md; content/source/resume/resume-current.png).
 - CeraPiper's middleware queries the Onshape feature tree through the REST API, reconstructs the assembly as a directed graph, traverses it depth-first, and serializes a JSON "Function Stack" (content/source/cerapiper/README.md).
 - CeraPiper's frontend is a p5.js client using WEBGL and 2D rendering (content/source/cerapiper/README.md).
-- CeraPiper's documented dependencies: Arduino Uno, Arduino IDE 2.3.3, ArduinoJson 7.4.2, Python 3, Flask 3.1.1, Requests, NetworkX, python-dotenv, Waitress (content/source/cerapiper/README.md).
+- CeraPiper's documented dependencies: Arduino Uno, Arduino IDE 2.3.3, ArduinoJson 7.4.2, Python 3, Flask 3.1.1, PySerial 3.5, Requests, NetworkX, python-dotenv, Waitress (content/source/cerapiper/README.md).
 - TODO(alex): CeraPiper is a team research project; confirm which layers of that stack Alex personally wrote before the site attributes any of them to him (content/source/cerapiper/README.md).
 
 ### 8.4 Web
 
 - Coded 8 commercial sites (content/source/resume/resume-current.png).
 - Built the AntiCam website and launch strategy (content/source/resume/resume-current.png).
-- Built and launched a public countdown website at chickenparmlunch.splashthat.com for his school's cafeteria menu; the school's food services team now coordinates with him before publishing each month's menu (content/source/essays/college-essays-private.txt#L202-L215).
+- Built and launched a public countdown website at chickenparmlunch.splashthat.com for his school's cafeteria menu; school food services has since involved him in menu announcements (content/source/essays/college-essays-private.txt#L202-L215).
 - The robotics team's FTC MicroFunding site (microfunding.tritonics.org) is credited on the team roster to teammate Milind A, not to Alex (content/source/robotics/championships-presentation/slide-e.jpg; content/source/robotics/championships-presentation/slide-b.png).
 - TODO(alex): Which 8 commercial sites, for whom, and are any of them linkable or screenshot-able for the site? No source names them (content/source/resume/resume-current.png).
 - TODO(alex): Is chickenparmlunch.splashthat.com still live, and should it appear as a shipped project? (content/source/essays/college-essays-private.txt#L202-L215)
@@ -3698,7 +3760,7 @@ the corrected spelling is what should reach the site.
 - Electronics listed on the résumé: Raspberry Pi, Arduino sensors (content/source/resume/resume-current.png — printed as "ELECTONICS"; the typo must not be copied).
 - Led electrical design, documentation, and mentoring on his FTC team (content/source/resume/resume-current.png).
 - Manages team strategy, the electrical system, and operations as DECODE-season captain (content/source/robotics/championships-presentation/slide-e.jpg; content/source/robotics/posters/poster-a.png).
-- Designed a charging circuit for AntiCam after an early prototype drew more current than its battery could supply (content/source/essays/college-essays-private.txt#L4573-L4576).
+- Taught himself soldering and basic electronics, then sought help designing a charging circuit for AntiCam after an early prototype drew more power than its battery could supply (content/source/essays/college-essays-private.txt#L4575-L4578).
 - Built an equivalent circuit out of diodes when a specialized transistor was unavailable (content/source/essays/college-essays-private.txt#L4576-L4581).
 - AntiCam uses optical components and circuitry that emit infrared light to block cameras (content/source/resume/resume-current.png).
 - The AntiCam cap build specifies a light-detection system for flashes to trigger the infrared LEDs, plus a safe recharging system and an accompanying circuit diagram for manufacture (content/source/anticam/mastery-learning-plan/text.md#page-1).
@@ -3721,7 +3783,7 @@ the corrected spelling is what should reach the site.
 - IDEA program training covers 3D CAD/printing, design thinking, rapid prototyping, fabrication, and shop safety (content/source/resume/resume-current.png).
 - The IDEA Club's activities also included laser cutting, CNC, and makerspace safety training (content/source/essays/college-essays-private.txt#L1538-L1552).
 - Mentored by Cornell Tech staff on machining and part fabrication, and ran a 3D printing workshop there (content/source/essays/college-essays-private.txt#L4402-L4408).
-- The teacher who ran the school iLab taught Alex CAD, design software, and the shop tools (content/source/essays/college-essays-private.txt#L6490-L6492).
+- The teacher who ran the school iLab taught Alex to catch mistakes before they happened; his Mastery instructors taught him new design software and how to use the machines (content/source/essays/college-essays-private.txt#L6490-L6492; content/source/essays/college-essays-private.txt#L6670-L6671; content/source/essays/college-essays-private.txt#L6732).
 - A laser-cut wooden cipher wheel was produced for the team's outreach modules (content/source/robotics/championships-presentation/slide-d.png).
 - CeraPiper's fabrication backend drives a custom ceramic printer: an Arduino maps primitives to motor steps and actuator outputs, regulates the clay pug mill feed rate, and drives a shape-shifting die (content/source/cerapiper/README.md).
 
@@ -3729,9 +3791,9 @@ the corrected spelling is what should reach the site.
 
 - Design work products listed on the résumé: robotics components, prosthetics, wearable technology (content/source/resume/resume-current.png).
 - Design process used on the robot: Goals → Brainstorm → CAD → Test → Prototype → Optimize → Repeat; rookies follow Design → CAD → Build → Test → Iterate (content/source/robotics/posters/poster-f.png; content/source/robotics/posters/poster-a.png).
-- Biomimicry is a named design method in Alex's own projects, including scorpion-inspired tail mechanics and coral-patterned Voronoi chassis geometry used for strength (content/source/essays/college-essays-private.txt#L4983-L4984).
+- Biomimicry is a named design method in Alex's own projects: a tail mechanism modelled on a scorpion, and a chassis whose Voronoi cut-outs follow coral geometry for strength (content/source/essays/college-essays-private.txt#L4983-L4984).
 - Modularity and repairability are treated as design goals in their own right: the prosthetic arm snaps together from interchangeable modules, and Monti is designed to be repaired and disassembled within seconds without screws (content/source/essays/college-essays-private.txt#L5661-L5665; content/source/portfolio/01-monti-robot.jpg#page-1).
-- Cost ceilings are used as design constraints: the prosthetic arm targets under $100 and AntiCam's three formats are all planned under $100 (content/source/resume/resume-current.png; content/source/anticam/pitch-deck-outline.md).
+- Cost ceilings are used as design constraints: the prosthetic arm targets under $100, and the two wearable AntiCam formats are priced under $100 (pin $30–45, cap $40–65) with the room unit at $100+ (content/source/resume/resume-current.png; content/source/anticam/pitch-deck-outline.md).
 - Prototype counts are how iteration is tracked: 90+ prosthetic arm prototypes; 30+ AntiCam prototypes across four major iterations; 5 full robot design iterations (content/source/resume/resume-current.png; content/source/robotics/posters/poster-f.png).
 
 ### 8.9 Business, product, and communication skills
@@ -3777,6 +3839,7 @@ say who wrote each one, so the site must not claim them as Alex's own work witho
 | 90+ prosthetic arm prototypes | Iteration practice | (content/source/resume/resume-current.png) | none given in source |
 | 30+ AntiCam prototypes and four major iterations | Iteration practice | (content/source/resume/resume-current.png) | none given in source |
 | Prosthetic arm buildable for under $100 | Cost-as-constraint | (content/source/resume/resume-current.png) | none given in source |
+| TODO(alex): the design brief's product requirement is "costs <$200 to produce" (content/source/prosthetic-arm/design-brief/text.md#page-5) while the résumé says <$100 — confirm which figure to publish | Cost-as-constraint | — | — |
 | 5 full robot design iterations | Design process | (content/source/robotics/posters/poster-f.png) | none given in source |
 | 200+ launcher trials analyzed | Analysis practice | (content/source/robotics/posters/poster-f.png) | none given in source |
 | Launcher compression optimized to 8 mm | Analysis practice | (content/source/robotics/posters/poster-f.png) | none given in source |
@@ -3809,18 +3872,18 @@ undated items grouped at the end.
 | Hackathon win (name and prize not stated) | 2023 | NYU Tandon School of Engineering (NYC), Cyber Security for Computer Science program; Alex was a program student | content/source/resume/resume-current.png |
 | Avenues Athletics Aviator Award | 9th grade | School-level award for varsity tennis leadership; appears only in the private drafts | content/source/essays/college-essays-private.txt#L1798-L1800 |
 | Entrepreneurship Award | 10th grade | School-level, multi-campus innovation and leadership honor; appears only in the private drafts | content/source/essays/college-essays-private.txt#L1795-L1797 |
-| Think Award, 2nd place, FIRST Tech Challenge World Championship | 11th grade; undated on the résumé and the portfolio page, private drafts place it in grade 11 and call it the school's first Worlds placement | Honu robot, FTC #14712, Alex as Electrical Lead; the portfolio page says 1st in NYC advanced the team to Worlds; the résumé sidebar states it only as "Worlds (Think Award, 2nd)" without naming a team | content/source/portfolio/03-honu-robot.jpg#page-1; content/source/resume/resume-current.png; content/source/essays/college-essays-private.txt#L1785-L1787, #L2521-L2522 |
-| College Board National Hispanic Recognition Program Scholar | 11th grade | National-level recognition; appears only in the private college essay drafts | content/source/essays/college-essays-private.txt#L1788-L1790 |
+| Think Award, 2nd place, FIRST Tech Challenge World Championship | 11th grade; undated on the résumé and the portfolio page, private drafts place it in grade 11 and call it the school's first Worlds placement | Honu robot, FTC #14712, Alex as Electrical Lead; the portfolio page says 1st in NYC advanced the team to Worlds; the résumé sidebar states it only as "Worlds (Think Award, 2nd)" without naming a team | content/source/portfolio/03-honu-robot.jpg#page-1; content/source/resume/resume-current.png; content/source/essays/college-essays-private.txt#L1785-L1787, #L2669-L2674 |
+| College Board National Hispanic Recognition Program Scholar | 11th grade | National-level recognition; appears only in the private college essay drafts. TODO(alex): do not publish without Alex's explicit go-ahead — it discloses ethnicity and its only source is the private drafts | content/source/essays/college-essays-private.txt#L1788-L1790 |
 | 1st place, New York Region competition / 2025 NY State Championship | Junior-year season; one draft states 2025 | The regional win that advanced Alex's FTC team to the World Championship; the same result is named three different ways across drafts (New York Region, NY State Championship, 1st place in NY State) | content/source/essays/college-essays-private.txt#L2322-L2323 |
 | 2x NYC Champion (Inspire Award) | Undated on the résumé; private drafts place NYC Champion twice and Inspire twice across grades 10-12 | FIRST Tech Challenge team (team number not stated on the résumé); Alex was Captain & Ops Lead and led electrical design, documentation and mentoring | content/source/resume/resume-current.png; content/source/essays/college-essays-private.txt#L1791-L1794 |
-| Top Inspire Awards at all three NYC qualifiers (1st, 2nd and 3rd), advancing to the Super Qualifiers | Senior-year season, after college applications were submitted; a later season than the application drafts, undated | FTC team Alex captained; appears only in the private drafts and is marked low confidence there (confirmation-only source, never quotable); may describe the same run as the DECODE awards strip (Inspire 1st Q3 / 2nd Q1 / 3rd Q9), but this is not certain | content/source/essays/college-essays-private.txt#L4028-L4041 |
+| Top Inspire Awards at all three NYC qualifiers (1st, 2nd and 3rd), advancing to the Super Qualifiers | Senior-year season, after college applications were submitted; a later season than the application drafts, undated | FTC team Alex co-led (the draft's word is "co led"); appears only in the private drafts and is marked low confidence there (confirmation-only source, never quotable); may describe the same run as the DECODE awards strip (Inspire 1st Q3 / 2nd Q1 / 3rd Q9), but this is not certain | content/source/essays/college-essays-private.txt#L4028-L4041 |
 | USC Iovine and Young Academy Faculty Scholarship | Admission cycle preceding fall 2026 | USC Iovine and Young Academy; appears only in the private drafts; referenced in section 1.4 as corroboration for the USC facts, which otherwise come only from root CLAUDE.md | content/source/essays/college-essays-private.txt#L136-L141 |
-| Inspire Award, 1st (Qualifier 3) | FTC DECODE season; no calendar year printed on any slide or poster | Tritonics, FTC #17253, Alex as Captain (Y4), Operations Team; printed on every poster and slide header | content/source/robotics/championships-presentation/slide-e.jpg; content/source/robotics/posters/poster-a.png; content/source/robotics/posters/poster-deck/text.md#L121, #page-1 |
-| Inspire Award, 2nd (Qualifier 1) | FTC DECODE season; no calendar year printed | Tritonics, FTC #17253, Alex as Captain (Y4); the first intake ramp version competed at this event | content/source/robotics/championships-presentation/slide-e.jpg; content/source/robotics/posters/poster-a.png; content/source/robotics/posters/poster-deck/text.md#L121, #page-1 |
+| Inspire Award, 1st (Qualifier 3) | FTC DECODE season; no calendar year printed on any slide or poster | Tritonics, FTC #17253, Alex as Captain (Y4), Operations Team; printed in the header of the six poster pages (poster-deck pages 1-6) and of slide-e; the other championship slides do not carry it | content/source/robotics/championships-presentation/slide-e.jpg; content/source/robotics/posters/poster-a.png; content/source/robotics/posters/poster-deck/text.md#L121, #page-1 |
+| Inspire Award, 2nd (Qualifier 1) | FTC DECODE season; no calendar year printed | Tritonics, FTC #17253, Alex as Captain (Y4); the intake the deck labels "V3 - Qualifier 1" (3-wide, flat ramp, offset transfer port) competed at this event; TODO(alex): the deck's intake version labels run V3, V2, V3, V4 across Qualifiers 1, 3, 9 and SuperQual 2 — confirm the real iteration order | content/source/robotics/championships-presentation/slide-e.jpg; content/source/robotics/posters/poster-a.png; content/source/robotics/posters/poster-deck/text.md#L121, #page-1 |
 | Inspire Award, 3rd (Qualifier 9) | FTC DECODE season; no calendar year printed | Tritonics, FTC #17253, Alex as Captain (Y4); intake V3 (centered port) competed at this event | content/source/robotics/championships-presentation/slide-e.jpg; content/source/robotics/posters/poster-a.png; content/source/robotics/posters/poster-deck/text.md#L121, #page-1 |
-| Sustain Award (Super Qualifier 2) | FTC DECODE season; no calendar year printed | Tritonics, FTC #17253, Alex as Captain (Y4); intake V4 with colour-sensor array and sorting paddles competed at this event, and the FTC Parts Drive was delivered there | content/source/robotics/championships-presentation/slide-e.jpg; content/source/robotics/posters/poster-a.png; content/source/robotics/posters/poster-deck/text.md#L121, #page-1 |
+| Sustain Award (Super Qualifier 2) | FTC DECODE season; no calendar year printed | Tritonics, FTC #17253, Alex as Captain (Y4); intake V4 with colour-sensor array and sorting paddles competed at this event | content/source/robotics/championships-presentation/slide-e.jpg; content/source/robotics/posters/poster-a.png; content/source/robotics/posters/poster-deck/text.md#L121, #page-1; content/source/robotics/posters/poster-deck/pages/page-16.jpg |
 | NYC Championship qualification (result, not an award) | FTC DECODE season; undated | Team #32706 Tic-Tac Tech, the new FTC team Tritonics recruited, launched and mentored | content/source/robotics/championships-presentation/slide-d.png; content/source/robotics/posters/poster-deck/text.md#page-8 |
-| 1st Place in NYC (FTC) | Undated | Honu robot, FTC #14712, Alex as Electrical Lead; the win advanced the team to the World Championship | content/source/portfolio/03-honu-robot.jpg#page-1 |
+| 1st Place in NYC (FTC) | Junior-year season; drafts name it the 2025 NY State Championship / New York Region win | Honu robot, FTC #14712, Alex as Electrical Lead; the win advanced the team to the World Championship; same result as the "1st place, New York Region competition" row above — TODO(alex): confirm and merge | content/source/portfolio/03-honu-robot.jpg#page-1; content/source/essays/college-essays-private.txt#L2322-L2323, #L2669-L2673 |
 | Inspire Award, 1st | Undated | Honu robot, FTC #14712, Alex as Electrical Lead | content/source/portfolio/03-honu-robot.jpg#page-1 |
 | Inspire Award, 2nd (four times) | Undated | Honu robot, FTC #14712, Alex as Electrical Lead; unclear whether all four/five Inspire 2nd results belong to the Honu season or are cumulative team history | content/source/portfolio/03-honu-robot.jpg#page-1 |
 | Connect Award | Undated | Honu robot, FTC #14712, Alex as Electrical Lead | content/source/portfolio/03-honu-robot.jpg#page-1 |
@@ -3833,6 +3896,7 @@ undated items grouped at the end.
 | Inspire Award, 2nd | Undated | Scorpion robot, FTC #17253 (Tritonics), Alex as Fabrication Lead | content/source/portfolio/05-scorpion-robot.jpg#page-1 |
 | Design Award, 3rd | Undated; listed as a separate bullet from "Design Award" on the same page | Scorpion robot, FTC #17253 (Tritonics), Alex as Fabrication Lead; unclear whether these are two events | content/source/portfolio/05-scorpion-robot.jpg#page-1 |
 | Third place in New York (rebuilt, almost entirely rookie team) | "Most recently"; no season or year given | The team Alex rebuilt from scratch with freshmen new to robotics. ROOT CLAUDE.md IS THE ONLY SOURCE — no portfolio page, poster, slide or engineering-portfolio page mentions a third-place New York finish. Flagged as TODO(alex). | CLAUDE.md |
+| 1st place award for outreach ("number one spot in outreach", two years running) | Undated; drafts tie it to the Worlds-qualifying years | Alex's FTC team; appears only in the private drafts. TODO(alex): confirm the award's real FTC name — it may be the Inspire or Connect Award described loosely | content/source/essays/college-essays-private.txt#L2296-L2297, #L71-L72 |
 
 ### 9.1 Notes on merges and open questions
 
@@ -3855,8 +3919,9 @@ undated items grouped at the end.
 - TODO(alex): "Top Inspire Awards at all three NYC qualifiers" (private drafts) may or may not be
   the same event as the DECODE-season awards strip printed on the team's posters/slides; kept as a
   separate row because no source states they are the same.
-- TODO(alex): No source ties a calendar year to any of the Honu, Monti, Scorpion, or Ball-Drive
-  robot awards; the FTC game season (and thus the calendar year) for each is unconfirmed.
+- TODO(alex): No source ties a calendar year to the Monti or Scorpion awards; the FTC game season for
+  each is unconfirmed. The Honu awards are dated indirectly by the private drafts (2025 NY win, grade
+  11 Worlds Think Award) — confirm. The Ball-Drive page lists no awards.
 - TODO(alex): "Third place in New York (rebuilt, almost entirely rookie team)" is stated only in
   root CLAUDE.md; no team document corroborates it. Confirm before publishing.
 - TODO(alex): Confirm whether "Design Award" and "Design Award 3rd" on the Scorpion page are the
@@ -3882,20 +3947,20 @@ of dropped.
 | **Education, timeline & general life stats** | | | |
 | Class of '26 | Avenues: The World School, Mastery Learning Program graduation year (education table and timeline) | content/source/resume/resume-current.png | internal count |
 | Summer 2025 | New York University (NYC), AB Calculus (education and timeline) | content/source/resume/resume-current.png | internal count |
-| Fewer than 20 students in a class of 150 | Size and selectivity of the Avenues Mastery Program | content/source/essays/college-essays-private.txt#L6726-L6729 | internal count |
-| Three years | Length of Alex's time in the Mastery Program | content/source/essays/college-essays-private.txt#L6726, #L3909-L3910 | internal count |
-| 1,200+ survey responses | Wellbeing study data Alex presented at a two-day mini-conference at the start of 10th grade | content/source/essays/college-essays-private.txt#L2117-L2124 | internal count |
-| $2,000 earned | Cookie Road, the 5th-grade edible cookie dough venture | content/source/essays/college-essays-private.txt#L3436-L3438 | internal count |
-| One of five selected teams | Cornell Tech Robot-in-2-Days, FTC Into the Deep season | content/source/essays/college-essays-private.txt#L4096-L4098 | internal count |
+| Fewer than 20 students in a class of 150 | Size and selectivity of the Avenues Mastery Program. CONFIRMATION ONLY — private drafts, gitignored, no publishable source exists; not for publication | content/source/essays/college-essays-private.txt#L6726-L6729 | internal count |
+| Three years | Length of Alex's time in the Mastery Program. CONFIRMATION ONLY — private drafts, gitignored, no publishable source exists; not for publication | content/source/essays/college-essays-private.txt#L6726, #L3909-L3910 | internal count |
+| 1,200+ survey responses | Wellbeing study data Alex presented at a two-day mini-conference at the start of 10th grade. CONFIRMATION ONLY — private drafts, gitignored, no publishable source exists; not for publication | content/source/essays/college-essays-private.txt#L2117-L2124 | internal count |
+| $2,000 earned | Cookie Road, the 5th-grade edible cookie dough venture. CONFIRMATION ONLY — private drafts, gitignored, no publishable source exists; not for publication | content/source/essays/college-essays-private.txt#L3436-L3438 | internal count |
+| One of five selected teams | Cornell Tech Robot-in-2-Days, FTC Into the Deep season. CONFIRMATION ONLY — private drafts, gitignored, no publishable source exists; not for publication | content/source/essays/college-essays-private.txt#L4096-L4098 | internal count |
 | **Activity time commitments, grades 9-12** | | | |
-| ~20 hrs/week, 40 weeks/year, grades 9-12 | Robotics time commitment, stated in both the FTC roles table and a second private-drafts passage (confirmation only, never quoted, for the second) | content/source/essays/college-essays-private.txt#L1513-L1530, #L1526-L1530 | internal count |
-| ~2 hrs/week, 52 weeks/year, grades 9-12 | Tully Tech time commitment | content/source/essays/college-essays-private.txt#L1677-L1692 | internal count |
-| ~2 hrs/week, 32 weeks/year, grades 9-12 | IDEA Club time commitment; the second citation of this figure is marked confirmation-only, not for publication as a statistic without Alex's approval | content/source/essays/college-essays-private.txt#L1538-L1552, #L1546-L1552 | internal count |
-| ~3 hrs/week, up to 8 hours at peak, grades 9-11 | NYC E-Waste Education & Collection Initiative time commitment | content/source/essays/college-essays-private.txt#L1586-L1604 | internal count |
-| ~1 hr/week, 12 weeks/year, three years | School wellbeing council commitment | content/source/essays/college-essays-private.txt#L1736-L1752 | internal count |
+| ~20 hrs/week, 40 weeks/year, grades 9-12 | Robotics time commitment, stated in both the FTC roles table and a second private-drafts passage. CONFIRMATION ONLY — private drafts, gitignored, no publishable source exists; not for publication | content/source/essays/college-essays-private.txt#L1513-L1530, #L1526-L1530 | internal count |
+| ~2 hrs/week, 52 weeks/year, grades 9-12 | Tully Tech time commitment. CONFIRMATION ONLY — private drafts, gitignored, no publishable source exists; not for publication | content/source/essays/college-essays-private.txt#L1677-L1692 | internal count |
+| ~2 hrs/week, 32 weeks/year, grades 9-12 | IDEA Club time commitment. CONFIRMATION ONLY — private drafts, gitignored, no publishable source exists; not for publication | content/source/essays/college-essays-private.txt#L1538-L1552, #L1546-L1552 | internal count |
+| ~3 hrs/week, up to 8 hours at peak, grades 9-11 | NYC E-Waste Education & Collection Initiative time commitment. CONFIRMATION ONLY — private drafts, gitignored, no publishable source exists; not for publication | content/source/essays/college-essays-private.txt#L1586-L1604 | internal count |
+| ~1 hr/week, 12 weeks/year, three years | School wellbeing council commitment. CONFIRMATION ONLY — private drafts, gitignored, no publishable source exists; not for publication | content/source/essays/college-essays-private.txt#L1736-L1752 | internal count |
 | **Skills, tools & recognitions (résumé sidebar)** | | | |
 | Coded 8 commercial sites | Web design skill on the résumé's Coding sidebar | content/source/resume/resume-current.png; content/source/resume/resume-older.png | internal count |
-| CAD tutorials produced in seven languages | Outreach and language skill; credited to Alex in root CLAUDE.md and tied in the private drafts to collaboration with under-resourced public-school teams at a Cornell Tech Robot-in-2-Days event; no team document mentions them and no public artefact exists in the repo to link to | CLAUDE.md; content/source/essays/college-essays-private.txt#L277, #L4098-L4101 | internal count |
+| CAD tutorials produced in seven languages | Outreach and language skill. Root CLAUDE.md credits this to Alex, but the only narrative source describes it as a team output ("CAD tutorials we developed and shared in seven languages") after a Cornell Tech Robot-in-2-Days collaboration with under-resourced public-school teams; no team document mentions them and no public artefact exists in the repo to link to — TODO(alex): confirm Alex's individual role before publishing this in the first person | CLAUDE.md; content/source/essays/college-essays-private.txt#L277, #L4098-L4101 | internal count |
 | **Prosthetic Arm (Stevens Institute design brief + résumé)** | | | |
 | 10 million+ people live with limb loss | Audience slide of the design brief; limb loss caused by congenital differences, accidents, necessary surgeries, war injuries, and more. CONFLICT: the private drafts state a much lower ~2.3 million figure for U.S. limb loss (see the do-not-publish row below) | content/source/prosthetic-arm/design-brief/text.md#page-2 | internal count |
 | 180,000+ people annually undergo amputations each year | Audience slide; stated as being in addition to tens of thousands of babies born and accidents resulting in limb loss | content/source/prosthetic-arm/design-brief/text.md#page-2 | internal count |
@@ -3911,10 +3976,11 @@ of dropped.
 | Passive arm prosthetic: 3K-5K | Cost-comparison graphic on the Problem slide | content/source/prosthetic-arm/design-brief/text.md#page-3 | internal count |
 | Body-powered arm prosthetic: 5K-10K | Cost-comparison graphic on the Problem slide | content/source/prosthetic-arm/design-brief/text.md#page-3 | internal count |
 | Myoelectric prosthetic: 20-100K+ | Cost-comparison graphic on the Problem slide; the price band Alex's design is positioned against | content/source/prosthetic-arm/design-brief/text.md#page-3 | internal count |
-| Under $100 | Prosthetic arm construction/build cost, from the résumé blurb; the figure root CLAUDE.md and the AntiCam pitch script also use per the résumé's own context note, and AntiCam's three planned formats are separately also targeted under $100. CONFLICT: the design brief's own Goal & Requirements slide instead sets a production cost requirement of under $200 (see next row) | content/source/resume/resume-current.png; content/source/anticam/pitch-deck-outline.md | internal count |
+| Under $100 | Prosthetic arm construction/build cost, from the résumé blurb; root CLAUDE.md repeats it. CONFLICT: the design brief's own Goal & Requirements slide instead sets a production cost requirement of under $200 (see next row) | content/source/resume/resume-current.png | internal count |
+| Under $100 | AntiCam's separate "all under $100" claim, though the Room Unit format is priced at $100+ | content/source/anticam/pitch-deck-outline.md#L3, #L24 | internal count |
 | Production cost requirement: under $200 | Goal & Requirements slide, listed last and called the most important requirement. CONFLICT: this is double the "under $100" figure used on the résumé and in root CLAUDE.md | content/source/prosthetic-arm/design-brief/text.md#page-5 | internal count |
 | 90+ prototypes | Résumé blurb for the Prosthetic Arm invention, corroborated by the private activity list as "90+ prototypes iterated"; the design brief itself gives no prototype count. CONFLICT: the private drafts separately cite a "76th design" figure (see next row) | content/source/resume/resume-current.png; content/source/essays/college-essays-private.txt#L1710-L1711 | internal count |
-| 76th design | Cited in the private narrative drafts. CONFLICT: conflicts with the 90+ prototypes figure above and may count a different thing | content/source/essays/college-essays-private.txt#L3273 | internal count |
+| 76th design | Cited in the private narrative drafts. CONFLICT: conflicts with the 90+ prototypes figure above and may count a different thing. CONFIRMATION ONLY — private drafts, gitignored, no publishable source exists; not for publication | content/source/essays/college-essays-private.txt#L3273 | internal count |
 | Perform >80% of common tasks | Functional requirement on the Goal & Requirements slide; no measured result is reported anywhere in the brief | content/source/prosthetic-arm/design-brief/text.md#page-5 | internal count |
 | 5 subsystems inside the forearm (servos, wrist control system, Arduino, batteries, myoelectric control system) | Forearm slide component list | content/source/prosthetic-arm/design-brief/text.md#page-8 | internal count |
 | 7 named hand-measurement parameters across Digits 1-5 | Parametric Design slide; the inputs that drive the resizable CAD model (verified on the page image) | content/source/prosthetic-arm/design-brief/pages/page-12.jpg#page-12 | internal count |
@@ -3922,7 +3988,7 @@ of dropped.
 | Auto-sizing results: cell={4.432, 2.728, 3.242} - Mass 5.571 g; cell={4.503, 1.434, 1.265} - Mass 7.906 g; cell={4.082, 4.72, 0.721} running | Auto Sizing slide console log; the loop optimizes cell parameters against mass, which does not obviously match the slide's "sizing" title | content/source/prosthetic-arm/design-brief/pages/page-13.jpg#page-13 | internal count |
 | A finger is 6 printed pieces plus 2 pin rods | Digit Design slide exploded component row (verified on the page image) | content/source/prosthetic-arm/design-brief/pages/page-07.jpg#page-7 | internal count |
 | Design brief is 16 slides; slide 16 is blank | Document-level fact about the only prosthetic source in the repo | content/source/prosthetic-arm/design-brief/text.md | internal count |
-| ~2.3 million people in the U.S. live with limb loss; ~700,000 upper-limb; ~2.5 million worldwide; hands are the second most needed prosthetic after legs | DO NOT PUBLISH — stated only in the private essay drafts, carries no citation, and does not match the design brief's own numbers. CONFLICT with the design brief's "10 million+" U.S. limb-loss figure above | content/source/essays/college-essays-private.txt#L3699-L3701, #L3256-L3259 | internal count |
+| ~2.3 million people in the U.S. live with limb loss; ~700,000 upper-limb; ~2.5 million worldwide; hands are the second most needed prosthetic after legs | CONFIRMATION ONLY — private drafts, gitignored, no publishable source exists; not for publication, and does not match the design brief's own numbers. CONFLICT with the design brief's "10 million+" limb-loss figure above, which names no country — the two may be measuring different populations (worldwide vs. U.S.); TODO(alex) before either is published | content/source/essays/college-essays-private.txt#L3699-L3701, #L3256-L3259 | internal count |
 | **AntiCam — external market & privacy statistics (pitch deck outline)** | | | |
 | 47% of Americans have found a camera at a vacation rental, up from 25% in 2023 (survey n=1,050, June 2025) | Sourced external statistics table; the quantified pain behind "travelers first" | content/source/anticam/pitch-deck-outline.md#L33 | https://www.ipx1031.com/surveillance-rental-study/ |
 | 58% worry about hidden cameras where they stay | Sourced external statistics table; also the basis of the derived SAM (35M of 61M) | content/source/anticam/pitch-deck-outline.md#L33 | https://www.ipx1031.com/surveillance-rental-study/ |
@@ -3930,7 +3996,7 @@ of dropped.
 | 55% of hosts surveyed admit to indoor cameras | Sourced external statistics table | content/source/anticam/pitch-deck-outline.md#L33 | https://www.ipx1031.com/surveillance-rental-study/ |
 | ~537,000 surveillance cameras across the 50 largest U.S. cities (updated Jan 2024) | Scale of the surveillance problem | content/source/anticam/pitch-deck-outline.md#L34 | https://www.comparitech.com/blog/vpn-privacy/us-surveillance-camera-statistics/ |
 | 11 surveillance cameras per 1,000 people across the 50 largest U.S. cities | Scale of the surveillance problem | content/source/anticam/pitch-deck-outline.md#L34 | https://www.comparitech.com/blog/vpn-privacy/us-surveillance-camera-statistics/ |
-| 70,882 surveillance cameras in New York City | Supersedes the ethics essay's uncited "18,000 NYC cameras" (see the off-limits row below) | content/source/anticam/pitch-deck-outline.md#L34 | https://www.comparitech.com/blog/vpn-privacy/us-surveillance-camera-statistics/ |
+| 70,882 surveillance cameras in New York City | Scale of the surveillance problem. The ethics essay's uncited "18,000" counts facial-recognition-capable cameras specifically, a different measurement — not a conflicting count of the same thing | content/source/anticam/pitch-deck-outline.md#L34 | https://www.comparitech.com/blog/vpn-privacy/us-surveillance-camera-statistics/ |
 | Use, marketing, sale and import of jammers are illegal under Communications Act §302(b) and §333; penalties include seizure and imprisonment | Underpins the "legal by design" contrast with RF jammers | content/source/anticam/pitch-deck-outline.md#L35 | https://www.fcc.gov/general/jammer-enforcement |
 | Airbnb banned indoor security cameras effective Apr 30, 2024 | "Rules without enforcement" framing | content/source/anticam/pitch-deck-outline.md#L36 | https://www.airbnb.com/help/article/3061 |
 | Deepfake fraud grew more than 10x from 2022 to 2023 | "AI changed what a photo can do" framing | content/source/anticam/pitch-deck-outline.md#L37 | https://www.security.org/resources/deepfake-statistics/ |
@@ -3964,7 +4030,7 @@ of dropped.
 | **AntiCam — do-not-publish / off-limits statistics** | | | |
 | 2.5M U.S. rental listings (AirDNA, 2023) | DO NOT PUBLISH WITHOUT A SOURCE — attributed to AirDNA in the deck but not covered by the outline's Sources block | content/source/anticam/pitch-deck-build.js#L312 | none in the outline's Sources block |
 | Hidden-camera detectors $20–200; RF jammers hundreds to thousands of dollars | DO NOT PUBLISH WITHOUT A SOURCE — no source given in the outline | content/source/anticam/pitch-deck-build.js#L148, #L149 | none in the outline's Sources block |
-| Ethics essay statistics: 70 camera captures per day; 18,000 NYC cameras; 60% worried about hotel-room cameras; one-quarter of Americans have found hidden cameras in hotel rooms | OFF-LIMITS — root CLAUDE.md restricts published AntiCam stats to the pitch outline; this NYC figure also CONFLICTS with the pitch outline's Comparitech-sourced 70,882 | content/source/anticam/ethics-of-tully-tech/text.md#page-1, #page-5, #page-6 | none (essay cites KDVR 2018 and Safe Home with no URLs; no Works Cited page exists) |
+| Ethics essay statistics: 70 camera captures per day; 18,000 NYC cameras; 60% worried about hotel-room cameras; one-quarter of Americans have found hidden cameras in hotel rooms | OFF-LIMITS — root CLAUDE.md restricts published AntiCam stats to the pitch outline | content/source/anticam/ethics-of-tully-tech/text.md#page-1, #page-5, #page-6 | none (essay cites KDVR 2018 and Safe Home with no URLs; no Works Cited page exists) |
 | **Robotics — Tritonics team, budget & season structure** | | | |
 | FTC #17253 (Tritonics) and FTC #14712 — the two teams Alex worked on | Monti, Ball-Drive and Scorpion are #17253; Swerve Drive and Honu are #14712. The Ball-Drive chassis render is engraved "17253 TRITONICS" | content/source/portfolio/01-monti-robot.jpg#page-1, 02-swerve-drive.jpg#page-1, 03-honu-robot.jpg#page-1, 04-ball-drive.jpg#page-1, 05-scorpion-robot.jpg#page-1 | internal count |
 | 80+ member robotics club | Root CLAUDE.md's figure for the club Alex leads in; his private drafts give the same number and add that his team was #1 of 5 teams in the club. The competition team itself is 14–15 people, so the 80+ is club scope, not team scope — flagged as TODO(alex) | CLAUDE.md; content/source/essays/college-essays-private.txt#L1517-L1520 | internal count |
@@ -3974,7 +4040,7 @@ of dropped.
 | 67% female rookie class, recruited after 4 female leads graduated | Season goal of increasing female participation. Note: the same deck also prints "gender imbalance 33% female → 6%," which looks like a typo | content/source/robotics/championships-presentation/slide-e.jpg; content/source/robotics/posters/poster-deck/text.md#page-3 | internal count |
 | 15 defined roles, averaging 3 cross-functional tags each; 2–4 trained members on every critical subsystem | Sustain data page, evidencing the cross-training model | content/source/robotics/posters/poster-deck/text.md#page-17 | internal count |
 | 3 teammates completed a summer STEM internship | SWOT strengths for the rebuilt team | content/source/robotics/championships-presentation/slide-f.jpg | internal count |
-| 12-month sustain cycle containing 6 structured technical training stages, 4 major sprint reviews, 3 qualifier feedback loops, 1 formal leadership transition plan, 100% of roles documented | The team's sustainability programme. CONFLICT: an earlier draft page says 5 sprint reviews and 4 qualifier loops | content/source/robotics/posters/poster-deck/text.md#page-17 | internal count |
+| 12-month sustain cycle containing 6 structured technical training stages, 4 major sprint reviews, 3 qualifier feedback loops, 1 formal leadership transition plan, 100% of roles documented | The team's sustainability programme. CONFLICT: an earlier deck page says 5 sprint reviews and 4 qualifier loops | content/source/robotics/posters/poster-deck/text.md#page-17, #page-1 | internal count |
 | Season budget: Electronics $611; Hardware $790.11; Materials $803.66; Fees $494.71; Limelight $189; Team Shirts $157.50; FLL Shirts $105; printed TOTAL $3,121 | Tritonics season spend after the 50% cut. CONFLICT: the line items actually sum to $3,150.98, not the printed $3,121 total | content/source/robotics/championships-presentation/slide-f.jpg; content/source/robotics/posters/poster-deck/text.md#page-3 | internal count |
 | 50% mid-season budget cut | Constraint that prompted the FTC MicroFunding site, budget tracking and sustainable materials, DECODE season | content/source/robotics/championships-presentation/slide-f.jpg; content/source/robotics/posters/poster-deck/text.md#page-3 | internal count |
 | 75+ hours recruiting | Tritonics Sustain poster, team development band | content/source/robotics/posters/poster-a.png; content/source/robotics/posters/poster-deck/text.md#page-3 | internal count |
@@ -3992,18 +4058,21 @@ of dropped.
 | 150 ms sorted rapid fire; 100 ms sorted transfer / unload rate; 10 ms launcher rapid fire | Three different timing figures across three pages of the same engineering portfolio — flagged as TODO(alex); may describe different steps | content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10, nyc-champs-portfolio-3.png#P12, nyc-champs-portfolio-5.png#P14 | internal count |
 | Intake iterations measured: V1 85% intake rate / 7 s to launcher; V2 97% / 5 s; V3 100% / 2 s | Ramp geometry iterations — flat ramp, vectoring slots, centered transfer with rubber-band grip | content/source/robotics/posters/poster-deck/text.md#page-15 | internal count |
 | Transfer V1 took 1.5 s and jammed above one ball; V2 added 2 counter-rollers, moves 2 artifacts simultaneously in 100 ms | Monty transfer subsystem iteration | content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-3.png#P12; content/source/robotics/posters/poster-deck/text.md#page-16 | internal count |
+| Transfer path shortened by 50%; jam rate reduced 80% | Quantified advantage of the integrated intake/sorting/storage/transfer subsystem | content/source/robotics/posters/poster-deck/text.md#page-15 | internal count |
 | Surgical-tubing rollers geared to 2000 rpm; gecko-wheel rollers to 2000 rpm; high-torque roller at 1000 rpm | Monty transfer components, plus a middle-ball blocker linkage | content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-3.png#P12 | internal count |
 | 2-motor limit on the launcher; compression optimized to 8 mm | Launcher design constraint, with the compression figure set by Vernier Graphical Analysis of artifact exit velocity | content/source/robotics/posters/poster-f.png; content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-4.png#P13 | internal count |
-| 200+ launcher trials analyzed; regression v = d · 2.64 + 1013; 189 successful shots and 11 misses; correlation coefficient 0.9880 | Launcher speed predicted from shot distance; the trial breakdown and correlation coefficient come from the poster deck version, the trial count and regression use from the portfolio | content/source/robotics/posters/poster-f.png; content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-4.png#P13; content/source/robotics/posters/poster-deck/text.md#page-10 | internal count |
+| 200+ launcher trials analyzed; regression v = d · 2.64 + 1013; 189 successful shots and 11 misses | Launcher speed predicted from shot distance; the trial breakdown comes from the poster deck version, the trial count and regression use from the portfolio. TODO(alex): a correlation coefficient (0.9880) was recorded earlier but appears in no source file — supply it or drop it | content/source/robotics/posters/poster-f.png; content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-4.png#P13; content/source/robotics/posters/poster-deck/text.md#page-10 | internal count |
 | 1:1 dual-servo turret gear ratio; 8-bearing adjustable hood with zero backlash; 150 ms three-ball unload via the artifact blocker | Monty launcher components enabling near-instantaneous automatic aiming | content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-4.png#P13 | internal count |
 | **Robotics — autonomous, TeleOp & control software** | | | |
 | Autonomous: 57 points + 1 ranking point; 12 artifacts sorted close zone; 9 artifacts sorted far zone | Monty capability as printed on the robot overview page. CONFLICT: conflicts with the software page's version below | content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10 | internal count |
 | Autonomous: 57 points + 2 ranking points; 12 artifacts sorted close zone; 18 artifacts far zone | The same autonomous run as stated on the TeleOp/auton software page and the Control poster. CONFLICT: conflicts with the robot-overview-page version above — flagged as TODO(alex) | content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-6.png#P15; content/source/robotics/posters/poster-d.png | internal count |
-| TeleOp: 141 points close zone / 150 points far zone; 42 artifacts +3 sorted close, 45 artifacts +3 sorted far | Monty TeleOp capability on the robot overview page. CONFLICT: the poster deck's version below implies a different points total (195 potential vs. 141+150=291 here) | content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10 | internal count |
+| Autonomous: 9-ball auto (close + far combined); auto path completion time 16 s | Control poster page's third reading of the same autonomous run. CONFLICT: a 9-ball combined total does not match either the 12+9 or the 12+18 artifact splits above — TODO(alex) | content/source/robotics/posters/poster-deck/text.md#page-10 | internal count |
+| TeleOp: 141 points close zone / 150 points far zone; 42 artifacts +3 sorted close, 45 artifacts +3 sorted far | Monty TeleOp capability on the robot overview page; the two point totals are alternative single-zone scenarios, not a sum. CONFLICT: the poster deck's version below gives 195 points potential for the same capability — flagged as TODO(alex) | content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10 | internal count |
 | TeleOp: 15 cycles per match, 3 artifacts per cycle, 45 artifacts max, 195 points potential, 75 ms inter-shot spacing | Poster deck's version of the same TeleOp capability. CONFLICT: see the robot-overview-page version above | content/source/robotics/posters/poster-deck/text.md#page-10 | internal count |
 | Two 4-bar odometry pods recording global coordinate position every 10 ms | Primary localization for Monty, fused with Limelight 3A AprilTag vision and an IMU | content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-5.png#P14; content/source/robotics/posters/poster-deck/text.md#page-10 | internal count |
 | 4-step localization merging 3 sensor sources (odometry pods, Limelight 3A, IMU) with a Kalman filter | Monty auto-aim pipeline; rotation from Limelight + IMU, position from odometry + Limelight. Team robot software; the source does not name an author for this work | content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-5.png#P14; content/source/robotics/posters/poster-d.png | internal count |
 | 98% AprilTag lock reliability; 100% odometry availability; path deviation ±0.2 cm; turret correction every 50 ms | Reported control-system reliability figures from the poster deck | content/source/robotics/posters/poster-deck/text.md#page-10 | internal count |
+| Launch RPM maintained ±1600%; "Cycle 150 ↓ 30%" | Printed in the same Control poster metrics block as the four figures above. Both look corrupted (±1600% is not a meaningful tolerance; "Cycle 150" is not a defined quantity) — TODO(alex): correct or remove before the poster is shown | content/source/robotics/posters/poster-deck/text.md#page-10 | internal count |
 | 5 color/colour sensors determine artifact colour and position, relayed to the driver on LED strips | Team software supporting the sorting intake | content/source/robotics/posters/poster-d.png; content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-6.png#P15 | internal count |
 | 30-second autonomous period | Stated constraint on the TeleOp/auton page and the Control poster | content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-6.png#P15; content/source/robotics/posters/poster-d.png | internal count |
 | Task System claimed to give a 10x faster code process; PEREGRINE modularity claimed to enable 10-minute rapid auton creation | Software architecture claims; neither has a stated measurement method — flagged as TODO(alex) | content/source/robotics/posters/poster-d.png; content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-6.png#P15 | internal count |
@@ -4012,7 +4081,7 @@ of dropped.
 | Non-linear joystick curve: cubic x³ = y on the engineering portfolio, x⁵ = y on the Control poster | Replaces the linear curve most teams use, for precise low-speed driving. CONFLICT: the exponent conflicts between the two sources | content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-6.png#P15; content/source/robotics/posters/poster-d.png | internal count |
 | **Robotics — fundraising & MicroFunding** | | | |
 | Student-built FTC MicroFunding website, branded "FTC Microfunding" ("Connecting teams and sponsors alike"), at microfunding.tritonics.org | The team's answer to the mid-season budget cut; credited on the roster to teammate Milind A (also spelled Miland A), not to Alex | content/source/robotics/championships-presentation/slide-b.png, #P8; content/source/robotics/championships-presentation/slide-e.jpg; content/source/robotics/posters/poster-deck/pages/page-05.jpg | https://microfunding.tritonics.org/ |
-| $1,000 raised for a Ukraine robotics team | Older résumé's Community Engagement section, related to the micro-funding work; this is the résumé figure and therefore the one to publish under the repo's tie-break rule. CONFLICT: root CLAUDE.md ties micro-funding to Ukraine, Ghana and the Blackfeet Reservation, but no team document mentions Ukraine; the private drafts give a different amount (next row) | content/source/resume/resume-older.png (Community Engagement, bullet 1); CLAUDE.md | internal count |
+| $1,000 raised for a Ukraine robotics team | Older résumé's Community Engagement section, bullet 1. The current résumé has no Community Engagement section and does not repeat this figure, so the repo's resume-current tie-break rule does not resolve it. CONFLICT: the private drafts give $2,000 (next row); root CLAUDE.md ties micro-funding to Ukraine, Ghana and the Blackfeet Reservation, but no team document mentions Ukraine — TODO(alex): confirm the amount before publishing any number | content/source/resume/resume-older.png (Community Engagement, bullet 1); CLAUDE.md | internal count |
 | $2,000 raised to send a Ukrainian FTC team to the World Championship | Same fundraising effort, different amount, from private drafts. CONFLICT: conflicts with the résumé's $1,000 figure above; confirmation only, not for publication | content/source/essays/college-essays-private.txt#L4378-L4379, #L68-L69 | internal count |
 | **Robotics — expert network ("Hydra")** | | | |
 | 38 experts connected with; 150+ hours of expert engagement; 71% multi-session or ongoing; 28% generated secondary connections | Tritonics "Hydra" regenerative expert network, Connect page. CONFLICT: the per-domain headcounts on the poster deck (see next two rows) sum to 36, not 38 | content/source/robotics/tritonics-portfolio/tritonics-portfolio.png#P5; content/source/robotics/posters/poster-deck/text.md#page-7 | internal count |
@@ -4025,6 +4094,7 @@ of dropped.
 | 2 robotics mini-competitions hosted; 1 additional FTC team (#32706 Tic-Tac Tech) launched and mentored | Sustain response to the graduation of half the team | content/source/robotics/championships-presentation/slide-f.jpg; content/source/robotics/championships-presentation/slide-b.png; content/source/robotics/championships-presentation/slide-d.png | internal count |
 | 5 FLL teams and 7 FTC teams funded and/or mentored; 300+ students tried robotics and coding; 100% of members learned new skills, produced prototypes, designed and planned outreach and reported more confidence | Team development impact tiles (Gather Seeds → Plant & Nurture → Grow Roots → Blossom). Note: 5+7=12 may be the team-level version of the "mentored 12 FLL/FTC teams" figure attributed to Alex personally elsewhere, though no source ties them together | content/source/robotics/championships-presentation/slide-c.png | internal count |
 | 500+ outreach/volunteer hours; 10,000+ individuals reached; 12+ FIRST teams mentored or created; 5 FLL teams mentored weekly; 1 FTC team created; 2 sustained international partnerships; 80+ schools provided curriculum; 28 new FIRST mentors | Tritonics Reach headline totals for the DECODE season; team-level, not claimed for Alex personally. The hours figure is worded "outreach hours" in one source and "volunteer hours" in another repetition of the same headline totals | content/source/robotics/championships-presentation/slide-d.png; content/source/robotics/posters/poster-b.png; content/source/robotics/posters/poster-deck/text.md#page-8 | internal count |
+| 10,000+ breakdown: curriculum 5,001–10,000 (labelled "potential" reach), Instagram 1,001–5,000, media 1,001–5,000; direct instruction 201–300 Hour of Code, 150–200 open houses, 76–100 demo events, 20–50 small-group mentoring; 447–650 from creative events | Shows the 10,000+ headline is a sum of estimate bands dominated by a *potential* curriculum reach — do not present it as a count of people reached | content/source/robotics/posters/poster-deck/text.md#page-8, #page-5 | internal count |
 | ~35+ unique organizations engaged; 60%+ multi-session engagements; outreach initiated 76% by current students and 24% by alumni | Poster deck's Reach data page | content/source/robotics/posters/poster-deck/text.md#page-8 | internal count |
 | Recruitment impact: 1 new team, 4 new coaches, 24 new mentors, 18 new volunteers | Reach/expansion slide. CONFLICT: the 24 new mentors here conflicts with the 28 new FIRST mentors on the Reach headline totals above | content/source/robotics/championships-presentation/slide-b.png | internal count |
 | 750 students reached with a K–8 robotics curriculum; 250+ students introduced to FIRST concepts, 80+ transitioned into FIRST programs, 60+ later joined FTC or FLL teams | FIRST pipeline programme results, largely through Hour of Code. Team-level, not to be re-attributed to Alex personally | content/source/robotics/championships-presentation/slide-d.png, #P7; content/source/robotics/posters/poster-deck/text.md#page-5 | internal count |
@@ -4043,8 +4113,8 @@ of dropped.
 | 9 toggleable blueprint layers | Grid and crop marks, part name/number, section outline, cut lines and connector cut-outs, fold guides and mandrel size, section highlights, notes, clay top view, piece IDs | content/source/cerapiper/README.md#the-paper-blueprint | internal count |
 | 3 software layers | Onshape/FeatureScript design layer, Python/Flask translation middleware, Arduino C++ fabrication backend | content/source/cerapiper/README.md#implementation | internal count |
 | 3 kinds of design-time constraint | Hard (restrict to fabricable values), corrective (repair input and report the adjustment), advisory (warn without blocking) | content/source/cerapiper/README.md#implementation | internal count |
-| ~8–10% elevated relative humidity | Environmental performance of the ceramic evaporative-cooling prototypes, attributed by the README to technical evaluations of the underlying process — i.e. the earlier CAM work published at ACM SCF 2025, not the CAD study | content/source/cerapiper/README.md#about-the-project | https://doi.org/10.1145/3745778.3766644 |
-| 1.85 L of water evaporated over 60 hours | Same technical evaluation of the underlying process as the humidity figure; belongs to the published CAM work, not the CAD layer | content/source/cerapiper/README.md#about-the-project | https://doi.org/10.1145/3745778.3766644 |
+| ~8–10% elevated relative humidity | Environmental performance of the ceramic evaporative-cooling prototypes, attributed by the README only to unspecified "technical evaluations of the underlying process" — TODO(alex): confirm whether these figures are from the SCF 2025 CAM paper before attaching its DOI | content/source/cerapiper/README.md#about-the-project | internal count (no citable source in the repo) |
+| 1.85 L of water evaporated over 60 hours | Same technical evaluation of the underlying process as the humidity figure, with the same unresolved attribution — TODO(alex): confirm before attaching the SCF 2025 DOI | content/source/cerapiper/README.md#about-the-project | internal count (no citable source in the repo) |
 | CeraPiper 2.1 cut Onshape API requests to about 1 per typical import, down from one per part | Version 2.1 (7/8/2026) reduced API calls to conserve Onshape API credits | content/source/cerapiper/README.md#implementation, #roadmap | internal count |
 | Eight designers and makers; all eight reported they could focus on design intent without attending to machine-specific detail; seven of eight said the workflow felt like designing in CAD rather than operating a machine | The README's account of the user study; used because the README is the only publishable source. CONFLICT: conflicts with the under-review draft's larger study (see next row), logged as TODO(alex) | content/source/cerapiper/README.md#from-cam-to-cad | internal count |
 | Twelve participants (plus a five-person formative study) | NOT PUBLISHABLE — recorded only inside a TODO(alex) conflict note as the reason the README's "eight designers and makers" cannot be reconciled; the draft reporting these numbers is under anonymous review, so the site must not state them. CONFLICT with the row above | content/source/cerapiper/user-study-paper/text.md#page-4, #page-9 | internal count |
@@ -4340,391 +4410,102 @@ exist only locally and are gitignored — never assume any file under those thre
 
 ### Conflicts
 
-- Project name: résumé calls the solar-road project "ENERGY ROAD: No Pitstops"; root CLAUDE.md, content/source/CLAUDE.md, and the portfolio page all call it "Electric Road." Pick one for the site (TODO(alex)).
-- Robot name spelling: the portfolio page and root CLAUDE.md spell it "Monti"; every Tritonics team document (the engineering portfolio, championship posters, championships-presentation slides, and the poster-deck, including a stray "Montyç") spells it "Monty"/"MONTY." content/source/CLAUDE.md's own index is inconsistent, using "Monti" for the portfolio row and "Monty" for the robotics row.
-- Visual system: root CLAUDE.md describes "black backgrounds with bright blue/green CAD renders," but only Monti (blue) and Honu (green) actually fit that; Swerve Drive is silver, Ball-Drive is blue/gray/yellow, Scorpion is silver on a white tile, and Electric Road is purple/gray.
-- IDEA program student counts: current and older résumé sidebars both say "co-founded program to train 70+ students" (root CLAUDE.md agrees: IDEA Club 70+), but the older résumé's own Community Engagement section on the same page says "40+ students reached through IDEA design & build workshops" — either two different measures or a stale number.
-- IDEA program name/acronym: the résumé sidebar labels it "INNOVATIVE DESIGN & ENGINEERING" while the older résumé's community section and root CLAUDE.md call it "IDEA" / "IDEA Club"; the expansion of the "A" is not given anywhere in the résumés.
-- Robotics training count: root CLAUDE.md says "trained 50+ students"; neither résumé gives a 50+ figure. The older résumé instead gives "80+ children inspired to explore STEM through coding & robotics." Root CLAUDE.md's separate "80+ member club" figure is club membership size, not children reached — these two different "80+" figures must not be merged with each other or with the 50+ figure.
-- CeraPiper publication status: the résumé says "Eventually writing a research paper and getting approved by SCF Research Conference" (forward-looking, implies expected acceptance). Root CLAUDE.md is explicit that the CAD paper is under anonymous review and must not be called published — only the earlier CAM version was published, at ACM SCF 2025. The AntiCam pitch outline separately credits Alex with "published fabrication software," which has the same problem. Neither phrasing should reach the site.
-- CeraPiper name spelling: the résumé writes "Cera Piper" (two words); root CLAUDE.md and the project's own README use "CeraPiper." Follow the README.
-- Awards and placements: root CLAUDE.md claims "2x NYC Champion," "2x Worlds qualifier," "multiple Inspire awards," and that the rebuilt/rookie team "placed third in New York." Across every other source — the résumé ("2x NYC Champion (Inspire Award) & Worlds (Think Award, 2nd)" with no team named), the seven portfolio pages (one NYC 1st place and one Worlds appearance, Honu #14712), the Tritonics championship slides/posters (Inspire 1st/2nd/3rd at qualifiers plus one Sustain Award at a Super Qualifier, no city/state placement stated), and the poster-deck (the same qualifier-level Inspire/Sustain awards, still no NY placement) — no single source documents two NYC championships, two Worlds qualifications, or a third-place finish in New York.
-- Prosthetic arm scope: root CLAUDE.md says the work "continued through his school's Mastery Program" and cites myoelectric sensors and AI-assisted fit, and separately says the internship included a research-assistant stint at Stevens Institute of Technology (summer 2024, faculty-supervised); the résumé only says "digitally-adaptable, customizable," and none of Stevens, a faculty supervisor, summer 2024, or the Mastery Program is named anywhere in the design brief's 16 slides. Not contradictory, just far narrower than root CLAUDE.md's framing.
-- Robotics role titles: root CLAUDE.md says "Team Captain and Operations Lead (earlier: mechanical/electrical lead)"; the résumé says "FTC Captain & Ops Lead · Led electrical design" (no mechanical/fabrication lead mentioned); the Scorpion portfolio page lists the role as "Fabrication Lead" (a title used nowhere else) while also crediting Alex as the one who "designed" that robot; the current-team slide (slide-e.jpg) says he "manages team strategy, electrical system & operations" — electrical framed as current, not earlier; and private drafts use "Head of Fabrication, Electrical, and Operations" alongside "Team Captain & Operations Lead." Likely the same arc described at different points in time and by different documents, but no single source reconciles all five titles.
-- Competition-result naming: private drafts describe the same rookie-season result three ways — a "1st-place finish in the New York Region competition," the "2025 NY State Championship," and "1st place in NY State."
-- Older résumé's "1,000+ food-insecure people nourished at food pantry" appears nowhere else — not in root CLAUDE.md's outreach list (Hudson Guild, Hour of Code, e-waste drive, CAD tutorials, micro-funding) and not in the private drafts.
-- Micro-funding beneficiaries and reservation spelling: root CLAUDE.md says the micro-funding platform "helped robotics teams in Ukraine, Ghana, and the Blackfeet Reservation." The older résumé only documents "$1,000 raised for Ukraine robotics team" (private drafts say $2,000) and never mentions Ghana or Blackfeet. The Tritonics team's own slides, posters, and poster-deck never mention Ukraine at all, tie Ghana to workshops at Accra High School (not micro-funding) and Blackfoot/Blackfleet to an FLL program (not micro-funding), and spell the reservation three different ways: "Blackfeet" (root CLAUDE.md), "Blackfoot Reserve"/"Blackfoot" (slides/posters), and "Blackfleet" (poster-deck).
-- File format: several résumé and Tritonics-portfolio "page" images are JPEG data saved with a .png extension (952x1260, JFIF signature); image tooling that trusts the extension may fail.
-- Honu's award list carries both "Inspire Award 1st" and "4 Time Inspire Award 2nd" — unclear whether all five Inspire results belong to that one robot/season or are cumulative team history.
-- Scorpion lists both "Design Award" and "Design Award 3rd" as separate bullets — unclear whether these are two distinct events or a duplicate.
-- Monti's award list ends with "Season Still Ongoing," so it is a snapshot and may be incomplete relative to the season's final result.
-- Modularity claim: root CLAUDE.md and Alex's own portfolio page call Monti/Monti "modular, screwless"; the Tritonics engineering portfolio and poster-deck instead describe an "8 screw rule," with each subsystem removable in a maximum of 45 seconds — few screws, not screwless.
-- Autonomous scoring is reported two ways across the Tritonics materials: "(57 points) +1 ranking point" with 9 far-zone artifacts sorted (engineering-portfolio P10) versus "(57 points) +2 ranking point" with 18 far-zone artifacts (engineering-portfolio P15 and the poster-deck).
-- Rapid-fire/unload/transfer timing is inconsistent across the Tritonics materials: 150 ms (sorting intake and the 3-ball unload, engineering-portfolio P10/P13 and poster-deck p. 13), 100 ms (unload rate and transfer, P11/P12 and poster-deck p. 16), 75 ms (poster-deck p. 15), and 10 ms (launcher "rapid fire," P14) — these figures may describe different steps rather than one true number.
-- Intake iteration labels are out of order in both the engineering portfolio (P11) and the poster-deck (page 16): "V3 – Qualifier 1," then "V2 – Qualifier 3," then "V3 – Qualifier 9," then "V4 – Super Qualifier 2" — the first is probably V1, and there are two V3s.
-- Launcher iteration count: engineering-portfolio P10 says 3 launcher iterations; P13 shows only Launcher V1 vs V2.
-- Engineering-portfolio pages P11/P12 reuse content across subsystems: "Unique Adjustable Hood" heads a paragraph about the transfer on P12; "Launcher V1 vs V2" on P12 actually shows renders and bullets describing the transfer (single-ball box → counter-roller version); the hood-box text overflow on P12 partly hides "~4000 teams surveyed" (recovered from P11, which repeats it); and P11 and P12 print the identical "Innovative solution" sentence (2 counter-rollers + third roller) for two different subsystems — the transfer's own strategy line (compact sorter, wheel-driven rapid feed, arc ramp) is the accurate one for P12.
-- Root CLAUDE.md assigns Alex as captain of #17253 for Monti, but no page in the seven-page portfolio or the Tritonics engineering portfolio names any student or role, so the captaincy cannot be verified from those sources alone.
-- Root CLAUDE.md attributes Swerve Drive to FTC #14712 (electrical lead); the Tritonics engineering portfolio (P10) says the swerve drive was "developed in conjunction with another team" and is the most complex chassis "we have made" — consistent, but it implies Tritonics co-built it, so the site should not present Swerve Drive as a #14712-only project without checking.
-- Budget total: the Tritonics poster-deck's itemized budget lines (slide-f.jpg, poster-a.png, and poster-deck page 3) sum to $3,150.98, but the printed TOTAL reads $3,121; a separate Financial Plan on poster-deck page 25 shows different figures again (budget $2,520, spent $1,890).
-- Hour of Code count: root CLAUDE.md says "20+ Hour of Code workshops"; the Tritonics team's own slide-d.png and poster-b.png say "30+ sessions."
-- Hudson Guild — named in root CLAUDE.md and Alex's own portfolio page — does not appear on any of the Tritonics team's 12 championship-presentation/poster pages; the named partners there are All Saints NJ, FDAVII STEM Lab, a Senior Center, mentored team #21377, a new team, Ghana FTC, a Blackfoot/Blackfleet FLL program, and the Hoboken Mayor's office.
-- Mentored team #21377 is spelled "Bosworth" on slide-d.png but "Botsworth" on poster-b.png/poster-e.png.
-- The new team the Tritonics helped is "Tic-Tac Tech" on slide-d.png but "Tic Tac Tec" on poster-b.png/poster-e.png.
-- A teammate's name is "Miland A" on slide-e.jpg but "Milind A" on poster-a.png/poster-c.jpg.
-- Team size: the SWOT says "7 → 14 members" (slide-f.jpg), but 15 members (9 returning + 6 rookies) are pictured on the roster (slide-e.jpg).
-- Gender stat: the SWOT weakness reads "Gender imbalance (33% female → 6%)" while the same deck elsewhere says the rookie class was 67% female with 4 new female students — the 6% figure is unexplained, possibly a typo.
-- New-mentor counts differ: 28 (slide-d.png Reach Planning; poster-b.png tiles) versus 24 new mentors (slide-b.png Recruitment Impact; poster-b.png recruitment tiles).
-- 80+ member club vs. team size: root CLAUDE.md (and private drafts) describe an "80+ member club," while every Tritonics season document shows a 14–15 member competition team (7 → 14 on the SWOT, 15 defined roles, 15 new students). The 80+ figure may describe a broader school program spanning multiple teams, but nothing here confirms it.
-- Team location: partners named across the Tritonics materials (Hoboken Mayor, "local underserved NJ communities," All Saints NJ) suggest a New Jersey base, while the team competes in NYC qualifiers ("qualified for Cities," "NYC Championship") and root CLAUDE.md places Alex at Avenues: The World School in NYC. Not necessarily contradictory, but needs confirmation before the site describes the team's home base.
-- Slide-vs-poster wording differences on the same facts: slide-b.png's Parts Drive text is truncated mid-sentence twice, while the poster version completes it ("Parts were delivered to schools and teams at the Super Qualifier"); slide-b.png's Recruitment Impact tile says "1 new teams" where the poster substitutes "#32706 Mentored team Tic Tac Tec"; and poster-b.png's Sustained Engagement tile reads "All Saints — New FIRST Mentors" where slide-d.png instead lists "All Saints NJ (monthly)."
-- Root CLAUDE.md's outreach list ("CAD tutorials in seven languages," the e-waste drive at 40+ lbs, "weekly robotics programs at Hudson Guild," and "20+ Hour of Code workshops") is not corroborated anywhere in the 30-page Tritonics poster-deck; Hudson Guild there is named only as a nonprofit partner.
-- Poster-deck internal inconsistency — sprint/qualifier counts: page 1's draft says "5 major sprint reviews" and "4 qualifier feedback loops"; pages 9 and 17 say "4 major sprint reviews" and "3 qualifier feedback loops."
-- Poster-deck internal inconsistency — expert count: page 7 says "38 Experts Engaged," but its own domain breakdown (9+7+6+4+4+3+3, and separately "26 Technical + 10 Organizational") sums to 36 both times.
-- Poster-deck internal inconsistency — turret gearing: the strategy list calls it a "2-ratio turret system" (pp. 12, 21) while the callouts on the same pages say a "1:1 turret gear ratio" (pp. 12, 13).
-- Poster-deck internal inconsistency — pathing software: page 2 presents PEREGRINE as the team's own custom software ("PEREGRINE using Infinite Variable Calculus"), while pages 10, 11, and 20 instead list a "Custom Pathing Engine (Peregrine replacement)."
-- Poster-deck internal inconsistency — collaborator title: the Simons Foundation collaborator on PEREGRINE is a "professor" on page 2 but a "PhD researcher" on page 28 (and "PhD Researchers," plural, on Alex's own Tritonics-portfolio page).
-- Poster-deck internal inconsistency — autonomous plan: page 10 says "9-ball auto (Close + Far)"; page 2 instead says "(57 points) +2 ranking point, Close zone: 12 artifacts sorted, Far zone: 18 artifacts."
-- Poster-deck internal inconsistency — placeholder/garbled numbers: "Launch RPM maintained ± 1600%" (pp. 10, 11) reads as an evident placeholder/typo (page 20 leaves it "± ___%"), and "Cycle 150 ↓ 30%" is garbled on all three Control pages.
-- Poster-deck internal inconsistency — outreach scale: "80+ schools reached" on the Robotics Curriculum tile (p. 5) versus "≈ 35+ unique organizations" (p. 8).
-- Poster-deck internal inconsistency — outreach percentages: "100% Student-Led Outreach" sits alongside "24% Alumni Initiated" on the same page (p. 8); "28% Generated Secondary Connections" (p. 6) versus "10+ Secondary Introductions Generated" (p. 7).
-- Poster-deck internal inconsistency — quantified advantage: "Transfer path shortened by 50%, Jam rate reduced 80%" (pp. 15, 22) appears as blank "___%" placeholders on an older version (p. 24), and the Design page's "Measured Improvements" fields are blank entirely (pp. 12, 21).
-- AntiCam Room Unit price vs. "all under $100": the pitch deck's own product-slide headline, its slide-4 notes, the pitch outline's storyline, and root CLAUDE.md all say the cap, pin, and room unit are "under $100," but the Room Unit card and the outline's slide table both separately say "$100+." Only the pin and cap tiers are actually under $100.
-- AntiCam project age: the Mastery learning plan (started 2/11/25) already says "over the past two years" of AntiCam work; the Fall 2026 pitch deck and outline still say "two years"; root CLAUDE.md says "Two years of work"; but the deck's own proof-slide caption dates the Ring doorbell test to "Pin prototype V2 · June 2023," and a private video brief says the project has run three years. By the deck's own evidence the project is 3+ years old by fall 2026, so "two years" is stale everywhere it appears.
-- AntiCam version numbering vs. test date: the pitch deck calls V4 "Pin V2 + Cap V2" — the current generation — and says it "passed the doorbell-camera test," but that test is dated June 2023 (a V2-generation part), and the Camera Blinder presentation itself documents only V1 (First/Second/Third/Final Prototype) and V2 (Process/Final/Final Pin) plus a separate "Hat Version 2," with no V3 or V4 shown anywhere in it. Root CLAUDE.md's "four major versions" and "30+ prototypes" are not directly supported by either deck.
-- Mastery learning plan dates: the project timeline runs 2/11/25–5/6/25, but the sponsor sign-off dates are 10/30/2025 and 3/29/2026 — after the stated final deliverable was due — and the file's own title reads "(2025–2026)." Either the timeline years are typos, or the sign-offs were added retroactively.
-- Mastery learning plan's Elements section writes up only "Waves" and "Global Mindset" (with "Global Mindet" misspelled in the source), but the sponsor sign-offs also include "Engineering," and the pitch deck separately calls it a "Faculty-sponsored Mastery project: optics & engineering."
-- Founder-slide claims not corroborated by root CLAUDE.md: the AntiCam pitch deck's founder slide says "four small businesses started before high school" and "a decade of building things that ship"; root CLAUDE.md confirms only "Coded 8 commercial websites."
-- Unsourced AntiCam pitch-deck statistics: "2.5M U.S. rental listings (AirDNA, 2023)" (the cited ConsumerAffairs/AirDNA source actually reports 60.92M users and 207M nights, not listings), detector price range "$20–200," jammer price range "hundreds to thousands of dollars," and near-IR "700 to 1,000 nanometers" are all unsourced speaker notes; root CLAUDE.md requires AntiCam stats to come only from the pitch outline, with sources.
-- Octura description: root CLAUDE.md calls it a "Bank of America partner" internship (summer 2024); the AntiCam pitch deck instead calls Octura a "fintech startup"; and private essay drafts spell it "Octora" and describe it as a CLO trading startup. Three different descriptions of the same internship.
-- "CB" naming: the Camera Blinder presentation slides never say "AntiCam" or "Camera Blinder" — the product is called only "the CB" — while the deck's own QR code URL uses "anticam" and root CLAUDE.md/text.md headings use AntiCam / Camera Blinder. The "Camera Blinder" expansion of "CB" is inferred from the file name, not stated on any slide.
-- Website URL: root CLAUDE.md gives tullytech.com; the Camera Blinder presentation's slide 18 QR code instead points to an older Wix site, https://tullytechn.wixsite.com/anticam.
-- Retro-reflective material wording: root CLAUDE.md and the AntiCam pitch outline both say "retro-reflective lining"; the private Ethics of Tully Tech essay instead says "retro-reflective coating" three times; the Mastery learning plan says retroreflective material "built into the hat lining." Coating and lining describe different physical constructions and should be resolved before the site describes the build.
-- AntiCam doorbell-test frames: Camera Blinder slide 15 ("FINAL PROTOTYPE V2") shows the night-vision, washed-out frame with a person present; slide 16, titled "FINAL PIN PROTOTYPE V2," instead shows a full-color frame from the same camera and street with no visible glow or person. Which frame demonstrates the device being on versus off is ambiguous, and the pitch outline raises the same open question.
-- AntiCam LED emitter type: slide 1's 10×10 LED array (yellow phosphor look) and slide 8's LED (yellow emitter) resemble stock white-phosphor LEDs, while slides 10–15 show a different, dark-chip module typical of IR emitters — the deck's text calls all of them "IR diodes," but the exact emitter type and wavelength per prototype is not stated anywhere.
-- Essay stat-sourcing rule: root CLAUDE.md says of AntiCam, "pull stats only from the pitch outline, with its sources." Every statistic in the private Ethics of Tully Tech essay (70/day, 18,000 cameras, 60%, one-quarter) is therefore off-limits for the site even though it appears in a source file — use the pitch outline's sourced figures instead (e.g., Comparitech's 70,882 NYC cameras, not the essay's uncited 18,000).
-- Hidden-camera statistics: the private essay cites Safe Home for "60% of people are worried" and "one-quarter of Americans have found hidden cameras in their hotel rooms"; the pitch outline instead cites IPX1031 (June 2025, n=1,050) at 58% worry and 47% found cameras at a rental (25% in 2023). The essay's 25% roughly matches IPX1031's 2023 figure but is attributed to hotel rooms rather than rentals, and the two "worry" percentages come from different studies.
-- The private essay is internally inconsistent about its own "70 times a day" statistic: page 1 says it applies to "the average person, not in a city"; page 5 restates it as happening "in rural areas" while using it to argue about walking down a city street. The page-5 sentence is highlighted in the source image, suggesting it was already flagged for review.
-- The private essay's scope is narrower than the rest of the AntiCam material: it never mentions the cap/pin/room-unit form factors, the 30+ prototype count, the four major versions, the two-years-of-work figure, or the live doorbell-camera test — though it does describe placing AntiCam in a room, which is at least consistent with the room-unit format.
-- The private essay asserts "there are no current laws against the creation or use of it" and predicts AntiCam "probably would not be outlawed" — an unsourced student legal opinion, not a legal finding, and should not be published as a statement of law.
-- AntiCam pricing oddity (Camera Blinder slide 2): the "Higher Quality Clip on Device" is priced $30–40, lower and narrower than the "Small Clip On Device" at $30–45, despite covering more sides of the body — possibly a typo in the source.
-- CeraPiper participant count: the public README describes a study with eight designers and makers (all eight on the design-intent item, seven of eight on the CAD-vs-machine item); the under-review paper draft instead describes twelve participants (P1–P12), with 12/12 and 11/12 on the same two items. The README appears to describe an earlier, smaller round of the same study — do not state a participant count on the site without asking Alex, and the larger study cannot be cited while the paper is under review.
-- CeraPiper outer-diameter bound: the README gives "40–78 mm" twice; the under-review paper draft gives "40 and 79 mm" / "40–79 mm." A one-millimetre discrepancy; use the README's 40–78 mm since it is the publishable source.
-- CeraPiper formative-study count: the README mentions only one study; the paper draft describes two — a five-session formative study (F1–F5) and a twelve-participant evaluation (P1–P12). If the site says "user study," it should not imply a single study of eight people.
-- CeraPiper inner-diameter specificity: the README says only "enumerated inner diameters (die mandrel sizes)"; the under-review paper draft names the actual values (30 and 40 mm flat-to-flat). The specific values exist only in the embargoed draft and should not be published even though they are a fact.
-- CeraPiper affiliation: root CLAUDE.md states the internship was "Cornell Tech x Technion, summer 2026." Neither the README nor the paper draft mentions Cornell Tech, the Technion, or any named university (the paper says only "our university"); the only institution named in these sources is the Matter of Tech Lab (matteroftechlab.org). Not a contradiction, but the affiliation is uncorroborated by the project's own materials.
-- CeraPiper role/authorship: root CLAUDE.md states Alex "was a research intern ... on this CAD tool." Neither source names him, and the published SCF 2025 CAM paper's author list (Berman, Seiz, Roumen) does not include him — confirming he is NOT an author on the published CAM paper. Whether he is named on the under-review CAD paper is unknowable from these files, since that paper is anonymized for review.
-- CeraPiper roadmap date precision: the roadmap gives Version 2.1 an exact date (7/8/2026) but Version 2.2 — the version whose paper-blueprint feature is central to both the README's teaser and the paper's walkthrough — only a month (7/2026). If the site states a "shipped" date for the blueprint feature, it can only be "July 2026," not an exact day.
-- Prosthetic-arm origin story is told at least four mutually exclusive ways across private drafts, all attached to the same follow-on facts: (a) watching his Abuelo, who had cerebral palsy, struggle to peel an orange; (b) watching a veteran with a hand amputation struggle to peel an orange while volunteering at a shelter; (c) watching a stranger at a food pantry whose hand could not close around an orange; and (d) touring a prosthetics lab during a middle-school summer program with no personal incident at all. This must be resolved by Alex before any version reaches the site, and if the family version is correct, whether a relative's medical condition should appear publicly needs separate confirmation.
-- Prosthetic-arm prototype count: private essay drafts repeatedly cite a "76th design," while the activity list and a video brief instead say "90+ prototypes" / "over 90 CADs." Root CLAUDE.md uses 90+, but the design brief itself gives no count at all — these may be three different things (a specific design iteration vs. a running total vs. a CAD-model count).
-- Hour of Code volume for Alex's own sessions: private-draft figures disagree with each other and with root CLAUDE.md — "40+ sessions led" in the activity list, "20+ workshops" in root CLAUDE.md, and an earlier note in the same private-draft file describing about 13 one-hour sessions.
-- Cornell Tech Robot-in-2-Days build duration is given as 36 hours in the NYU-framed drafts and 48 hours in the Cornell-community-framed drafts of the same story.
-- AntiCam iteration count in the private drafts is stated loosely and inconsistently — "tens of iterations," "dozens of iterations," and "more iterations than I could count" — all less precise than root CLAUDE.md's 30+ prototypes and four major versions, though the four prototype generations the drafts do name corroborate the four-version claim.
-- Timing collision: root CLAUDE.md dates both the Stevens research internship and the Octura internship to summer 2024; a private draft places the Stevens work specifically in the summer after sophomore year. Whether both internships happened in the same single summer is unclear.
-- Robotics team merge date is described three ways across private drafts of the same story: "last year," "my sophomore year," and "the spring before my Junior year."
-- Prosthetic device wording drifts across drafts between "prosthetic arm," "assistive hand," and "prosthetic hand" — the hand-to-arm scope change is itself documented in the drafts, so later drafts that still say "hand" are probably stale.
-- AntiCam mechanism is described two ways in private drafts: as infrared light that cameras see but humans do not, and separately as "scrambling" the video image of the wearer's face. Root CLAUDE.md's IR-LED-array-plus-retro-reflective-lining description is more specific; "scrambles" reads as a lay simplification rather than a second real mechanism.
-- E-waste metric mismatch: root CLAUDE.md cites 40+ lbs collected; a private draft instead reports a year-two expansion serving 200+ organizations with NYC Sanitation as a partner. Different units, not necessarily contradictory, but the site should not blend the two into one figure.
-- No FTC team numbers (17253, 14712) appear anywhere in the private college-essay drafts, so that file cannot corroborate which awards, roles, or robots belong to which team.
-- Extended Memory is named as a concept only in root CLAUDE.md; it appears in no other source file anywhere in the repo — neither résumé, no portfolio page, no robotics material, and not in the private essay drafts.
-- Prosthetic-arm cost target: root CLAUDE.md and the résumé both say the arm is buildable "under $100"; the design brief's own most-emphasized requirement instead reads "Most importantly ... costs <$200 to produce." Two of three sources say $100 and the primary design document says $200 — do not publish a figure without resolving this.
-- Prosthetic-arm audience-stat denominator: page 2 of the design brief places "2.6 million+ / Of those people live in developing nations" directly beneath the "3 million+ upper-arm amputations" stat (implying 2.6M of that 3M), while page 3 restates ">2.6 million people in developing nations" against the overall 10M limb-loss population instead. The same number is given two different denominators.
-- Prosthetic-arm internal cost figures don't quite line up: page 3's bullet says the "average cost" of non-functional prosthetics is "approx. $5,000," while the graphic on the same slide prices the passive-arm band at "3K–5K" (so $5,000 is the top of the band, not the average); separately, "robotic prosthetics often cost over $20,000" sits beside the graphic's "20-100K+" for myoelectric devices specifically — consistent, but differently scoped.
-- Modularity wording: root CLAUDE.md says the prosthetic arm is "modular for quick repair"; the design brief never mentions repair — it says "modular and easy to assemble parts" and frames modularity as making fabrication faster and easier. "Quick repair" is an extrapolation this source doesn't support.
-- Typos and misspellings present in the source material that must never be reproduced on the site: on the résumé, "Conell" (Cornell), "while in they are in motion" (Electric Road); on the Tritonics engineering-portfolio/poster pages, "will all actions" (should be "with"), "software(designed" (missing space), "Robot -in-2-Days" (spacing), "Accesories" (e-waste poster), and British "Organised"; in the AntiCam essay, "privcy," "extream," "licence," "their previously would have been," and inconsistent capitalization of "Anticam"; in the prosthetic-arm design brief, "funtionality," "Reseach," and "Average cos t"; and the design brief's page 15 carries an unrendered Canva template placeholder ("www.reallygreatsite.com") that must not survive into any published copy.
+- Robot name spelling: "Monti" (Alex's own portfolio page, root CLAUDE.md) vs "Monty" (every Tritonics team document: engineering portfolio, championship posters/slides, poster-deck, including a stray "Montyç"). Site follows "Monti," Alex's own naming.
+- CeraPiper spelling: "Cera Piper" (résumé) vs "CeraPiper" (the project's own README, root CLAUDE.md). Site follows "CeraPiper."
+- CeraPiper publication status: the résumé ("eventually... getting approved") and the AntiCam pitch outline ("published fabrication software") vs root CLAUDE.md and the under-review paper draft, which are explicit that only the earlier CAM version is published (ACM SCF 2025) and the CAD paper is under anonymous review. Site never calls the CAD paper published.
+- CeraPiper study numbers (participant count, formative-study count, outer/inner diameter): the public README vs the embargoed under-review paper draft. Site follows the README only; the draft's numbers stay unpublished regardless of which is more current.
+- AntiCam statistics: root CLAUDE.md restricts AntiCam stats to "the pitch outline, with its sources"; the private ethics essay and the deck's own speaker notes carry uncited numbers (70/day, 18,000 cameras, 60%/one-quarter, 2.5M rental listings, price ranges). Site uses only the pitch outline's sourced figures.
+- Essay use: root CLAUDE.md forbids publishing essay text; content/source/CLAUDE.md separately flags the ethics essay as good for "framing." Site treats it as ideas only, never quotes it.
+- Retro-reflective wording: "lining" (root CLAUDE.md, pitch outline, Mastery plan) vs "coating" (private ethics essay, three times). Site follows "lining."
+- AntiCam legality: root CLAUDE.md frames AntiCam as "legal and harmless by physics" (a mechanism claim); the private essay asserts no current laws prohibit it and predicts it won't be outlawed (a legal opinion). Site states only the mechanism, never a legal conclusion.
+- Modularity/screws: "modular, screwless" (root CLAUDE.md, Alex's portfolio page) vs the Tritonics engineering portfolio/poster-deck's documented "8 screw rule" with 45-second subsystem swaps. Site follows the documented "few screws, fast-swap" description.
+- Project naming: résumé's "Energy Road: No Pitstops" vs root CLAUDE.md/portfolio page's "Electric Road." Site follows "Electric Road," the name already used on the built page.
+- IDEA acronym: "Innovative Design & Engineering" (résumé sidebar) vs plain "IDEA"/"IDEA Club" (root CLAUDE.md, older résumé) vs "Innovative Design, Engineering & Automotive" (private drafts). Site follows "IDEA Club" and drops any acronym expansion.
+- Website URL: root CLAUDE.md gives tullytech.com; the Camera Blinder deck's QR code points to an older Wix site. Site links only to tullytech.com.
+- Reservation name: "Blackfeet Reservation" (root CLAUDE.md) vs "Blackfoot Reserve"/"Blackfoot" vs "Blackfleet" (Tritonics slides/posters/poster-deck). Site follows root CLAUDE.md's "Blackfeet" pending confirmation of the underlying program.
+- Robotics role titles: root CLAUDE.md's "Team Captain and Operations Lead (earlier: mechanical/electrical lead)" vs the résumé's "Captain & Ops Lead · Led electrical design" vs the Scorpion page's "Fabrication Lead" vs private drafts' "Head of Fabrication, Electrical, and Operations." Site follows root CLAUDE.md's umbrella framing; per-project titles stay on that project's own page.
+- Octura description: root CLAUDE.md's "Bank of America partner" internship vs the AntiCam deck's "fintech startup" vs private drafts' "Octora," a CLO trading startup. Site follows root CLAUDE.md's description and the résumé's spelling, "Octura."
 
-### TODO(alex)
+### TODO(alex): decisions needed before launch
 
-- TODO(alex): Confirm USC / Iovine and Young Academy enrollment (fall 2026) and the TroyLabs BUILD PM division for publication — neither appears on either résumé, so the site currently relies on root CLAUDE.md alone, with only a private draft corroborating it.
-- TODO(alex): Which public name for the solar road project: 'Energy Road: No Pitstops' (résumé) or 'Electric Road' (portfolio page / root CLAUDE.md)?
-- TODO(alex): Reconcile the IDEA program's "70+ students trained" (both résumé sidebars) with the older résumé's "40+ students reached through IDEA design & build workshops" — two different counts, or one out of date?
-- TODO(alex): Robotics outreach numbers: root says trained 50+ students; older résumé says 80+ children through coding & robotics. Which figure(s) to publish and what each counts (Hudson Guild? Hour of Code?).
-- TODO(alex): Food pantry service (1,000+ people): organization name, dates, and whether Alex wants it on the site.
-- TODO(alex): Ukraine never appears in the 30-page Tritonics poster-deck or any other team document, only in the older résumé and private drafts, and the team roster credits the micro-funding site to teammate Milind A. Confirm what Alex personally built or led, via which platform/campaign, when, and whether it predates the micro-funding site.
-- TODO(alex): 'Built & tested CLO models' at Octura: confirm CLO expansion (collateralized loan obligation?) before using the term.
-- TODO(alex): Which FTC team (#17253 or #14712) does each award belong to, and in which year? The résumé sidebar's "2x NYC Champion (Inspire Award) & Worlds (Think Award, 2nd)" names no team; root CLAUDE.md claims 2x Worlds qualifier; the résumé and portfolio pages together document only one NYC 1st place and one Worlds appearance (Honu, #14712). Confirm the second NYC championship and the second Worlds qualification, with team number and year.
-- TODO(alex): Tully Tech founding date and legal status are not on the résumé.
-- TODO(alex): Provide a clean AntiCam cap photo. The résumé thumbnail is a commercial sports championship cap with third-party logo baked in; unsuitable for publication.
-- TODO(alex): Confirm what the two small AntiCam insets on the résumé depict (clip-on pin? room unit?) so captions in the AntiCam deck can be matched.
-- TODO(alex): Confirm whether a downloadable résumé PDF should be offered and, if so, supply a version without the phone number.
-- TODO(alex): NYU Tandon hackathon: name of the hackathon and what was won.
-- TODO(alex): No dates, seasons or years appear on any of the seven pages. Which FTC season (game name/year) does each robot belong to: Monti, Swerve Drive, Honu, Ball-Drive, Scorpion?
-- TODO(alex): Honu text uses 'sample' (FTC 2024–25 INTO THE DEEP terminology) and Monti has a 'Three Ball Intake' (ball-based game). Confirm seasons rather than inferring.
-- TODO(alex): Monti page says 'Season Still Ongoing'. What were the final awards/results for that season?
-- TODO(alex): Order of the two teams: was #14712 (Electrical Lead) before #17253 (Captain)? Root CLAUDE.md implies electrical lead was 'earlier' but pages give no order.
-- TODO(alex): Source or method for the 'Swerve Drive 30% more efficient than any other FTC drive train' claim; drop or soften if unsupported.
-- TODO(alex): Source for 'First fully modular FTC robot' and 'first-of-its-kind scissor lift' claims; consider softening to 'our first' / 'the first we know of'.
-- TODO(alex): Is PEREGRINE the team's own pathing engine or a library it replaced — three poster-deck pages call it a "Custom Pathing Engine (Peregrine replacement)" while another presents PEREGRINE as the team's own software. Can the Simons Foundation collaborator who co-developed it be named (called a "professor" on one page, a "PhD researcher" on another, and "PhD Researchers" plural on Alex's own portfolio page — confirm singular or plural), and is "Infinite Variable Calculus" the intended term (calculus of variations)?
-- TODO(alex): Was Ball-Drive built and competed, or a design study only? No awards or 'of note' appear.
-- TODO(alex): Robot-in-2-Days: which year, and what was the result beyond 'successfully competed'?
-- TODO(alex): E-waste city-wide expansion with NYC Department of Sanitation: current status (planned vs. launched)?
-- TODO(alex): Hudson Guild: how many weeks/students, and over what period?
-- TODO(alex): Are higher-resolution originals available for the source renders and photos generally? The robotics CAD-render tiles (~200×180 px, hero renders ~300–400 px wide), the prosthetic-arm design-brief pages (1456×840 px), and the Electric Road concept render/test photo (roughly 320×195 and 325×150 px) are all too small for a full-width hero without native exports.
-- TODO(alex): Electric Road: any measured numbers from the scaled model (power, speed, efficiency) to back 'sufficient power ... even at high speeds'?
-- TODO(alex): Confirm 'Honu' meaning (Hawaiian for green sea turtle) if the site wants to explain the name; the claw render looks turtle-like but the page does not say so.
-- TODO(alex): confirm his role on Monty (captain? which subsystems did he design or author on these pages?) and the year/season of these pages; no page states either.
-- TODO(alex): confirm the game name and season. Pages never name it; vocabulary and event labels match FTC DECODE (2025–26) per the sibling poster deck's 'DECODE SEASON AWARDS'.
-- TODO(alex): confirm 'nyc-champs' means the FTC New York City Championship and the team's result there; the pages do not say.
-- TODO(alex): pages P1–P4 and P6–P9 of this portfolio are not in the folder (only P5 and P10–P15). Are they available (they likely hold team, awards and outreach content)?
-- TODO(alex): which rapid-fire figure is correct (10 ms, 100 ms or 150 ms) and which auton numbers (+1 vs +2 ranking points; 9 vs 18 far-zone artifacts) are final.
-- TODO(alex): correct intake version numbering (first iteration labeled V3 at Qualifier 1).
-- TODO(alex): source or method for the '~4000 teams surveyed' claim before using it as a stat.
-- TODO(alex): Identify the unreadable logos in the Tritonics championships-presentation footer (teal 'H' circle, gold seal, black lightning bolt, orange square, silver seal, white script 'OK') and explain the USC Iovine and Young Academy connection shown there and in the Connect expert-network strip, given Alex starts at USC in fall 2026.
-- TODO(alex): Robot name spelling for the site — "Monti" (Alex's portfolio page and root CLAUDE.md) vs "MONTY" (every Tritonics team document, including a stray "Montyç"). The résumé names no robot, so it can't break the tie.
-- TODO(alex): whether Alex was on Tritonics when the Ball drive was 'developed by Tritonics' (root CLAUDE.md lists Ball-Drive #17253 as ops lead/captain) and whether Swerve was co-developed with #14712.
-- TODO(alex): Which season/year is this? No page gives a date; the DECODE game is the FTC 2025–26 season by external knowledge only. Confirm before writing dates.
-- TODO(alex): Confirm the Modular Prosthetic Arm Connect project is yours (the slide credits Professor Long Wang and shows Stevens/Infinite Technologies logos but names no student) and that the workbench photo on slide-a.png (~x415-530,y400-500) is you.
-- TODO(alex): Confirm ownership of the other three Connect projects (fusor reactor — Martin G?; PEREGRINE path optimization — Noah G?; Golden Record — Ayrton K?) so they are credited to teammates, not to you.
-- TODO(alex): Identify the teal circular 'H' logo next to Bloomberg Philanthropies on the fusor panel (unreadable at source resolution).
-- TODO(alex): Are you the 'one senior [who] is the school Design & Engineering Lead' and one of the 'three teammates [who] completed summer STEM internship' in the SWOT (slide-f.jpg)?
-- TODO(alex): Which parts of the outreach program did you personally lead (summer camp design, Hour of Code, Hoboken Mayor outreach, Decode modules, micro-funding site)? The pages attribute the micro-funding website to Milind A and the judges script to Taran A.
-- TODO(alex): Resolve the robotics budget total — itemized lines sum to $3,150.98 but the printed total reads $3,121 — before quoting either figure.
-- TODO(alex): Hour of Code count — four figures exist for one program: 20+ workshops (Alex's portfolio page), 30+ sessions (Tritonics team Reach page), and 40+ sessions or 13 one-hour sessions (private drafts). Confirm which number to publish and whether it counts Alex's sessions or the team's.
-- TODO(alex): Is https://microfunding.tritonics.org/ still live, and did you build any of it? Should the site link to it?
-- TODO(alex): Has the PEREGRINE research ("will be published & through an open-source platform") actually been published or open-sourced? Link if so.
-- TODO(alex): The exact shooting-regression equation and the driver-curve exponent (printed as x^5 = y?) are unreadable at source resolution; supply if you want them quoted.
-- TODO(alex): Team location/school: pages reference Hoboken and NJ communities while competing in NYC; clarify how to describe the team's base.
-- TODO(alex): Reconcile the "80+ member club" in root CLAUDE.md and the private drafts with the 14–15 person Tritonics competition team documented across the DECODE-season materials — what does the 80+ figure count (a broader school program spanning all five teams)?
-- TODO(alex): Which specific event corresponds to 'placed third in New York' in CLAUDE.md (Inspire 3rd at Qualifier 9? something later not in these pages?).
-- TODO(alex): Which season/year is this deck? DECODE logo and Gantt weekday-date pairs match Nov-Dec 2025, but no year is printed.
-- TODO(alex): What was the final placement at the New York (NYC) championship? The deck lists only qualifier Inspire awards and a Super Qualifier Sustain award; root CLAUDE.md says 'placed third in New York'.
-- TODO(alex): Reservation name and spelling — root CLAUDE.md says "Blackfeet Reservation"; the Tritonics team materials spell it "Blackfoot Reserve" / "Blackfoot" on some pages and "Blackfleet" on others. Confirm the correct name, and whether the collaboration was micro-funding, an FLL program built there, or both.
-- TODO(alex): Source for 'CAD tutorials in seven languages', the e-waste drive (40+ lbs), '20+ Hour of Code workshops', 'weekly robotics programs at Hudson Guild', 'trained 50+ students', and '80+ member club' — none are in this deck (check portfolio/07-community-events.jpg and championships-presentation).
-- TODO(alex): "38 Experts Engaged" is stated on the poster-deck, but the domain breakdown sums to 36. Confirm the correct number.
-- TODO(alex): Reconcile the poster-deck's sprint/qualifier counts — draft page 1 says 5 major sprint reviews and 4 qualifier feedback loops; pages 9 and 17 say 4 and 3.
-- TODO(alex): Is the launch-regression velocity unit t/sec or ticks/sec (chart y-axis reads 'Velocity (t/sec)')?
-- TODO(alex): What does 'Tic Tac Tech (made cities)' mean — a team the Tritonics founded, and where?
-- TODO(alex): Are the Monty CAD renders Alex's own work or team work; who should be credited? Which render is the current version (page 13/12 vs the older blue CAD on pages 14 and 23)?
-- TODO(alex): Is microfunding.tritonics.org still live, and should the site link to it?
-- TODO(alex): The 'Neptune' planet graphic (p. 25) and Clearbot photo (pp. 14, 23) look third-party; do not reuse without a source.
-- TODO(alex): Alex's personal contribution to Monty (which subsystems, software, or CAD he owned) is not stated; the deck only gives 'Captain (Y4)' in Operations.
-- TODO(alex): The build script references 15 image assets that are NOT in the repo (`assets/` folder missing): bg_title.jpg, bg_plain.jpg, bg_close.jpg, pin_v2_cut.png (clear Pin V2 cutout, title + product slide), cap_front_cut.png (Cap front cutout, solution slide), cap_side_cut.png (Cap side, product slide), cap_under_cut.png (Cap V2 underside showing emitter array), ir_glow.jpg (phone-camera photo of emitter glowing magenta), ring_off.jpg / ring_on.jpg / ring_on_zoom.jpg (Ring doorbell frames off/on + zoom inset ~340x470), proto_v1.jpg … proto_v4.jpg (V1–V4 prototype photos). Locate originals (likely camera-blinder-presentation slides) or ask Alex for the files. AntiCam-Pitch-Deck.pptx output is also not in the repo.
-- TODO(alex): Confirm whether the Room Unit should be described as 'under $100' (root CLAUDE.md, outline) or '$100+' (deck product card).
-- TODO(alex): Confirm when AntiCam actually started (two years vs June 2023 test date) and pick one consistent 'years of work' figure for the site.
-- TODO(alex): Confirm the doorbell test date (June 2023?), which prototype was worn ('Pin prototype V2'), and that the left frame is 'AntiCam off' (color) and right is 'AntiCam on' (washed-out night-vision) — outline TBD L48.
-- TODO(alex): Reconcile version numbering: is 'Pin V2' the same generation as 'V4 = Pin V2 + Cap V2'? What is the exact count behind '30+ prototypes'?
-- TODO(alex): Confirm Mastery plan year (dates read 2/11/25–5/6/25 but sign-offs are 10/30/2025 and 3/29/2026) and whether the cap deliverable (flash-triggered IR, retroreflective lining, recharging, circuit diagram) was completed.
-- TODO(alex): Real BOM and margin figures (deck values $15–25 and 55–65% are founder estimates, outline TBD L49).
-- TODO(alex): Segment scoring table is founder's assessment; re-score after BUILD interviews (outline TBD L47). Do not present as data on the site.
-- TODO(alex): Verify the ethics quote ('Camera jammers already give this capability to people willing to break the law…') is verbatim from the Ethics of Tully Tech essay before quoting it.
-- TODO(alex): Confirm 'four small businesses started before high school' and 'a decade of building things that ship' are accurate and wanted on the site.
-- TODO(alex): Source for '2.5M U.S. rental listings (AirDNA, 2023)', detector price range '$20–200', and jammer price range; otherwise drop them.
-- TODO(alex): Is the AntiCam origin story ("a friend's private moment was posted online without consent") cleared to publish? It involves a third party.
-- TODO(alex): IR eye-safety: the deck lists 'IR eye-safety testing' and 'IR eye-safety certification' as future work; the site must not imply the device is certified safe.
-- TODO(alex): The Global Mindset paragraph on page-2 ends mid-sentence ('I am accounting for this mindset …') in the source itself; is there a complete version?
-- TODO(alex): Optional deck items still missing: waitlist/website numbers, advisors, founder photo/headshot (outline TBD L50).
-- TODO(alex): Should Mastery sponsors' names (Shorr, Mr. Field) appear on the site? Probably omit; 'faculty-sponsored' is enough.
-- TODO(alex): Was the AntiCam pitch deck submitted to TroyLabs BUILD, and what was the outcome? Root CLAUDE.md states Fall 2026 BUILD, PM division; the deck itself is framed as an application.
-- TODO(alex): When and where was this deck presented (class, program, year)? No date or venue appears; only the June 7, 2023 Ring timestamp bounds it.
-- TODO(alex): Confirm which doorbell frame is 'AntiCam on' (slide 15, B&W night vision with wash-out) vs 'AntiCam off' (slide 16, color, no glow), and whether both are from the same session on 06/07/2023.
-- TODO(alex): Is the Ring frame OK to publish? It shows a residential street (likely home) and a person; consider cropping or blurring the street.
-- TODO(alex): Are the slide 17 cap photos of a real Hat Version 2 prototype, or stock cap images with LEDs/lining added as a mockup?
-- TODO(alex): Exact LED modules used per version (wattage, IR wavelength e.g. 850/940 nm, chip count). Slides 10-15 show a 3x3-chip 10W-style COB; slide 1's 10x10 array appears to be a stock image.
-- TODO(alex): Battery details: coin-cell type (LR44?), 4 cells in V1/V2 vs 9 in the third prototype; run time.
-- TODO(alex): Is the red unit on slide 2 a working room-unit prototype? It is the only room-device photo and is unlabeled.
-- TODO(alex): Whose hands/body appear in slides 9, 11, 14 (presumably Alex)? Confirm before publishing.
-- TODO(alex): Slide 20 is fully black. Was it a video (test footage)? Is that footage available for the site?
-- TODO(alex): Is the laser cutter a Trotec (partial 'trotec' lettering on slide 10) and where was fabrication done (school shop)?
-- TODO(alex): Is https://tullytechn.wixsite.com/anticam still live, and should the site link to it or only to tullytech.com?
-- TODO(alex): Is the slide-18 logo the current Tully Tech logo, and is a vector version available?
-- TODO(alex): Confirm whether 'CB' stood for 'Camera Blinder' and when the name changed to AntiCam.
-- TODO(alex): How the V1/V2 photographed here map onto the 'four major versions' in the pitch outline (are V3/V4 later, undocumented in this deck?).
-- TODO(alex): coating or lining? The essay says the retro-reflective element is a "coating"; CLAUDE.md and the pitch outline say "lining." Which is accurate for the current build?
-- TODO(alex): the essay's IR claim is qualitative ("seems like a blinding light to a camera"). No wavelength, LED count, power, range, or emitter spec appears anywhere in 9 pages. The site's mechanism copy needs those numbers from another source.
-- TODO(alex): does the "no current laws against it" claim still hold, and is it safe to say on a public site? Recommend the site state only the mechanism (no RF emission, no jamming, no damage) and let readers draw the legal inference, rather than asserting legality.
-- TODO(alex): should the site publish a use policy / acceptable-use statement at all? The essay proposes communicating intent at purchase and manufacture ("Lawyer Talk"), but naming specific misuses in public marketing copy is a judgment call.
-- TODO(alex): the essay's honest limitation — IR is weaker in bright daylight — is a credibility asset if stated plainly, but it is also a product weakness. Confirm whether to surface it on the AntiCam page.
-- TODO(alex): the essay's stats have no URLs (KDVR "Caught on Camera" 2018; Safe Home "How to Detect a Spy Cam in Your Hotel Room"). No Works Cited page exists in the 9 pages. If any essay stat is ever wanted on the site, a linkable source has to be found first.
-- TODO(alex): confirm this essay may be referenced at all. Root CLAUDE.md says "Never publish essay text; the essays are private drafts" — that rule is written about content/source/essays/, but this is also an essay. content/source/CLAUDE.md calls this file a "Good source for the 'built to protect people' framing," which implies ideas-yes/words-no. Treat as ideas only.
-- TODO(alex): Whether AntiCam's public framing should keep the essay's two-sided honesty (naming the public-safety tension outright) or lead only with the protective use cases. The essay is the only source that argues both sides.
-- TODO(alex): Is the production cost target $100 or $200? The design brief says <$200; CLAUDE.md and the AntiCam pitch script say <$100. Pick one and state whether it is a target or an achieved BOM cost.
-- TODO(alex): Sources for the audience and cost statistics. The brief cites nothing for 10M+, 180,000+, 3M+, 30%, 2.6M+, $5,000, $20,000, $0.5M lifetime, 10-50% insurance coverage, or 5-15% access. Site content rules require every statistic to have a source available, so these cannot be published as-is.
-- TODO(alex): Does "2.6 million+ in developing nations" refer to the 3M upper-arm amputees or to the 10M overall limb-loss population? Pages 2 and 3 imply different denominators.
-- TODO(alex): Is the prototype count 90+, and does it cover fingers/mechanisms only or complete arms? The brief documents at least three distinct physical builds but gives no count.
-- TODO(alex): Stevens Institute attribution — the prosthetic-arm design brief names no institution, supervisor, lab, or date. Confirm how the Stevens role should read on the site, and whether the lab or the faculty mentor (named Professor Long Wang in one private draft) may be credited.
-- TODO(alex): Provenance of the title-slide hand photo (page 1). Its chrome-ringed wrist cuff does not match the forearm designs on pages 8, 10 or 14, suggesting it may be stock rather than Alex's build. Do not use it as a hero until confirmed.
-- TODO(alex): The page 9 slide uses third-party product photos of a muscle-sensor breakout board and a screenshot of ROBOTIS Dynamixel example code. Which myoelectric sensor was actually used (MyoWare? part number?), and is there a photo of Alex's own wiring/firmware to use instead?
-- TODO(alex): The page 15 van is a stock photo with another organization's real branding ("Keeping New Mexico Safe & Healthy"). Confirm it is removed from any published version; also confirm whether the VA outreach connection was ever actually made or is still aspirational.
-- TODO(alex): Was ">80% of common tasks" measured, and if so how? The brief lists it as a requirement and reports no test results anywhere — no grip force numbers, no task success rates, no cycle counts, despite page 6 claiming strength/grip/actuation/functionality tests were run.
-- TODO(alex): What is the neural network in the Auto Sizing pipeline (page 13)? What data was it trained on, what does it predict, and is it Alex's model or an nTop built-in? "AI-assisted automatic fit" in CLAUDE.md rests entirely on this one slide.
-- TODO(alex): The console on page 13 optimizes lattice cell parameters against mass (5.571 g, 7.906 g). Is the auto-sizing optimizing a lattice infill for weight, or sizing the hand geometry to the user? The slide title says sizing but the data says lattice mass — clarify before writing copy.
-- TODO(alex): Confirm the finger cord material and servo spec. The brief says "Kevlar Cord Attached to Servo" and an elastic return cord, but no servo model, torque, count, battery spec, or Arduino board model is given.
-- TODO(alex): Should the page 11 claim "CUTTING OUT ORTHOTISTS AND PROSTHETISTS" appear on the site? It is a combative framing about licensed clinicians and may read badly to a medical or investor audience; there is no supporting argument slide behind it.
-- TODO(alex): The page 15 text layer contains the Canva placeholder "www.reallygreatsite.com" (not visibly rendered). Confirm no template placeholder text survives into anything published.
-- TODO(alex): Are there photos or video of the arm being worn or operated by a person? Every image in this deck is a bench shot, render, or component — nothing shows the device in use, which is the strongest possible asset for this project page.
-- TODO(alex): What exactly was your role and title on CeraPiper? Neither the README nor the paper names you, and the folder gives no team list. The site needs a role line ('research intern, summer 2026' per root CLAUDE.md) that you can stand behind.
-- TODO(alex): Which parts of the system did YOU build? The README describes the Onshape FeatureScript layer, the Flask middleware, the Arduino firmware and the paper blueprint as one system with no attribution per component. Without this, any CeraPiper page can only say 'I worked on' at the system level, which is weak for recruiters.
-- TODO(alex): Confirm the Cornell Tech x Technion framing. The sources only name the Matter of Tech Lab. Should the site say 'Matter of Tech Lab', 'Cornell Tech', 'Cornell Tech x Technion', or all three?
-- TODO(alex): The five README figures (figures/teaser_v2.png, paper_teaser.png, software_architecture_v2.png, cad_interface.png, primitive_shots.png) are referenced but missing from content/source/cerapiper/. Copy them in — they are the only CeraPiper images that could plausibly be published.
-- TODO(alex): Even for the README figures, confirm the lab is OK with them appearing on your personal site, and whether photos showing other people's hands need clearance.
-- TODO(alex): Can the site link the live demo (https://cerapipes.onrender.com / https://cerapipe.matteroftechlab.org/), the GitHub repo (github.com/matteroftech/CeraPipes), and the Google Drive SCF demo video? All three are in the README but the repo may be private or the links stale.
-- TODO(alex): The 8-10% relative humidity and 1.85 L / 60 h figures come from the earlier CAM work's technical evaluation. If we cite them, the footnote should point to doi:10.1145/3745778.3766644 — confirm that is the right citation and that those exact numbers appear in that paper.
-- TODO(alex): the README's 'eight designers and makers' study cannot be reconciled with the draft's twelve participants from these files alone. Ask Alex which number is current and which one is safe to state given the review embargo.
-- TODO(alex): content/source/cerapiper/user-study-paper/ is gitignored and under anonymous review. Do not call the CAD paper published, do not quote any sentence from text.md, do not reproduce or crop any page image, and do not name the paper title on the site. Use only the README for publishable CeraPiper copy.
-- TODO(alex): no information anywhere in this group about dates of Alex's internship beyond 'summer 2026' in root CLAUDE.md, no mention of a supervisor or advisor, and no statement of what CeraPiper cost, how many prototypes were built, or how many machines exist.
-- TODO(alex): the README describes a 'chandelier-style' assembled cooling device, but no image of one is present in this source group (the paper's Figure 7 shows an arch-shaped cooling screen, not a chandelier). If the site uses the word 'chandelier' there is nothing to show for it.
-- TODO(alex): Which prosthetic-arm origin story is the true one, and may it be published? Private drafts give three mutually exclusive versions — a grandfather with cerebral palsy, a veteran at a shelter, a stranger at a food pantry — plus a fourth framing with no personal incident. If the family version is correct, confirm the grandfather (or his family) is comfortable with the medical condition appearing on a public site.
-- TODO(alex): Confirm the prosthetic prototype count to publish — 76 designs, 90+ prototypes, or 90+ CAD models. These may be three different things.
-- TODO(alex): Confirm the correct spelling and description of the finance internship — the résumé says "OCTURA, Bank of America Partner"; the private drafts spell it "Octora" and describe it as a CLO trading startup.
-- TODO(alex): Confirm whether the Stevens research internship and the Octura finance internship happened in the same summer; the résumé dates both to Summer 2024.
-- TODO(alex): Confirm which FTC team (17253 or 14712) each award belongs to — this file never uses team numbers.
-- TODO(alex): Confirm whether the senior-season result (Inspire Awards at all three NYC qualifiers, advancing to Super Qualifiers) is final, and how it relates to the 'rookie team placed third in New York' line in root CLAUDE.md.
-- TODO(alex): Confirm whether the chicken parm countdown site (chickenparmlunch.splashthat.com) should appear on the site as a shipped project, and whether the URL is still live.
-- TODO(alex): Confirm whether the microphone-blocking device is a real second Tully Tech product or an abandoned idea.
-- TODO(alex): Confirm whether the post-application projects (urban bridge design, four-player chess variant with chess.com, the NJ K-8 STEM curriculum, the FTC coding algorithm) shipped and should be listed.
-- TODO(alex): Extended Memory appears nowhere in the essays — confirm it exists and what stage it is at.
-- TODO(alex): Confirm whether the Cuban-American / multigenerational-household identity material and the National Hispanic Recognition Scholar award should appear on the site, and in what section.
-- TODO(alex): The essays mention an apraxia diagnosis and a family member's illness. These are private health details and are deliberately excluded from this extraction; confirm they stay out.
-- TODO(alex): Confirm the Mastery teacher's name spelling (Schwartzott vs Schwartzoff) if she is to be credited.
-- TODO(alex): Confirm whether nTop was a sponsor, a mentor, or a tool vendor — the draft says the school bans sponsorships and the relationship was structured as mentorship.
-- TODO(alex): The list under the 'Accepted' heading appears to be an applied-to list rather than an acceptance list. If any admissions outcomes are to appear on the site, confirm them directly; only the USC Iovine and Young admission and Faculty Scholarship are unambiguous here.
-- TODO(alex): The AntiCam surveillance statistics in this file (70 cameras per NYC block, 70 captures per day, 58%/11% Airbnb figures) carry no citations. Use the sourced versions from content/source/anticam/pitch-deck-outline.md instead.
-- TODO(alex): Confirm whether a downloadable résumé PDF should be offered on the site and, if so, supply a version with the phone number removed — the résumé image on file cannot be published as-is.
-- TODO(alex): Confirm whether the USC Iovine and Young Faculty Scholarship should be listed as an award on the site.
-- TODO(alex): No source file other than root CLAUDE.md mentions Steve Jobs. Confirm whether the influence should be stated on the site and, if so, in what words.
-- TODO(alex): Which FTC season (game name and year) does each robot belong to — Monti, Swerve Drive, Honu, Ball-Drive, Scorpion? No portfolio page carries a date.
-- TODO(alex): Which calendar season is the DECODE season material? No slide or poster prints a year.
-- TODO(alex): Order of the two teams — was #14712 (electrical lead) before #17253 (captain)? Root CLAUDE.md implies mechanical/electrical lead came earlier, but no source states the order.
-- TODO(alex): Monti's page says 'Season Still Ongoing' — what were the final results for that season?
-- TODO(alex): No source other than root CLAUDE.md mentions a third-place finish in New York. Which event does it refer to, and what is its exact name? The nearest documented results are Inspire 3rd at Qualifier 9 and the Sustain Award at Super Qualifier 2.
-- TODO(alex): Robotics team merge date — drafts variously place it in sophomore year and in the spring before junior year.
-- TODO(alex): Confirm the CLO expansion (collateralized loan obligation?) before the term is used on the site.
-- TODO(alex): Tully Tech's founding date and legal status are not stated on the résumé; the private drafts give grades 9–12 and the 2025–2026 project plan says 'over the past two years'.
-- TODO(alex): AntiCam duration is inconsistent across sources — the pitch outline and root CLAUDE.md say two years, the 2025–2026 Mastery plan says 'over the past two years', and the ninth-grade first prototype implies three or more years by senior year.
-- TODO(alex): Confirm the IDEA program's public name and the expansion of the acronym — three variants exist: "Innovative Design & Engineering" (current résumé sidebar), "IDEA Club" (root CLAUDE.md), and "Innovative Design, Engineering & Automotive" (private drafts, the only place the "A" is expanded) — plus its founding year, co-founder, and whether it is still running.
-- TODO(alex): Confirm whether the National Hispanic Recognition Scholar award, the school Entrepreneurship Award, and the Aviator Award should appear on the site; all three come only from private drafts.
-- TODO(alex): Confirm whether the senior-season result (Inspire Awards at all three NYC qualifiers, advancing to Super Qualifiers) is final.
-- TODO(alex): Confirm whether the pre-high-school ventures (Alex's Magnets and Stickers, Locos Logos, Cookie Road, Void Electronics) belong on the site; they appear only in private drafts.
-- TODO(alex): Confirm whether the athletics, LASU, and wellbeing-council entries belong on the site; they appear only in private drafts.
-- TODO(alex): The older résumé's community section (Ukraine fundraising, IDEA workshops, food pantry, STEM for children) was dropped from the current résumé. Confirm whether those items should still appear on the site.
-- TODO(alex): The résumé lists SolidWorks first, but SolidWorks appears in no other source file; Onshape, Fusion, and nTop are the tools the project sources actually document. Confirm the CAD list and its order for the site.
-- TODO(alex): CeraPiper is a team research project; confirm which layers of that stack Alex personally wrote before the site attributes any of them to him.
-- TODO(alex): Which 8 commercial sites, for whom, and are any of them linkable or screenshot-able for the site? No source names them.
-- TODO(alex): Is chickenparmlunch.splashthat.com still live, and should it appear as a shipped project?
-- TODO(alex): Confirm which languages Alex speaks and at what level; only Spanish use is documented, via a single outreach anecdote.
-- TODO(alex): Confirm which of the team robot software systems (Task System, Kalman localization, PID control, PEREGRINE, Monti's pathing software), if any, Alex wrote or co-wrote, so the skills section can claim them accurately.
-- TODO(alex): Room Unit price — root CLAUDE.md, the outline storyline and the deck's own product-slide headline all say every format is "under $100", but the Room Unit card and the outline's slide table both say "$100+". Confirm which is right; the site currently cannot say "all under $100". (content/source/anticam/pitch-deck-build.js#L400, #L405; content/source/anticam/pitch-deck-outline.md#L3, #L23)
-- TODO(alex): Project age — the Mastery plan already says "over the past two years" at its 2/11/25 start, the Fall 2026 deck still says "two years", and the doorbell test is dated June 2023. Pick one figure for the site; on the deck's own evidence the project is three or more years old. (content/source/anticam/mastery-learning-plan/text.md#page-1; content/source/anticam/pitch-deck-build.js#L446, #L236)
-- TODO(alex): Version numbering — the deck calls V4 "Pin V2 + Cap V2" and says that generation passed the doorbell test, but the Pin V2 test is dated June 2023 and the Camera Blinder deck shows only V1 and V2 plus "Hat Version 2". Confirm how the Camera Blinder V1/V2 map onto the deck's V1–V4, and what the exact count behind "30+ prototypes" is. (content/source/anticam/pitch-deck-build.js#L452; content/source/anticam/camera-blinder-presentation/text.md#page-15, #page-17)
-- TODO(alex): Doorbell frames — confirm that the black-and-white night-vision frame is "AntiCam on" and the color frame is "AntiCam off", that both are from the same session on 06/07/2023, and that the person in the frame is you. The outline raises the same question. (content/source/anticam/pitch-deck-outline.md#L48)
-- TODO(alex): Is the Ring frame cleared to publish? It shows a residential street and a person; consider cropping or blurring. (content/source/anticam/camera-blinder-presentation/pages/page-15.jpg)
-- TODO(alex): The ethics quote used on the deck's responsible-design slide — attributed to "Alex Tully, Ethics of Tully Tech (2025)" — does not appear anywhere in content/source/anticam/ethics-of-tully-tech/text.md. Verified by search. Do not publish it as a quote from the essay until you confirm its origin. (content/source/anticam/pitch-deck-build.js#L530)
-- TODO(alex): Coating or lining? The essay says the retro-reflective element is a "coating"; the deck, the outline and root CLAUDE.md say "lining"; the Mastery plan says retroreflective materials built into the hat lining. These describe different physical things. (content/source/anticam/ethics-of-tully-tech/text.md#page-3; content/source/anticam/mastery-learning-plan/text.md#page-1; content/source/anticam/pitch-deck-outline.md#L3)
-- TODO(alex): IR eye-safety — the deck lists IR eye-safety testing and certification as future work. The site must not imply the device is certified safe, and should not repeat the essay's absolute safety claim. (content/source/anticam/pitch-deck-build.js#L581; content/source/anticam/ethics-of-tully-tech/text.md#page-4)
-- TODO(alex): Emitter specifications — no source gives wavelength (850 nm? 940 nm?), LED count, power, battery run time, or range for any version. The near-IR "700 to 1,000 nanometers" line is uncited speaker notes. Provide real numbers or the mechanism copy stays qualitative. (content/source/anticam/pitch-deck-build.js#L214)
-- TODO(alex): Battery details — coin-cell type (LR44?), four cells in V1/V2 versus nine in the third prototype, and run time per version. (content/source/anticam/camera-blinder-presentation/pages/page-08.jpg, page-11.jpg)
-- TODO(alex): Is the red unit on Camera Blinder slide 2 a working room-unit prototype? It sits beside the Room Device caption but is unlabeled, and it is the only room-unit image in the sources. (content/source/anticam/camera-blinder-presentation/pages/page-02.jpg)
-- TODO(alex): Are the Hat Version 2 photos of a real prototype or a mockup on stock cap images? Two of the four views show no hardware at all. (content/source/anticam/camera-blinder-presentation/pages/page-17.jpg)
-- TODO(alex): Provide a clean AntiCam cap photo. The résumé thumbnail is a commercial sports championship cap with third-party branding baked in. (content/source/resume/resume-current.png)
-- TODO(alex): Real BOM and margin figures, to replace the $15–25 and 55–65% founder estimates. (content/source/anticam/pitch-deck-outline.md#L49)
-- TODO(alex): Segment scoring table is the founder's own assessment and is to be re-scored after BUILD interviews. Confirm it stays off the site. (content/source/anticam/pitch-deck-outline.md#L47)
-- TODO(alex): Sources for "2.5M U.S. rental listings (AirDNA, 2023)", the detector price range "$20–200", and the jammer price range; otherwise these are dropped. (content/source/anticam/pitch-deck-build.js#L148, #L149, #L312)
-- TODO(alex): Mastery plan dates — the project runs 2/11/25–5/6/25 but the sponsor sign-offs are dated 10/30/2025 and 3/29/2026, after the final deliverable was due, and the file title reads "(2025–2026)". Confirm the real dates, and whether the cap deliverable (flash-triggered IR, retroreflective lining, recharging, circuit diagram) was actually completed. (content/source/anticam/mastery-learning-plan/text.md#page-3)
-- TODO(alex): Should the Mastery sponsors' names (Shorr, Mr. Field) appear on the site? Recommend omitting them; "faculty-sponsored" carries the same weight. (content/source/anticam/mastery-learning-plan/text.md#page-3)
-- TODO(alex): Old site — Camera Blinder slide 18's QR code resolves to an older Wix AntiCam page. Is it still live, and should the site link only to tullytech.com? (content/source/anticam/camera-blinder-presentation/pages/page-18.jpg)
-- TODO(alex): Locate the missing deck assets/ images (clean cut-outs of the pin, cap, IR glow, Ring frames and V1–V4 prototype photos). They would be the best assets for the site. (content/source/anticam/pitch-deck-build.js#L5)
-- TODO(alex): The deck's founder slide claims "four small businesses started before high school" and "a decade of building things that ship"; root CLAUDE.md confirms only the eight commercial websites. Confirm before either line is used on the AntiCam page. (content/source/anticam/pitch-deck-build.js#L549, #L558)
-- TODO(alex): The outline's storyline paragraph credits Alex with "published fabrication software". Root CLAUDE.md is explicit that the CeraPiper CAD paper is under anonymous review and must not be called published. Do not carry that phrasing over from the outline. (content/source/anticam/pitch-deck-outline.md#L3)
-- TODO(alex): Confirm whether "CB" in the Camera Blinder deck stood for Camera Blinder, and when the name became AntiCam. The slide text never says AntiCam; only the QR URL does. (content/source/anticam/camera-blinder-presentation/text.md#page-1; content/source/anticam/camera-blinder-presentation/pages/page-18.jpg)
-- TODO(alex): Production cost — is it under $100 or under $200? The design brief's own most-emphasized requirement is "costs <$200 to produce", while the résumé says the arm "can be constructed for <$100", root CLAUDE.md says under $100, and the AntiCam pitch script says "buildable for under $100". Pick one figure and say whether it is a target or a measured bill of materials. (content/source/prosthetic-arm/design-brief/text.md#page-5; content/source/resume/resume-current.png; content/source/anticam/pitch-deck-build.js#L554)
-- TODO(alex): Sources for the audience and cost statistics. The brief cites nothing for 10M+, 180,000+, 3M+, ~30%, 2.6M+, $5,000, $20,000, the 5-year replacement interval, $0.5M lifetime cost, 10–50% insurance coverage, or 5–15% access. Site rules require a source for every statistic, so none of these can go on the site until you supply citations. (content/source/prosthetic-arm/design-brief/text.md#page-2, #page-3)
-- TODO(alex): Does "2.6 million+ in developing nations" describe the 3 million upper-arm amputees or the 10 million overall limb-loss population? The Audience slide places it under the upper-arm card and words it "Of those people", while the Problem slide restates it against overall limb loss. (content/source/prosthetic-arm/design-brief/pages/page-02.jpg#page-2; content/source/prosthetic-arm/design-brief/text.md#page-3)
-- TODO(alex): Prototype count — the résumé and activity list say 90+ prototypes, the private drafts also cite a 76th design and "over 90 CAD models", and the brief gives no count at all. Confirm the number to publish and what it counts: CAD iterations, printed parts, complete arms, or all three. (content/source/resume/resume-current.png; content/source/essays/college-essays-private.txt#L1710-L1711, #L3273, #L3671)
-- TODO(alex): Was ">80% of common tasks" ever measured? The brief lists it as the functional requirement and reports no results — no grip force, no task success rate, no cycle counts — although the process slide says strength, grip, actuation and functionality tests were run. If results exist, they are the strongest thing this project could show. (content/source/prosthetic-arm/design-brief/text.md#page-5, #page-6)
-- TODO(alex): What is the neural network in the Auto Sizing pipeline? What was it trained on, what does it predict, is it yours or an nTop built-in — and is the loop sizing the hand geometry to the user or optimizing a lattice for mass? The slide is titled sizing, but the console optimizes cell parameters against mass in grams. "AI-assisted automatic fit" rests entirely on this one slide. (content/source/prosthetic-arm/design-brief/text.md#page-13; content/source/prosthetic-arm/design-brief/pages/page-13.jpg#page-13)
-- TODO(alex): Which myoelectric sensor did you actually use — make and part number? The slide shows third-party breakout-board product photos and ROBOTIS Dynamixel sample code, so the site cannot describe your sensor or firmware from this source. A photo of your own wiring would replace it. (content/source/prosthetic-arm/design-brief/pages/page-09.jpg#page-9)
-- TODO(alex): Confirm the actuation hardware specs the brief omits: servo model and count, servo torque, battery type and capacity, Arduino board model, and the Kevlar cord spec. (content/source/prosthetic-arm/design-brief/text.md#page-7, #page-8)
-- TODO(alex): Is "modular for quick repair" accurate? The brief only claims modular, easy-to-assemble parts and ties modularity to faster fabrication; the repair wording comes from the private drafts. (content/source/prosthetic-arm/design-brief/text.md#page-5, #page-15; content/source/essays/college-essays-private.txt#L2794-L2797)
-- TODO(alex): Should the "cutting out orthotists and prosthetists" framing appear on the site? It is a blunt claim about licensed clinicians, with no supporting argument slide behind it, and it may read badly to a medical or investor audience. (content/source/prosthetic-arm/design-brief/text.md#page-11)
-- TODO(alex): Has the VA outreach connection actually been made, or is it still aspirational? It is the only partner named in the brief, and the site should not imply a relationship that does not exist. (content/source/prosthetic-arm/design-brief/text.md#page-15)
-- TODO(alex): Are there photos or video of the arm being worn or operated by a person, or of a finger or hand actuating? Every image in the brief is a bench shot, a render, or a component — nothing shows the device in use, which is the asset this project most needs. (content/source/prosthetic-arm/design-brief/text.md)
-- TODO(alex): Provenance of the title-slide hand photo — the three-ring wrist cuff does not match the forearm shown on pages 8, 10 and 14. Confirm whether it is your build before it is used anywhere. (content/source/prosthetic-arm/design-brief/pages/page-01.jpg#page-1)
-- TODO(alex): Confirm nothing from the brief's template survives into published material: the page 15 text layer contains the Canva placeholder "www.reallygreatsite.com" (not visibly rendered on the slide), and the source text carries typos — "funtionality", "Reseach", "Average cos t" — that must not be reproduced if any of this copy is reused. (content/source/prosthetic-arm/design-brief/text.md#page-15, #page-6, #page-3)
-- TODO(alex): Which FTC season — game name and year — does each robot belong to: Monti, Swerve Drive, Honu, Ball-Drive, Scorpion? No portfolio page carries a date, season or year.
-- TODO(alex): Confirm the calendar year of the DECODE season on the Tritonics pages; no page prints a year, and the Gantt weekday-date pairs pointing at Nov–Dec 2025 are inference only.
-- TODO(alex): Confirm which team (#17253 or #14712) each award belongs to; the private drafts never use team numbers and the portfolio pages are the only source pairing a robot with a team.
-- TODO(alex): No source ties the DECODE award strip to a team number in print, though the headers carry the Tritonics 17253 wordmark. Confirm the Inspire 1st/2nd/3rd and Sustain awards are #17253's and belong to the Monti season.
-- TODO(alex): Honu's award list carries both "Inspire Award 1st" and "4 Time Inspire Award 2nd" — do all five Inspire results belong to that robot's season, or are they cumulative team history?
-- TODO(alex): Scorpion lists both "Design Award" and "Design Award 3rd" as separate bullets — two distinct events, or a duplicate?
-- TODO(alex): Monti's award list ends with "Season Still Ongoing", so it is a snapshot. What were the final results for that season, including any championship placement?
-- TODO(alex): The portfolio pages give no order for the two teams. Root CLAUDE.md implies #14712 (electrical lead) came before #17253 (captain), but no source states it. Confirm the order and the seasons.
-- TODO(alex): The résumé states "FTC Captain & Ops Lead · Led electrical design" as one current role, root CLAUDE.md files electrical under "earlier", and the roster card lists the electrical system as a current responsibility. Confirm the phrasing for the site.
-- TODO(alex): "Fabrication Lead" (Scorpion) appears in no source but portfolio page 5. Confirm whether it should be listed alongside captain / ops lead / electrical lead.
-- TODO(alex): Scorpion is credited two ways on one page — "an FTC Competition Robot that I designed" alongside "My Role: Fabrication Lead". Decide how to phrase the credit.
-- TODO(alex): "7 → 14 members" on the SWOT versus 15 people pictured on the roster. Which is the end-of-season number?
-- TODO(alex): Was Ball-Drive built and competed, or a design study? No awards and no "Of Note" line appear, and the Tritonics chassis comparison says it was rejected as oversized and not modular.
-- TODO(alex): "Screwless" (root CLAUDE.md and Alex's portfolio page) versus the documented "8 screw rule / 45-second subsystem removal". These are not the same claim; confirm which to publish.
-- TODO(alex): Source or basis for "First fully modular FTC robot" — consider softening to "the first we know of" unless there is evidence.
-- TODO(alex): Source or method for "30% more efficient than any other FTC drive train" (Swerve Drive). Drop or soften if unsupported.
-- TODO(alex): Source for "first-of-its-kind scissor lift" (Scorpion).
-- TODO(alex): Source or method for the "~4000 teams surveyed" claim before it is used as a statistic.
-- TODO(alex): How were "10x faster code process" and "10-minute rapid auton creation" measured?
-- TODO(alex): Autonomous numbers differ between pages — 57 points +1 ranking point with 9 far-zone artifacts, versus 57 points +2 ranking points with 18. Which is final?
-- TODO(alex): Rapid-fire timing is stated three ways — 150 ms, 100 ms and 10 ms — across three pages of the same portfolio. Say which step each describes, or pick the correct one.
-- TODO(alex): The intake iteration labels read "V3 – Qualifier 1", "V2 – Qualifier 3", "V3 – Qualifier 9", "V4 – Super Qualifier 2" — two V3s, and the first is presumably V1. Confirm the numbering.
-- TODO(alex): P10 says 3 launcher iterations; P13 shows only V1 and V2.
-- TODO(alex): Since the Tritonics chassis page says the swerve drive was co-developed with another team, confirm before the site presents Swerve Drive as a #14712-only project.
-- TODO(alex): Confirm whether "Honu" should be explained on the site; the claw render reads turtle-like but no source states a meaning.
-- TODO(alex): The joystick curve is printed as cubic (x³) on the engineering portfolio and x⁵ on the Control poster. Confirm the exponent.
-- TODO(alex): Ukraine fundraising amount — $1,000 (older résumé) vs $2,000 (private essay drafts). Confirm the figure.
-- TODO(alex): The SWOT prints "Gender imbalance (33% female → 6%)" on the same deck that reports a 67% female rookie class. The 6% looks like a typo; confirm before either number is published.
-- TODO(alex): Confirm what the "50+ students trained" figure counts, and whether it is the same population as the team's "50+ new students to FIRST values".
-- TODO(alex): Which outreach programmes did Alex personally lead versus the team as a whole? The team pages attribute the micro-funding site to Milind A and the judges script to Taran A.
-- TODO(alex): E-waste city-wide expansion with the NYC Department of Sanitation — planned or launched?
-- TODO(alex): Hudson Guild — how many weeks, how many students, over what period? Only Alex's portfolio page documents the programmes; the team documents name it as a partner only.
-- TODO(alex): New mentors are given as 28 on the Reach planning page and 24 on the recruitment page.
-- TODO(alex): The team competes in NYC qualifiers but its outreach references Hoboken, NJ communities and All Saints NJ, while Alex attends Avenues in NYC. Clarify how to describe the team's base before writing location copy.
-- TODO(alex): Mentored team #21377 is "Bosworth" on the slide and "Botsworth" on the poster; the new team is "Tic-Tac Tech" on the slide and "Tic Tac Tec" on the poster. Confirm spellings if either is named.
-- TODO(alex): Confirm that the Modular Prosthetic Arm Connect project is Alex's, and that the workbench photo on that panel (slide-a.png, approx. x 415–530, y 400–500) is him.
-- TODO(alex): Confirm the other three Connect projects belong to teammates (fusor reactor, autonomous path optimization, Golden Record) so the site credits them correctly or omits them.
-- TODO(alex): Confirm whether Professor Long Wang may be named on the site.
-- TODO(alex): Photo clearance for every image showing minors, teammates or unidentified adults, and confirmation that the e-waste photo may be used as a portrait.
-- TODO(alex): Pages P1–P4 and P6–P9 of the Tritonics engineering portfolio are not in the repo (only P5 and P10–P15). They likely hold team, awards and outreach content — are they available?
-- TODO(alex): Slides P5 and P6 of the championship presentation are missing; the numbering jumps from P4 to P7.
-- TODO(alex): Confirm whether "nyc-champs-portfolio" in the filenames means the FTC New York City Championship and, if so, the team's result there; the pages never name the event.
-- TODO(alex): Source typos that must not be reproduced on the site: "Robot -in-2-Days" spacing, "will all actions" for "with", "software(designed" missing a space, "Accesories", and British "Organised".
-- TODO(alex): Decide whether the site names the teams publicly as Tritonics #17253 and #14712, or refers to them generically.
-- TODO(alex): What exactly was your role and title on CeraPiper, and is "Research Intern, Cornell Tech x Technion, summer 2026" the line you want on the site? Neither the README nor the paper draft names you, and the folder contains no team list; the résumé is the only source for the role.
-- TODO(alex): Which parts of the system did you build? The README describes the Onshape FeatureScript layer, the Flask middleware, the Arduino firmware, and the paper blueprint as one system with no attribution per component, so the site can currently only say you worked on it at the system level.
-- TODO(alex): How should the affiliation read — "Matter of Tech Lab", "Cornell Tech", "Cornell Tech x Technion", or all three? The résumé says Cornell Tech x Technion; the CeraPiper sources name only the Matter of Tech Lab, and the paper draft refers to the authors' university without naming it.
-- TODO(alex): Study size conflict. The README reports a study with eight designers and makers (all eight on design intent, seven of eight on the CAD-versus-machine question); the draft under review documents a later, larger study with twelve participants plus a separate five-person formative study. Per the content rules the résumé is the tiebreaker, but it says nothing about the study, so the README's numbers are used. Which figures are current, and may any of them be published while the draft is under review?
-- TODO(alex): Outer-diameter conflict. The README gives 40–78 mm twice; the draft gives 40–79 mm. The README is the publishable source, so 40–78 mm is used. Which is correct?
-- TODO(alex): Supply the five README figures — teaser_v2.png, paper_teaser.png, software_architecture_v2.png, cad_interface.png, primitive_shots.png. They are referenced by the README but absent from content/source/cerapiper/, and they are the only CeraPiper images that could plausibly be published.
-- TODO(alex): Confirm the Matter of Tech Lab is comfortable with those figures, and with any CeraPiper copy, appearing on your personal site — and whether photos showing other people's hands need separate clearance.
-- TODO(alex): May the site link the live tool (https://cerapipes.onrender.com and https://cerapipe.matteroftechlab.org/), the repository (https://github.com/matteroftech/CeraPipes), and the SCF demo video on Google Drive? All four are in the README, but the repo may be private and the links may be stale.
-- TODO(alex): Confirm the ~8–10% relative humidity and 1.85 L / 60 hours figures appear in the published SCF 2025 paper, so the site can footnote them to doi:10.1145/3745778.3766644. The README attributes them to technical evaluations of the underlying process without naming the paper.
-- TODO(alex): The README mentions a chandelier-style assembled cooling device, but no image of one is available in this source group. Is there a photo, or should the site drop the word?
-- TODO(alex): Name spelling — the site will use "CeraPiper" (the project README's spelling) rather than the résumé's "Cera Piper". Confirm. Note also that the résumé body misspells Cornell as "Conell" and that typo must not be carried into any site copy.
-- TODO(alex): The résumé calls the work "CAD and slicing software", while the README frames it as a CAD layer built over an existing CAM tool. Which framing do you want on the site? They are compatible but emphasize different things.
-- TODO(alex): Not stated anywhere in the sources — the internship's exact start and end dates, a supervisor or advisor name, how many machines exist, and how many prototypes were produced. Supply any of these you want on the site.
-- TODO(alex): Project name for the solar road — "Electric Road" (portfolio page and root CLAUDE.md) or "ENERGY ROAD: No Pitstops" (current résumé)? The repo's tie-break rule prefers the résumé, which would make "Energy Road: No Pitstops" the published name, but CLAUDE.md and the portfolio page both use "Electric Road". (content/source/portfolio/06-electric-road.jpg#page-1; content/source/resume/resume-current.png; CLAUDE.md)
-- TODO(alex): Any measured results from the Electric Road scaled model — power generated, transfer distance, vehicle speed, efficiency — to support the "sufficient power … even at high speeds" claim, which carries no measurement in any source. (content/source/portfolio/06-electric-road.jpg#page-1)
-- TODO(alex): When was Electric Road built? No source gives a year; the only timing cue is that it was a Mastery project. (content/source/portfolio/06-electric-road.jpg#page-1)
-- TODO(alex): Is the pillar-mounted coil arrangement in the Electric Road render the real proposed design, or a presentation simplification? The render shows roadside pillars, the companion diagram shows a receiving coil under the car, and the text describes coils embedded in the road. (content/source/portfolio/06-electric-road.jpg#page-1)
-- TODO(alex): Fix the résumé typo if its Electric Road wording is reused: it reads "while in they are in motion". (content/source/resume/resume-current.png)
-- TODO(alex): Does the IDEA curriculum include CNC? Root CLAUDE.md says it does, but neither résumé lists CNC among the five subjects. (CLAUDE.md; content/source/resume/resume-current.png; content/source/resume/resume-older.png)
-- TODO(alex): Any publishable photo of an IDEA session, a student project, or the makerspace. There is no image of this program anywhere in content/source/. (content/source/resume/resume-current.png — text-only entry, no thumbnail)
-- TODO(alex): Is the IDEA Club the same program as the résumé's "Innovative Design & Engineering" sidebar entry, or two different things? Both appear to describe one activity but no source says so explicitly. (content/source/resume/resume-current.png; content/source/resume/resume-older.png)
-- TODO(alex): E-waste city-wide expansion with the NYC Department of Sanitation — still planned, or has it launched? Your page states it in the present tense as in-progress. (content/source/portfolio/07-community-events.jpg#page-1)
-- TODO(alex): Hudson Guild — how many students, over how many weeks, and across what period? No source gives a count; "weekly" is the only quantity. (content/source/portfolio/07-community-events.jpg#page-1)
-- TODO(alex): Micro-funding credit. The team roster credits the Micro Funding website to teammate Miland A, while root CLAUDE.md lists the platform among your smaller pieces. What was your part — the fundraising, the partnerships, or the site itself? (content/source/robotics/championships-presentation/slide-e.jpg; CLAUDE.md)
-- TODO(alex): Is https://microfunding.tritonics.org/ still live, and should the site link to it? (content/source/robotics/championships-presentation/slide-b.png#P8)
-- TODO(alex): CAD tutorials in seven languages — where are they published, and is there a link or screenshot? Root CLAUDE.md is the only non-essay source; they appear in no document in content/source/. (CLAUDE.md)
-- TODO(alex): Do you want the older résumé's four community numbers on the site at all? The current résumé drops that whole section. The food pantry line in particular is claimed nowhere else in the repo and needs an organisation name and dates if it is used. (content/source/resume/resume-older.png; content/source/resume/resume-current.png)
-- TODO(alex): Is the food pantry where you volunteered the same food pantry that appears in one version of the prosthetic arm's origin story in your drafts? §4 records three competing origin stories; if they are the same place, that resolves part of both questions at once. (content/source/resume/resume-older.png; content/source/essays/college-essays-private.txt#L6366 and #L6389)
-- TODO(alex): May the e-waste photo of you be used as the site's portrait? It is the only clear photo of you in this section's sources, and at roughly 110 px wide the page copy is too small — a higher-resolution original would be needed. (content/source/portfolio/07-community-events.jpg#page-1)
-- TODO(alex): Do not reproduce the source typos if this copy is reused: "Organised" (British spelling) and "Accesories" on the e-waste poster. (content/source/portfolio/07-community-events.jpg#page-1)
-- TODO(alex): Does Extended Memory exist beyond the idea — any sketch, CAD, prototype, or notes? Root CLAUDE.md is the only source in the entire repo; the term appears in no source file, neither résumé, no portfolio page, and not in the private drafts. (CLAUDE.md — Smaller pieces)
-- TODO(alex): Extended Memory form factor — glasses, a hat, or something else? CLAUDE.md names both glasses and a hat as examples. (CLAUDE.md)
-- TODO(alex): Is "Extended Memory" the public name, or a working title? (CLAUDE.md)
-- TODO(alex): If Extended Memory does appear, how should its privacy angle be handled, given that a wearable which records faces and moments is the inverse of AntiCam's premise of giving people control over when they are seen? (content/source/resume/resume-current.png)
-- TODO(alex): Whether Alex is named as an author on either CeraPiper paper. Confirmed NOT an author on the published SCF 2025 CAM paper (Berman, Seiz, Roumen); the under-review CAD paper is anonymized for review and cannot be checked from these files. The résumé's "eventually writing a research paper" language must not be presented as accepted or published.
-- TODO(alex): Which photos are cleared for public use. Covers Hudson Guild and Hour of Code photos (minors' faces), the roster/team headshots (15 students, several minors), community outreach photos (Ghana, FreeCycles, Blackfoot), whiteboard/fabrication process photos, and expert headshots on the Tritonics portfolio pages. Confirm which may be published as-is, which need cropping or blurring, and whether teammates may be named or pictured at all (default assumption in these notes: no) — plus whether third-party logos (Stevens, Microsoft, Simons Foundation, Bloomberg Philanthropies, FIRST, DECODE, NASA, NYU, USC) may appear.
-- TODO(alex): A headshot. No source file contains one; the e-waste photo of Alex is the only clear, cleared-looking face shot on file, and at roughly 110 px wide it is too small to use directly. Confirm whether to commission or supply a new one.
-- TODO(alex): Social links to publish. No source lists any accounts (LinkedIn, GitHub, Instagram, or otherwise); confirm which, if any, should appear on the site.
-- TODO(alex): The teammate portfolio pages https://www.martin-gendell.com/ftc-robotics and https://arelypeckham.com/work/first-robotics were unreachable from the build environment (403 on CONNECT at the outbound proxy), so nothing from either has been used. If either is a teammate's write-up of these seasons, it may resolve the season dates, team numbers, and award attributions this document otherwise leaves open — check both and pull in any extra robotics facts they contain.
-- TODO(alex): Whether Extended Memory and outreach belong on the home page or only on /about. Root CLAUDE.md already raises whether Extended Memory should appear on the site at all; once that is decided, confirm placement for it and for the outreach material (Hudson Guild, Hour of Code, e-waste, micro-funding) — home-page-level or /about-only.
-- TODO(alex): Ten re-renders of the CAD models at 2400 px on black would materially improve the site. The robotics CAD tiles on file are ~200×180 px card crops from slide exports (hero renders top out around 300–400 px wide); native 2400 px renders of Monti/Monty, Swerve Drive, Honu, Ball-Drive, Scorpion, plus the strongest AntiCam and prosthetic-arm hero shots, would let the site use them at full width instead of thumbnail scale.
+- Authorship on the CeraPiper papers — confirmed NOT an author on the published SCF 2025 CAM paper (Berman, Seiz, Roumen); the under-review CAD paper is anonymized and can't be checked.
+- Which photos are cleared for public use — Hudson Guild/Hour of Code photos of minors, the 15-person roster (several minors), outreach photos (Ghana, FreeCycles, Blackfeet), fabrication/process photos, expert headshots, and whether teammates may be named or pictured at all (default assumption: no).
+- A headshot — no source file contains one; the only clear face shot (the e-waste photo, ~110px wide) is too small to use directly.
+- Social links to publish — no source lists any accounts (LinkedIn, GitHub, Instagram, or otherwise).
+- Two teammate portfolio pages were unreachable at build time (martin-gendell.com/ftc-robotics, arelypeckham.com/work/first-robotics — 403 at the outbound proxy); check both for season dates, team numbers, or award attributions this document otherwise leaves open.
+- Whether Extended Memory and outreach (Hudson Guild, Hour of Code, e-waste, micro-funding) appear on the home page or only on /about.
+- Ten CAD re-renders at 2400px on black (Monti/Monty, Swerve Drive, Honu, Ball-Drive, Scorpion, plus the strongest AntiCam and prosthetic-arm shots) — current sources top out around 300–400px wide.
+- AntiCam project age — "two years" (pitch outline, deck, root CLAUDE.md) vs the deck's own June 2023 doorbell-test date and a private video brief's "three years," which put it at 3+ years by fall 2026.
+- AntiCam version numbering — how Camera Blinder's documented V1/V2 (plus "Hat Version 2") map onto the pitch deck's V1–V4, and the exact count behind "30+ prototypes."
+- Prosthetic-arm cost target — root CLAUDE.md and the résumé say under $100; the design brief's own most-emphasized requirement says under $200.
+- Prosthetic-arm prototype count — "76th design," "90+ prototypes," and "90+ CAD models" may be three different figures; root CLAUDE.md uses 90+.
+- Robotics award claims — root CLAUDE.md's "2x NYC Champion," "2x Worlds qualifier," and rookie team "placed third in New York" aren't corroborated by the résumé, the seven portfolio pages, or any Tritonics team document, which together document only one NYC 1st, one Worlds appearance (Honu #14712), and qualifier-level Inspire/Sustain awards.
+- Robotics training/outreach counts — "trained 50+ students" (root CLAUDE.md) vs "80+ children" (older résumé) vs IDEA's "70+" vs "40+ reached" — confirm which figure(s) to publish and what each counts.
+- FTC season/year for each robot (Monti, Swerve Drive, Honu, Ball-Drive, Scorpion) — no page or slide prints a date, which affects every robot's project-page copy.
+- CeraPiper affiliation — "Cornell Tech x Technion" (root CLAUDE.md, résumé) vs the project's own sources, which name only the Matter of Tech Lab.
+- Micro-funding figure and scope — $1,000 (older résumé) vs $2,000 (private drafts) raised for Ukraine, and whether Ghana/Blackfeet involvement was actually micro-funding or a separate workshop/FLL program.
+
+### TODO(alex): nice to confirm
+
+**General / bio & contact**
+- USC Iovine and Young enrollment, TroyLabs BUILD PM division, and the Steve Jobs influence line are sourced only from root CLAUDE.md (plus one private draft for USC) — not corroborated by either résumé.
+- Tully Tech's founding date/legal status, which 8 commercial sites Alex coded (and for whom), languages spoken beyond English, and the CAD tool list/order (résumé leads with SolidWorks, but only Onshape/Fusion/nTop appear in project sources) aren't documented.
+- Whether to offer a downloadable résumé PDF (needs the phone number removed) and whether the USC Faculty Scholarship should be listed as an award.
+
+**Electric Road**
+- No measured results (power, speed, efficiency) back the "sufficient power ... even at high speeds" claim; no build year is given; and it's unclear whether the roadside-pillar render or the under-car/in-road-coil descriptions reflect the real design. Don't reproduce the résumé's "while in they are in motion" typo.
+
+**IDEA Club**
+- Founding year, co-founder, and whether it's still running; whether it's the same activity as the résumé's "Innovative Design & Engineering" entry; whether CNC is really part of the curriculum (root CLAUDE.md says yes, neither résumé lists it); no publishable photo of a session exists.
+
+**Robotics / Tritonics**
+- Team/award attribution: which FTC team (#17253 vs #14712) each award and robot belongs to, and the order the two teams were led in — no source states either.
+- Season results: Monti's page says "Season Still Ongoing" (final result?); what "placed third in New York" refers to beyond Inspire 3rd/Sustain qualifier awards; whether Honu's five Inspire results are one season or cumulative; whether Scorpion's two "Design Award" bullets are duplicates; whether Ball-Drive competed or was a design study (the chassis page says it was rejected as oversized).
+- Unsupported claims to source or soften: "First fully modular FTC robot," "30% more efficient than any other FTC drive train" (Swerve), "first-of-its-kind scissor lift" (Scorpion), "~4000 teams surveyed," "10x faster code process," "10-minute rapid auton creation."
+- Internal engineering-portfolio/poster-deck inconsistencies not yet resolved: autonomous scoring (+1/9 vs +2/18 far-zone artifacts), rapid-fire timing (150/100/10 ms), intake iteration numbering (two "V3" labels), launcher iteration count, budget total ($3,150.98 itemized vs $3,121 printed, vs a separate Financial Plan), expert count (38 vs a 36-sum breakdown), sprint/qualifier counts (5/4 vs 4/3), turret ratio ("2-ratio" vs "1:1"), and outreach reach/percentage figures that don't reconcile — none should be quoted until resolved.
+- Whether Swerve Drive should be shown as #14712-only, given the team's own page says it was co-developed with another team; whether "Honu" (Hawaiian for sea turtle) should be explained; the joystick-curve exponent (cubic vs x^5); how to phrase the Scorpion "Fabrication Lead" credit.
+- Team/season logistics: end-of-season team size (7→14 vs 15 pictured), the gender stat ("33%→6%" looks like a typo against "67% female rookie class"), new-mentor counts (28 vs 24), and the team's home base (Hoboken/NJ outreach partners vs NYC qualifiers and Alex's NYC school).
+- Naming to confirm if used: mentored team #21377 ("Bosworth"/"Botsworth"), the new team ("Tic-Tac Tech"/"Tic Tac Tec"), and whether to name the teams publicly as #17253/#14712 or generically.
+- Who personally led which outreach programs (micro-funding is credited to teammate Milind A, the judges script to Taran A); the Ukraine micro-funding amount and whether microfunding.tritonics.org is still live to link.
+- The Modular Prosthetic Arm Connect-program panel and its workbench photo — confirm they're Alex's, that the other three Connect projects belong to teammates, and whether Professor Long Wang may be named.
+- Missing source pages (engineering-portfolio P1–P4/P6–P9, championship-presentation P5–P6) may hold team/awards/outreach content worth requesting.
+- Photo/logo clearance: any image showing minors, teammates, or unidentified adults, and whether third-party logos (Stevens, Microsoft, Simons Foundation, Bloomberg Philanthropies, FIRST, DECODE, NASA, NYU, USC) may appear. Don't reproduce source typos ("Robot -in-2-Days," "will all actions," "software(designed," "Accesories," "Organised").
+
+**AntiCam**
+- Doorbell-test provenance: which frame is "on" vs "off," whether both are from the same 06/07/2023 session, whether the person shown is Alex, and whether the Ring frame (residential street) is cleared to publish.
+- Missing deck assets (clean pin/cap cutouts, IR-glow photo, Ring frames, V1–V4 prototype photos) would be the best available images — locate or request originals.
+- Room Unit price ("under $100" per outline/root CLAUDE.md/deck headline vs "$100+" on the deck's own product card); real BOM/margin figures to replace the founder-estimate $15–25 and 55–65%; the segment-scoring table should stay off the site (pre-BUILD-interview self-assessment).
+- Emitter specs (wavelength, LED count, power) and battery details (cell type/count, run time) aren't given anywhere; whether the slide-2 red unit is a working room-unit prototype and whether the Hat V2 photos show real hardware.
+- Whether the founder-slide claims ("four small businesses before high school," "a decade of building things that ship") are accurate and wanted, and whether the origin story (a friend's moment posted without consent) is cleared given the third party involved.
+- Whether the deck's ethics-slide quote actually appears in the private essay (not found there on search); whether the essay's daylight-weakness limitation should be surfaced as an honest caveat; whether an acceptable-use statement belongs on the site.
+- Whether "CB" stood for "Camera Blinder" and when the name became AntiCam; whether the old Wix site is still live; whether/when the deck was submitted to TroyLabs BUILD and the outcome.
+- Confirm IR eye-safety is described only as future testing, never as certified.
+
+**Prosthetic arm**
+- Which origin story is true (grandfather with cerebral palsy / veteran at a shelter / stranger at a food pantry / no personal incident) and, if the family version, whether it's cleared given the medical detail.
+- Prototype count ("76th design" / "90+ prototypes" / "90+ CAD models" may be three different figures) and whether ">80% of common tasks" was ever actually measured — the brief reports no results despite claiming tests were run.
+- No source cites the audience/cost statistics (10M+, 3M+, 2.6M+, $5,000, $20,000, insurance/access percentages), and it's unclear whether "2.6 million+ in developing nations" is a subset of the 3M or the 10M figure.
+- Actual hardware used: myoelectric sensor make/part number, servo model/count/torque, battery, Arduino board, Kevlar cord spec (the brief shows third-party stock photos, not Alex's build); what the Auto Sizing neural network predicts and whose model it is.
+- Whether "modular for quick repair" is accurate (the brief only says "modular, easy to assemble") and whether the "cutting out orthotists and prosthetists" framing belongs on a recruiter/investor-facing site.
+- Whether the VA outreach connection has happened or is aspirational; whether any photo/video shows the arm in use (everything on file is a bench shot, render, or component); provenance of the title-slide hand photo (its wrist cuff doesn't match the other forearm designs).
+- Stevens attribution (no institution/supervisor/date in the brief itself) and whether Professor Long Wang may be named; confirm no Canva placeholder text or brief typos ("funtionality," "Reseach") survive into published copy.
+
+**CeraPiper**
+- Exact role/title to publish (résumé's "Research Intern, Cornell Tech x Technion, summer 2026") — neither the README nor the paper names Alex, and which parts of the stack (FeatureScript layer, Flask middleware, Arduino firmware, paper blueprint) he personally built isn't stated.
+- Whether the lab is comfortable with the five referenced-but-missing README figures appearing on a personal site, and whether hands shown in them need clearance; whether the live demo, GitHub repo, and SCF demo video may be linked (repo may be private, links may be stale).
+- Whether the 8–10% humidity and 1.85 L/60 h figures may be footnoted to the published SCF 2025 paper (doi:10.1145/3745778.3766644); whether there's a photo of the "chandelier-style" cooling device the README describes, or the word should be dropped.
+- Internship start/end dates, supervisor name, machine count, and prototype count aren't stated anywhere; whether "CAD and slicing software" (résumé) or "a CAD layer over an existing CAM tool" (README) is the framing to use.
+
+**Outreach / community**
+- Food pantry service ("1,000+ people," older résumé only) — organization, dates, whether wanted on the site, and whether it's the same pantry as one prosthetic-arm origin story.
+- Hudson Guild and "CAD tutorials in seven languages" have no supporting count, link, or screenshot anywhere; e-waste's NYC Sanitation expansion — planned or launched?
+- Whether the older résumé's dropped community section (Ukraine, IDEA workshops, food pantry, STEM for children) should be revived, and whether the e-waste photo of Alex (~110px, only clear face shot on file) can serve as a portrait or needs a higher-res original.
+
+**Personal background**
+- Whether Cuban-American/multigenerational-household material, the National Hispanic Recognition Scholar award, school Entrepreneurship Award, and Aviator Award (private drafts only) should appear, and where.
+- Whether pre-high-school ventures (Alex's Magnets and Stickers, Locos Logos, Cookie Road, Void Electronics), athletics/LASU/wellbeing-council entries, the chicken-parm countdown site, and the post-application projects (bridge design, chess variant, NJ K–8 curriculum, FTC coding algorithm) belong on the site.
+- Whether the microphone-blocking device is a real second Tully Tech product; Mastery teacher name spelling (Schwartzott/Schwartzoff) if credited; whether nTop was sponsor, mentor, or tool vendor.
+- Confirm the CLO expansion and reconcile "Octura"/Bank-of-America-partner vs "Octora"/CLO-trading-startup before using financial jargon; confirm the Stevens and Octura internships' summer-2024 overlap.
 
 ## 13. Voice notes
 

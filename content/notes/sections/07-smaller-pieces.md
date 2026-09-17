@@ -25,8 +25,8 @@ has no source anywhere in the repo except root CLAUDE.md itself; see §7.4.
 ### 7.1 Electric Road (individual Mastery project)
 
 **Role:** Individual project. Alex's own portfolio page labels it a Mastery Project and prints
-"Individual Project" where the other six pages print a team role
-(content/source/portfolio/06-electric-road.jpg#page-1). The page uses first person for the build: it
+"Individual Project" where the five robot pages print a team role under "My Role:" (the outreach
+page, 07, prints no role at all) (content/source/portfolio/06-electric-road.jpg#page-1). The page uses first person for the build: it
 states that he built the scaled testing model (content/source/portfolio/06-electric-road.jpg#page-1).
 The résumé lists it under "Tully Tech – Select Inventions", where Alex is described as founder and
 innovator of the startup (content/source/resume/resume-current.png).
@@ -69,8 +69,9 @@ embedded with wireless charging coils — demonstrated with a scaled testing mod
   content/source/portfolio/07-community-events.jpg).
 - No measured number of any kind appears on the page: no power figure, no speed, no efficiency, no
   transfer distance, no coil count in text (content/source/portfolio/06-electric-road.jpg#page-1).
-- No award, no "Key Innovation(s)" label box, and no "Of Note" line appears on this page, unlike
-  pages 1, 3, and 5 (content/source/portfolio/06-electric-road.jpg#page-1).
+- No award list and no "Key Innovation(s)" label box appears on this page, unlike pages 1, 3 and 5,
+  and no "Of Note" line, unlike page 2 (content/source/portfolio/06-electric-road.jpg#page-1;
+  content/source/portfolio/02-swerve-drive.jpg#page-1).
 
 #### Statistics
 
@@ -214,9 +215,10 @@ the activity in grades 9 through 12 at roughly two hours a week over thirty-two 
 
 ### 7.3 Outreach
 
-**Role:** Mixed, and it matters. On his own portfolio page Alex uses first person for the Hour of
-Code curriculum and the e-waste drive, and describes running the Hudson Guild programs
-(content/source/portfolio/07-community-events.jpg#page-1). On the Tritonics team documents the same
+**Role:** Mixed, and it matters. His own portfolio page describes all three programmes in
+subjectless first-person fragments ("Ran programs weekly…", "Organised and Ran over 20 workshops…",
+"Organised in school e-waste drive…"); the only explicit "I" on the page is the e-waste city-wide
+expansion line (content/source/portfolio/07-community-events.jpg#page-1). On the Tritonics team documents the same
 outreach programs are presented as team work, and one of them — the micro-funding website — is
 credited by name to a teammate (content/source/robotics/championships-presentation/slide-e.jpg). The
 team's roster card for Alex describes his role as managing team strategy, the electrical system, and
@@ -226,8 +228,12 @@ below.
 
 **Dates:** No outreach source in the repo carries a calendar year
 (content/source/portfolio/07-community-events.jpg#page-1;
-content/source/robotics/championships-presentation/slide-d.png). Alex's private drafts put the
-outreach work in grades 9 through 12 (content/source/essays/college-essays-private.txt#L1564-L1577).
+content/source/robotics/championships-presentation/slide-d.png). Alex's private drafts date only
+individual entries: the e-waste initiative to grades 9–11
+(content/source/essays/college-essays-private.txt#L1599) and describe "a lot of outreach over the
+past 3 years" starting with Hudson Guild
+(content/source/essays/college-essays-private.txt#L4370-L4371). TODO(alex): grade span for the other
+outreach programmes.
 
 ---
 
@@ -273,8 +279,8 @@ are minors — see the clearance TODO in §7.3.7.
   first-person source, since the résumé does not mention Hour of Code at all
   (content/source/resume/resume-current.png).
 - **30+ sessions.** Source: the Tritonics Reach planning slide and the Reach poster, describing the
-  team's programme (content/source/robotics/championships-presentation/slide-d.png#P7). No external
-  citation in the source.
+  team's programme (content/source/robotics/championships-presentation/slide-d.png#P7;
+  content/source/robotics/posters/poster-b.png). No external citation in the source.
 - **40+ Hour of Code sessions led.** Source: Alex's private drafts, activity list
   (content/source/essays/college-essays-private.txt#L1573). Confirmation only; not for publication.
 - **13 one-hour sessions.** Source: an earlier note in the same private file
@@ -309,10 +315,11 @@ photo appears on the team's Reach slide, showing children at laptops with an ins
   content/source/robotics/posters/poster-deck/text.md; the remaining robotics files are images and
   are listed in §7.7).
 - Alex's private drafts add, as neutral facts, that the drive began locally and involved advertising,
-  sorting, cleaning, donating, and recycling, with a cross-school competition in progress
-  (content/source/essays/college-essays-private.txt#L64-L67), and that the second-year expansion
-  covered 200+ organisations in partnership with NYC Sanitation, local officials, and media
-  (content/source/essays/college-essays-private.txt#L1586-L1598).
+  and handled the collected material through to donation or recycling, and had a cross-school
+  competition planned (content/source/essays/college-essays-private.txt#L64-L65), and that the
+  second-year expansion covered 200+ organisations in partnership with NYC Sanitation, local
+  officials, and media, and that he is listed there as "Co-Chair" who "Co-led" that year-two
+  expansion (content/source/essays/college-essays-private.txt#L1586-L1596).
 
 **Statistics.**
 
@@ -351,11 +358,15 @@ photo appears on the team's Reach slide, showing children at laptops with an ins
   content/source/robotics/posters/poster-deck/text.md).
 - Alex's private drafts corroborate the count of seven languages, and tie the tutorials' origin to
   collaboration with under-resourced public school teams at a Cornell Tech Robot-in-2-Days event
-  (content/source/essays/college-essays-private.txt#L4098-L4101;
+  (content/source/essays/college-essays-private.txt#L4099-L4102;
   content/source/essays/college-essays-private.txt#L277-L279).
+- Credit: both corroborating passages use "we" — the tutorials are described as developed and shared
+  by the team after a collaboration, not by Alex alone
+  (content/source/essays/college-essays-private.txt#L4101-L4102; #L276-L278). No source names Alex as
+  their author.
 
 **Statistics.** **Seven languages.** Sources: root CLAUDE.md (CLAUDE.md), corroborated in Alex's
-private drafts (content/source/essays/college-essays-private.txt#L4101;
+private drafts (content/source/essays/college-essays-private.txt#L4102;
 content/source/essays/college-essays-private.txt#L277). No external citation exists, and there is no
 public artefact in the repo to link to.
 
@@ -396,10 +407,9 @@ he took part in — see the TODO in §7.3.7.
 
 - Root CLAUDE.md states that the platform helped robotics teams in Ukraine, Ghana, and the Blackfeet
   Reservation (CLAUDE.md — Smaller pieces).
-- Alex's private drafts corroborate all three, describing a micro-funding platform that connects
-  robotics teams with their local communities and naming teams in Ukraine, Ghana, and Montana's
-  Blackfeet Reservation as the ones helped to raise funds
-  (content/source/essays/college-essays-private.txt#L277-L279).
+- Alex's private drafts corroborate all three recipients, naming teams in Ukraine, Ghana, and
+  Montana's Blackfeet Reservation as having been helped to raise funds through the platform
+  (content/source/essays/college-essays-private.txt#L277-L280).
 - The team documents corroborate Ghana and the Blackfoot community but not Ukraine: the Reach
   planning slide lists "Ghana FTC (monthly)" and "Blackfoot Reserve FLL Teams (monthly +
   fundraising)" under sustained engagement
@@ -412,12 +422,18 @@ he took part in — see the TODO in §7.3.7.
   (content/source/robotics/posters/poster-deck/text.md#page-8), while page 29 of the same deck spells
   it "Blackfoot" (content/source/robotics/posters/poster-deck/text.md#page-29) and root CLAUDE.md
   spells it "Blackfeet" (CLAUDE.md). See the TODO in §7.3.7.
+- The team's Reach slide records that this season the team helped introduce and launch FIRST
+  programs in a Montana reservation community, Accra (Ghana), and local underserved NJ communities,
+  where FIRST programs did not previously exist, supporting team formation and fundraising
+  (content/source/robotics/championships-presentation/slide-b.png#P8) — so the reservation work is
+  at least partly programme-building, not only micro-funding.
 
 **Statistics.**
 
 - **$1,000 raised for a Ukraine robotics team.** Source: the older résumé's Community Engagement
   section (content/source/resume/resume-older.png). No external citation in the source. This is the
-  résumé figure and therefore the one to publish. See §7.3.6.
+  résumé figure, but it is on the superseded résumé only — the current résumé drops it, so it must
+  not be published before Alex confirms. See §7.3.6.
 - **$2k raised to send a Ukrainian team to the World Championship.** Source: Alex's private drafts
   (content/source/essays/college-essays-private.txt#L68-L69). Confirmation only; not for publication,
   and it conflicts with the résumé's $1,000 — see the TODO in §7.3.7.
@@ -440,7 +456,8 @@ he took part in — see the TODO in §7.3.7.
 #### 7.3.6 The older résumé's community numbers
 
 These four lines appear only in the "COMMUNITY ENGAGEMENT (Quantifiable Impact)" section of the older
-résumé, which the current résumé drops in order to make room for the CeraPiper entry
+résumé. The current résumé drops that section and adds the CeraPiper entry; no source says the two
+changes are related
 (content/source/resume/resume-older.png; content/source/resume/resume-current.png). Everything else
 on the two pages is otherwise identical (content/source/resume/resume-older.png;
 content/source/resume/resume-current.png). None of the four carries an external citation in the
@@ -600,10 +617,10 @@ Ranked by usefulness. Every one of these is a crop out of a slide or a résumé,
 none is hero-scale without a higher-resolution original from Alex.
 
 1. **Electric Road concept render** — roadside solar pillars, coil disks, purple car on a marked
-   road. Approximately 320×195 px at x 595–915, y 5–200
+   road. Approximately 200×180 px at x 608–809, y 21–202
    (content/source/portfolio/06-electric-road.jpg#page-1). Best card image for Electric Road.
 2. **Electric Road scaled test model photo** — copper coils, receiver board, breadboard on a blue
-   mat. Approximately 325×150 px at x 605–930, y 205–355
+   mat. Approximately 215×125 px at x 636–853, y 219–341
    (content/source/portfolio/06-electric-road.jpg#page-1). The proof-of-build image, and the only
    physical-prototype photo in the portfolio set.
 3. **Electric Road in-vehicle coil diagram** — white line art, car from above with a concentric

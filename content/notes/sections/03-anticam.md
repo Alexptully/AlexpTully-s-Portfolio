@@ -1,8 +1,9 @@
 ## 3. Featured: AntiCam
 
-**Role:** Founder, Tully Tech — sole designer, builder and author of every AntiCam document in
-`content/source/anticam/`. (content/source/resume/resume-current.png — "TULLY TECH - SELECT
-INVENTIONS / Founder & innovator of tech startup."; content/source/anticam/pitch-deck-build.js#L8 —
+**Role:** Founder, Tully Tech — author of the AntiCam documents in `content/source/anticam/` (deck
+metadata, first-person project plan and essay). No source states he worked alone; drop "sole".
+(content/source/resume/resume-current.png — "TULLY TECH - SELECT
+INVENTIONS / Founder & innovator of tech startup."; content/source/anticam/pitch-deck-build.js#L8-L9 —
 `pres.author = 'Alexander Tully'`, `pres.company = 'Tully Tech'`)
 
 **Dates:** Stated as two years of work in both the 2025 Mastery plan and the Fall 2026 pitch deck;
@@ -58,8 +59,8 @@ content/source/resume/resume-current.png)
   (content/source/anticam/pitch-deck-build.js#L403)
 - Cap, $40–65: the flagship, 360° coverage, retro-reflective lining, flash detection.
   (content/source/anticam/pitch-deck-build.js#L404)
-- Room Unit, $100+: whole-room coverage for rentals and hotel rooms, described as next in line and
-  rendered in the deck as an LED-grid glyph because no prototype photo exists for it.
+- Room Unit, $100+: whole-room coverage for rentals and hotel rooms, described as next in line; the
+  deck carries no photo for it and draws an LED-grid glyph instead.
   (content/source/anticam/pitch-deck-build.js#L405)
 - The same four-tier price ladder appears in the earlier Camera Blinder deck: small clip-on $30–45
   (one side), hat/band $40–65 (360º), higher-quality clip-on $30–40 (multiple sides), room device
@@ -68,6 +69,10 @@ content/source/resume/resume-current.png)
 - Planned channels: direct at tullytech.com, then Amazon and Etsy, then creator and
   travel-community partnerships.
   (content/source/anticam/pitch-deck-build.js#L428)
+- The same channel plan appears in the earlier Camera Blinder deck — own website, Amazon, Etsy and
+  other online stores, promoted through social media, Google and YouTube ads — alongside its stated
+  process of research → prototyping → production and distribution.
+  (content/source/anticam/camera-blinder-presentation/text.md#page-4, #page-5, #page-6)
 
 **Legal and harmless by physics**
 
@@ -97,14 +102,14 @@ content/source/resume/resume-current.png)
   are all listed as planned work, not completed work.
   (content/source/anticam/pitch-deck-build.js#L581)
 - Earlier prototypes were built from laser-cut wood/MDF and acrylic plates, 3D-printed cases,
-  hand-soldered coin-cell packs joined with copper tape, and a 10W-class COB LED module with a 3×3
-  grid of emitter chips. (content/source/anticam/camera-blinder-presentation/pages/page-10.jpg,
+  hand-soldered coin-cell packs joined with copper tape, and a COB LED module with a 3×3 grid of
+  emitter chips (no source gives its wattage). (content/source/anticam/camera-blinder-presentation/pages/page-10.jpg,
   page-11.jpg, page-13.jpg, page-14.jpg)
 - V2 added a physical slide switch on the battery plate beside four coin cells, and the V2 stack is
   six laser-cut clear acrylic plates inside a two-tier 3D-printed case, shown in white, dark gray
   and navy. (content/source/anticam/camera-blinder-presentation/pages/page-13.jpg, page-15.jpg)
-- The Tully Tech logo is laser-engraved into prototype lids from the second prototype onward.
-  (content/source/anticam/camera-blinder-presentation/pages/page-12.jpg, page-13.jpg)
+- The Tully Tech logo is laser-engraved into prototype lids on the second prototype and on V1 and V2.
+  (content/source/anticam/camera-blinder-presentation/pages/page-10.jpg, page-12.jpg, page-13.jpg)
 
 **Testing**
 
@@ -129,7 +134,7 @@ content/source/resume/resume-current.png)
   (content/source/anticam/pitch-deck-build.js#L308-L313)
 - The Mastery plan names the same communities in Alex's own words: travelers securing private
   rentals, parents, and high-profile individuals facing invasive paparazzi.
-  (content/source/anticam/mastery-learning-plan/text.md#page-2)
+  (content/source/anticam/mastery-learning-plan/text.md#page-2, #page-3)
 - The stated reason travelers come first: dim indoor rooms are where IR saturation is strongest and
   the pin already works there; travel forums are a dense, reachable channel; a rented bedroom is the
   least controversial place to be invisible.
@@ -149,8 +154,8 @@ content/source/resume/resume-current.png)
   doorbell-camera test passed. (content/source/anticam/pitch-deck-build.js#L461)
 - The Mastery Learning System project (2/11/25–5/6/25) set the cap as its final deliverable: a
   working baseball-cap AntiCam with flash light-detection triggering the IR lights, retroreflective
-  material in the hat lining, a safe recharging system, a comfortable design, and an accompanying
-  circuit diagram for recreation and manufacture.
+  material in the hat lining, proper lighting conditions for activation, a safe recharging system, a
+  comfortable design, and an accompanying circuit diagram for recreation and manufacture.
   (content/source/anticam/mastery-learning-plan/text.md#page-1, #page-3)
 - In that plan Alex states every prototype to that point was unusable for consumers, either lacking
   functionality or having an impractical design, and names the four problems the project set out to
@@ -195,8 +200,9 @@ estimate / derived figure / TBD.
 **Derived market sizing** — arithmetic on the sourced numbers above, not itself a cited statistic.
 (content/source/anticam/pitch-deck-build.js#L274-L276)
 
-- TAM: 61M people → $3.4B at a $55 device. ($55 is the midpoint of the Cap price range; the deck
-  notes its bars are not to scale.)
+- TAM: 61M people → $3.4B at a $55 device. ($55 is the figure the deck uses and calls the midpoint
+  of the Cap price range, though the midpoint of $40–65 is $52.50 — TODO(alex): confirm the $55
+  device price before any TAM/SAM/SOM number is published; the deck notes its bars are not to scale.)
 - SAM: 35M people, the 58% of 61M who worry → $1.9B.
 - SOM: 35K units, stated as 1 in 1,000 of the SAM over three years → ~$1.9M in first sales.
   **Founder assumption — no external source.**
@@ -231,8 +237,9 @@ statistics without a source**
   (content/source/anticam/pitch-deck-build.js#L214)
 - All statistics in the ethics essay (70 captures/day; 18,000 NYC cameras; 60% worried;
   one-quarter have found cameras) are **off-limits** under the root CLAUDE.md rule. Where they
-  overlap with the outline, the outline's sourced versions differ — e.g. the essay's 18,000 NYC
-  cameras vs. Comparitech's 70,882. (content/source/anticam/ethics-of-tully-tech/text.md#page-5,
+  overlap with the outline, the outline's sourced versions differ — e.g. the essay's 18,000
+  facial-recognition cameras in NYC, which is not the same count as Comparitech's 70,882
+  surveillance cameras. (content/source/anticam/ethics-of-tully-tech/text.md#page-5,
   #page-6)
 
 ---
@@ -242,7 +249,8 @@ statistics without a source**
 Source: `content/source/anticam/ethics-of-tully-tech/text.md`, a 9-page essay dated May 11, 2025.
 
 **Do not quote or closely paraphrase any sentence from this essay on the site.** It is school
-coursework containing typos, uncited statistics and lay legal assertions. Use the argument points
+coursework containing typos, statistics cited to popular sources outside the approved list (KDVR
+2018, Safe Home) plus one uncited figure, and lay legal assertions. Use the argument points
 and vocabulary below, rewritten. The essay contains no images.
 
 *Neutral facts about the document*
@@ -251,8 +259,8 @@ and vocabulary below, rewritten. The essay contains no images.
   (content/source/anticam/ethics-of-tully-tech/text.md#page-1)
 - The deck lists "Ethics & legality research, 2025" as completed traction.
   (content/source/anticam/pitch-deck-build.js#L461)
-- In the essay Alex refers to himself as the founder and frames release ethics as a founder's
-  responsibility. (content/source/anticam/ethics-of-tully-tech/text.md#page-9)
+- The essay frames release ethics as "the founder's responsibility", in the third person; it never
+  self-identifies Alex as the founder. (content/source/anticam/ethics-of-tully-tech/text.md#page-9)
 
 *Argument points available to the site (ideas, not sentences)*
 
@@ -294,7 +302,7 @@ and vocabulary below, rewritten. The essay contains no images.
 physics; legal by design; light, not radio; physics, not patterns; blinds the camera, not the
 network; built to protect people, not to hide crimes; honest about limits; control when you're
 seen; privacy you can wear.
-(content/source/anticam/pitch-deck-build.js#L104, #L172, #L502, #L522, #L524)
+(content/source/anticam/pitch-deck-build.js#L104, #L172, #L501, #L502, #L522, #L524, #L525, #L612)
 
 *Do not publish as legal advice.* The essay's assertion that no law currently prohibits creating or
 using the device is an unsourced student opinion. The site should describe the mechanism — light
@@ -318,17 +326,18 @@ only, no radio emission, no jamming, no damage — and let the reader draw the i
 **Build steps documented photographically in the Camera Blinder deck**
 (content/source/anticam/camera-blinder-presentation/text.md#page-7 through #page-17)
 
-1. Light Test 1 — bench test of the LED on alligator-clip leads. (page-07.jpg)
+1. Light Test 1 — out-of-focus photo of alligator-clip leads and component bags; no LED visible. Not
+   usable as a test image. (page-07.jpg)
 2. First Prototype — laser-cut discs, a clear disc holding four coin cells, a 3D-printed ring
    battery holder, a COB LED module. (page-08.jpg)
 3. Test 2 — the LED lit and photographed, reading magenta to the camera, powered from a bench
    supply. (page-09.jpg)
 4. Second Prototype — laser-cut MDF plates with the Tully Tech logo engraved, cut on a laser
    cutter. (page-10.jpg)
-5. Third Prototype — layered acrylic with nine hand-soldered coin cells joined by copper tape.
-   (page-11.jpg)
+5. Third Prototype — layered acrylic with ten hand-soldered coin cells (4 + 4 + 2) wire-linked, plus
+   a separate plate with copper-tape bus bars. (page-11.jpg)
 6. Final Prototype V1 — 3D-printed case with a black rim and maroon body, engraved frosted acrylic
-   lid, LED face glowing pink to the camera. (page-12.jpg)
+   lid, emitter face showing rows of magenta IR dies (unlit). (page-12.jpg)
 7. Process V2 — six clear laser-cut acrylic plates, four coin cells plus a slide switch, engraved
    lid. (page-13.jpg, page-14.jpg)
 8. Final Prototype V2 — two-tier 3D-printed cases in white, dark gray and navy. (page-15.jpg)
@@ -362,8 +371,9 @@ None of these are cleared for publication yet — see the image TODO(alex) lines
 **Hero candidates**
 
 - `content/source/anticam/camera-blinder-presentation/pages/page-12.jpg` — Final Prototype V1, LED
-  face: white plate, emitter dots glowing magenta, black rim, maroon body, isolated on a light
-  background (right-upper region of the page). The strongest product-plus-IR-glow shot.
+  face: white plate, rows of magenta IR emitter dies (unlit), black rim, maroon body, isolated on a
+  light background (right-upper region of the page). The strongest clean product shot; page-09.jpg
+  is the only real IR-glow shot.
   **Use:** page hero, or the AntiCam card on the home page.
 - `content/source/anticam/camera-blinder-presentation/pages/page-09.jpg` — the lit COB LED seen by
   a camera as a bright magenta square inside a pink halo (left half of the page). Abstract, no
@@ -402,7 +412,7 @@ None of these are cleared for publication yet — see the image TODO(alex) lines
 - `content/source/anticam/camera-blinder-presentation/pages/page-10.jpg` — the Second Prototype
   flat-lay of laser-cut MDF plates, plus the laser cutter engraving the Tully Tech logo.
   **Use:** fabrication card in the timeline.
-- `content/source/anticam/camera-blinder-presentation/pages/page-11.jpg` — the nine-coin-cell
+- `content/source/anticam/camera-blinder-presentation/pages/page-11.jpg` — the ten-coin-cell
   battery plate with copper-tape bus bars and soldered links. **Use:** the "hand-built" detail in
   the timeline.
 - `content/source/anticam/camera-blinder-presentation/pages/page-08.jpg` — the First Prototype
@@ -412,10 +422,10 @@ None of these are cleared for publication yet — see the image TODO(alex) lines
 
 - `content/source/anticam/camera-blinder-presentation/pages/page-15.jpg` (top row) — the three V2
   pin cases, white / dark gray / navy. **Use:** the Pin card.
-- `content/source/anticam/camera-blinder-presentation/pages/page-02.jpg` (bottom-right) — the
-  red/maroon room-unit prototype with pink-glowing emitter rows. **Use:** the Room Unit card. This
-  is the only room-unit photo anywhere in the sources, and the slide does not label it — confirm
-  with Alex first.
+- `content/source/anticam/camera-blinder-presentation/pages/page-02.jpg` (bottom-right) — the same
+  Final Prototype V1 pin unit shown on page-12.jpg, placed beside the "Room Device" caption. It is
+  NOT a room-unit prototype; there is no room-unit photo in any source. Do not use it as the Room
+  Unit card.
 
 **Reference only, do not publish**
 
@@ -491,7 +501,7 @@ power, battery run time, or range for any version. The near-IR "700 to 1,000 nan
 uncited speaker notes. Provide real numbers or the mechanism copy stays qualitative.
 (content/source/anticam/pitch-deck-build.js#L214)
 
-TODO(alex): Battery details — coin-cell type (LR44?), four cells in V1/V2 versus nine in the third
+TODO(alex): Battery details — coin-cell type (LR44?), four cells in V1/V2 versus ten in the third
 prototype, and run time per version.
 (content/source/anticam/camera-blinder-presentation/pages/page-08.jpg, page-11.jpg)
 

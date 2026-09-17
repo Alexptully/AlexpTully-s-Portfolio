@@ -44,9 +44,12 @@ content/source/robotics/championships-presentation/slide-e.jpg).
   "17253 TRITONICS" and appears as a wordmark on every Tritonics portfolio and poster page
   (content/source/portfolio/04-ball-drive.jpg#page-1;
   content/source/robotics/tritonics-portfolio/tritonics-portfolio.png#P5).
-- The team name derives from Triton, Neptune's moon; the mascot is a three-headed hydra holding a
-  trident (content/source/robotics/championships-presentation/slide-a.png;
-  content/source/robotics/posters/poster-deck/text.md#page-14).
+- The team is named after Triton, called "our team's namesake moon" (content/source/robotics/championships-presentation/slide-a.png)
+  and "our team namesake" for the robot's wave aesthetics (content/source/robotics/posters/poster-deck/text.md#page-14).
+  A multi-headed hydra with a trident is used as team artwork alongside the "Hydra" sustainability
+  model (content/source/robotics/championships-presentation/slide-c.png; content/source/robotics/posters/poster-d.png).
+  TODO(alex): no source states that Triton is Neptune's moon or calls the hydra the team mascot —
+  confirm before either goes on the site.
 - Tritonics is described as a 100% student-led, co-educational team with no team mentors
   (content/source/robotics/championships-presentation/slide-e.jpg;
   content/source/robotics/championships-presentation/slide-c.png;
@@ -67,9 +70,12 @@ content/source/robotics/championships-presentation/slide-e.jpg).
   content/source/essays/college-essays-private.txt#L4783).
 - Per his private drafts the robotics commitment averaged about 20 hours per week across 40 weeks
   a year, in grades 9–12 (content/source/essays/college-essays-private.txt#L1526-L1530).
-- Alex's name appears on exactly one page in the entire Tritonics document set (the roster). No
-  Tritonics engineering-portfolio page, poster or slide names any student against any subsystem
-  (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10).
+- Alex is named only on the team roster, which is reprinted on four files (content/source/robotics/championships-presentation/slide-e.jpg;
+  content/source/robotics/posters/poster-a.png; content/source/robotics/posters/poster-c.jpg;
+  content/source/robotics/posters/poster-deck/text.md#page-3). Apart from that roster, which does
+  assign students to subsystems, no Tritonics engineering-portfolio page names any student against
+  any subsystem (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10 through
+  nyc-champs-portfolio-6.png#P15).
 - TODO(alex): The portfolio pages give no order for the two teams. Root CLAUDE.md implies the
   electrical-lead work on #14712 came earlier and the #17253 captaincy later (CLAUDE.md), but no
   source states it. Confirm the order and the seasons.
@@ -97,14 +103,12 @@ content/source/robotics/championships-presentation/slide-e.jpg).
 - The Sustain data page counts **15 defined roles**, averaging 3 cross-functional tags each, with
   2–4 trained members on every critical subsystem
   (content/source/robotics/posters/poster-deck/text.md#page-17).
-- The six rookies named on the roster are Naresa B (Designer), Kerala B (Fabrication), Emma R
-  (Scout), Grayson H (CADer), Chris B (3D Modeling) and Rina W (Software), all Y1
+- The roster lists nine returning members (captain Y4, design lead Y3, outreach Y3, mech lead Y4,
+  fabrication Y2, build Y3, software lead Y2, code specialist Y2, CAD Y2) and six Y1 rookies
+  (designer, fabrication, scout, CADer, 3D modeling, software)
   (content/source/robotics/championships-presentation/slide-e.jpg;
-  content/source/robotics/posters/poster-deck/text.md#page-3).
-- The nine returning members are Alex T (Captain, Y4), Alexa F (Design Lead, Y3), Taran A
-  (Outreach, Y3), Martin G (Mech Lead, Y4), Tarik W (Fabrication, Y2), Leland C (Build, Y3), Noah G
-  (Software Lead, Y2), Milind A (Code Specialist, Y2) and Ayrton K (CAD, Y2)
-  (content/source/robotics/posters/poster-deck/text.md#page-3).
+  content/source/robotics/posters/poster-deck/text.md#page-3). Names are left out of these notes
+  pending clearance; read them from the source file if needed.
 - TODO(alex): Reconcile "80+ member club" (CLAUDE.md; essays) with the 14–15 person Tritonics team
   (content/source/robotics/championships-presentation/slide-e.jpg). Confirm what the 80+ counts —
   the school robotics program across all five teams? — so the site does not imply an 80-person
@@ -137,7 +141,7 @@ content/source/robotics/championships-presentation/slide-e.jpg).
 | No awards listed | Ball-Drive, FTC #17253 | (content/source/portfolio/04-ball-drive.jpg#page-1) |
 | No awards listed; competed at NYC-FIRST's signature event Robot-in-2-Days | Swerve Drive, FTC #14712 | (content/source/portfolio/02-swerve-drive.jpg#page-1) |
 
-**The DECODE season awards strip, printed on every Tritonics poster and slide header:**
+**The DECODE season awards strip, printed on all four Tritonics posters and on the team-structure slide:**
 
 - Inspire 1st Award at Qualifier 3; Inspire 2nd Award at Qualifier 1; Inspire 3rd Award at
   Qualifier 9; Sustain Award at Super Qualifier 2
@@ -153,7 +157,7 @@ content/source/robotics/championships-presentation/slide-e.jpg).
 - Alex's private drafts record the Worlds Think Award at 2nd place in grade 11 and describe it as
   the first time his school had ever placed at the World Championship
   (content/source/essays/college-essays-private.txt#L1785-L1787;
-  content/source/essays/college-essays-private.txt#L2521-L2522).
+  content/source/essays/college-essays-private.txt#L2669-L2674).
 - Those drafts also record NYC Champion twice and Inspire Award twice, spanning grades 10–12
   (content/source/essays/college-essays-private.txt#L1791-L1794), and a later season in which the
   team took the top Inspire Award at all three NYC qualifiers — 1st, 2nd and 3rd — and advanced to
@@ -177,7 +181,8 @@ content/source/robotics/championships-presentation/slide-e.jpg).
   "third in New York" refers to, and its exact name, before it goes on the site.
 - TODO(alex): The résumé supports "2x NYC Champion" and one Worlds appearance
   (content/source/resume/resume-current.png); root CLAUDE.md claims "2x Worlds qualifier"
-  (CLAUDE.md), and the portfolio pages document only one NYC first place and one Worlds appearance
+  (CLAUDE.md) and Alex's private drafts record "2x NYC Champion • 2x Worlds Qualifier"
+  (content/source/essays/college-essays-private.txt#L1515-L1518), and the portfolio pages document only one NYC first place and one Worlds appearance
   (content/source/portfolio/03-honu-robot.jpg#page-1). Confirm the second NYC championship and the
   second Worlds qualification, with team number and year.
 - TODO(alex): Honu's award list carries both "Inspire Award 1st" and "4 Time Inspire Award 2nd"
@@ -211,8 +216,10 @@ content/source/robotics/championships-presentation/slide-e.jpg).
   preferred source is silent. Confirm the canonical spelling for the site.
 - TODO(alex): Which FTC season — game name and year — does each robot belong to? No portfolio page
   carries a date, season name or year (content/source/portfolio/01-monti-robot.jpg#page-1 through
-  content/source/portfolio/05-scorpion-robot.jpg#page-1). The only season named anywhere is DECODE,
-  on the Tritonics headers (content/source/robotics/posters/poster-deck/text.md#page-1).
+  content/source/portfolio/05-scorpion-robot.jpg#page-1). The only seasons named anywhere are DECODE,
+  on the Tritonics headers (content/source/robotics/posters/poster-deck/text.md#page-1), and INTO THE
+  DEEP, which Alex's private drafts tie to the Cornell Tech Robot-in-2-Days build and the Swerve
+  Drive year (content/source/essays/college-essays-private.txt#L4386-L4388).
 - TODO(alex): Scorpion is credited two ways on one page — "an FTC Competition Robot that I
   designed" alongside "My Role: Fabrication Lead"
   (content/source/portfolio/05-scorpion-robot.jpg#page-1). Decide how to phrase the credit.
@@ -221,7 +228,10 @@ content/source/robotics/championships-presentation/slide-e.jpg).
   page describes it as a fully unique motion system developed by Tritonics that was rejected for
   the season chassis as oversized and not modular
   (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10).
-- TODO(alex): Robot-in-2-Days — which year, and what was the result beyond "successfully competed"?
+- Robot-in-2-Days was held at Cornell Tech; per Alex's private drafts the team was one of five
+  selected and built a functioning robot in 36 hours, in the INTO THE DEEP season
+  (content/source/essays/college-essays-private.txt#L4093-L4095; #L4386). TODO(alex): confirm the
+  year and whether the 36-hour / 1-of-5 framing may be published.
   (content/source/portfolio/02-swerve-drive.jpg#page-1)
 
 ### 5.5 Robot detail: Monti / Monty (FTC #17253, Alex as Captain)
@@ -283,7 +293,7 @@ content/source/robotics/championships-presentation/slide-e.jpg).
   (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10;
   content/source/robotics/posters/poster-deck/text.md#page-13).
 - Polycarbonate bumpers increase static and collision resistance
-  (content/source/robotics/posters/poster-deck/text.md#page-13).
+  (content/source/robotics/posters/poster-deck/text.md#page-12).
 - Ergonomic carry handles with TPU grips are placed over the center of mass, after the team
   struggled to lift the robot (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10).
 
@@ -414,8 +424,9 @@ this subsection is the team's work (content/source/robotics/tritonics-portfolio/
   sorted close, 45 artifacts with +3 sorted far
   (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10).
 - The poster deck's TeleOp figures: 15 cycles per match, 3 artifacts per cycle, 45 artifacts
-  maximum, 195 points potential, 75 ms inter-shot spacing
-  (content/source/robotics/posters/poster-deck/text.md#page-10).
+  maximum and 195 points potential (content/source/robotics/posters/poster-deck/text.md#page-10);
+  the Innovate page adds 75 ms inter-shot spacing, a transfer path shortened by 50% and an 80%
+  jam-rate reduction (content/source/robotics/posters/poster-deck/text.md#page-15).
 - TODO(alex): Autonomous numbers differ between pages — "57 points +1 ranking point, far zone 9
   artifacts" (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10) versus
   "57 points +2 ranking points, far zone 18 artifacts"
@@ -455,7 +466,7 @@ this subsection is the team's work (content/source/robotics/tritonics-portfolio/
   made" and says it was developed in conjunction with another team
   (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-1.png#P10).
 - Per Alex's private drafts, the swerve drive was built as a summer cross-team project after two
-  robotics teams merged (content/source/essays/college-essays-private.txt#L4386-L4388).
+  robotics teams merged (content/source/essays/college-essays-private.txt#L4083-L4093).
 - **Ball-Drive (FTC #17253, Alex as Ops Lead / Captain)** — four two-axis balls replace wheels,
   allowing more efficient and accurate field positioning; the team used a Master Sketch so parts
   stay linked and the model is parametric (content/source/portfolio/04-ball-drive.jpg#page-1).
@@ -506,8 +517,8 @@ All software facts below come from team-authored pages that name no student
   **Kalman filter** — rotation from Limelight + IMU, position from odometry + Limelight
   (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-5.png#P14;
   content/source/robotics/posters/poster-d.png).
-- The Limelight also enables sorting via an Obelisk scan of the game's AprilTag element
-  (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-5.png#P14).
+- The Limelight also enables sorting via an "Obelisk scan" (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-5.png#P14).
+  TODO(alex): confirm what the Obelisk is before the site explains it.
 - Reported reliability: 98% AprilTag lock, 100% odometry availability, path deviation reduced to
   ±0.2 cm, turret correction every 50 ms
   (content/source/robotics/posters/poster-deck/text.md#page-10).
@@ -540,9 +551,11 @@ All software facts below come from team-authored pages that name no student
 - The driver button map on a PS4-style controller: flush out artifacts; reset odometry; load
   artifacts into transfer; launch/unload artifacts sequence; movement on the left stick; rotation on
   the right stick (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-6.png#P15).
-- The team uses a non-linear joystick curve — printed as a cubic x³ = y on the engineering
-  portfolio — in place of the linear curve most teams use, for precise low-speed driving
-  (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-6.png#P15).
+- The team uses a non-linear joystick curve — printed as x⁵ = y against the linear x = y that the
+  poster labels "What most teams use" — for precise low-speed driving
+  (content/source/robotics/posters/poster-d.png; content/source/robotics/posters/poster-deck/text.md#page-2).
+  The same graphic on content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-6.png#P15 is
+  too low-resolution to read the exponent.
 - The robot is single-driver (content/source/robotics/posters/poster-deck/text.md#page-10).
 
 **PEREGRINE — custom autonomous pathing**
@@ -583,10 +596,6 @@ All software facts below come from team-authored pages that name no student
   (content/source/robotics/posters/poster-deck/text.md#page-10;
   content/source/robotics/posters/poster-deck/text.md#page-2). Confirm whether PEREGRINE is the
   team's engine or a library it replaced.
-- TODO(alex): The joystick curve is printed as cubic (x³) on the engineering portfolio
-  (content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-6.png#P15) and as x⁵ on the
-  Control poster (content/source/robotics/posters/poster-d.png). Confirm the exponent.
-
 ### 5.9 Team structure, rebuild and sustainability
 
 - The team lost 50% of its members — its experienced leaders — to graduation, and rebuilt the
@@ -792,7 +801,10 @@ All software facts below come from team-authored pages that name no student
 - Sustained-engagement partners: 5 FLL teams weekly; Ghana FTC monthly; Blackfoot Reserve FLL teams
   monthly plus fundraising; Team Tic-Tac Tech #32706; Bosworth FTC #21377; Hour of Code (30+
   sessions); All Saints NJ monthly; a senior center, ongoing; FDAVII STEM Lab weekly
-  (content/source/robotics/championships-presentation/slide-d.png).
+  (content/source/robotics/championships-presentation/slide-d.png). The deck also names the
+  Philippines alongside Ghana under international teams engaged, which likely accounts for the
+  "2 sustained international partnerships" (content/source/robotics/posters/poster-deck/text.md#page-5;
+  #page-8).
 - Hudson Guild appears in the team documents only as a named nonprofit partner, with no program
   detail (content/source/robotics/posters/poster-deck/text.md#page-8;
   content/source/robotics/posters/poster-deck/text.md#page-5).
@@ -848,7 +860,10 @@ All software facts below come from team-authored pages that name no student
   content/source/robotics/posters/poster-deck/text.md#page-8). Confirm the correct name.
 - TODO(alex): E-waste city-wide expansion with the NYC Department of Sanitation — planned or
   launched? (content/source/portfolio/07-community-events.jpg#page-1)
-- TODO(alex): Hudson Guild — how many weeks, how many students, over what period?
+- Per Alex's private drafts the Hudson Guild programme ran once or twice a week after school for
+  lower-income students, across about three years of outreach
+  (content/source/essays/college-essays-private.txt#L4371-L4373). TODO(alex): confirm the number of
+  students and the exact period before publishing.
   (content/source/portfolio/07-community-events.jpg#page-1)
 - TODO(alex): New mentors are given as 28 on the Reach planning page and 24 on the recruitment page
   (content/source/robotics/championships-presentation/slide-d.png vs
@@ -1016,11 +1031,10 @@ Missing source material
   outreach content. Are they available?
 - TODO(alex): Slides P5 and P6 of the championship presentation are missing; the numbering jumps
   from P4 to P7 (content/source/robotics/championships-presentation/).
-- **TODO(alex): Two robotics reference URLs could not be reached from this build environment —
-  https://www.martin-gendell.com/ftc-robotics and https://arelypeckham.com/work/first-robotics.
-  Both fail at the outbound proxy (403 on CONNECT), so nothing from either page has been used here.
-  If either is a teammate's write-up of these same seasons, it may resolve the season dates, team
-  numbers and award attributions above; please either confirm the facts directly or paste the
+- **TODO(alex): Two web pages that may be teammates' write-ups of these seasons were unreachable
+  from this build environment (403 on CONNECT at the outbound proxy), so nothing from either has
+  been used. Alex has the URLs; if either covers these seasons it may resolve the season dates,
+  team numbers and award attributions above — please confirm the facts directly or paste the
   relevant text into `content/source/`.**
 
 Claims that need a source before publication
@@ -1040,10 +1054,10 @@ Writing and presentation
 
 - TODO(alex): Robot name spelling, Monti vs Monty — see §5.4.
 - TODO(alex): Source typos that must not be reproduced on the site: "Robot -in-2-Days" spacing and
-  "will all actions" for "with" (content/source/portfolio/02-swerve-drive.jpg#page-1;
-  content/source/portfolio/01-monti-robot.jpg#page-1); "software(designed" missing a space
-  (content/source/portfolio/01-monti-robot.jpg#page-1); "Accesories" and British "Organised"
-  (content/source/portfolio/07-community-events.jpg#page-1).
+  "will all actions" for "with" (content/source/portfolio/02-swerve-drive.jpg#page-1 for the spacing;
+  content/source/portfolio/03-honu-robot.jpg#page-1 for "will all actions"); "software(designed"
+  missing a space (content/source/portfolio/01-monti-robot.jpg#page-1); "Accesories" and British
+  "Organised" (content/source/portfolio/07-community-events.jpg#page-1).
 - TODO(alex): Decide whether the site names the team publicly as Tritonics #17253 and #14712, or
   refers to them generically (content/source/portfolio/04-ball-drive.jpg#page-1).
 
@@ -1080,7 +1094,7 @@ Supporting:
 24. `content/source/robotics/posters/poster-f.png` — Design poster (process, 5 iterations, launcher/transfer)
 25. `content/source/robotics/posters/poster-deck/text.md` — 30-page working deck; pages 1–3, 5, 7, 8, 10, 12–17, 28, 29 carry the facts cited here
 26. `content/source/robotics/posters/poster-deck/pages/page-13.jpg`, `page-15.jpg`, `page-16.jpg`, `page-25.jpg` — renders, ramp iterations, Gantt dates
-27. `CLAUDE.md` (root) — the only source for "80+ member club", "2x Worlds qualifier", "third in New York", "trained 50+ students", and CAD tutorials in seven languages
+27. `CLAUDE.md` (root) — the only source for "third in New York"; "80+ member club", "2x Worlds qualifier", "trained 50+ students" and the seven-language CAD tutorials are also corroborated in `content/source/essays/college-essays-private.txt` (L1515-L1524, L4101)
 
 Confirmation only, never quoted:
 

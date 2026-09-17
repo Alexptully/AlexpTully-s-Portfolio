@@ -15,6 +15,9 @@ hollow ceramic pipes that assemble into structures which cool a space by evapora
 **Name to publish:** CeraPiper, one word, as the project's own README spells it. The résumé writes it
 "Cera Piper"; the résumé also misspells Cornell as "Conell" in the body text.
 (content/source/cerapiper/README.md#about-the-project; content/source/resume/resume-current.png)
+The README prose spells the tool "CeraPiper", but the repository, the live-site URLs, and the app's
+own title bar all read "CeraPipes" / "cerapipe" — so any link label on the site will differ from the
+project name; see the name-spelling TODO in 6.10.
 
 ---
 
@@ -33,21 +36,25 @@ hollow ceramic pipes that assemble into structures which cool a space by evapora
 
 **What the project documents say**
 
-- Neither `content/source/cerapiper/README.md` nor the paper draft contains the strings "Alex",
-  "Tully", "Cornell", "Technion", or "intern" — verified by whole-file grep across both files
+- "Tully", "Cornell" and "Technion" appear nowhere in either `content/source/cerapiper/README.md` or
+  the paper draft; "Alex" occurs only inside other researchers' names in the draft's bibliography
+  (Alexander Teibrich, Jason Alexander) and "intern" only inside words like "internal" and
+  "International" — verified by whole-file grep across both files
   (content/source/cerapiper/README.md; content/source/cerapiper/user-study-paper/text.md).
 - The README has no authors, contributors, or acknowledgments section; its only attribution is to the
   Matter of Tech Lab (content/source/cerapiper/README.md#contact).
 - The paper draft's byline is "Anonymous Author(s)", because the draft is under anonymous review, so
   no author list exists in the file to check against
   (content/source/cerapiper/user-study-paper/text.md#page-1).
-- The only human names anywhere in this source group are the authors of the earlier, published CAM
-  paper: Ofer Berman, Ethan Zhi Ming Seiz, and Thijs Roumen. Alex is not among them
-  (content/source/cerapiper/user-study-paper/text.md#page-16, reference [10]).
+- The only human names attached to the project itself are the authors of the earlier, published CAM
+  paper: Ofer Berman, Ethan Zhi Ming Seiz, and Thijs Roumen. Alex is not among them. (The draft's
+  bibliography names dozens of unrelated researchers, and the README names Benoit Blanchon as the
+  ArduinoJson author; the README's "ofer mode" setting is the only in-project echo of a named
+  person.) (content/source/cerapiper/user-study-paper/text.md#page-16, reference [10]).
 - The only institution named in the CeraPiper sources is the Matter of Tech Lab. The paper draft
   refers to the authors' university without naming it, and redacts the interview language as a
   placeholder for review (content/source/cerapiper/README.md#contact;
-  content/source/cerapiper/user-study-paper/text.md#page-10, #page-18).
+  content/source/cerapiper/user-study-paper/text.md#page-9, #page-10).
 - The README describes the whole system as one piece of work and attributes no component to any
   individual (content/source/cerapiper/README.md#implementation).
 
@@ -168,7 +175,8 @@ is the clearest structure for a technical section on the site.
   single axis (content/source/cerapiper/README.md#from-cam-to-cad).
 - The README's framing of why the CAD layer exists: that interface made the process "controllable,
   but not designable" — makers reasoned about extrusion parameters in isolation and could not compose
-  or evaluate the assembled object. This is public README wording, not paper wording, and is the
+  or evaluate the assembled object. This is README wording, not paper wording (whether the README's
+  repository is public is unconfirmed — see the repo-visibility TODO in 6.10), and is the
   cleanest one-line explanation available for the site
   (content/source/cerapiper/README.md#from-cam-to-cad).
 - The current tool recompiles that CAM workflow into a CAD one: each machine parameter is
@@ -195,7 +203,7 @@ into a two-column block on the site. All values below are README values.
 
 ---
 
-### 6.4 Numbers and constraints (all publishable, all from the README)
+### 6.4 Numbers and constraints (all from the README; the two evaluation figures are not yet publishable)
 
 | Figure | What it is | Source |
 |---|---|---|
@@ -208,17 +216,15 @@ into a two-column block on the site. All values below are README values.
 | 9 | Toggleable blueprint layers | (content/source/cerapiper/README.md#the-paper-blueprint) |
 | 3 | Software layers (Onshape/FeatureScript, Python/Flask, Arduino C++) | (content/source/cerapiper/README.md#implementation) |
 | 3 | Kinds of design-time constraint (hard, corrective, advisory) | (content/source/cerapiper/README.md#implementation) |
-| ~8–10% | Elevated relative humidity achieved by prototypes | (content/source/cerapiper/README.md#about-the-project; external citation https://doi.org/10.1145/3745778.3766644) |
-| 1.85 L / 60 hours | Water evaporated by prototypes | (content/source/cerapiper/README.md#about-the-project; external citation https://doi.org/10.1145/3745778.3766644) |
+| ~8–10% | Elevated relative humidity achieved by prototypes | (content/source/cerapiper/README.md#about-the-project — README does not name the source of this figure; DOI attribution unconfirmed, see TODO in 6.10) |
+| 1.85 L / 60 hours | Water evaporated by prototypes | (content/source/cerapiper/README.md#about-the-project — README does not name the source of this figure; DOI attribution unconfirmed, see TODO in 6.10) |
 | 1 API request | Typical Onshape requests per import after Version 2.1, down from one per part | (content/source/cerapiper/README.md#roadmap) |
 
 - The README attributes the humidity and evaporation figures to technical evaluations of the
   underlying process, which also demonstrated repeatable geometric fidelity and measurable
-  temperature reductions. Those evaluations belong to the earlier CAM work published at ACM SCF 2025,
-  so the citation for both figures is that paper's DOI
-  (content/source/cerapiper/README.md#about-the-project;
-  https://doi.org/10.1145/3745778.3766644). See TODO(alex) in 6.10 — the exact numbers have not been
-  checked against the published paper itself.
+  temperature reductions. The README does not say where those evaluations were reported, so the site
+  cannot footnote them to the SCF 2025 paper until Alex confirms it (see TODO in 6.10)
+  (content/source/cerapiper/README.md#about-the-project).
 - The README gives no temperature-reduction number, only the word "measurable", so the site must not
   state one (content/source/cerapiper/README.md#about-the-project).
 
@@ -241,7 +247,8 @@ into a two-column block on the site. All values below are README values.
 - Frontend: a p5.js (WEBGL + 2D) client — `geometry_builder.js`, `tabs.js` (per-bed tabs and the
   printable paper blueprint), `components.js`, `paperControls.js`, `utils.js`, `constants.js`,
   `state.js`, `primitiveSchema.js`, `stackManager.js`, `stackIntegration.js`, `ui.js`, `buttons.js`;
-  templates use a bento layout (`index.html`, `header.html`, `settings.html`)
+  templates: `index.html` (the main editor, a bento layout of 3D + Components and 2D + Paper Sheet
+  Layers), `header.html` (shared toolbar), `settings.html` (kiln/conveyor configuration)
   (content/source/cerapiper/README.md#file-structure).
 
 ---
@@ -389,8 +396,9 @@ the `figures/` directory does not) — ask Alex to supply these first:
 | `content/source/cerapiper/figures/cad_interface.png` | The interface: bed tab bar, straight/curved 3D viewport, Components panel, interactive bed blueprint | The single best "what the tool looks like" image |
 | `content/source/cerapiper/figures/primitive_shots.png` | Example primitives: tools, 3D preview, 2D cross-section, curve and connector primitives | Small supporting grid, or a detail strip |
 
-(All five: content/source/cerapiper/README.md — markdown reference-link definitions at end of file,
-plus the figure captions in #about-the-project, #implementation, and #usage. Absence from disk
+(All five: content/source/cerapiper/README.md — `teaser_v2.png` from the inline <img> in the project
+header, the other four from the markdown reference-link definitions at end of file, plus the figure
+captions in #about-the-project, #implementation, and #usage. Absence from disk
 verified by `find content/source/cerapiper -type f`.)
 
 **Do not publish — reference only.** These are pages of the draft under anonymous review. They are
@@ -450,7 +458,7 @@ TODO(alex): How should the affiliation read — "Matter of Tech Lab", "Cornell T
 Technion", or all three? The résumé says Cornell Tech x Technion; the CeraPiper sources name only the
 Matter of Tech Lab, and the paper draft refers to the authors' university without naming it.
 (content/source/resume/resume-current.png; content/source/cerapiper/README.md#contact;
-content/source/cerapiper/user-study-paper/text.md#page-10)
+content/source/cerapiper/user-study-paper/text.md#page-9)
 
 TODO(alex): Study size conflict. The README reports a study with eight designers and makers (all
 eight on design intent, seven of eight on the CAD-versus-machine question); the draft under review
@@ -491,7 +499,9 @@ available in this source group. Is there a photo, or should the site drop the wo
 
 TODO(alex): Name spelling — the site will use "CeraPiper" (the project README's spelling) rather than
 the résumé's "Cera Piper". Confirm. Note also that the résumé body misspells Cornell as "Conell" and
-that typo must not be carried into any site copy.
+that typo must not be carried into any site copy. Note further that the repository
+(github.com/matteroftech/CeraPipes), the live-site URLs, and the app's own title bar all read
+"CeraPipes" / "cerapipe" rather than "CeraPiper" — decide which spelling any on-site link label uses.
 (content/source/resume/resume-current.png; content/source/cerapiper/README.md)
 
 TODO(alex): The résumé calls the work "CAD and slicing software", while the README frames it as a CAD

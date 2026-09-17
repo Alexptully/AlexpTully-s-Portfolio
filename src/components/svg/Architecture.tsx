@@ -1,3 +1,4 @@
+import type { ArchitectureLayer } from "@/content/types";
 import { cn } from "@/lib/utils";
 
 /**
@@ -9,17 +10,6 @@ import { cn } from "@/lib/utils";
  * The block heights are computed from the copy, so a layer can carry one detail line or three
  * without the caller touching the drawing.
  */
-
-export type ArchitectureLayer = {
-  /** What the layer is, e.g. "Design layer". */
-  name: string;
-  /** What it is built with, e.g. "Onshape, FeatureScript". */
-  tech: string;
-  /** Short detail lines. Lines are not wrapped for you: one string per drawn line. */
-  lines?: string[];
-  /** `physical` draws the layer on paper stock instead of as an outline. */
-  kind?: "software" | "physical";
-};
 
 export type ArchitectureProps = {
   /** Accessible name of the figure. */

@@ -61,7 +61,9 @@ export const site: Site = {
   labels: {
     role: "My role",
     proof: "Proof",
+    awards: "Awards",
     awardsNone: "None.",
+    backToText: "Back to text",
     dateNotRecorded: "date not recorded",
     teamMeasurement: "(team measurement)",
     versionTag: "Version",

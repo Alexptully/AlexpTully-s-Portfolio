@@ -6,6 +6,12 @@ type SourcesProps = {
   /** Heading level: h2 inside a page body, h3 inside the footer. */
   as?: "h2" | "h3";
   heading?: string;
+  /**
+   * The 1-based source numbers that have a `ref-N` anchor on the page. When given, the
+   * "Back to text" link renders only for those, so it can never point at nothing. Omit it
+   * and every item links back, which is right when the page marks every source in prose.
+   */
+  backlinks?: Iterable<number>;
   id?: string;
   className?: string;
 };
@@ -22,18 +28,21 @@ function hostOf(href: string) {
 /**
  * The page's numbered Sources list (design-spec §5.6, §14). Item N has `id="src-N"` so a
  * `FootnoteRef` can point at it with `href="#src-N"` and `aria-describedby="src-N"`, and
- * each item links back to its marker at `#ref-N`. A public `href` renders as a link; an
- * internal `path` renders the document name as text.
+ * each item links back to its marker at `#ref-N` — but only when that anchor exists, which
+ * `backlinks` decides. A public `href` renders as a link; an internal `path` renders the
+ * document name as text.
  */
 export function Sources({
   sources,
   as: Heading = "h2",
   heading = site.footer.sourcesHeading,
+  backlinks,
   id = "sources",
   className,
 }: SourcesProps) {
   if (sources.length === 0) return null;
   const headingId = `${id}-heading`;
+  const anchored = backlinks ? new Set(backlinks) : null;
 
   return (
     <section id={id} aria-labelledby={headingId} className={className}>
@@ -58,10 +67,15 @@ export function Sources({
                 ) : (
                   <span className="text-ink">{source.name}</span>
                 )}
-                {source.note ? <span>; {source.note}</span> : null}.{" "}
-                <a href={`#ref-${n}`} className="link-quiet whitespace-nowrap">
-                  Back to text
-                </a>
+                {source.note ? <span>; {source.note}</span> : null}.
+                {!anchored || anchored.has(n) ? (
+                  <>
+                    {" "}
+                    <a href={`#ref-${n}`} className="link-quiet whitespace-nowrap">
+                      {site.labels.backToText}
+                    </a>
+                  </>
+                ) : null}
               </p>
             </li>
           );

@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { FootnoteRef } from "@/components/content/Stat";
+import { MarkerSeparator, splitFootnotes } from "@/components/content/Footnotes";
 
 /**
  * Footnote plumbing for the about page (design-spec §14, `src/content/types.ts`).
@@ -21,38 +22,6 @@ export type FootnoteBlock = {
 };
 
 export type FootnoteOwners = Map<number, string>;
-
-const SUPERSCRIPT: Record<string, number> = {
-  "⁰": 0, "¹": 1, "²": 2, "³": 3, "⁴": 4, "⁵": 5, "⁶": 6, "⁷": 7, "⁸": 8, "⁹": 9,
-};
-
-type Part = string | number;
-
-/** Splits prose at its superscript digits; a run of them becomes one footnote index. */
-export function splitFootnotes(text: string): Part[] {
-  const parts: Part[] = [];
-  let buffer = "";
-  let digits = "";
-  const flush = () => {
-    if (!digits) return;
-    if (buffer) parts.push(buffer);
-    buffer = "";
-    parts.push(Number(digits));
-    digits = "";
-  };
-  for (const ch of text) {
-    const digit = SUPERSCRIPT[ch];
-    if (digit !== undefined) {
-      digits += digit;
-    } else {
-      flush();
-      buffer += ch;
-    }
-  }
-  flush();
-  if (buffer) parts.push(buffer);
-  return parts;
-}
 
 /** Every marker a block renders, in order, with the position that identifies it. */
 function markersOf(block: FootnoteBlock): Array<{ index: number; at: string }> {
@@ -77,15 +46,6 @@ export function footnoteOwners(blocks: FootnoteBlock[]): FootnoteOwners {
   return owners;
 }
 
-/**
- * Two markers set side by side read as one number ("9" and "10" become "910"), so a run of
- * them is separated the way a printed footnote run is: a comma and a hair space, at the
- * marker's own size.
- */
-function MarkerSeparator() {
-  return <sup className="align-super text-[0.7em] leading-[0] text-ink">,&#8201;</sup>;
-}
-
 /** Renders one block's text with its markers inline, then any `extra` markers after it. */
 export function Footnoted({ block, owners }: { block: FootnoteBlock; owners: FootnoteOwners }) {
   const parts = splitFootnotes(block.text);
@@ -96,11 +56,10 @@ export function Footnoted({ block, owners }: { block: FootnoteBlock; owners: Foo
       {parts.map((part, i) =>
         typeof part === "number" ? (
           part > 0 ? (
-            <FootnoteRef
-              key={`${block.key}#${i}`}
-              index={part}
-              backlink={owners.get(part) === `${block.key}#${i}`}
-            />
+            <Fragment key={`${block.key}#${i}`}>
+              {typeof parts[i - 1] === "number" ? <MarkerSeparator /> : null}
+              <FootnoteRef index={part} backlink={owners.get(part) === `${block.key}#${i}`} />
+            </Fragment>
           ) : null
         ) : (
           <Fragment key={`${block.key}#${i}`}>{part}</Fragment>

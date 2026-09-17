@@ -3,7 +3,7 @@ import { RingCompare } from "@/components/moments/RingCompare";
 import { FingerLinkage } from "@/components/moments/FingerLinkage";
 import { DriveDiagram } from "@/components/moments/DriveDiagram";
 import { HexProfile } from "@/components/moments/HexProfile";
-import { Architecture, type ArchitectureLayer } from "@/components/svg/Architecture";
+import { Architecture } from "@/components/svg/Architecture";
 import { BlueprintStrip } from "@/components/svg/BlueprintStrip";
 import { CardFigure, FigureCaption, type Cite } from "@/components/work/Figure";
 
@@ -12,53 +12,6 @@ type MomentSlotProps = {
   cite: Cite;
 };
 
-/*
- * Labels for the two CeraPiper drawings. Every line is a fact from the README as the content
- * map records it (content/notes/content-map.md §6, "Implementation" and "The paper blueprint").
- * TODO(wp1): move these into `projects.ts` under `how.architecture` / `how.blueprint` so no copy
- * lives in a component; the handoff note lists the exact objects.
- */
-const ARCHITECTURE_LAYERS: ArchitectureLayer[] = [
-  {
-    name: "Design layer",
-    tech: "Onshape, FeatureScript",
-    lines: ["Ribbed pipes, branches, connectors, collars", "Hard, corrective and advisory constraints"],
-  },
-  {
-    name: "Translation middleware",
-    tech: "Python, Flask",
-    lines: [
-      "Reads the feature tree over the REST API",
-      "Linearises each branch into one extrusion",
-      "Serialises a JSON Function Stack",
-    ],
-  },
-  {
-    name: "Fabrication backend",
-    tech: "Arduino, C++",
-    lines: ["Maps primitives to motor steps", "Regulates the pug-mill feed rate", "Drives the shape-shifting die"],
-  },
-  {
-    name: "Paper blueprint",
-    tech: "20 cm sheet on a standard plotter",
-    kind: "physical",
-    lines: ["Runs along the bed under the clay"],
-  },
-];
-const ARCHITECTURE_LINKS = ["Onshape REST API", "Function Stack over USB serial", "Printed from the Function Stack"];
-
-const BLUEPRINT = {
-  partName: "Main bed",
-  pieceId: "Piece 1",
-  sheetWidth: "20 cm",
-  marks: {
-    cut: "Cut line, where the clay is divided into fabricable segments",
-    endPiece: "Fixed 60 mm start and end pieces at the limits of the 800 mm bed",
-    mandrel: "The mandrel size in use, drawn as the bore centreline",
-    hexHole: "Hex marker where a hole is hand-cut for a perpendicular connector",
-  },
-  note: "800 mm bed, 60 mm end pieces",
-};
 
 /**
  * The page's single interactive element (design-spec §6.4, §10.3), chosen by the project's
@@ -149,8 +102,8 @@ export function MomentSlot({ how, cite }: MomentSlotProps) {
               <Architecture
                 title={architecture.alt}
                 desc={architecture.caption}
-                layers={ARCHITECTURE_LAYERS}
-                links={ARCHITECTURE_LINKS}
+                layers={architecture.layers}
+                links={architecture.links}
                 maxWidth={400}
               />
               <FigureCaption
@@ -163,11 +116,11 @@ export function MomentSlot({ how, cite }: MomentSlotProps) {
               <BlueprintStrip
                 title={blueprint.alt}
                 desc={blueprint.caption}
-                partName={BLUEPRINT.partName}
-                pieceId={BLUEPRINT.pieceId}
-                sheetWidth={BLUEPRINT.sheetWidth}
-                marks={BLUEPRINT.marks}
-                note={BLUEPRINT.note}
+                partName={blueprint.partName}
+                pieceId={blueprint.pieceId}
+                sheetWidth={blueprint.sheetWidth}
+                marks={blueprint.marks}
+                note={blueprint.note}
                 maxWidth={640}
               />
               <FigureCaption

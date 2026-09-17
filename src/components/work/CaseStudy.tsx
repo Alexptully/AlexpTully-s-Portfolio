@@ -1,10 +1,11 @@
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import type { Figure as FigureData, ImageGround, Project, Source, SpecRow } from "@/content/types";
 import { site } from "@/content/site";
 import { Container } from "@/components/layout/Container";
 import { Prose } from "@/components/content/Prose";
 import { Sources } from "@/components/content/Sources";
 import { FootnoteRef } from "@/components/content/Stat";
+import { MarkerSeparator, splitFootnotes } from "@/components/content/Footnotes";
 import { SpecSheet } from "@/components/content/SpecSheet";
 import { VersionLedger } from "@/components/content/VersionLedger";
 import { AwardsList } from "@/components/content/AwardsList";
@@ -15,47 +16,11 @@ import { Filmstrip } from "@/components/media/Filmstrip";
 import { HexPipe } from "@/components/svg/HexPipe";
 import { HandParameters } from "@/components/svg/HandParameters";
 import { RegressionChart } from "@/components/svg/RegressionChart";
-import { CardFigure, FigureCaption, PlateFigure, type Citation, type Cite } from "@/components/work/Figure";
+import { CardFigure, FigureCaption, PlateFigure, type Cite } from "@/components/work/Figure";
 import { MomentSlot } from "@/components/work/MomentSlot";
 import { RobotSection } from "@/components/work/RobotSection";
 
 /* ------------------------------------------------------------ footnotes */
-
-const SUPERSCRIPT: Record<string, number> = {
-  "⁰": 0, "¹": 1, "²": 2, "³": 3, "⁴": 4, "⁵": 5, "⁶": 6, "⁷": 7, "⁸": 8, "⁹": 9,
-};
-
-type Part = string | number;
-
-/**
- * Splits prose at its superscript digits (design-spec §4.3, content/types.ts): a run of
- * superscript characters becomes one footnote index, everything else stays text.
- */
-function splitFootnotes(text: string): Part[] {
-  const parts: Part[] = [];
-  let buffer = "";
-  let digits = "";
-  const flush = () => {
-    if (digits) {
-      if (buffer) parts.push(buffer);
-      buffer = "";
-      parts.push(Number(digits));
-      digits = "";
-    }
-  };
-  for (const ch of text) {
-    const digit = SUPERSCRIPT[ch];
-    if (digit !== undefined) {
-      digits += digit;
-    } else {
-      flush();
-      buffer += ch;
-    }
-  }
-  flush();
-  if (buffer) parts.push(buffer);
-  return parts;
-}
 
 type ProseEntry = { key: string; text: string };
 
@@ -71,11 +36,15 @@ function proseOwners(entries: ProseEntry[]): Map<number, string> {
 }
 
 function Footnoted({ text, ownerKey, owners }: { text: string; ownerKey: string; owners: Map<number, string> }) {
+  const parts = splitFootnotes(text);
   return (
     <>
-      {splitFootnotes(text).map((part, i) =>
+      {parts.map((part, i) =>
         typeof part === "number" ? (
-          <FootnoteRef key={`${ownerKey}#${i}`} index={part} backlink={owners.get(part) === `${ownerKey}#${i}`} />
+          <Fragment key={`${ownerKey}#${i}`}>
+            {typeof parts[i - 1] === "number" ? <MarkerSeparator /> : null}
+            <FootnoteRef index={part} backlink={owners.get(part) === `${ownerKey}#${i}`} />
+          </Fragment>
         ) : (
           part
         ),
@@ -90,7 +59,7 @@ function Footnoted({ text, ownerKey, owners }: { text: string; ownerKey: string;
  * marker owns the back-link anchor when one exists; otherwise the first figure or measurement
  * citing that source does, in render order, so every "Back to text" link lands somewhere.
  */
-function buildCite(project: Project, prose: Map<number, string>): Cite {
+function buildCite(project: Project, prose: Map<number, string>): { cite: Cite; anchored: Set<number> } {
   const { sources } = project;
   const indexOf = (source: Source) => sources.indexOf(source) + 1;
 
@@ -121,100 +90,62 @@ function buildCite(project: Project, prose: Map<number, string>): Cite {
     if (n > 0 && !prose.has(n) && !owners.has(n)) owners.set(n, key);
   }
 
-  return (source, key): Citation => {
+  const cite: Cite = (source, key) => {
     const index = indexOf(source);
     return { index, backlink: index > 0 && owners.get(index) === key };
   };
+  // Every number that will have a `ref-N` anchor in the DOM, so the Sources list only
+  // offers "Back to text" where there is text to go back to.
+  return { cite, anchored: new Set([...prose.keys(), ...owners.keys()]) };
 }
 
 /* ---------------------------------------------------- per-page drawings */
 
 /*
- * The two authored drawings that a case study places outside the moment (design-spec §7.2 and
- * §7.3): the seven hand measurements beside the prosthetic ledger, and the launcher regression
- * under the robotics results. Their labels are the facts the content map records
- * (content/notes/content-map.md, prosthetic §"parametric" and robotics §"Launcher").
- * TODO(wp1): move these label sets into `projects.ts` so no copy lives in a component.
+ * The two authored drawings a case study places outside the moment (design-spec §7.2, §7.3):
+ * the seven hand measurements beside the prosthetic ledger, and the launcher regression under
+ * the robotics results. Their labels and their citation come from the project, so nothing here
+ * is copy; the page renders whichever the project declares.
  */
-const HAND = {
-  title: "The seven hand measurements the parametric model is built on",
-  desc: "A drawing of a hand, palm side, with digits 1 to 5 labelled and each measurement marked as a girth arc or a length arrow.",
-  digitLabels: ["Digit 1", "Digit 2", "Digit 3", "Digit 4", "Digit 5"] as [string, string, string, string, string],
-  parameters: {
-    handCircumference: "Hand circumference",
-    handLength: "Hand length",
-    palmLength: "Palm length",
-    wristCircumference: "Wrist circumference",
-    fingerRoot: "Finger root circumference",
-    interphalangeal: "Interphalangeal joint circumference",
-    distalInterphalangeal: "Distal interphalangeal joint circumference",
-  },
-  caption: "The seven hand measurements that size the model, redrawn from the design brief.",
-  /** The source object is looked up by path so the figure joins the page's numbered list. */
-  sourcePath: "#page-12",
-};
-
-const REGRESSION = {
-  title: "Launcher speed against shot distance",
-  desc: "A chart with shot distance in centimetres along the bottom and launcher speed up the side; one straight line rises from left to right, labelled with the team's equation.",
-  x: { label: "Shot distance, d (cm)", min: 0, max: 300, ticks: [0, 100, 200, 300] },
-  y: { label: "Launcher speed, v", min: 1000, max: 1900, ticks: [1000, 1300, 1600, 1900] },
-  line: { slope: 2.64, intercept: 1013, label: "v = d · 2.64 + 1013" },
-  notes: [
-    "The line is drawn from the equation the team published; the individual trials are not published, so no points are plotted.",
-    "Distance is in centimetres, as the poster deck's chart labels it. The unit of v is not legible in any source, so the axis carries the equation's own values.",
-    // TODO(alex): the unit of v (encoder ticks per second, RPM, or something else).
-  ],
-  caption: "Launcher tuning: the team's regression from 200+ trials at 8 mm compression, redrawn from the equation.",
-  sourceClaim: "2.64",
-};
 
 function extraCitations(project: Project): Array<[Source, string]> {
   const out: Array<[Source, string]> = [];
-  if (project.slug === "prosthetic-arm") {
-    const source = project.sources.find((s) => s.path?.endsWith(HAND.sourcePath));
-    if (source) out.push([source, "extra:hand"]);
-  }
-  if (project.slug === "robotics") {
-    const source = project.sources.find((s) => s.claim?.includes(REGRESSION.sourceClaim));
-    if (source) out.push([source, "extra:regression"]);
-  }
+  if (project.handParameters) out.push([project.handParameters.source, "extra:hand"]);
+  if (project.regression) out.push([project.regression.source, "extra:regression"]);
   return out;
 }
 
 function LedgerExtra({ project, cite }: { project: Project; cite: Cite }) {
-  if (project.slug !== "prosthetic-arm") return null;
-  const source = project.sources.find((s) => s.path?.endsWith(HAND.sourcePath));
-  if (!source) return null;
+  const hand = project.handParameters;
+  if (!hand) return null;
   return (
     <figure className="mt-12 max-w-[34rem]">
       <HandParameters
-        title={HAND.title}
-        desc={HAND.desc}
-        digitLabels={HAND.digitLabels}
-        parameters={HAND.parameters}
+        title={hand.title}
+        desc={hand.desc}
+        digitLabels={hand.digitLabels}
+        parameters={hand.parameters}
         maxWidth={420}
       />
-      <FigureCaption text={HAND.caption} source={source} citation={cite(source, "extra:hand")} />
+      <FigureCaption text={hand.caption} source={hand.source} citation={cite(hand.source, "extra:hand")} />
     </figure>
   );
 }
 
 function ResultsExtra({ project, cite }: { project: Project; cite: Cite }) {
-  if (project.slug !== "robotics") return null;
-  const source = project.sources.find((s) => s.claim?.includes(REGRESSION.sourceClaim));
-  if (!source) return null;
+  const chart = project.regression;
+  if (!chart) return null;
   return (
     <figure className="mt-10 max-w-[34rem]">
       <RegressionChart
-        title={REGRESSION.title}
-        desc={REGRESSION.desc}
-        x={REGRESSION.x}
-        y={REGRESSION.y}
-        line={REGRESSION.line}
-        notes={REGRESSION.notes}
+        title={chart.title}
+        desc={chart.desc}
+        x={chart.x}
+        y={chart.y}
+        line={chart.line}
+        notes={chart.notes}
       />
-      <FigureCaption text={REGRESSION.caption} source={source} citation={cite(source, "extra:regression")} />
+      <FigureCaption text={chart.caption} source={chart.source} citation={cite(chart.source, "extra:regression")} />
     </figure>
   );
 }
@@ -284,9 +215,9 @@ export function CaseStudy({ project, next }: CaseStudyProps) {
     { key: "status", text: project.status },
     { key: "next", text: project.next },
   ]);
-  const cite = buildCite(project, prose);
+  const { cite, anchored } = buildCite(project, prose);
   const renderSpecValue = (row: SpecRow, i: number) => <Footnoted text={row.value} ownerKey={`spec-${i}`} owners={prose} />;
-  const awardsHeading = project.spec.find((row) => row.value === site.labels.awardsNone)?.term ?? "Awards";
+  const awardsHeading = site.labels.awards;
   const hero = project.hero;
 
   return (
@@ -347,7 +278,12 @@ export function CaseStudy({ project, next }: CaseStudyProps) {
           </div>
         ) : null}
         {project.versions.length > 0 ? (
-          <VersionLedger caption={`${project.title}: ${project.versionsHeading}`} rows={project.versions} cite={cite} />
+          <VersionLedger
+            caption={`${project.title}: ${project.versionsHeading}`}
+            rows={project.versions}
+            note={project.versionsNote}
+            cite={cite}
+          />
         ) : null}
         {project.ledgers?.map((ledger, li) => (
           <div key={ledger.heading} className="mt-12 md:mt-16">
@@ -408,7 +344,7 @@ export function CaseStudy({ project, next }: CaseStudyProps) {
 
       {/* 9. Sources, then the shared footer from the layout */}
       <Container className="mt-16 md:mt-24">
-        <Sources sources={project.sources} />
+        <Sources sources={project.sources} backlinks={anchored} />
       </Container>
     </article>
   );

@@ -51,6 +51,12 @@ export type ImageRef = {
   width: number;
   height: number;
   ground: ImageGround;
+  /**
+   * The plate ground, when a `light` crop could not be levelled onto `--plate-light`.
+   * Set to the crop's own measured border colour so the crop edge still vanishes into the
+   * plate. Only the three poster crops the levelling pass had to skip carry it (§12.1).
+   */
+  plateColor?: string;
   alt: string;
   caption: string;
   /** Exactly as the source prints it, e.g. "7 June 2023". Omitted when no source dates it. */
@@ -135,6 +141,60 @@ export type Ledger = {
   aside?: ImageRef;
 };
 
+/** One block of the CeraPiper stack drawing (§7.4). Rendered by `svg/Architecture`. */
+export type ArchitectureLayer = {
+  /** What the layer is, e.g. "Design layer". */
+  name: string;
+  /** What it is built with, e.g. "Onshape, FeatureScript". */
+  tech: string;
+  /** Short detail lines. One string per drawn line; nothing is wrapped for you. */
+  lines?: string[];
+  /** `physical` draws the layer on paper stock instead of as an outline. */
+  kind?: "software" | "physical";
+};
+
+/** The four named marks on the CeraPiper paper blueprint (§7.4). */
+export type BlueprintMarks = {
+  cut: string;
+  endPiece: string;
+  mandrel: string;
+  hexHole: string;
+};
+
+/**
+ * The seven hand measurements drawing beside the prosthetic ledger (§7.2).
+ * Every label is a parameter name from the design brief; `source` is the page's own citation.
+ */
+export type HandParametersSpec = {
+  title: string;
+  desc: string;
+  digitLabels: [string, string, string, string, string];
+  parameters: {
+    handCircumference: string;
+    handLength: string;
+    palmLength: string;
+    wristCircumference: string;
+    fingerRoot: string;
+    interphalangeal: string;
+    distalInterphalangeal: string;
+  };
+  caption: string;
+  source: Source;
+};
+
+/** The launcher regression chart under the robotics results (§7.3). */
+export type RegressionSpec = {
+  title: string;
+  desc: string;
+  x: { label: string; min: number; max: number; ticks: number[] };
+  y: { label: string; min: number; max: number; ticks: number[] };
+  line: { slope: number; intercept: number; label: string };
+  /** What the chart does and does not claim, printed under it. */
+  notes: string[];
+  caption: string;
+  source: Source;
+};
+
 /** A two-column `<table>` with a header row. */
 export type TwoColumnTable = {
   columns: [string, string];
@@ -194,6 +254,8 @@ export type HowBlock =
       component: "FingerLinkage";
       intro: string;
       label: string;
+      /** The unit spelled out in words for `aria-valuetext`, e.g. "Servo travel 54 percent". */
+      valueTextUnit: string;
       /** Says in the DOM that the drawn angles are illustrative, not a measured spec. */
       note: string;
       card: ImageRef;
@@ -205,6 +267,8 @@ export type HowBlock =
       legend: string;
       /** `<label>` for the direction range input. */
       label: string;
+      /** The unit spelled out in words for `aria-valuetext`, e.g. "Drive direction 55 degrees". */
+      valueTextUnit: string;
       options: Array<{ id: string; label: string; note: string }>;
       caption: string;
       source: Source;
@@ -215,11 +279,37 @@ export type HowBlock =
       diameterLabel: string;
       rotateLabel: string;
       spanLabel: string;
+      /** The visible readout's unit, e.g. "mm". */
+      unit: string;
+      /** The same unit spelled out in words for `aria-valuetext`, e.g. "58 millimetres". */
+      valueTextUnit: string;
+      /** The rotation unit spelled out in words, e.g. "indexed one step, 30 degrees". */
+      rotationUnit: string;
+      /** The dimension drawn on the span diagram: the README's own advisory limit. */
+      spanLimitLabel: string;
       /** The one advisory string, shown when the span passes the tool's own limit. */
       spanWarning: string;
       translation: TwoColumnTable;
-      architecture: { alt: string; caption: string; source: Source };
-      blueprint: { alt: string; caption: string; source: Source };
+      architecture: {
+        alt: string;
+        caption: string;
+        source: Source;
+        layers: ArchitectureLayer[];
+        /** What passes from one layer to the next. One fewer item than `layers`. */
+        links: string[];
+      };
+      blueprint: {
+        alt: string;
+        caption: string;
+        source: Source;
+        /** Sheet headings on the drawing. Illustrative labels, as the caption says. */
+        partName: string;
+        pieceId: string;
+        sheetWidth: string;
+        marks: BlueprintMarks;
+        /** The sheet's own notes line. */
+        note: string;
+      };
       source: Source;
     };
 
@@ -248,6 +338,8 @@ export type Project = {
   /** Heading for the versions section ("Versions", or "Robots" on robotics). */
   versionsHeading: string;
   versions: Version[];
+  /** One line under the versions ledger, e.g. the CeraPiper note about v1–v2.0 (§7.4). */
+  versionsNote?: string;
   /** Extra ledgers rendered after the main one. */
   ledgers?: Ledger[];
   /** Cards shown beside the ledger or the process band. */
@@ -255,6 +347,10 @@ export type Project = {
   contactSheet?: ContactSheetItem[];
   filmstrip?: FilmstripItem[];
   robots?: RobotSection[];
+  /** The hand-measurement drawing under the ledger (prosthetic arm only, §7.2). */
+  handParameters?: HandParametersSpec;
+  /** The launcher regression chart under Results (robotics only, §7.3). */
+  regression?: RegressionSpec;
   /** "Results" sentences. Superscripts index into `sources`. */
   results: string[];
   awards: Award[] | "none";
@@ -287,8 +383,20 @@ export type HomeHero = {
   index: HomeIndexEntry[];
   /** Photo mode, and the plate that moves under the hero in canvas mode. */
   photo: { image: ImageRef };
-  /** Canvas mode (§10.1). */
-  canvas: { caption: string; alt: string; pauseLabel: string; playLabel: string };
+  /** Canvas mode (§10.1). The `status*` lines are announced by the wrapper's `role="status"`. */
+  canvas: {
+    caption: string;
+    alt: string;
+    pauseLabel: string;
+    playLabel: string;
+    /** Accessible name of the keyboard control inside the box. */
+    keyboardLabel: string;
+    statusDrifting: string;
+    statusPaused: string;
+    statusReducedMotion: string;
+    /** Announced when the poster stands alone (no WebGL, or the low-end guard tripped). */
+    statusPoster: string;
+  };
   sources: Source[];
 };
 
@@ -399,7 +507,11 @@ export type Site = {
   labels: {
     role: string;
     proof: string;
+    /** Heading over an awards list on a case study. */
+    awards: string;
     awardsNone: string;
+    /** The Sources list's link back to the marker that cites it. */
+    backToText: string;
     dateNotRecorded: string;
     teamMeasurement: string;
     versionTag: string;

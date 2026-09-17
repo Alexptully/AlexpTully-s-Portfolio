@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { ImageRef } from "@/content/types";
 import { PlateTransition } from "@/components/media/PlateTransition";
-import { cn } from "@/lib/utils";
+import { cn, plateGround } from "@/lib/utils";
 
 export type PlateAspect = "4/3" | "16/10";
 
@@ -23,6 +23,19 @@ const aspectClass: Record<PlateAspect, string> = {
   "4/3": "aspect-[4/3]",
   "16/10": "aspect-[16/10]",
 };
+
+/**
+ * A plate is never more than twice as wide as the object it holds, and never narrower than
+ * this. Rule one means a crop is drawn at its native width at most, so without a cap a small
+ * crop — the two Monty renders are 176 and 179 px — would float in a plate five times its
+ * width. The cap keeps the object the thing you see. Every crop at 480 px or wider fills its
+ * column as before, so this only bites where the source material is small.
+ */
+const MIN_PLATE_WIDTH = 360;
+
+function plateWidth(image: ImageRef): number {
+  return Math.max(image.width * 2, MIN_PLATE_WIDTH);
+}
 
 /**
  * The object plate (design-spec §1.2, §12.1): a fixed-aspect box whose ground comes from the
@@ -75,6 +88,7 @@ export function Plate({
         image.ground === "light" ? "bg-plate-light" : "bg-bg",
         className,
       )}
+      style={{ maxWidth: `${plateWidth(image)}px`, ...plateGround(image) }}
     >
       {transitionName ? <PlateTransition name={transitionName}>{img}</PlateTransition> : img}
     </div>

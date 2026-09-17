@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { FilmstripItem } from "@/content/types";
-import { cn } from "@/lib/utils";
+import { cn, plateGround } from "@/lib/utils";
 
 type FilmstripProps = {
   tiles: FilmstripItem[];
@@ -39,6 +39,7 @@ export function Filmstrip({ tiles, label, className }: FilmstripProps) {
                     "flex h-[120px] items-center justify-center overflow-hidden rounded-photo px-3",
                     image.ground === "light" ? "bg-plate-light" : "bg-surface",
                   )}
+                  style={plateGround(image)}
                 >
                   <Image
                     src={image.src}

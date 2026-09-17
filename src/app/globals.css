@@ -449,6 +449,21 @@
 }
 
 /* ---------------------------------------------------------------------------
+   Plate morph (spec §4.2, §11.5)
+
+   `PlateTransition` names the shared pair `share="plate"`, so the home row's plate and the
+   case-study hero morph into each other across the route change. The browser default is
+   250 ms ease; the site's step is 300 ms on its own easing. The reduced-motion block below
+   zeroes it.
+   --------------------------------------------------------------------------- */
+::view-transition-group(.plate),
+::view-transition-old(.plate),
+::view-transition-new(.plate) {
+  animation-duration: 300ms;
+  animation-timing-function: var(--ease-out);
+}
+
+/* ---------------------------------------------------------------------------
    Reduced motion (tech-notes (a).9, spec §11.6)
    --------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {

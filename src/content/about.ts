@@ -105,7 +105,7 @@ export const about: About = {
 
   bio: [
     "I build hardware. I founded Tully Tech, which makes affordable assistive and privacy devices, and I finish Avenues: The World School’s Mastery Learning Program with the class of 2026.",
-    "I work parametrically: master sketches where one variable updates the whole design, prototypes in wood before anything is cut in metal, iteration counted in versions and measured rather than described, and a cost ceiling treated as a design constraint from the first sketch. I would rather state a limitation up front than have someone find it, so the pages here say where each thing is weak.",
+    "I work parametrically: master sketches where one variable updates the whole design, prototypes in wood before anything is cut in metal, iteration counted in versions and measured rather than described, and a cost ceiling treated as a design constraint from the first sketch.⁹,¹⁰ I would rather state a limitation up front than have someone find it, so the pages here say where each thing is weak.¹¹",
     "Next: USC’s Iovine and Young Academy, Arts, Technology and the Business of Innovation, in fall 2026, alongside TroyLabs BUILD’s PM division and advanced robotics. The work I admire is restrained — an object that explains itself and stops there — and that is what I aim at.",
     // TODO(alex): open question 13 — USC and TroyLabs BUILD come only from the project brief.
     // Confirm they may be public before launch.
@@ -257,7 +257,7 @@ export const about: About = {
       "Weekly robotics sessions for younger students at Hudson Guild.",
       "20+ Hour of Code workshops, with a curriculum I wrote for lower-grade students.⁶",
       "An in-school e-waste drive that collected 40+ pounds; a city-wide expansion is planned, not done.⁶",
-      "On the robotics team, rookie training is stage-based and one to one, and every rookie finishes a working subsystem and plans an outreach event.",
+      "On the robotics team, rookie training is stage-based and one to one, and every rookie finishes a working subsystem and plans an outreach event.⁸",
       "I led the team that launched our FTC micro-funding site after a mid-season budget cut; the site itself is credited on our roster to a teammate.",
       // TODO(alex): open question 12 — the Hour of Code count is 20+ on the portfolio page, 30+
       // in the team documents and other numbers in the private drafts; the portfolio figure is

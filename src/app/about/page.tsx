@@ -42,37 +42,12 @@ function indexOf(source: Source): number {
   return about.sources.indexOf(source) + 1;
 }
 
-/**
- * Same, for a source the copy does not mark with a superscript. Matched on the citation's
- * own `claim`, not on any rendered words, and 0 (no marker) if the claim is ever reworded —
- * the page loses a marker rather than pointing at the wrong source.
- * TODO(wp1): move these four markers into the copy in `src/content/about.ts` as superscripts
- * and delete this lookup. The asks are written up in the wp6 handoff.
- */
-function indexOfClaim(prefix: string): number {
-  return about.sources.findIndex((source) => source.claim?.startsWith(prefix)) + 1;
-}
-
-const METHOD = indexOfClaim("Prototype in wood");
-const COST_CEILING = indexOfClaim("A production cost ceiling");
-const LIMITS = indexOfClaim("Stating a product");
-const TRAINING = indexOfClaim("Rookie training");
-
-/** The outreach line about rookie training, which the TRAINING citation backs. */
-const ROOKIE_LINE = about.outreach.lines.findIndex((line) => /rookie/i.test(line));
-
 /*
  * Every run of prose on the page, in render order. `footnoteOwners` gives the first marker
  * of each index the `id="ref-N"` anchor, so ids stay unique and the Sources list's
  * "Back to text" links all resolve.
  */
-// Paragraph 2 states the method, the cost ceiling and the habit of naming limits; those are
-// exactly the claims sources 9–11 carry, and the copy prints no marker for them.
-const bioBlocks: FootnoteBlock[] = about.bio.map((text, i) => ({
-  key: `bio-${i}`,
-  text,
-  extra: i === 1 ? [METHOD, COST_CEILING, LIMITS] : undefined,
-}));
+const bioBlocks: FootnoteBlock[] = about.bio.map((text, i) => ({ key: `bio-${i}`, text }));
 
 const toolBlocks: FootnoteBlock[] = about.tools.lines.map((text, i) => ({
   key: `tools-${i}`,
@@ -84,7 +59,6 @@ const toolBlocks: FootnoteBlock[] = about.tools.lines.map((text, i) => ({
 const outreachBlocks: FootnoteBlock[] = about.outreach.lines.map((text, i) => ({
   key: `outreach-${i}`,
   text,
-  extra: i === ROOKIE_LINE ? [TRAINING] : undefined,
 }));
 
 /** Keys here must match the ones `SmallerPieces` renders. */

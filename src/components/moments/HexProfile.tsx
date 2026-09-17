@@ -8,17 +8,6 @@ type How = Extract<HowBlock, { component: "HexProfile" }>;
 
 type HexProfileProps = { how: How };
 
-/*
- * TODO(wp1): the three strings here that are not yet in `projects.ts`. Two are units that
- * `aria-valuetext` has to spell out (design-spec §7.4 asks for "N millimetres"); the third is the
- * dimension on the span drawing, and 150 mm is the README's own advisory limit, already cited in
- * the page's Results and in the CAM-to-CAD table. The handoff note lists the fields to add.
- */
-const UNIT_MM = "mm";
-const UNIT_MM_SPOKEN = "millimetres";
-const UNIT_DEGREES = "degrees";
-const SPAN_LIMIT_LABEL = `150 ${UNIT_MM}`;
-
 const W = 600;
 const H = 360;
 
@@ -115,8 +104,8 @@ export function HexProfile({ how }: HexProfileProps) {
   const warningId = `${id}-warning`;
   const radius = diameter * SECTION.scale;
   const indexed = ((rotation % 360) + 360) % 360;
-  const diameterText = `${diameter} ${UNIT_MM}`;
-  const diameterSpoken = `${diameter} ${UNIT_MM_SPOKEN}`;
+  const diameterText = `${diameter} ${how.unit}`;
+  const diameterSpoken = `${diameter} ${how.valueTextUnit}`;
   const spanLength = overLimit ? SPAN.over : SPAN.limit;
 
   return (
@@ -135,7 +124,7 @@ export function HexProfile({ how }: HexProfileProps) {
       >
         <title id={titleId}>{`${how.diameterLabel} ${diameterText}`}</title>
         <desc id={descId}>
-          {how.intro} {how.diameterLabel} {diameterSpoken}, {indexed} {UNIT_DEGREES}.
+          {how.intro} {how.diameterLabel} {diameterSpoken}, {indexed} {how.rotationUnit}.
           {overLimit ? ` ${how.spanWarning}.` : ""}
         </desc>
 
@@ -210,7 +199,7 @@ export function HexProfile({ how }: HexProfileProps) {
           stroke="none"
           style={{ fontVariantNumeric: "tabular-nums" }}
         >
-          {SPAN_LIMIT_LABEL}
+          {how.spanLimitLabel}
         </text>
 
         <path

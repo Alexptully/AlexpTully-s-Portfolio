@@ -8,12 +8,6 @@ type How = Extract<HowBlock, { component: "DriveDiagram" }>;
 
 type DriveDiagramProps = { how: How };
 
-/*
- * TODO(wp1): the one word here that is not in `projects.ts`. `aria-valuetext` has to spell the
- * unit out (design-spec §14), so it lives here until `how` carries a `valueTextUnit` field.
- */
-const UNIT_DEGREES = "degrees";
-
 /** The drawing is laid out on a 600 grid and cropped to what it actually uses. */
 const CENTRE = 300;
 const VIEW = { x: 104, y: 104, size: 392 };
@@ -125,7 +119,7 @@ export function DriveDiagram({ how }: DriveDiagramProps) {
   const titleId = `${id}-title`;
   const descId = `${id}-desc`;
   const noteId = `${id}-note`;
-  const valueText = `${how.label} ${direction} ${UNIT_DEGREES}`;
+  const valueText = `${how.label} ${direction} ${how.valueTextUnit}`;
 
   // Forward is up the screen; right is right. One unit command, resolved per drivetrain.
   const forward = Math.cos(rad(direction));

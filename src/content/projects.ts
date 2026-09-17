@@ -415,7 +415,9 @@ const ac15: ImageRef = {
   src: "/images/anticam/ac-15-v2-parts-angled.jpg",
   width: 470,
   height: 295,
-  ground: "light",
+  // A photograph on a mid-grey desk: levelling it onto the light plate would clip the clear
+  // acrylic to white, so it keeps its own ground on `--bg` like the other bench shots.
+  ground: "photo",
   alt: "The V2 clear acrylic parts laid out at an angle: cells and switch plate, LED plate, cutout plates, engraved lid",
   caption: "The V2 stack laid out in order: cells and switch, emitter plate, spacers, lid.",
   source: S.cb14,
@@ -493,7 +495,9 @@ const pa05: ImageRef = {
   src: "/images/prosthetic-arm/pa-05-forearm-open.jpg",
   width: 274,
   height: 700,
-  ground: "photo",
+  // A cut-out on a pure-black slide: the pipeline keys the black onto `--bg`, so the label
+  // matches what is on disk.
+  ground: "dark",
   alt: "The physical forearm standing upright with its shell opened: stacked black servos, red and black wiring, a green Arduino-style board, the white hand on top",
   caption: "The forearm opened: servo stack, wiring, Arduino-style board.",
   source: S.briefImg("08"),
@@ -552,9 +556,15 @@ const pa10: ImageRef = {
 const rb01: ImageRef = {
   id: "rb-01-monty-render-white",
   src: "/images/robotics/rb-01-monty-render-white.jpg",
-  width: 450,
-  height: 370,
-  ground: "light",
+  // The clean rectangle in the poster is portrait and this small; the crop is never upscaled.
+  width: 176,
+  height: 296,
+  // Not a render on a plain ground: the only Monty render free of baked-on callouts is a crop
+  // of a printed poster, and it carries the poster's own gradient (white at the top, navy at
+  // the bottom). No single plate colour makes that edge vanish, so it sits as a photograph.
+  // TODO(alex): a 2400 px re-render of Monty on a plain ground, straight from the CAD file,
+  // would put this and rb-02 back on a light plate.
+  ground: "photo",
   alt: "Team CAD render of Monty: blue and silver chassis with Voronoi-cut side plates and a turreted launcher on top",
   caption:
     "Monty, Tritonics #17253: team CAD render, turreted launcher and three-ball sorting intake.",
@@ -565,10 +575,11 @@ const rb01: ImageRef = {
 const rb02: ImageRef = {
   id: "rb-02-monty-render-poster",
   src: "/images/robotics/rb-02-monty-render-poster.jpg",
-  width: 400,
-  height: 360,
-  ground: "light",
-  alt: "Team CAD render of Monty from the front three-quarter, intake rollers at the front, turret above",
+  width: 179,
+  height: 278,
+  // Same poster ground as rb-01; see the note there.
+  ground: "photo",
+  alt: "Team CAD render of Monty seen from above the front: the turreted launcher on its ring and the blue-and-silver Voronoi side plates below it",
   caption: "Monty, Tritonics #17253: team CAD render, three-quarter view.",
   source: S.deckP13img,
   cleared: true,
@@ -589,8 +600,9 @@ const rb03: ImageRef = {
 const rb04: ImageRef = {
   id: "rb-04-transfer-render",
   src: "/images/robotics/rb-04-transfer-render.jpg",
-  width: 320,
-  height: 360,
+  // Callout boxes bound the annotation-free rectangle at this size.
+  width: 288,
+  height: 290,
   ground: "light",
   alt: "Render of the transfer: three purple artifacts in a silver Voronoi frame with a tubing roller",
   caption: "The transfer: three artifacts held in order in a Voronoi-cut frame.",
@@ -601,8 +613,9 @@ const rb04: ImageRef = {
 const rb05: ImageRef = {
   id: "rb-05-launcher-render",
   src: "/images/robotics/rb-05-launcher-render.jpg",
+  // The clean band around the launcher is landscape, not portrait.
   width: 340,
-  height: 390,
+  height: 228,
   ground: "light",
   alt: "Render of the launcher: blue turret ring, adjustable hood and a weighted flywheel",
   caption: "The launcher: hooded flywheel on a 1:1 dual-servo turret.",
@@ -736,6 +749,8 @@ const rb16: ImageRef = {
   width: 255,
   height: 157,
   ground: "light",
+  // The crop keeps the portfolio page's own dark card ground, so the plate takes it too.
+  plateColor: "#3d3e43",
   alt: "The sorting intake holding three artifacts, one green and two purple",
   caption: "The sorting intake holding three artifacts at once.",
   source: S.ep2,
@@ -1034,6 +1049,8 @@ const prostheticArm: Project = {
     intro:
       "One elastic cord holds the finger open; a Kevlar cord from a servo in the forearm pulls it closed. Elastic runs outside the bend, Kevlar inside.",
     label: "Servo travel",
+    // Spelled out because `aria-valuetext` reads it aloud: "Servo travel 54 percent".
+    valueTextUnit: "percent",
     note:
       "The joint angles in this drawing are illustrative: they are chosen so the hand closes at full travel, not measured from the build.",
     card: pa06,
@@ -1127,6 +1144,24 @@ const prostheticArm: Project = {
       attribution: "alex",
     },
   ],
+  /* The drawing under the ledger (§7.2). Every label is a parameter name from brief p12. */
+  handParameters: {
+    title: "The seven hand measurements the parametric model is built on",
+    desc:
+      "A drawing of a hand, palm side, with digits 1 to 5 labelled and each measurement marked as a girth arc or a length arrow.",
+    digitLabels: ["Digit 1", "Digit 2", "Digit 3", "Digit 4", "Digit 5"],
+    parameters: {
+      handCircumference: "Hand circumference",
+      handLength: "Hand length",
+      palmLength: "Palm length",
+      wristCircumference: "Wrist circumference",
+      fingerRoot: "Finger root circumference",
+      interphalangeal: "Interphalangeal joint circumference",
+      distalInterphalangeal: "Distal interphalangeal joint circumference",
+    },
+    caption: "The seven hand measurements that size the model, redrawn from the design brief.",
+    source: FP.parameters,
+  },
   sources: [
     FP.prototypes,
     FP.autoSizing,
@@ -1193,6 +1228,8 @@ const robotics: Project = {
     intro: "Three drivetrains we have built or used. Move the pointer, or the slider, to steer.",
     legend: "Drivetrain",
     label: "Drive direction",
+    // Spelled out because `aria-valuetext` reads it aloud: "Drive direction 55 degrees".
+    valueTextUnit: "degrees",
     options: [
       { id: "swerve", label: "Swerve", note: "Fastest and the most complex; not modular." },
       { id: "ball-drive", label: "Ball-Drive", note: "High torque and speed; oversized, and not modular." },
@@ -1399,6 +1436,23 @@ const robotics: Project = {
       attribution: "team",
     },
   ],
+  /* The chart under Results (§7.3), drawn from the team's published equation. */
+  regression: {
+    title: "Launcher speed against shot distance",
+    desc:
+      "A chart with shot distance in centimetres along the bottom and launcher speed up the side; one straight line rises from left to right, labelled with the team’s equation.",
+    x: { label: "Shot distance, d (cm)", min: 0, max: 300, ticks: [0, 100, 200, 300] },
+    y: { label: "Launcher speed, v", min: 1000, max: 1900, ticks: [1000, 1300, 1600, 1900] },
+    line: { slope: 2.64, intercept: 1013, label: "v = d · 2.64 + 1013" },
+    notes: [
+      "The line is drawn from the equation the team published; the individual trials are not published, so no points are plotted.",
+      "Distance is in centimetres, as the poster deck’s chart labels it. The unit of v is not legible in any source, so the axis carries the equation’s own values.",
+      // TODO(alex): the unit of v (encoder ticks per second, RPM, or something else).
+    ],
+    caption:
+      "Launcher tuning: the team’s regression from 200+ trials at 8 mm compression, redrawn from the equation.",
+    source: FR.launcher,
+  },
   sources: [FR.iterations, FR.launcher, FR.localization, FR.growth, FR.intake],
 };
 
@@ -1474,6 +1528,12 @@ const cerapiper: Project = {
     diameterLabel: "Outer diameter",
     rotateLabel: "Rotate 30°",
     spanLabel: "Span",
+    unit: "mm",
+    // Spelled out because `aria-valuetext` reads it aloud: "58 millimetres".
+    valueTextUnit: "millimetres",
+    rotationUnit: "degrees",
+    // The dimension drawn on the span diagram; the README's own advisory limit.
+    spanLimitLabel: "150 mm",
     spanWarning: "Unsupported span over 150 mm: sag advisory",
     translation: {
       columns: ["Machine parameter", "Design element"],
@@ -1490,12 +1550,52 @@ const cerapiper: Project = {
       caption:
         "Three software layers and one physical one: FeatureScript features in Onshape, Python and Flask middleware that compiles the feature tree into a JSON Function Stack, Arduino firmware at the machine, and the printed paper blueprint under the clay.",
       source: S.readme,
+      layers: [
+        {
+          name: "Design layer",
+          tech: "Onshape, FeatureScript",
+          lines: ["Ribbed pipes, branches, connectors, collars", "Hard, corrective and advisory constraints"],
+        },
+        {
+          name: "Translation middleware",
+          tech: "Python, Flask",
+          lines: [
+            "Reads the feature tree over the REST API",
+            "Linearises each branch into one extrusion",
+            "Serialises a JSON Function Stack",
+          ],
+        },
+        {
+          name: "Fabrication backend",
+          tech: "Arduino, C++",
+          lines: ["Maps primitives to motor steps", "Regulates the pug-mill feed rate", "Drives the shape-shifting die"],
+        },
+        {
+          name: "Paper blueprint",
+          tech: "20 cm sheet on a standard plotter",
+          kind: "physical",
+          lines: ["Runs along the bed under the clay"],
+        },
+      ],
+      links: ["Onshape REST API", "Function Stack over USB serial", "Printed from the Function Stack"],
     },
     blueprint: {
       alt: "A 20 cm-wide printed blueprint strip with the part name, cut marks at the bed limit, the mandrel size and a hex marker where a hole is hand-cut",
       caption:
         "The paper blueprint: a 20 cm-wide sheet that runs along the bed under the freshly extruded clay, carrying the part name, where to cut, the mandrel in use and where to hand-cut a hole for a perpendicular connector.",
       source: S.readme,
+      // Sheet headings. "Main bed" and "Piece 1" are illustrative, as the caption says; the
+      // marks and the note are the README's own.
+      partName: "Main bed",
+      pieceId: "Piece 1",
+      sheetWidth: "20 cm",
+      marks: {
+        cut: "Cut line, where the clay is divided into fabricable segments",
+        endPiece: "Fixed 60 mm start and end pieces at the limits of the 800 mm bed",
+        mandrel: "The mandrel size in use, drawn as the bore centreline",
+        hexHole: "Hex marker where a hole is hand-cut for a perpendicular connector",
+      },
+      note: "800 mm bed, 60 mm end pieces",
     },
     source: S.readme,
   },
@@ -1534,6 +1634,7 @@ const cerapiper: Project = {
         "Interactive paper blueprint; an Extrude action and per-bed tabs; branch pipes carve a matching hex hole in the host; ribbed branch profiles.",
     },
   ],
+  versionsNote: "v1 to v2.0 predate my internship.",
   results: [
     "The tool holds the machine’s limits: outer diameter 40–78 mm, rotation in 30° increments, an 800 mm bed minus 60 mm start and end pieces, and a 150 mm unsupported-span advisory.¹",
     "Version 2.1 cut Onshape API requests to about one per import, from one per part.²",
@@ -1638,6 +1739,12 @@ export const homeHero: HomeHero = {
       "This is a model of the AntiCam clip-on pin, not a photo. Each dot is one infrared LED. Move the pointer: that is where the camera is, and the camera is what washes out.",
     pauseLabel: "Pause",
     playLabel: "Play",
+    keyboardLabel: "Move the camera with the arrow keys",
+    statusDrifting: "The camera drifts on its own until you move the pointer or use the arrow keys.",
+    statusPaused: "Paused. Nothing moves until you press Play.",
+    statusReducedMotion:
+      "Reduced motion is on: nothing moves on its own. The pointer and the arrow keys still move the camera.",
+    statusPoster: "Shown lit, as a camera would see it.",
   },
   sources: [S.resume, S.deck],
 };

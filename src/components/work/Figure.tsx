@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import type { ImageRef, Source } from "@/content/types";
 import { Plate, type PlateAspect } from "@/components/media/Plate";
 import { FootnoteRef } from "@/components/content/Stat";
-import { cn } from "@/lib/utils";
+import { cn, plateGround } from "@/lib/utils";
 
 /**
  * A resolved citation: `index` is the 1-based position of the source in the page's Sources
@@ -153,6 +153,7 @@ export function CardFigure({
           "flex w-full items-center justify-center overflow-hidden rounded-plate p-6",
           image.ground === "light" ? "bg-plate-light" : "bg-bg",
         )}
+        style={plateGround(image)}
       >
         <Image
           src={image.src}
@@ -201,6 +202,7 @@ export function Tile({ image, size = "ledger", className }: TileProps) {
         size === "ledger" ? "h-[104px] w-[104px] md:h-40 md:w-40" : "aspect-square w-full",
         className,
       )}
+      style={plateGround(image)}
     >
       <Image
         src={image.src}

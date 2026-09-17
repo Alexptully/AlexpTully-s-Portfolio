@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Host_Grotesk } from "next/font/google";
 import { site } from "@/content/site";
+import { siteOrigin } from "@/lib/site-url";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { Masthead } from "@/components/layout/Masthead";
 import { Footer } from "@/components/layout/Footer";
@@ -19,8 +20,10 @@ const host = Host_Grotesk({
 });
 
 export const metadata: Metadata = {
-  // TODO(alex): final domain (open question 16). Without it, OG URLs stay relative.
-  ...(site.siteUrl ? { metadataBase: new URL(site.siteUrl) } : {}),
+  // The origin every Open Graph and Twitter image resolves against. TODO(alex): open
+  // question 16 — set `site.siteUrl` (or `NEXT_PUBLIC_SITE_URL` at deploy time) and this,
+  // the sitemap and robots.txt all follow. See `@/lib/site-url`.
+  metadataBase: new URL(siteOrigin),
   title: {
     template: `%s | ${site.name}`,
     default: site.metaTitle,

@@ -1,3 +1,4 @@
+import type { BlueprintMarks } from "@/content/types";
 import { cn } from "@/lib/utils";
 
 /**
@@ -22,17 +23,11 @@ export type BlueprintStripProps = {
   pieceId: string;
   /** The sheet's across-the-bed dimension, e.g. "20 cm". */
   sheetWidth: string;
-  /** The four numbered marks, named in this order under the drawing. */
-  marks: {
-    /** 1: the cut line. */
-    cut: string;
-    /** 2: the fixed start and end pieces at the ends of the bed. */
-    endPiece: string;
-    /** 3: the mandrel size in use, drawn as the bore centreline. */
-    mandrel: string;
-    /** 4: where a hole is hand-cut to receive a perpendicular branch. */
-    hexHole: string;
-  };
+  /**
+   * The four numbered marks, named in this order under the drawing: the cut line, the fixed
+   * start and end pieces, the mandrel in use, and where a hole is hand-cut for a branch.
+   */
+  marks: BlueprintMarks;
   /** The sheet's notes line, printed on the sheet itself. */
   note?: string;
   maxWidth?: number;

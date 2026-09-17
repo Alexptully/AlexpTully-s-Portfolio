@@ -127,22 +127,6 @@ function getSlowServerSnapshot() {
   return false;
 }
 
-/*
- * Strings for the controls and the status line. `homeHero.canvas` carries the caption and the
- * Pause / Play labels; the rest is here for now.
- * TODO(alex): move these four strings into `homeHero.canvas` in `src/content/projects.ts`
- * (`keyboardLabel`, `statusDrifting`, `statusPaused`, `statusReducedMotion`, `statusPoster`)
- * so no copy lives in a component (requested in the wp8 handoff).
- */
-const COPY = {
-  keyboard: "Move the camera with the arrow keys",
-  statusDrifting: "The camera drifts on its own until you move the pointer or use the arrow keys.",
-  statusPaused: "Paused. Nothing moves until you press Play.",
-  statusReducedMotion:
-    "Reduced motion is on: nothing moves on its own. The pointer and the arrow keys still move the camera.",
-  statusPoster: "Shown lit, as a camera would see it.",
-} as const;
-
 const KEY_STEP = 0.1;
 const ARROWS: Record<string, [dx: number, dy: number]> = {
   ArrowLeft: [-KEY_STEP, 0],
@@ -164,7 +148,8 @@ export type PinCanvasProps = {
  * next to the figure carries the meaning.
  */
 export default function PinCanvas({ poster, className }: PinCanvasProps) {
-  const { pauseLabel, playLabel } = homeHero.canvas;
+  const canvasCopy = homeHero.canvas;
+  const { pauseLabel, playLabel } = canvasCopy;
   const box = useRef<HTMLDivElement>(null);
   const [input] = useState(() => new PinInput());
 
@@ -213,12 +198,12 @@ export default function PinCanvas({ poster, className }: PinCanvasProps) {
   };
 
   const status = !showScene
-    ? COPY.statusPoster
+    ? canvasCopy.statusPoster
     : reduceMotion
-      ? COPY.statusReducedMotion
+      ? canvasCopy.statusReducedMotion
       : userPaused
-        ? COPY.statusPaused
-        : COPY.statusDrifting;
+        ? canvasCopy.statusPaused
+        : canvasCopy.statusDrifting;
 
   return (
     <div
@@ -271,7 +256,7 @@ export default function PinCanvas({ poster, className }: PinCanvasProps) {
             onKeyDown={onKeyDown}
             className="type-button pointer-events-none absolute top-3 left-3 min-h-11 rounded-control bg-surface px-4 opacity-0 ring-1 ring-border-strong ring-inset focus-visible:pointer-events-auto focus-visible:opacity-100"
           >
-            {COPY.keyboard}
+            {canvasCopy.keyboardLabel}
           </button>
           <button
             type="button"

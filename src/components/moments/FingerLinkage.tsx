@@ -7,13 +7,6 @@ type How = Extract<HowBlock, { component: "FingerLinkage" }>;
 
 type FingerLinkageProps = { how: How };
 
-/*
- * TODO(wp1): the only string in this file that does not come from `projects.ts`. `aria-valuetext`
- * has to spell the unit out in words (design-spec §7.2 asks for "Servo travel N percent"), so the
- * word lives here until `how` carries a `valueTextUnit` field. The handoff note lists it.
- */
-const UNIT_PERCENT = "percent";
-
 /** The box is sized to the union of every pose, from fully open to a closed fist. */
 const W = 460;
 const H = 348;
@@ -110,7 +103,7 @@ export function FingerLinkage({ how }: FingerLinkageProps) {
   const descId = `${id}-desc`;
   const joints = frames(travel / 100);
   const tip = toWorld(joints[2], SEGMENTS[2].length, 0);
-  const valueText = `${how.label} ${travel} ${UNIT_PERCENT}`;
+  const valueText = `${how.label} ${travel} ${how.valueTextUnit}`;
 
   return (
     <div className="w-full">

@@ -180,6 +180,11 @@ const FP = {
     ...S.brief(8),
     claim: "The forearm houses five subsystems",
   } satisfies Source,
+  requirements: {
+    ...S.brief(5),
+    claim: "The functional requirements, including performing more than 80% of common tasks",
+    note: "A requirement in the brief; no test against the 80% threshold is reported anywhere.",
+  } satisfies Source,
 };
 
 /** Robotics page footnotes, in `<ol>` order. All four are team measurements. */
@@ -208,6 +213,12 @@ const FR = {
     ...S.deckP15,
     claim: "Intake iterations: 85% at 7 s, then 97% at 5 s, then 100% at 2 s",
     note: "Team measurement.",
+  } satisfies Source,
+  modularity: {
+    ...S.ep1,
+    claim: "The 8-screw rule: each subsystem removable in 45 seconds at most",
+    note:
+      "Team measurement; also on poster-deck page 13. The project brief calls Monti screwless, which the team's own documents do not.",
   } satisfies Source,
 };
 
@@ -238,7 +249,7 @@ const ac01: ImageRef = {
   width: 500,
   height: 475,
   ground: "light",
-  alt: "AntiCam V1 pin seen from the emitter side: a white plate with a 3-by-3 grid of emitters glowing magenta, inside a textured black rim and maroon body",
+  alt: "AntiCam V1 pin seen from the emitter side: a white plate with a grid of emitters glowing magenta, inside a textured black rim and maroon body",
   caption:
     "AntiCam, final prototype V1, emitter side. Phone camera: the emitters read magenta because the sensor sees near-infrared; to the eye they are dark.",
   source: S.cb12,
@@ -317,6 +328,8 @@ const ac07: ImageRef = {
   src: "/images/anticam/ac-07-v2-flatlay.jpg",
   width: 620,
   height: 460,
+  // The desk this was shot on is levelled onto `--plate-light` in the built file (its border
+  // measures exactly the token), so it belongs on a light plate.
   ground: "light",
   alt: "Six clear laser-cut acrylic plates for the AntiCam V2 pin laid flat: the LED plate with its module, a plate with four coin cells and a slide switch, spacer plates and the engraved lid",
   caption: "V2 process: six clear acrylic plates, coin cells and a slide switch.",
@@ -330,8 +343,8 @@ const ac08: ImageRef = {
   width: 300,
   height: 300,
   ground: "photo",
-  alt: "A hand holding the 10 W-class COB LED module: white ceramic body, 3-by-3 emitter grid, metal solder tabs",
-  caption: "The COB emitter module: a 3-by-3 grid on a ceramic body, with solder tabs.",
+  alt: "A hand holding the 10 W-class COB LED module: white ceramic body, a grid of emitter dies, metal solder tabs",
+  caption: "The COB emitter module: a grid of emitter dies on a ceramic body, with solder tabs.",
   source: S.cb14,
   cleared: true,
 };
@@ -559,15 +572,15 @@ const rb01: ImageRef = {
   // The clean rectangle in the poster is portrait and this small; the crop is never upscaled.
   width: 176,
   height: 296,
-  // Not a render on a plain ground: the only Monty render free of baked-on callouts is a crop
+  // Not a render on a plain ground: the only Monti render free of baked-on callouts is a crop
   // of a printed poster, and it carries the poster's own gradient (white at the top, navy at
   // the bottom). No single plate colour makes that edge vanish, so it sits as a photograph.
-  // TODO(alex): a 2400 px re-render of Monty on a plain ground, straight from the CAD file,
+  // TODO(alex): a 2400 px re-render of Monti on a plain ground, straight from the CAD file,
   // would put this and rb-02 back on a light plate.
   ground: "photo",
-  alt: "Team CAD render of Monty: blue and silver chassis with Voronoi-cut side plates and a turreted launcher on top",
+  alt: "Team CAD render of Monti: blue and silver chassis with Voronoi-cut side plates and a turreted launcher on top",
   caption:
-    "Monty, Tritonics #17253: team CAD render, turreted launcher and three-ball sorting intake.",
+    "Monti, Tritonics #17253: team CAD render, turreted launcher and three-ball sorting intake.",
   source: S.ep1,
   cleared: true,
 };
@@ -579,8 +592,8 @@ const rb02: ImageRef = {
   height: 278,
   // Same poster ground as rb-01; see the note there.
   ground: "photo",
-  alt: "Team CAD render of Monty seen from above the front: the turreted launcher on its ring and the blue-and-silver Voronoi side plates below it",
-  caption: "Monty, Tritonics #17253: team CAD render, three-quarter view.",
+  alt: "Team CAD render of Monti seen from above the front: the turreted launcher on its ring and the blue-and-silver Voronoi side plates below it",
+  caption: "Monti, Tritonics #17253: team CAD render, three-quarter view.",
   source: S.deckP13img,
   cleared: true,
 };
@@ -748,9 +761,10 @@ const rb16: ImageRef = {
   src: "/images/robotics/rb-16-intake-three.jpg",
   width: 255,
   height: 157,
-  ground: "light",
-  // The crop keeps the portfolio page's own dark card ground, so the plate takes it too.
-  plateColor: "#3d3e43",
+  // The crop keeps the portfolio page's own dark card ground (#3D3E43), which is neither
+  // `--plate-light` nor `--bg` and cannot be levelled onto either without crushing the
+  // render. It sits as a photograph on `--bg` rather than inventing a third plate colour.
+  ground: "photo",
   alt: "The sorting intake holding three artifacts, one green and two purple",
   caption: "The sorting intake holding three artifacts at once.",
   source: S.ep2,
@@ -829,7 +843,9 @@ const anticam: Project = {
   oneLine:
     "A wearable that keeps cameras from capturing a usable image of me. An infrared LED array washes out night-vision sensors and a retro-reflective lining returns flashes to the lens. Nothing is jammed, nothing is damaged.",
   lead: "AntiCam is my wearable privacy device: an infrared LED array and a retro-reflective lining that keep cameras from capturing a usable image of me, without jamming or damaging anything.",
-  role: "Founder, Tully Tech. Sole designer and builder.",
+  // "Sole" is not in any source: content-map §3 records that no source states he worked
+  // alone, and the page's own "What others did" says only that no collaborator is named.
+  role: "Founder, Tully Tech. Designer and builder.",
   proof: {
     value: "30+ prototypes, four major versions, tested against a live doorbell camera",
     label: "AntiCam build record",
@@ -839,7 +855,10 @@ const anticam: Project = {
   hero: {
     ...ac01,
     caption:
-      "Final prototype V1, emitter side, through a phone camera. The nine emitters read magenta because the sensor responds to near-infrared; to the eye they are dark.",
+      // TODO(alex): confirm the emitter die count. The presentation describes a 3-by-3 grid;
+      // the module in this photograph reads as three rows of roughly nine dies. No count is
+      // printed until the two agree.
+      "Final prototype V1, emitter side, through a phone camera. The emitters read magenta because the sensor responds to near-infrared; to the eye they are dark.",
   },
   homePlate: {
     kind: "diptych",
@@ -853,7 +872,7 @@ const anticam: Project = {
   spec: [
     {
       term: "My role",
-      value: "Founder, Tully Tech. Sole designer, builder and author of every AntiCam document.",
+      value: "Founder, Tully Tech. Designer, builder and author of every AntiCam document.",
       sources: [S.resume, S.deck],
     },
     {
@@ -892,7 +911,8 @@ const anticam: Project = {
   why: [
     "Most cameras use night-vision-capable sensors that respond to near-infrared light the eye cannot see. AntiCam works in that gap: light, not radio; physics, not patterns.",
     "It removes me from the frame without removing the camera from service, and it is weaker in bright daylight, which I say up front.",
-    "I built it to protect people, and the use policy says so at checkout.",
+    // AntiCam has never been sold; content-map §314 records the use policy as a plan.
+    "I built it to protect people, and the plan puts that use policy in the terms at checkout.",
   ],
   how: {
     component: "RingCompare",
@@ -907,36 +927,45 @@ const anticam: Project = {
   },
   versionsHeading: "Versions",
   versions: [
+    // The sources name the builds First / Second / Third prototype and Final Prototype V1 and
+    // V2; "V1"-"V4" was a second numbering invented here, and it made "V1" mean two different
+    // devices — the first build in this table and the finished pin in the hero caption.
     {
-      tag: "V1",
+      tag: "First",
       sentence:
         "Proof of physics: a single IR module on laser-cut discs with four coin cells. Cameras see it, eyes do not.",
       tile: ac13,
     },
     {
-      tag: "V2",
+      tag: "Second",
       sentence:
         "First enclosure: laser-cut MDF housing, logo engraved into the lid, carryable.",
       tile: ac09,
     },
     {
-      tag: "V3",
+      tag: "Third",
       sentence:
         "Clip-on device: acrylic plates, nine hand-soldered coin cells joined with copper tape, tested against real cameras.",
       tile: ac11,
     },
     {
-      tag: "V4",
+      tag: "Final V1",
       date: "7 June 2023",
       sentence:
-        "Pin V2 and Cap V2: six clear acrylic plates, slide switch, under-brim cap array. The generation that passed the doorbell test.",
-      tile: ac07,
+        "The generation that passed the doorbell test: the finished pin, and the under-brim cap array beside it.",
+      tile: ac02,
       measurement: {
         value: "Doorbell test passed",
         label: "Ring doorbell, night mode, 7 June 2023",
         source: FA.doorbell,
         attribution: "alex",
       },
+    },
+    {
+      tag: "Final V2",
+      sentence:
+        "Six clear acrylic plates, coin cells and a slide switch, in three colourways.",
+      tile: ac07,
     },
   ],
   figures: [
@@ -1041,7 +1070,7 @@ const prostheticArm: Project = {
     // brief says under $200, and neither says whether that is a target or a measured BOM.
   ],
   why: [
-    "Requirements first: off-the-shelf parts, most of them printable; modular, easy-to-assemble pieces; myoelectric control; more than 80% of common tasks; and, listed last and called the most important, a production cost ceiling.",
+    "Requirements first: off-the-shelf parts, most of them printable; modular, easy-to-assemble pieces; myoelectric control; a target of more than 80% of common tasks; and, listed last and called the most important, a production cost ceiling.⁶",
     "The goal is to show that a reliable prosthetic can be made at low cost with accessible materials while keeping the functions that matter.",
   ],
   how: {
@@ -1168,6 +1197,7 @@ const prostheticArm: Project = {
     FP.fingerParts,
     FP.parameters,
     FP.subsystems,
+    FP.requirements,
   ],
 };
 
@@ -1176,8 +1206,10 @@ const prostheticArm: Project = {
 const robotics: Project = {
   slug: "robotics",
   title: "Robotics, FIRST Tech Challenge",
+  // The home row carries no footnote list of its own, so the sourced figure stays on the case
+  // study and this sentence names the rule without restating its measurement.
   oneLine:
-    "Five competition robots across two teams, from a first iteration cut entirely in wooden plates to a modular metal robot whose subsystems come off in 45 seconds at most.",
+    "Five competition robots across two teams, from a first iteration cut entirely in wooden plates to a modular metal robot whose subsystems lift off one at a time.",
   lead: "I captain FIRST Tech Challenge team Tritonics #17253 and was electrical lead on #14712, where we won first in NYC and took the 2nd-place Think Award at the World Championship.",
   role: "Captain and operations lead, Tritonics #17253; earlier electrical lead, #14712, and fabrication lead.",
   proof: {
@@ -1185,9 +1217,19 @@ const robotics: Project = {
       "With Honu, #14712, we won 1st in NYC and the 2nd-place Think Award at the FTC World Championship",
     label: "FTC results",
     source: F.honuResults,
-    attribution: "team",
+    // No attribution suffix: this is a competition result, not something the team measured,
+    // and the sentence already says "we".
   },
-  hero: rb02,
+  /*
+   * The hero is the portfolio-page Monti render, not the poster crop. The poster crops
+   * (rb-01, rb-02) are the only Monti renders free of baked-on callouts, but they are 176 and
+   * 179 px wide and carry the printed poster's own white-to-navy gradient, so as a hero one
+   * of them opened the page with a 179 px stamp whose edges sat against the page. rb-08 is
+   * 295 px on a black ground that keys cleanly onto `--bg`. It is still small: the case-study
+   * hero composes rather than stacks below its width, and the TODO(alex) on rb-01 — a 2400 px
+   * re-render of Monti from the CAD file — is what actually fixes this.
+   */
+  hero: rb08,
   homePlate: rb01,
   spec: [
     {
@@ -1220,7 +1262,7 @@ const robotics: Project = {
   ],
   why: [
     "We prototype in wood and finish in metal.",
-    "Every subsystem follows an 8-screw rule so it comes off in 45 seconds at most, and the CAD lives on parametric master sketches, so one variable updates the whole design.",
+    "Every subsystem follows an 8-screw rule so it comes off in 45 seconds at most,⁶ and the CAD lives on parametric master sketches, so one variable updates the whole design.",
     "I lead the electrical system, the documentation and the training that keeps the team going after its leaders graduate.",
   ],
   how: {
@@ -1246,7 +1288,9 @@ const robotics: Project = {
       id: "scorpion",
       name: "Scorpion",
       team: "#17253",
-      role: "Fabrication lead. The portfolio page also calls it a robot I designed.",
+      // TODO(alex): the portfolio page also calls Scorpion a robot you designed. The role
+      // field states the one role every source agrees on; confirm the design credit.
+      role: "Fabrication lead.",
       idea: "A motor at the base of the scissor lift pushes the base beams together, and the geometry drives the structure vertically.",
       plate: rb10,
       detail: rb11,
@@ -1305,8 +1349,9 @@ const robotics: Project = {
       name: "Monti",
       team: "#17253",
       role: "Captain.",
-      idea: "Modular by rule: few screws, each subsystem removable in 45 seconds; a three-ball sorting intake; a hooded flywheel launcher on a 1:1 dual-servo turret.",
-      plate: rb08,
+      // The section plate is the poster three-quarter view; the hero above carries rb-08.
+      idea: "Modular by rule: eight screws to a subsystem, each one off in 45 seconds at most;⁶ a three-ball sorting intake; a hooded flywheel launcher on a 1:1 dual-servo turret.",
+      plate: rb02,
       detail: rb16,
       awards: [
         { name: "Inspire Award, 1st", robot: "Monti", team: "#17253", role: "Captain", when: "season still ongoing when recorded", source: S.pf01 },
@@ -1322,6 +1367,9 @@ const robotics: Project = {
       // Monti. The site follows the portfolio page.
     },
   ],
+  // TODO(alex): the Scorpion render is the one robot exported on a white ground, so its tile
+  // is the only light plate in a row of four dark ones. A re-export of Scorpion on the same
+  // dark ground as the other four would put the whole strip on one plate.
   filmstrip: [
     { label: "Scorpion, #17253, fabrication lead", href: "#scorpion", image: rb10 },
     { label: "Swerve Drive, #14712, electrical lead", href: "#swerve-drive", image: rb06 },
@@ -1385,14 +1433,12 @@ const robotics: Project = {
     // "first fully modular FTC robot", "30% more efficient", "~4,000 teams surveyed",
     // "10x faster code process".
   ],
+  // The five robot sections already print every award as a record, with the robot, the role
+  // and the source on each. A page-level table repeating them verbatim made a recruiter count
+  // the same record twice, so the only entry kept here is the one no robot section carries:
+  // the résumé's own summary line.
   awards: [
-    { name: "Think Award, 2nd place, FTC World Championship", robot: "Honu", team: "#14712", role: "Electrical lead", source: S.pf03 },
-    { name: "1st place in NYC, advancing to the World Championship", robot: "Honu", team: "#14712", role: "Electrical lead", source: S.pf03 },
     { name: "2x NYC Champion, Inspire Award", role: "Led electrical design, documentation and mentoring", source: S.resume },
-    { name: "Inspire Award, 1st; Inspire Award, 2nd, four times; Connect Award; Innovate Award", robot: "Honu", team: "#14712", role: "Electrical lead", source: S.pf03 },
-    { name: "Inspire Award, 1st; Inspire Award, 2nd; Innovate Award, 1st", robot: "Monti", team: "#17253", role: "Captain", when: "season still ongoing when recorded", source: S.pf01 },
-    { name: "Design Award; Innovate Award, 2nd; Inspire Award, 2nd; Design Award, 3rd", robot: "Scorpion", team: "#17253", role: "Fabrication lead", source: S.pf05 },
-    { name: "Inspire Award, 1st (Q3), 2nd (Q1) and 3rd (Q9); Sustain Award (Super Qualifier 2)", team: "Tritonics #17253", role: "Captain", when: "FTC DECODE season", source: S.slideE },
   ],
   didList: [
     "Team strategy, the electrical system and operations as captain.",
@@ -1453,7 +1499,7 @@ const robotics: Project = {
       "Launcher tuning: the team’s regression from 200+ trials at 8 mm compression, redrawn from the equation.",
     source: FR.launcher,
   },
-  sources: [FR.iterations, FR.launcher, FR.localization, FR.growth, FR.intake],
+  sources: [FR.iterations, FR.launcher, FR.localization, FR.growth, FR.intake, FR.modularity],
 };
 
 /* ========================================================== CeraPiper ==== */
@@ -1526,6 +1572,8 @@ const cerapiper: Project = {
     intro:
       "Every profile is hexagonal because the die is. The tool constrains what the machine can make: hard limits, corrections it applies for you, and advisories.",
     diameterLabel: "Outer diameter",
+    // The die is indexed in 30° steps; this names the control, the button names its action.
+    rotationLabel: "Die index",
     rotateLabel: "Rotate 30°",
     spanLabel: "Span",
     unit: "mm",
@@ -1701,9 +1749,12 @@ export function nextProject(slug: ProjectSlug): Project {
 /* =============================================================== home ==== */
 
 export const homeHero: HomeHero = {
-  headline:
-    "I’m Alex Tully. I design and build hardware: a privacy wearable, a low-cost prosthetic arm, competition robots, and a CAD tool for clay.",
-  roleLine: "Founder, Tully Tech. Sole designer and builder of AntiCam.",
+  // The h1 carries the 88 px display step, so it is short enough to hold it; the list of work
+  // that used to run inside it is the lead sentence below.
+  headline: "I’m Alex Tully. I design and build hardware.",
+  lead: "A privacy wearable, a low-cost prosthetic arm, competition robots, and a CAD tool for clay.",
+  // "Sole" is not in any source: content-map §3 says no source states he worked alone.
+  roleLine: "Founder, Tully Tech. Designer and builder of AntiCam.",
   indexLabel: "Featured work",
   index: [
     {

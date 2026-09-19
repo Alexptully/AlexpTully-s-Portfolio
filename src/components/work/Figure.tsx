@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import type { ImageRef, Source } from "@/content/types";
 import { Plate, type PlateAspect } from "@/components/media/Plate";
 import { FootnoteRef } from "@/components/content/Stat";
-import { cn, plateGround } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 /**
  * A resolved citation: `index` is the 1-based position of the source in the page's Sources
@@ -127,6 +127,12 @@ type CardFigureProps = {
   caption?: string;
   /** Caps the card; the image is never wider than its native pixels regardless. */
   maxWidth?: number;
+  /**
+   * Grid mode: the card fills its cell and the media box takes a fixed 4:3, so every card in
+   * a row is the same height and the captions under them share a baseline. Without it the
+   * cards size themselves to their crops and the captions stagger.
+   */
+  fill?: boolean;
   children?: ReactNode;
   className?: string;
 };
@@ -141,19 +147,23 @@ export function CardFigure({
   citation,
   caption,
   maxWidth,
+  fill = false,
   children,
   className,
 }: CardFigureProps) {
   if (!image.cleared) return null;
   const width = maxWidth ? Math.min(maxWidth, image.width) : image.width;
   return (
-    <figure className={cn("w-full", className)} style={{ maxWidth: `${width + 48}px` }}>
+    <figure
+      className={cn("w-full", className)}
+      style={fill ? undefined : { maxWidth: `${width + 48}px` }}
+    >
       <div
         className={cn(
           "flex w-full items-center justify-center overflow-hidden rounded-plate p-6",
+          fill && "aspect-[4/3]",
           image.ground === "light" ? "bg-plate-light" : "bg-bg",
         )}
-        style={plateGround(image)}
       >
         <Image
           src={image.src}
@@ -161,10 +171,18 @@ export function CardFigure({
           width={image.width}
           height={image.height}
           quality={75}
-          sizes={`(max-width: ${width + 48}px) calc(100vw - 80px), ${width}px`}
+          sizes={
+            fill
+              ? "(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 45vw, 380px"
+              : `(max-width: ${width + 48}px) calc(100vw - 80px), ${width}px`
+          }
           loading="lazy"
           className={cn("h-auto w-full object-contain", image.ground === "photo" && "rounded-photo")}
-          style={{ maxWidth: `min(100%, ${width}px)`, aspectRatio: `${image.width} / ${image.height}` }}
+          style={{
+            maxWidth: `min(100%, ${width}px)`,
+            maxHeight: "100%",
+            aspectRatio: `${image.width} / ${image.height}`,
+          }}
         />
       </div>
       {label ? <p className="type-heading mt-4">{label}</p> : null}
@@ -199,10 +217,9 @@ export function Tile({ image, size = "ledger", className }: TileProps) {
       className={cn(
         "flex shrink-0 items-center justify-center overflow-hidden rounded-photo p-2",
         image.ground === "light" ? "bg-plate-light" : "bg-surface",
-        size === "ledger" ? "h-[104px] w-[104px] md:h-40 md:w-40" : "aspect-square w-full",
+        size === "ledger" ? "h-[104px] w-[104px] lg:h-40 lg:w-40" : "aspect-square w-full",
         className,
       )}
-      style={plateGround(image)}
     >
       <Image
         src={image.src}

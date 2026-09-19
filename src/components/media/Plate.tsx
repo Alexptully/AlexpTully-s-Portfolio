@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { ImageRef } from "@/content/types";
 import { PlateTransition } from "@/components/media/PlateTransition";
-import { cn, plateGround } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 export type PlateAspect = "4/3" | "16/10";
 
@@ -88,7 +88,7 @@ export function Plate({
         image.ground === "light" ? "bg-plate-light" : "bg-bg",
         className,
       )}
-      style={{ maxWidth: `${plateWidth(image)}px`, ...plateGround(image) }}
+      style={{ maxWidth: `${plateWidth(image)}px` }}
     >
       {transitionName ? <PlateTransition name={transitionName}>{img}</PlateTransition> : img}
     </div>

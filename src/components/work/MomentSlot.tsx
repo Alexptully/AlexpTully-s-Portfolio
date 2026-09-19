@@ -49,7 +49,11 @@ export function MomentSlot({ how, cite }: MomentSlotProps) {
               <FingerLinkage how={how} />
               <p className="type-caption mt-3 max-w-[60ch]">{how.note}</p>
             </div>
-            <CardFigure image={how.card} className="lg:col-span-5" citation={cite(how.card.source, "how:card")} />
+            <CardFigure
+              image={how.card}
+              className="self-start lg:col-span-5"
+              citation={cite(how.card.source, "how:card")}
+            />
           </div>
         </div>
       );
@@ -74,11 +78,17 @@ export function MomentSlot({ how, cite }: MomentSlotProps) {
             <HexProfile how={how} />
           </div>
 
-          <table className="mt-12 w-full max-w-[40rem] border-collapse">
+          {/* The spec sheet higher up the page spans the container on a 4 / 8 split; this
+              table is the same width on the same split, so the page has one table measure. */}
+          <table className="mt-12 w-full border-collapse">
             <thead>
               <tr className="border-b border-border">
-                {translation.columns.map((column) => (
-                  <th key={column} scope="col" className="type-caption py-3 pr-5 text-left font-normal">
+                {translation.columns.map((column, i) => (
+                  <th
+                    key={column}
+                    scope="col"
+                    className={`type-caption py-3 pr-5 text-left font-normal ${i === 0 ? "md:w-1/3" : ""}`}
+                  >
                     {column}
                   </th>
                 ))}
@@ -121,7 +131,9 @@ export function MomentSlot({ how, cite }: MomentSlotProps) {
                 sheetWidth={blueprint.sheetWidth}
                 marks={blueprint.marks}
                 note={blueprint.note}
-                maxWidth={640}
+                // Capped well below the column so the sheet's labels, which scale with the
+                // drawing, stay between the 14 px floor on a phone and body size here.
+                maxWidth={470}
               />
               <FigureCaption
                 text={blueprint.caption}

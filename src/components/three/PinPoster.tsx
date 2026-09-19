@@ -33,17 +33,30 @@ const CENTER = { x: BOX.w / 2, y: BOX.h / 2 };
 /**
  * The pin's 42 mm width, in drawing units. Every part below is a multiple of it, as in §10.1.
  * Sized so the pin covers the same share of the box as it does through the scene camera
- * (fov 30 at z 4.2, object at z 0.2: 2 · 4 · tan 15° ≈ 2.14 units tall), so the canvas can
- * cross-fade in over the poster without the object jumping size.
+ * (fov 21 at z 4.2, object at z 0.2: 2 · 4 · tan 10.5° ≈ 1.48 units tall), so the canvas can
+ * cross-fade in over the poster without the object jumping size. The object fills about
+ * seven tenths of the box height: at a third of it the hero's largest element was ground.
  */
-const UNIT = 336;
+const UNIT = 487;
 const RIM = UNIT * 1.06;
 const BODY = UNIT * 0.98;
 const PLATE = UNIT * 0.78;
-const MODULE = UNIT * 0.3;
+/**
+ * The emitter module takes nearly half the pin, as it does on the V2 flatlay: the object a
+ * reader recognises is the emitter plate, not the housing around it.
+ */
+const MODULE = UNIT * 0.46;
 const WELL = MODULE * 0.86;
-const PITCH = UNIT * 0.085;
-const EMITTER = UNIT * 0.028;
+const PITCH = UNIT * 0.125;
+const EMITTER = UNIT * 0.038;
+/**
+ * Corner radii, as a share of the unit. The pin is a laser-cut square stack, so the corners
+ * are eased, not rounded: at a squircle radius the drawing reads as an application icon
+ * rather than as hardware.
+ */
+const R_RIM = UNIT * 0.055;
+const R_BODY = UNIT * 0.045;
+const R_PLATE = UNIT * 0.03;
 
 const square = (size: number, radius: number) => ({
   x: CENTER.x - size / 2,
@@ -86,8 +99,8 @@ export function PinPoster({ title, desc, id = "pin-poster", className }: PinPost
       <defs>
         {/* The light the emitters throw into the room behind the pin. */}
         <radialGradient id={`${id}-room`}>
-          <stop offset="0%" stopColor="var(--accent)" stopOpacity={0.34} />
-          <stop offset="45%" stopColor="var(--accent)" stopOpacity={0.1} />
+          <stop offset="0%" stopColor="var(--accent)" stopOpacity={0.22} />
+          <stop offset="45%" stopColor="var(--accent)" stopOpacity={0.06} />
           <stop offset="100%" stopColor="var(--accent)" stopOpacity={0} />
         </radialGradient>
         {/* The key light, upper left, and the shade it leaves at the lower right. */}
@@ -117,27 +130,29 @@ export function PinPoster({ title, desc, id = "pin-poster", className }: PinPost
       </defs>
 
       <rect x={0} y={0} width={BOX.w} height={BOX.h} fill="var(--bg)" />
-      <circle cx={CENTER.x} cy={CENTER.y} r={470} fill={`url(#${id}-room)`} />
+      {/* The light the emitters throw into the room stays near the object; at the width of
+          the whole box it read as a halo behind an icon rather than as spill. */}
+      <circle cx={CENTER.x} cy={CENTER.y} r={UNIT * 0.78} fill={`url(#${id}-room)`} />
 
       {/* Rim, body, plate: the pin as three stacked plates, each taking the same light. */}
-      <rect {...square(RIM, UNIT * 0.14)} fill="var(--pin-rim)" />
-      {lit(RIM, UNIT * 0.14)}
-      <rect {...square(BODY, UNIT * 0.12)} fill="var(--pin-body)" />
-      {lit(BODY, UNIT * 0.12)}
-      <rect {...square(PLATE, UNIT * 0.06)} fill="var(--plate-light)" />
-      <rect {...square(PLATE, UNIT * 0.06)} fill={`url(#${id}-shade)`} />
+      <rect {...square(RIM, R_RIM)} fill="var(--pin-rim)" />
+      {lit(RIM, R_RIM)}
+      <rect {...square(BODY, R_BODY)} fill="var(--pin-body)" />
+      {lit(BODY, R_BODY)}
+      <rect {...square(PLATE, R_PLATE)} fill="var(--plate-light)" />
+      <rect {...square(PLATE, R_PLATE)} fill={`url(#${id}-shade)`} />
 
       {/* The pink the array spills back over the object it sits in. */}
-      <circle cx={CENTER.x} cy={CENTER.y} r={UNIT * 0.55} fill={`url(#${id}-wash)`} />
+      <circle cx={CENTER.x} cy={CENTER.y} r={UNIT * 0.45} fill={`url(#${id}-wash)`} />
 
       {/* The COB module, its well and the nine infrared emitters, lit. */}
-      <rect {...square(MODULE, UNIT * 0.02)} fill="var(--led-module)" />
-      {lit(MODULE, UNIT * 0.02)}
-      <rect {...square(WELL, UNIT * 0.012)} fill="var(--emitter-off)" />
+      <rect {...square(MODULE, UNIT * 0.014)} fill="var(--led-module)" />
+      {lit(MODULE, UNIT * 0.014)}
+      <rect {...square(WELL, UNIT * 0.008)} fill="var(--emitter-off)" />
       {EMITTERS.map((e) => (
         <circle key={e.key} cx={e.cx} cy={e.cy} r={EMITTER} fill={`url(#${id}-emitter)`} />
       ))}
-      <circle cx={CENTER.x} cy={CENTER.y} r={UNIT * 0.44} fill={`url(#${id}-glare)`} />
+      <circle cx={CENTER.x} cy={CENTER.y} r={UNIT * 0.36} fill={`url(#${id}-glare)`} />
     </svg>
   );
 }

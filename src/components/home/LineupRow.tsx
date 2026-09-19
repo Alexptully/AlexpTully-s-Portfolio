@@ -10,13 +10,19 @@ type LineupRowProps = {
   project: Project;
   /** 1-based position of `project.proof.source` in the home Sources list. */
   footnote: number;
+  /**
+   * The rows near the top of the page load their plate eagerly. A lazy plate that only
+   * decodes on scroll leaves the row as a caption under an empty box for anything that
+   * paints the page in one pass — a print, a share preview, a page capture.
+   */
+  priority?: boolean;
 };
 
 /** §13: the plate's CSS width per breakpoint, so no srcset entry exceeds what is drawn. */
 const PLATE_SIZES = "(max-width: 768px) calc(100vw - 32px), (max-width: 1024px) 50vw, 580px";
 
 /** The plate for whatever fills it: an image, the two-frame diptych, or an authored drawing. */
-function RowPlate({ plate, slug }: { plate: PlateRef; slug: string }) {
+function RowPlate({ plate, slug, priority }: { plate: PlateRef; slug: string; priority?: boolean }) {
   const name = `plate-${slug}`;
   if ("kind" in plate && plate.kind === "diptych") {
     return (
@@ -28,6 +34,7 @@ function RowPlate({ plate, slug }: { plate: PlateRef; slug: string }) {
         fallbackCaption={plate.fallbackCaption}
         sizes={PLATE_SIZES}
         transitionName={name}
+        priority={priority}
       />
     );
   }
@@ -44,7 +51,7 @@ function RowPlate({ plate, slug }: { plate: PlateRef; slug: string }) {
   }
   return (
     <figure>
-      <Plate image={plate} aspect="4/3" sizes={PLATE_SIZES} transitionName={name} />
+      <Plate image={plate} aspect="4/3" sizes={PLATE_SIZES} transitionName={name} priority={priority} />
       <Caption text={plate.caption} date={plate.date} source={plate.source} />
     </figure>
   );
@@ -57,7 +64,7 @@ function RowPlate({ plate, slug }: { plate: PlateRef; slug: string }) {
  * `<h2>` anchor is a stretched link, so the row's accessible name is the title and the mini
  * `<dl>` stays outside the link. The plate never moves or zooms.
  */
-export function LineupRow({ project, footnote }: LineupRowProps) {
+export function LineupRow({ project, footnote, priority }: LineupRowProps) {
   const { slug, title, oneLine, role, proof, homePlate } = project;
   const titleId = `${slug}-title`;
 
@@ -68,7 +75,7 @@ export function LineupRow({ project, footnote }: LineupRowProps) {
       className="relative grid gap-y-5 border-t border-border pt-10 md:grid-cols-12 md:gap-x-5 md:pt-16"
     >
       <div className="md:col-span-6">
-        <RowPlate plate={homePlate} slug={slug} />
+        <RowPlate plate={homePlate} slug={slug} priority={priority} />
       </div>
 
       <div className="md:col-span-6">

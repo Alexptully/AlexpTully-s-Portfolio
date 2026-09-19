@@ -9,6 +9,8 @@ investors, internship and research recruiters.
 - `npm run dev` — local dev at http://localhost:3000
 - `npm run build` — production build (run before calling any task done)
 - `npm run lint` — ESLint
+- `npm run check:content` — every stat sourced, every un-cleared image has a fallback
+- `node scripts/images/build.mjs` — rebuild `public/images/**` from `scripts/images/manifest.json`
 
 ## Stack and conventions
 - Next.js App Router, TypeScript, Tailwind, `src/` directory, `@/*` import alias

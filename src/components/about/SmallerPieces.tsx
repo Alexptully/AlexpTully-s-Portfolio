@@ -6,20 +6,32 @@ import { Footnoted, type FootnoteOwners } from "@/components/about/Footnoted";
 /** §7.5: the only images in this section, at 200 px, each on its own ground. */
 const IMAGE_WIDTH = 200;
 
+/**
+ * The two frames are different shapes, so without a fixed box their captions started at
+ * different heights and the pair read as two stray text blocks rather than one row. The box
+ * is the plate's own ground; the image is contained inside it at its native size.
+ */
 function PieceImage({ image }: { image: ImageRef }) {
   if (!image.cleared) return null;
   return (
     <figure>
-      <Image
-        src={image.src}
-        alt={image.alt}
-        width={image.width}
-        height={image.height}
-        quality={75}
-        sizes={`${IMAGE_WIDTH}px`}
-        className={image.ground === "photo" ? "h-auto rounded-photo" : "h-auto"}
+      <div
+        className={`flex aspect-[4/3] items-center justify-center overflow-hidden rounded-plate ${
+          image.ground === "light" ? "bg-plate-light" : "bg-bg"
+        }`}
         style={{ width: `min(100%, ${IMAGE_WIDTH}px)` }}
-      />
+      >
+        <Image
+          src={image.src}
+          alt={image.alt}
+          width={image.width}
+          height={image.height}
+          quality={75}
+          sizes={`${IMAGE_WIDTH}px`}
+          className={image.ground === "photo" ? "h-auto rounded-photo" : "h-auto"}
+          style={{ maxWidth: `min(100%, ${image.width}px)`, maxHeight: "100%" }}
+        />
+      </div>
       <Caption text={image.caption} date={image.date} source={image.source} />
     </figure>
   );

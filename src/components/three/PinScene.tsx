@@ -84,8 +84,16 @@ const KEY_SCALE = 17;
 const HEMI_INTENSITY = 1.4;
 
 const IDLE_MS = 3000; // drift takes over this long after the last input
-const GUARD_FRAMES = 3; // frame gaps measured for the low-end guard
-const GUARD_MS = 24;
+/*
+ * Low-end guard (§10.1). The first frames after mount are always slow — shader compile,
+ * geometry upload, the first paint of a canvas that is larger on a desktop than on a phone —
+ * so measuring them measured the warm-up, not the device, and tripped the guard on ordinary
+ * desktops. That left the poster and, with it, no Pause control, while the same machine at a
+ * phone width ran the scene. The guard now skips the warm-up and measures the frames after it.
+ */
+const GUARD_WARMUP = 8; // frames drawn before any measurement
+const GUARD_FRAMES = 6; // frame gaps measured after the warm-up
+const GUARD_MS = 34;
 
 /**
  * R3F configures the renderer asynchronously, so a failed context creation surfaces as an
@@ -239,15 +247,16 @@ function Pin({ input, paused, reduceMotion, onReady, onSlow }: PinProps) {
     const now = performance.now();
     if (s.t0 < 0) s.t0 = now;
 
-    // First frame drawn, and the low-end guard over the next three frame gaps.
+    // First frame drawn, then the low-end guard over the frame gaps after the warm-up.
     if (s.frame === 0) onReady();
+    const guardEnd = GUARD_WARMUP + GUARD_FRAMES;
     let measuring = false;
-    if (s.frame <= GUARD_FRAMES) {
-      if (s.lastT >= 0 && s.frame > 0) {
+    if (s.frame <= guardEnd) {
+      if (s.lastT >= 0 && s.frame > GUARD_WARMUP) {
         if (now - s.lastT > GUARD_MS) s.slowFrames += 1;
-        if (s.frame === GUARD_FRAMES && s.slowFrames === GUARD_FRAMES) onSlow();
+        if (s.frame === guardEnd && s.slowFrames === GUARD_FRAMES) onSlow();
       }
-      measuring = s.frame < GUARD_FRAMES;
+      measuring = s.frame < guardEnd;
       s.frame += 1;
     }
 
@@ -408,7 +417,9 @@ export default function PinScene({ className, onError, ...pin }: PinSceneProps) 
       // Frames are drawn only on input, on drift ticks and while values ease; idle GPU cost is zero.
       frameloop="demand"
       gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
-      camera={{ fov: 30, position: [0, 0, 4.2], near: 0.1, far: 20 }}
+      // 21°, not 30: the object fills about seven tenths of the box instead of a third, and
+      // the poster's own geometry table is scaled to match, so the cross-fade does not jump.
+      camera={{ fov: 21, position: [0, 0, 4.2], near: 0.1, far: 20 }}
       style={{ background: "transparent" }}
       onCreated={({ gl }) => {
         gl.toneMapping = ACESFilmicToneMapping;

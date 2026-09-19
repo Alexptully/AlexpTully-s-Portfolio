@@ -102,6 +102,8 @@ export function HexProfile({ how }: HexProfileProps) {
   const titleId = `${id}-title`;
   const descId = `${id}-desc`;
   const warningId = `${id}-warning`;
+  const rotationId = `${id}-rotation`;
+  const spanId = `${id}-span`;
   const radius = diameter * SECTION.scale;
   const indexed = ((rotation % 360) + 360) % 360;
   const diameterText = `${diameter} ${how.unit}`;
@@ -227,12 +229,17 @@ export function HexProfile({ how }: HexProfileProps) {
         </g>
       </svg>
 
-      <div className="mt-6 flex max-w-[600px] flex-col gap-5">
-        <div className="flex min-w-0 flex-col gap-1">
+      {/*
+        One control pattern for all three: a muted label, then a 44 px control row. The die
+        index used to print a bare "0°" between a bordered button and a 24 px pill switch, so
+        the line read as three unrelated widgets at three heights.
+      */}
+      <div className="mt-6 grid max-w-[600px] gap-x-8 gap-y-5 sm:grid-cols-2">
+        <div className="flex min-w-0 flex-col gap-1 sm:col-span-2">
           <label htmlFor={id} className="type-caption">
             {how.diameterLabel}
           </label>
-          <div className="flex items-center gap-4">
+          <div className="flex min-h-11 items-center gap-4">
             <input
               id={id}
               type="range"
@@ -244,31 +251,41 @@ export function HexProfile({ how }: HexProfileProps) {
               aria-valuetext={diameterSpoken}
               className="range-input flex-1"
             />
-            <output htmlFor={id} className="type-value w-16 shrink-0 text-right">
+            <output htmlFor={id} className="type-value w-16 shrink-0 text-right tabular-nums">
               {diameterText}
             </output>
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
-          <div className="flex items-center gap-4">
+        <div className="flex min-w-0 flex-col gap-1">
+          <span id={rotationId} className="type-caption">
+            {how.rotationLabel}
+          </span>
+          <div className="flex min-h-11 items-center gap-4">
             <button
               type="button"
+              aria-describedby={rotationId}
               onClick={() => setRotation((current) => current + ROTATION_STEP)}
-              className="flex min-h-11 items-center rounded-control border border-border-strong px-4 type-button"
+              className="type-button flex min-h-11 flex-1 items-center justify-center rounded-control border border-border-strong px-4"
             >
               {how.rotateLabel}
             </button>
-            <output className="type-value w-12 shrink-0">{indexed}°</output>
+            <output className="type-value w-16 shrink-0 text-right tabular-nums">{indexed}°</output>
           </div>
+        </div>
 
+        <div className="flex min-w-0 flex-col gap-1">
+          <span id={spanId} className="type-caption">
+            {how.spanLabel}
+          </span>
           <button
             type="button"
             role="switch"
             aria-checked={overLimit}
+            aria-labelledby={spanId}
             aria-describedby={overLimit ? warningId : undefined}
             onClick={() => setOverLimit((current) => !current)}
-            className="flex min-h-11 items-center gap-3 type-button"
+            className="type-button flex min-h-11 items-center gap-3"
           >
             <span
               aria-hidden="true"
@@ -282,7 +299,7 @@ export function HexProfile({ how }: HexProfileProps) {
                 }}
               />
             </span>
-            {how.spanLabel}
+            <span className="tabular-nums">{how.spanLimitLabel}</span>
           </button>
         </div>
       </div>

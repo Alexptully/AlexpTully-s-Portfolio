@@ -116,7 +116,7 @@ export function Architecture({
                 y={techY + 20 + j * 18}
                 fill={quiet}
                 fillOpacity={paper ? 0.75 : 1}
-                fontSize={14}
+                fontSize={15}
                 stroke="none"
               >
                 {line}
@@ -137,7 +137,7 @@ export function Architecture({
                   x={PAD_X + 26}
                   y={top + h + GAP / 2 + 5}
                   fill={LINE}
-                  fontSize={14}
+                  fontSize={15}
                   stroke="none"
                 >
                   {links[i]}

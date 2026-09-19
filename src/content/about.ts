@@ -98,6 +98,10 @@ const F = {
     ...deckJs,
     claim: "Stating a product's limits unprompted, including where it is weaker",
   } satisfies Source,
+  microFunding: {
+    ...slideF,
+    claim: "The FTC micro-funding site, launched after a mid-season budget cut",
+  } satisfies Source,
 };
 
 export const about: About = {
@@ -138,7 +142,9 @@ export const about: About = {
       },
       {
         when: "Summer 2024",
-        what: "Octura (a Bank of America partner, NYC), selective internship: CLO models, market data, investor calls.",
+        // TODO(alex): content-map open item — confirm the CLO expansion (collateralized loan
+        // obligation?) before the acronym goes on the site. Until then the plainer wording.
+        what: "Octura (a Bank of America partner, NYC), selective internship: financial models, market data, investor calls.",
         source: F.resume,
       },
       {
@@ -196,6 +202,9 @@ export const about: About = {
       {
         name: "2x NYC Champion, Inspire Award",
         role: "Led electrical design, documentation and mentoring",
+        // The résumé names no team and no year, so this line may include the Honu title above
+        // it rather than describing two further championships.
+        when: "teams and years not named on the résumé; may include the Honu title above",
         source: F.resume,
       },
       {
@@ -254,11 +263,11 @@ export const about: About = {
     heading: "Teaching and outreach",
     lines: [
       "IDEA Club, which I co-founded and lead, has trained 70+ students in 3D CAD and printing, design thinking, rapid prototyping, fabrication and shop safety.⁵",
-      "Weekly robotics sessions for younger students at Hudson Guild.",
+      "Weekly robotics sessions for younger students at Hudson Guild.⁶",
       "20+ Hour of Code workshops, with a curriculum I wrote for lower-grade students.⁶",
       "An in-school e-waste drive that collected 40+ pounds; a city-wide expansion is planned, not done.⁶",
       "On the robotics team, rookie training is stage-based and one to one, and every rookie finishes a working subsystem and plans an outreach event.⁸",
-      "I led the team that launched our FTC micro-funding site after a mid-season budget cut; the site itself is credited on our roster to a teammate.",
+      "I led the team that launched our FTC micro-funding site after a mid-season budget cut; the site itself is credited on our roster to a teammate.¹²",
       // TODO(alex): open question 12 — the Hour of Code count is 20+ on the portfolio page, 30+
       // in the team documents and other numbers in the private drafts; the portfolio figure is
       // the one printed. The "trained 50+ students in robotics" figure comes only from the
@@ -331,5 +340,6 @@ export const about: About = {
     F.method,
     F.costCeiling,
     F.limits,
+    F.microFunding,
   ],
 };

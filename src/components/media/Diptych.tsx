@@ -16,11 +16,13 @@ type DiptychProps = {
   fallbackCaption: string;
   sizes: string;
   transitionName?: string;
+  /** Above the fold: eager, high fetch priority, so the plate is not blank on first paint. */
+  priority?: boolean;
   className?: string;
 };
 
 /** One of the two 16:9 frames. */
-function Frame({ image, sizes }: { image: ImageRef; sizes: string }) {
+function Frame({ image, sizes, priority }: { image: ImageRef; sizes: string; priority?: boolean }) {
   return (
     <Image
       src={image.src}
@@ -29,7 +31,8 @@ function Frame({ image, sizes }: { image: ImageRef; sizes: string }) {
       height={image.height}
       quality={75}
       sizes={sizes}
-      loading="lazy"
+      loading={priority ? "eager" : "lazy"}
+      fetchPriority={priority ? "high" : undefined}
       className="h-auto w-full rounded-photo object-contain md:h-full md:w-auto"
       style={{ maxWidth: `min(100%, ${image.width}px)`, aspectRatio: "16 / 9" }}
     />
@@ -51,13 +54,14 @@ export function Diptych({
   fallbackCaption,
   sizes,
   transitionName,
+  priority,
   className,
 }: DiptychProps) {
   if (!a.cleared || !b.cleared) {
     // TODO(alex): open question 2 — clear the two Ring frames; the diptych renders once both are.
     return (
       <figure className={className}>
-        <Plate image={fallback} sizes={sizes} transitionName={transitionName} />
+        <Plate image={fallback} sizes={sizes} transitionName={transitionName} priority={priority} />
         <Caption text={fallbackCaption} source={fallback.source} />
       </figure>
     );
@@ -70,8 +74,8 @@ export function Diptych({
         "md:aspect-[4/3] md:grid-rows-2 md:justify-items-center md:overflow-hidden",
       )}
     >
-      <Frame image={a} sizes={sizes} />
-      <Frame image={b} sizes={sizes} />
+      <Frame image={a} sizes={sizes} priority={priority} />
+      <Frame image={b} sizes={sizes} priority={priority} />
     </div>
   );
 

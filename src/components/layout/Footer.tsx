@@ -48,7 +48,17 @@ export function Footer({ sources, children }: FooterProps) {
           </div>
         ) : null}
 
-        <p className="type-footnote max-w-[60ch] lg:col-span-12">{footer.smallPrint}</p>
+        {/* With no sources column the small print takes columns 6-12 rather than leaving the
+            right half of the rule empty under the address. */}
+        <p
+          className={
+            hasRight
+              ? "type-footnote max-w-[60ch] lg:col-span-12"
+              : "type-footnote max-w-[60ch] lg:col-span-7 lg:col-start-6 lg:row-start-1"
+          }
+        >
+          {footer.smallPrint}
+        </p>
       </Container>
     </footer>
   );

@@ -111,8 +111,9 @@
   body {
     background: var(--bg);
     color: var(--ink);
-    /* §3.2 body: 17 px below 768, 18 px from 768 */
-    font-size: 17px;
+    /* §3.2 body: 17 px below 768, 18 px from 768, in rem so the browser's own
+       font-size setting still scales the whole page. */
+    font-size: 1.0625rem;
     line-height: 1.6;
     font-weight: 400;
     letter-spacing: 0.003em;
@@ -123,7 +124,7 @@
 
   @media (min-width: 768px) {
     body {
-      font-size: 18px;
+      font-size: 1.125rem;
       line-height: 1.55;
     }
   }
@@ -235,45 +236,45 @@
 }
 
 @utility type-body {
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: 0.003em;
   color: var(--ink);
   @media (min-width: 768px) {
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 1.55;
   }
 }
 
 /* Spec value, ledger cell: body size, tabular figures */
 @utility type-value {
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;
   color: var(--ink);
   font-variant-numeric: tabular-nums;
   @media (min-width: 768px) {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 }
 
 /* Role line ("My role" value) */
 @utility type-role {
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0;
   color: var(--ink);
   @media (min-width: 768px) {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 }
 
 /* Caption, spec label, index description */
 @utility type-caption {
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 400;
   line-height: 1.45;
   letter-spacing: 0;
@@ -282,7 +283,7 @@
 
 /* Footnote, source, small print: never smaller, never darker than --quiet */
 @utility type-footnote {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.45;
   letter-spacing: 0;
@@ -291,7 +292,7 @@
 }
 
 @utility type-nav {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0;
@@ -299,7 +300,7 @@
 }
 
 @utility type-button {
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0;
@@ -363,9 +364,18 @@
   }
 }
 
-/* Superscript footnote marker (§3.2): real <sup><a>, underlined on hover/focus only */
+/*
+  Superscript footnote marker (§3.2): real <sup><a>, underlined on hover/focus only.
+
+  The glyph never drops below 11 px, whatever size the text around it is, so the digits stay
+  legible in a 15 px caption or a 14 px ledger cell as well as in body copy. The `::after`
+  box gives the link a ~24 × 32 px tap target without adding anything to the line box, and
+  the `!important` on the decoration colour keeps a marker inside a `Prose` block looking
+  the same as one in a caption (`Prose` underlines every other descendant link).
+*/
 @utility footnote-mark {
-  font-size: 0.7em;
+  position: relative;
+  font-size: max(0.6875rem, 0.7em);
   line-height: 0;
   vertical-align: super;
   color: var(--ink);
@@ -373,11 +383,16 @@
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
-  text-decoration-color: transparent;
+  text-decoration-color: transparent !important;
   transition: text-decoration-color 150ms var(--ease-out);
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -10px -6px;
+  }
   &:hover,
   &:focus-visible {
-    text-decoration-color: var(--ink);
+    text-decoration-color: var(--ink) !important;
   }
 }
 

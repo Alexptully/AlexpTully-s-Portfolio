@@ -10,6 +10,11 @@ import { cn } from "@/lib/utils";
  * It is the one drawn light surface on the site, licensed because the object really is paper
  * (§2.2 `--paper` / `--paper-ink`). Marks are numbered on the sheet and named underneath, so the
  * long labels stay at reading size instead of shrinking with the drawing.
+ *
+ * Text inside an SVG scales with the viewBox, so the sheet's own labels are sized against the
+ * narrowest width the figure is ever drawn at (a 358 px phone column): 16 units there is just
+ * over the 14 px floor `type-footnote` sets for the smallest print on the site. The caller
+ * caps the figure so the same labels do not become headline-sized on a wide screen.
  */
 
 export type BlueprintStripProps = {
@@ -114,12 +119,12 @@ function Mark({ n, x, y, to }: { n: number; x: number; y: number; to: [number, n
         stroke={CALLOUT}
         {...HAIRLINE}
       />
-      <circle cx={x} cy={y} r={10} fill="var(--bg)" stroke={CALLOUT} {...HAIRLINE} />
+      <circle cx={x} cy={y} r={11.5} fill="var(--bg)" stroke={CALLOUT} {...HAIRLINE} />
       <text
         x={x}
-        y={y + 4.5}
+        y={y + 5.5}
         fill="var(--ink)"
-        fontSize={13}
+        fontSize={16}
         textAnchor="middle"
         stroke="none"
         style={{ fontVariantNumeric: "tabular-nums" }}
@@ -194,7 +199,7 @@ export function BlueprintStrip({
           strokeOpacity={0.4}
           {...HAIRLINE}
         />
-        <text x={SHEET.x + 12} y={SHEET.y + 18} fill={INK} fontSize={14} stroke="none">
+        <text x={SHEET.x + 12} y={SHEET.y + 18} fill={INK} fontSize={16} stroke="none">
           {partName}
         </text>
         <text
@@ -202,7 +207,7 @@ export function BlueprintStrip({
           y={SHEET.y + 18}
           fill={INK}
           fillOpacity={0.75}
-          fontSize={14}
+          fontSize={16}
           textAnchor="end"
           stroke="none"
           style={{ fontVariantNumeric: "tabular-nums" }}
@@ -215,7 +220,7 @@ export function BlueprintStrip({
             y={BAND.bottom + 18}
             fill={INK}
             fillOpacity={0.75}
-            fontSize={14}
+            fontSize={16}
             stroke="none"
           >
             {note}
@@ -276,7 +281,7 @@ export function BlueprintStrip({
           y={0}
           transform={`translate(${W - 10} ${AXIS_Y}) rotate(-90)`}
           fill={CALLOUT}
-          fontSize={14}
+          fontSize={16}
           textAnchor="middle"
           stroke="none"
           style={{ fontVariantNumeric: "tabular-nums" }}

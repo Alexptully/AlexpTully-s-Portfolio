@@ -95,8 +95,14 @@ const orphanAnchors = unowned.filter((n) => !inTimeline.has(n) && !inAwards.has(
 export default function AboutPage() {
   return (
     <Container className="pt-10 pb-4 lg:pt-16">
-      {/* Columns 1–8 of the 1200 grid: 8 × 80 px + 7 × 20 px gaps. */}
-      <div className="lg:max-w-[780px]">
+      {/*
+        The prose blocks carry the 34 rem measure themselves, so the page needs no second,
+        narrower column of its own: the timeline, the awards records and the smaller-pieces
+        list take the same 1200 px rule they take on every case study. Capping the whole page
+        at 780 px left the right half of every rule empty and made this the one route whose
+        tables measured differently from the rest of the site.
+      */}
+      <div>
         <h1 className="type-display">{about.title}</h1>
 
         <Prose className="mt-8">

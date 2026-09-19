@@ -51,12 +51,6 @@ export type ImageRef = {
   width: number;
   height: number;
   ground: ImageGround;
-  /**
-   * The plate ground, when a `light` crop could not be levelled onto `--plate-light`.
-   * Set to the crop's own measured border colour so the crop edge still vanishes into the
-   * plate. Only the three poster crops the levelling pass had to skip carry it (§12.1).
-   */
-  plateColor?: string;
   alt: string;
   caption: string;
   /** Exactly as the source prints it, e.g. "7 June 2023". Omitted when no source dates it. */
@@ -277,6 +271,8 @@ export type HowBlock =
       component: "HexProfile";
       intro: string;
       diameterLabel: string;
+      /** Names the control the rotate button and its degree readout belong to. */
+      rotationLabel: string;
       rotateLabel: string;
       spanLabel: string;
       /** The visible readout's unit, e.g. "mm". */
@@ -377,6 +373,11 @@ export type HomeIndexEntry = {
 
 export type HomeHero = {
   headline: string;
+  /**
+   * The sentence under the h1, at the lead scale. The headline carries the display step, so
+   * it has to be short enough to hold it; what the work actually is goes here.
+   */
+  lead: string;
   roleLine: string;
   /** `aria-label` for the index `<nav>`. */
   indexLabel: string;

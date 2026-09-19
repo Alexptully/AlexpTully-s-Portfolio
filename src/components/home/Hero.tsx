@@ -23,22 +23,20 @@ const HERO_SIZES =
  * columns 1–5 and the object columns 6–12, centred on the text block; below it they stack.
  */
 export function Hero({ mode, hero }: HeroProps) {
-  const { headline, roleLine, indexLabel, index, photo, canvas } = hero;
+  const { headline, lead, roleLine, indexLabel, index, photo, canvas } = hero;
 
   return (
     <Container as="section" className="pt-10 pb-20 lg:pt-16 lg:pb-24">
       <div className="grid gap-y-10 lg:min-h-[640px] lg:grid-cols-12 lg:items-center lg:gap-x-5">
         <div className="lg:col-span-5">
           {/*
-            Display weight and tracking, but capped at 56 px instead of the 88 px display step:
-            the sentence is 23 words, and at 88 px in the 480 px column it runs to fourteen
-            lines (about 1,250 px). 56 px gives the seven or eight lines the §5.7 wireframe
-            draws; 40 px on phone matches §5.8 exactly. The full display step stays on the
-            contact-band name.
+            The h1 takes the site's display step, like every case-study h1 and the /about h1.
+            It is short enough to hold it: the list of work that used to run inside the
+            sentence is the lead below, at the lead scale, where it reads as one line of
+            specifics rather than eight lines of display type.
           */}
-          <h1 className="text-balance text-[clamp(2.5rem,1.7rem+2.2vw,3.5rem)] font-light leading-[1.05] tracking-[-0.02em] text-ink">
-            {headline}
-          </h1>
+          <h1 className="type-display">{headline}</h1>
+          <p className="type-lead measure mt-6">{lead}</p>
           <p className="type-role mt-6">{roleLine}</p>
           <WorkIndex label={indexLabel} items={index} className="mt-8" />
         </div>
@@ -65,15 +63,18 @@ export function Hero({ mode, hero }: HeroProps) {
 
       {mode === "canvas" ? (
         <div className="mt-16 lg:mt-20 lg:grid lg:grid-cols-12 lg:gap-x-5">
-          {/* The V1 photograph, directly under the object column, at 500 px with the caption above (§5.2). */}
+          {/* The V1 photograph, directly under the object column, at 500 px. Plate first,
+              caption under it: every other plate on the site reads in that order, and one
+              flipped pair breaks the unit the whole catalogue is built from (§1.4 graft 14). */}
           <figure className="max-w-[500px] lg:col-span-7 lg:col-start-6">
-            <Caption text={photo.image.caption} source={photo.image.source} className="mt-0 mb-3" />
             <Plate
               image={photo.image}
               aspect="4/3"
               quality={90}
               sizes="(max-width: 640px) calc(100vw - 32px), 500px"
+              priority
             />
+            <Caption text={photo.image.caption} source={photo.image.source} />
           </figure>
         </div>
       ) : null}

@@ -1,4 +1,5 @@
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
+import { FootnoteRef } from "@/components/content/Stat";
 
 /**
  * The one footnote splitter (design-spec §4.3, `src/content/types.ts`).
@@ -54,4 +55,35 @@ export function splitFootnotes(text: string): FootnotePart[] {
  */
 export function MarkerSeparator(): ReactNode {
   return <sup className="align-super text-[0.7em] leading-[0] text-ink">,&#8201;</sup>;
+}
+
+/**
+ * A run of copy with its superscript markers rendered as footnote links. `owners` maps a
+ * footnote number to the key of the marker that owns its `#ref-N` anchor, so a source cited
+ * twice on one page still has exactly one back-link target.
+ */
+export function ProseFootnotes({
+  text,
+  ownerKey,
+  owners,
+}: {
+  text: string;
+  ownerKey: string;
+  owners: Map<number, string>;
+}): ReactNode {
+  const parts = splitFootnotes(text);
+  return (
+    <>
+      {parts.map((part, i) =>
+        typeof part === "number" ? (
+          <Fragment key={`${ownerKey}#${i}`}>
+            {typeof parts[i - 1] === "number" ? <MarkerSeparator /> : null}
+            <FootnoteRef index={part} backlink={owners.get(part) === `${ownerKey}#${i}`} />
+          </Fragment>
+        ) : (
+          part
+        ),
+      )}
+    </>
+  );
 }

@@ -1,11 +1,10 @@
-import { Fragment, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import type { Figure as FigureData, ImageGround, Project, Source, SpecRow } from "@/content/types";
 import { site } from "@/content/site";
 import { Container } from "@/components/layout/Container";
 import { Prose } from "@/components/content/Prose";
 import { Sources } from "@/components/content/Sources";
-import { FootnoteRef } from "@/components/content/Stat";
-import { MarkerSeparator, splitFootnotes } from "@/components/content/Footnotes";
+import { ProseFootnotes as Footnoted, splitFootnotes } from "@/components/content/Footnotes";
 import { SpecSheet } from "@/components/content/SpecSheet";
 import { VersionLedger } from "@/components/content/VersionLedger";
 import { AwardsList } from "@/components/content/AwardsList";
@@ -33,24 +32,6 @@ function proseOwners(entries: ProseEntry[]): Map<number, string> {
     });
   }
   return owners;
-}
-
-function Footnoted({ text, ownerKey, owners }: { text: string; ownerKey: string; owners: Map<number, string> }) {
-  const parts = splitFootnotes(text);
-  return (
-    <>
-      {parts.map((part, i) =>
-        typeof part === "number" ? (
-          <Fragment key={`${ownerKey}#${i}`}>
-            {typeof parts[i - 1] === "number" ? <MarkerSeparator /> : null}
-            <FootnoteRef index={part} backlink={owners.get(part) === `${ownerKey}#${i}`} />
-          </Fragment>
-        ) : (
-          part
-        ),
-      )}
-    </>
-  );
 }
 
 /**
@@ -153,6 +134,15 @@ function ResultsExtra({ project, cite }: { project: Project; cite: Cite }) {
 /* --------------------------------------------------------------- layout */
 
 const HERO_SIZES = "(max-width: 1024px) calc(100vw - 48px), 960px";
+const COMPACT_HERO_SIZES = "(max-width: 1024px) calc(100vw - 48px), 490px";
+/**
+ * A crop is never drawn wider than its native pixels (§12.1), so a small source — the largest
+ * clean Monti render in Alex's material is 295 px — leaves a stacked hero as a stamp floating
+ * above an 88 px h1. Below this width the hero composes instead: the object in columns 1-5,
+ * the title and lead in 6-12, both vertically centred. Above it the hero stays full width and
+ * stacked, which is what AntiCam, the prosthetic arm and CeraPiper all get.
+ */
+const COMPACT_HERO_MAX = 640;
 const PLATE_SIZES = "(max-width: 768px) calc(100vw - 32px), (max-width: 1024px) 50vw, 580px";
 
 /** Section heading rhythm (design-spec §3.3): 96 px above an h2 (64 on phones), 24 below. */
@@ -173,7 +163,12 @@ function Section({ id, heading, children }: { id: string; heading: string; child
   );
 }
 
-/** Cards grouped by ground, one row per ground, so light and dark plates never share a row (§6). */
+/**
+ * Cards grouped by ground, one row per ground, so light and dark plates never share a row
+ * (§6), on a fixed grid rather than a wrapping flex row. Every card fills its cell and every
+ * media box is 4:3, so the tiles are the same size and the captions under them sit on one
+ * baseline; an odd count leaves an empty cell instead of restarting the stagger.
+ */
 function FigureRows({ figures, cite }: { figures: FigureData[]; cite: Cite }) {
   const groups = new Map<ImageGround, FigureData[]>();
   for (const figure of figures) {
@@ -185,9 +180,18 @@ function FigureRows({ figures, cite }: { figures: FigureData[]; cite: Cite }) {
   return (
     <>
       {[...groups.entries()].map(([ground, list]) => (
-        <div key={ground} className="mt-12 flex flex-wrap items-start gap-x-6 gap-y-10">
+        <div
+          key={ground}
+          className="mt-12 grid items-start gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
+        >
           {list.map(({ image, label }) => (
-            <CardFigure key={image.id} image={image} label={label} citation={cite(image.source, `fig:${image.id}`)} />
+            <CardFigure
+              key={image.id}
+              image={image}
+              label={label}
+              fill
+              citation={cite(image.source, `fig:${image.id}`)}
+            />
           ))}
         </div>
       ))}
@@ -212,6 +216,7 @@ export function CaseStudy({ project, next }: CaseStudyProps) {
     ...project.spec.map((row, i) => ({ key: `spec-${i}`, text: row.value })),
     ...project.why.map((text, i) => ({ key: `why-${i}`, text })),
     ...project.results.map((text, i) => ({ key: `res-${i}`, text })),
+    ...(project.robots ?? []).map((robot) => ({ key: `robot:${robot.id}:idea`, text: robot.idea })),
     { key: "status", text: project.status },
     { key: "next", text: project.next },
   ]);
@@ -219,29 +224,45 @@ export function CaseStudy({ project, next }: CaseStudyProps) {
   const renderSpecValue = (row: SpecRow, i: number) => <Footnoted text={row.value} ownerKey={`spec-${i}`} owners={prose} />;
   const awardsHeading = site.labels.awards;
   const hero = project.hero;
+  // `Plate` caps a plate at twice its image's width, so this is the plate the hero will draw.
+  const compactHero = !("kind" in hero) && hero.width * 2 < COMPACT_HERO_MAX;
 
   return (
     <article>
       {/* 1. Object hero */}
       <Container as="header" className="pt-8 md:pt-12">
-        {"kind" in hero ? (
-          <figure className="max-w-[960px]">
-            <HexPipe title={hero.alt} desc={hero.caption} id={`hexpipe-${project.slug}`} />
-            <FigureCaption text={hero.caption} source={hero.source} citation={cite(hero.source, "hero")} />
-          </figure>
-        ) : (
-          <PlateFigure
-            image={hero}
-            aspect="16/10"
-            sizes={HERO_SIZES}
-            quality={90}
-            priority
-            transitionName={`plate-${project.slug}`}
-            className="max-w-[960px]"
-          />
-        )}
-        <h1 className="type-display mt-12 md:mt-16">{project.title}</h1>
-        <p className="type-lead measure mt-6">{project.lead}</p>
+        <div
+          className={
+            compactHero
+              ? "grid gap-y-8 lg:grid-cols-12 lg:items-center lg:gap-x-5"
+              : undefined
+          }
+        >
+          <div className={compactHero ? "lg:col-span-5" : undefined}>
+            {"kind" in hero ? (
+              <figure className="max-w-[960px]">
+                <HexPipe title={hero.alt} desc={hero.caption} id={`hexpipe-${project.slug}`} />
+                <FigureCaption text={hero.caption} source={hero.source} citation={cite(hero.source, "hero")} />
+              </figure>
+            ) : (
+              <PlateFigure
+                image={hero}
+                aspect="16/10"
+                sizes={compactHero ? COMPACT_HERO_SIZES : HERO_SIZES}
+                quality={90}
+                priority
+                transitionName={`plate-${project.slug}`}
+                className="max-w-[960px]"
+              />
+            )}
+          </div>
+          <div className={compactHero ? "lg:col-span-7" : undefined}>
+            <h1 className={compactHero ? "type-display" : "type-display mt-12 md:mt-16"}>
+              {project.title}
+            </h1>
+            <p className="type-lead measure mt-6">{project.lead}</p>
+          </div>
+        </div>
       </Container>
 
       {/* 2. Spec sheet, and the robotics filmstrip under it */}
@@ -273,7 +294,14 @@ export function CaseStudy({ project, next }: CaseStudyProps) {
         {project.robots ? (
           <div className="-mt-6">
             {project.robots.map((robot) => (
-              <RobotSection key={robot.id} robot={robot} cite={cite} awardsHeading={awardsHeading} sizes={PLATE_SIZES} />
+              <RobotSection
+                key={robot.id}
+                robot={robot}
+                cite={cite}
+                owners={prose}
+                awardsHeading={awardsHeading}
+                sizes={PLATE_SIZES}
+              />
             ))}
           </div>
         ) : null}

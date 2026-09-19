@@ -17,7 +17,10 @@ export function Prose({ children, className }: ProseProps) {
       className={cn(
         "type-body measure",
         "[&>p+p]:mt-[1em] [&>ul]:mt-[1em] [&>ol]:mt-[1em] [&>ul]:list-disc [&>ul]:pl-5 [&>ol]:list-decimal [&>ol]:pl-5 [&_li+li]:mt-[0.5em]",
-        "[&_a]:link",
+        // Footnote markers are excluded: they carry their own `footnote-mark` styling, whose
+        // underline appears on hover and focus only. Without the exclusion a marker inside a
+        // prose block would grow a solid underline that the same marker in a caption does not.
+        "[&_a:not(.footnote-mark)]:link",
         className,
       )}
     >

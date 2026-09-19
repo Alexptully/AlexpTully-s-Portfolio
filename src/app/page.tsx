@@ -61,8 +61,15 @@ export default function Home() {
       <Hero mode={site.heroMode} hero={homeHero} />
 
       <Container as="section" id="work" className="space-y-10 md:space-y-16">
-        {projects.map((project) => (
-          <LineupRow key={project.slug} project={project} footnote={footnoteFor(project)} />
+        {projects.map((project, i) => (
+          <LineupRow
+            key={project.slug}
+            project={project}
+            footnote={footnoteFor(project)}
+            // The first two rows sit within roughly the second viewport; their plates load
+            // eagerly so the page never paints a caption under an empty box.
+            priority={i < 2}
+          />
         ))}
       </Container>
 

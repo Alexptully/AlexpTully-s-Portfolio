@@ -18,19 +18,23 @@ type CaptionProps = {
  */
 export function Caption({ text, date, source, className }: CaptionProps) {
   const showDate = date && !text.includes(date);
+  if (!text && !source) return null;
   return (
-    <figcaption className={cn("mt-3 max-w-[60ch]", className)}>
-      <p className="type-caption">
-        {text}
-        {showDate ? (
-          <>
-            {" "}
-            <time>{date}</time>.
-          </>
-        ) : null}
-      </p>
+    <figcaption className={cn("mt-4 max-w-[60ch]", className)}>
+      {text ? (
+        <p className="type-caption">
+          {text}
+          {showDate ? (
+            <>
+              {" "}
+              <time>{date}</time>.
+            </>
+          ) : null}
+        </p>
+      ) : null}
       {source ? (
-        <p className="type-footnote mt-1">
+        <p className={cn("type-label mt-2 normal-case tracking-normal text-quiet", !text && "mt-0")}>
+          <span aria-hidden="true" className="mr-2 inline-block h-px w-4 align-middle bg-border-strong" />
           Source:{" "}
           {source.href ? (
             <a href={source.href} rel="noopener" className="link">

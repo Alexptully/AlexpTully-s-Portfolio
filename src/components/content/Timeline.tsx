@@ -41,7 +41,7 @@ export function Timeline({ rows, sources, termWidth = "9rem", className }: Timel
             key={`${row.when}-${i}`}
             className="grid gap-x-5 gap-y-1 py-4 sm:grid-cols-[var(--term-w)_minmax(0,1fr)]"
           >
-            <dt className="type-caption tabular-nums">{row.when}</dt>
+            <dt className="type-label pt-1 text-quiet">{row.when}</dt>
             <dd className="type-value max-w-[40rem]">
               {row.what}
               {n > 0 ? <FootnoteRef index={n} backlink={false} /> : null}

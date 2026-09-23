@@ -19,6 +19,15 @@ type PlateProps = {
   className?: string;
 };
 
+/** The ground under the object: a lit light-box for light crops, a spotlit stage for dark ones. */
+const groundClass: Record<ImageRef["ground"], string> = {
+  light: "border-black/10 bg-[radial-gradient(ellipse_80%_70%_at_50%_40%,#f1f2f3,var(--plate-light)_60%,#d5d7db)]",
+  // Dark crops are levelled to --bg exactly, so the ground stays flat: any gradient behind
+  // them would show the crop rectangle.
+  dark: "border-border bg-bg",
+  photo: "border-border bg-[linear-gradient(180deg,#131820,var(--bg))]",
+};
+
 const aspectClass: Record<PlateAspect, string> = {
   "4/3": "aspect-[4/3]",
   "16/10": "aspect-[16/10]",
@@ -83,14 +92,24 @@ export function Plate({
   return (
     <div
       className={cn(
-        "flex w-full items-center justify-center overflow-hidden rounded-plate",
+        "group/plate relative flex w-full items-center justify-center overflow-hidden rounded-plate border",
         aspectClass[aspect],
-        image.ground === "light" ? "bg-plate-light" : "bg-bg",
+        groundClass[image.ground],
         className,
       )}
       style={{ maxWidth: `${plateWidth(image)}px` }}
     >
-      {transitionName ? <PlateTransition name={transitionName}>{img}</PlateTransition> : img}
+      {/* Registration ticks inset from the frame, like a print sheet. */}
+      <div
+        aria-hidden="true"
+        className={cn(
+          "ticks pointer-events-none absolute inset-3 [--tick:10px]",
+          image.ground === "light" ? "[--tick-c:#9aa1ab]" : "[--tick-c:var(--border-strong)]",
+        )}
+      />
+      <div className="relative flex h-full w-full items-center justify-center p-6 transition-transform duration-700 ease-[var(--ease-out)] group-hover/row:scale-[1.025] md:p-8">
+        {transitionName ? <PlateTransition name={transitionName}>{img}</PlateTransition> : img}
+      </div>
     </div>
   );
 }

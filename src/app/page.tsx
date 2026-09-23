@@ -58,19 +58,29 @@ function structuredData() {
 export default function Home() {
   return (
     <>
-      <Hero mode={site.heroMode} hero={homeHero} />
+      <Hero mode={site.heroMode} hero={homeHero} sources={homeSources} />
 
-      <Container as="section" id="work" className="space-y-10 md:space-y-16">
+      <Container as="section" id="work" aria-labelledby="work-heading" className="mt-8 md:mt-16">
+        <div className="mb-14 flex flex-wrap items-end justify-between gap-6 md:mb-20">
+          <h2 id="work-heading" className="type-display">
+            {homeHero.indexLabel}
+          </h2>
+          <p className="type-caption max-w-[34ch]">{homeHero.workNote}</p>
+        </div>
+        <div className="space-y-20 md:space-y-28">
         {projects.map((project, i) => (
           <LineupRow
             key={project.slug}
             project={project}
+            index={i}
+            meta={homeHero.index.find((e) => e.href === `#${project.slug}`)?.description}
             footnote={footnoteFor(project)}
             // The first two rows sit within roughly the second viewport; their plates load
             // eagerly so the page never paints a caption under an empty box.
             priority={i < 2}
           />
         ))}
+        </div>
       </Container>
 
       <NowAndNext data={nowAndNext} />

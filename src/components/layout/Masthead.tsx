@@ -56,7 +56,8 @@ function NavItem({ item, pathname }: { item: NavLink; pathname: string }) {
 }
 
 /**
- * Site masthead (design-spec §4.2, §5.1): one 56 px row on every route, never sticky.
+ * Site masthead: one 56 px row on every route, sticky with a blurred ground so the lit
+ * emitter beside the wordmark stays in view.
  * Wordmark left; the `site.nav` items right (Work, About, Email; tullytech.com at ≥ 1024).
  * The current route gets a static 2 px accent underline plus `aria-current="page"`.
  */
@@ -64,11 +65,15 @@ export function Masthead() {
   const pathname = usePathname() ?? "/";
 
   return (
-    <header>
+    <header className="sticky top-0 z-40 border-b border-border/70 bg-bg/75 backdrop-blur-md supports-[backdrop-filter]:bg-bg/60">
       <Container className="flex h-14 items-center justify-between">
         {/* The wordmark never takes aria-current: "Work" marks home, so one pink underline per viewport. */}
-        <Link href="/" className={itemClass}>
-          {site.name}
+        <Link href="/" className="group inline-flex h-11 items-center gap-3">
+          <span aria-hidden="true" className="led led-pulse" />
+          <span className="type-nav">{site.name}</span>
+          <span aria-hidden="true" className="type-label hidden border-l border-border pl-3 md:inline">
+            {site.website.label}
+          </span>
         </Link>
 
         <nav aria-label="Site">

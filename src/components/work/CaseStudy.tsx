@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import type { Figure as FigureData, ImageGround, Project, Source, SpecRow } from "@/content/types";
 import { site } from "@/content/site";
 import { Container } from "@/components/layout/Container";
@@ -145,20 +146,36 @@ const COMPACT_HERO_SIZES = "(max-width: 1024px) calc(100vw - 48px), 490px";
 const COMPACT_HERO_MAX = 640;
 const PLATE_SIZES = "(max-width: 768px) calc(100vw - 32px), (max-width: 1024px) 50vw, 580px";
 
-/** Section heading rhythm (design-spec §3.3): 96 px above an h2 (64 on phones), 24 below. */
-function SectionHeading({ id, children }: { id: string; children: ReactNode }) {
+/**
+ * A numbered section: a sticky side index (part number and heading) in columns 1-3, the
+ * content in 4-12 at `lg`; stacked below, with the number above the heading.
+ */
+function Section({
+  id,
+  heading,
+  n,
+  children,
+}: {
+  id: string;
+  heading: string;
+  n: number;
+  children: ReactNode;
+}) {
   return (
-    <h2 id={id} className="type-title mb-6">
-      {children}
-    </h2>
-  );
-}
-
-function Section({ id, heading, children }: { id: string; heading: string; children: ReactNode }) {
-  return (
-    <section id={id} className="container-site mt-16 md:mt-24" aria-labelledby={`${id}-heading`}>
-      <SectionHeading id={`${id}-heading`}>{heading}</SectionHeading>
-      {children}
+    <section id={id} className="container-site mt-20 md:mt-32" aria-labelledby={`${id}-heading`}>
+      <div className="border-t border-border pt-8 lg:grid lg:grid-cols-12 lg:gap-x-8 lg:pt-10">
+        <div className="mb-8 lg:col-span-3 lg:mb-0">
+          <div className="lg:sticky lg:top-24">
+            <p aria-hidden="true" className="type-label text-quiet">
+              § {String(n).padStart(2, "0")}
+            </p>
+            <h2 id={`${id}-heading`} className="type-title mt-3 lg:text-[clamp(1.75rem,1.2rem+1vw,2.25rem)]">
+              {heading}
+            </h2>
+          </div>
+        </div>
+        <div className="min-w-0 lg:col-span-9">{children}</div>
+      </div>
     </section>
   );
 }
@@ -201,6 +218,8 @@ function FigureRows({ figures, cite }: { figures: FigureData[]; cite: Cite }) {
 
 type CaseStudyProps = {
   project: Project;
+  /** 1-based position in the lineup, printed as the part number. */
+  number: number;
   /** The next case study in lineup order. */
   next: Project;
 };
@@ -210,7 +229,7 @@ type CaseStudyProps = {
  * Versions (Robots), Results, What I did and what others did, Status with the Next link, and
  * Sources as the last section before the shared footer. Every word renders from `projects.ts`.
  */
-export function CaseStudy({ project, next }: CaseStudyProps) {
+export function CaseStudy({ project, next, number }: CaseStudyProps) {
   const { sectionHeadings: h } = site;
   const prose = proseOwners([
     ...project.spec.map((row, i) => ({ key: `spec-${i}`, text: row.value })),
@@ -231,6 +250,17 @@ export function CaseStudy({ project, next }: CaseStudyProps) {
     <article>
       {/* 1. Object hero */}
       <Container as="header" className="pt-8 md:pt-12">
+        <nav aria-label="Breadcrumb" className="type-label mb-8 flex items-center gap-3 text-quiet md:mb-10">
+          <Link href="/#work" className="link-quiet hover:text-ink">
+            {site.nav[0].label}
+          </Link>
+          <span aria-hidden="true">/</span>
+          <span>{String(number).padStart(2, "0")}</span>
+          <span aria-hidden="true">/</span>
+          <span className="text-ink" aria-current="page">
+            {project.title}
+          </span>
+        </nav>
         <div
           className={
             compactHero
@@ -256,17 +286,17 @@ export function CaseStudy({ project, next }: CaseStudyProps) {
               />
             )}
           </div>
-          <div className={compactHero ? "lg:col-span-7" : undefined}>
-            <h1 className={compactHero ? "type-display" : "type-display mt-12 md:mt-16"}>
-              {project.title}
-            </h1>
-            <p className="type-lead measure mt-6">{project.lead}</p>
+          <div className={compactHero ? "lg:col-span-7" : "mt-12 md:mt-16 lg:grid lg:grid-cols-12 lg:gap-x-8"}>
+            <h1 className={compactHero ? "type-display" : "type-display lg:col-span-7"}>{project.title}</h1>
+            <p className={compactHero ? "type-lead measure mt-6 text-muted" : "type-lead measure mt-6 text-muted lg:col-span-5 lg:mt-3 lg:self-end"}>
+              {project.lead}
+            </p>
           </div>
         </div>
       </Container>
 
       {/* 2. Spec sheet, and the robotics filmstrip under it */}
-      <Container className="mt-10 md:mt-12">
+      <Container className="mt-12 md:mt-16">
         <SpecSheet rows={project.spec} renderValue={renderSpecValue} />
         {project.filmstrip ? (
           <Filmstrip tiles={project.filmstrip} label={project.versionsHeading} className="mt-8" />
@@ -274,7 +304,7 @@ export function CaseStudy({ project, next }: CaseStudyProps) {
       </Container>
 
       {/* 3. Why */}
-      <Section id="why" heading={h.why}>
+      <Section id="why" n={1} heading={h.why}>
         <Prose>
           {project.why.map((text, i) => (
             <p key={i}>
@@ -285,12 +315,12 @@ export function CaseStudy({ project, next }: CaseStudyProps) {
       </Section>
 
       {/* 4. How it works */}
-      <Section id="how" heading={h.how}>
+      <Section id="how" n={2} heading={h.how}>
         <MomentSlot how={project.how} cite={cite} />
       </Section>
 
       {/* 5. Versions, or Robots */}
-      <Section id="versions" heading={project.versionsHeading}>
+      <Section id="versions" n={3} heading={project.versionsHeading}>
         {project.robots ? (
           <div className="-mt-6">
             {project.robots.map((robot) => (
@@ -334,7 +364,7 @@ export function CaseStudy({ project, next }: CaseStudyProps) {
       </Section>
 
       {/* 6. Results, with awards as records where the project has any */}
-      <Section id="results" heading={h.results}>
+      <Section id="results" n={4} heading={h.results}>
         <Prose>
           {project.results.map((text, i) => (
             <p key={i}>
@@ -352,12 +382,12 @@ export function CaseStudy({ project, next }: CaseStudyProps) {
       </Section>
 
       {/* 7. What I did, what others did */}
-      <Section id="who" heading={`${h.did}, ${h.others.charAt(0).toLowerCase()}${h.others.slice(1)}`}>
+      <Section id="who" n={5} heading={`${h.did}, ${h.others.charAt(0).toLowerCase()}${h.others.slice(1)}`}>
         <TwoLists left={{ heading: h.did, items: project.didList }} right={{ heading: h.others, items: project.othersList }} />
       </Section>
 
       {/* 8. Status and next */}
-      <Section id="status" heading={h.status}>
+      <Section id="status" n={6} heading={h.status}>
         <Prose>
           <p>
             <Footnoted text={project.status} ownerKey="status" owners={prose} />

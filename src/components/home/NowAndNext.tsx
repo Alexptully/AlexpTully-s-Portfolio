@@ -32,9 +32,12 @@ export function NowAndNext({ data }: NowAndNextProps) {
   return (
     <section id="now-and-next" aria-labelledby={headingId} className="mt-20 md:mt-32">
       <Container className="grid gap-y-6 lg:grid-cols-12 lg:gap-x-5">
-        <h2 id={headingId} className="type-title lg:col-span-3">
-          {data.heading}
-        </h2>
+        <div className="lg:col-span-3">
+          <p className="type-label mb-4 text-quiet">Timeline</p>
+          <h2 id={headingId} className="type-title">
+            {data.heading}
+          </h2>
+        </div>
         <div className="lg:col-span-9">
           <Timeline
             rows={data.rows.map((r) => ({ when: r.term, what: r.description, source: r.source }))}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Host_Grotesk } from "next/font/google";
+import { Host_Grotesk, JetBrains_Mono } from "next/font/google";
 import { site } from "@/content/site";
 import { siteOrigin } from "@/lib/site-url";
 import { SkipLink } from "@/components/layout/SkipLink";
@@ -17,6 +17,14 @@ const host = Host_Grotesk({
   display: "swap",
   adjustFontFallback: true,
   variable: "--font-host",
+});
+
+// The instrument voice: part numbers, figure labels, spec terms, dates. Never body copy.
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+  variable: "--font-jbm",
 });
 
 export const metadata: Metadata = {
@@ -48,10 +56,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${host.variable} h-full antialiased`}
+      className={`${host.variable} ${mono.variable} h-full antialiased`}
       style={{ colorScheme: "dark" }}
     >
-      <body className="flex min-h-full flex-col bg-bg font-sans text-ink">
+      <body className="grain flex min-h-full flex-col bg-bg font-sans text-ink">
         <SkipLink />
         <Masthead />
         <main id="content" tabIndex={-1} className="flex flex-1 flex-col outline-none">

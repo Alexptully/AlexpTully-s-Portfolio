@@ -20,12 +20,12 @@ export function MiniSpec({ role, proof, footnote, className }: MiniSpecProps) {
   return (
     <dl className={cn("divide-y divide-border border-y border-border", className)}>
       <div className="py-4">
-        <dt className="type-caption">{site.labels.role}</dt>
-        <dd className="type-role mt-1 max-w-[40rem]">{role}</dd>
+        <dt className="type-label">{site.labels.role}</dt>
+        <dd className="type-role mt-1.5 max-w-[40rem]">{role}</dd>
       </div>
       <div className="py-4">
-        <dt className="type-caption">{site.labels.proof}</dt>
-        <dd className="type-value mt-1 max-w-[40rem] [&_sup]:relative">
+        <dt className="type-label">{site.labels.proof}</dt>
+        <dd className="type-value mt-1.5 max-w-[40rem] [&_sup]:relative">
           <Stat stat={proof} index={footnote} />
         </dd>
       </div>

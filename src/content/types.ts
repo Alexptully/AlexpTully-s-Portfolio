@@ -327,6 +327,11 @@ export type Project = {
   hero: ImageRef | SvgRef;
   /** Home lineup plate. */
   homePlate: PlateRef;
+  /**
+   * Optional: several small objects shown together in the home plate instead of `homePlate`,
+   * for a project whose renders are each too small to hold a plate alone (robotics).
+   */
+  homeGroup?: { images: ImageRef[]; caption: string };
   spec: SpecRow[];
   /** "Why" section: two or three first-person sentences. */
   why: string[];
@@ -371,8 +376,15 @@ export type HomeIndexEntry = {
   source: Source;
 };
 
+/** One cell of the hero's figure strip: a short number and what it counts, always sourced. */
+export type HeroFigure = { value: string; label: string; source: Source };
+
 export type HomeHero = {
+  /** Mono line above the h1: the three things Alex is, as root CLAUDE.md names them. */
+  kicker: string;
   headline: string;
+  /** Four sourced figures under the hero; each resolves against `homeSources` by reference. */
+  figures: HeroFigure[];
   /**
    * The sentence under the h1, at the lead scale. The headline carries the display step, so
    * it has to be short enough to hold it; what the work actually is goes here.
@@ -381,6 +393,8 @@ export type HomeHero = {
   roleLine: string;
   /** `aria-label` for the index `<nav>`. */
   indexLabel: string;
+  /** One line beside the "Featured work" heading. */
+  workNote: string;
   index: HomeIndexEntry[];
   /** Photo mode, and the plate that moves under the hero in canvas mode. */
   photo: { image: ImageRef };

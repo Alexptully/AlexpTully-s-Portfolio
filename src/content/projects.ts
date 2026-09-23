@@ -1231,6 +1231,10 @@ const robotics: Project = {
    */
   hero: rb08,
   homePlate: rb01,
+  homeGroup: {
+    images: [rb08, rb09, rb06],
+    caption: "Monti (#17253), Honu and Swerve Drive (#14712): three of the five robots, from my portfolio pages.",
+  },
   spec: [
     {
       term: "My role",
@@ -1751,11 +1755,22 @@ export function nextProject(slug: ProjectSlug): Project {
 export const homeHero: HomeHero = {
   // The h1 carries the 88 px display step, so it is short enough to hold it; the list of work
   // that used to run inside it is the lead sentence below.
+  // Root CLAUDE.md: "hardware founder, product designer, and robotics lead".
+  kicker: "Hardware founder / Product designer / Robotics lead",
   headline: "I’m Alex Tully. I design and build hardware.",
+  // Each figure reuses the Source object of a lineup proof, so its footnote number is the
+  // same one the lineup row prints.
+  figures: [
+    { value: "30+", label: "AntiCam prototypes, four major versions", source: F.anticamPrototypes },
+    { value: "90+", label: "prosthetic arm prototypes", source: F.armPrototypes },
+    { value: "1st", label: "in NYC with Honu, #14712, plus the 2nd-place Think Award at Worlds", source: F.honuResults },
+    { value: "SCF ’25", label: "CeraPiper’s CAM version, published at ACM SCF 2025", source: F.scfPaper },
+  ],
   lead: "A privacy wearable, a low-cost prosthetic arm, competition robots, and a CAD tool for clay.",
   // "Sole" is not in any source: content-map §3 says no source states he worked alone.
   roleLine: "Founder, Tully Tech. Designer and builder of AntiCam.",
   indexLabel: "Featured work",
+  workNote: "Four projects. My role is stated on each, and every figure links to its source.",
   index: [
     {
       title: "AntiCam",

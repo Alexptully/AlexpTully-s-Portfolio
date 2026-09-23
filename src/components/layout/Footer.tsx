@@ -21,7 +21,7 @@ export function Footer({ sources, children }: FooterProps) {
   const hasRight = (sources && sources.length > 0) || children;
 
   return (
-    <footer className="mt-24 border-t border-border">
+    <footer className="relative mt-24 overflow-hidden border-t border-border">
       <Container className="grid gap-12 pt-16 pb-12 lg:grid-cols-12 lg:gap-x-5">
         <div className="lg:col-span-5">
           <address className="type-body flex flex-col items-start gap-1">
@@ -60,6 +60,16 @@ export function Footer({ sources, children }: FooterProps) {
           {footer.smallPrint}
         </p>
       </Container>
+      {/* The name set as a nameplate along the bottom edge. Decorative; the address above is the text. */}
+      <div aria-hidden="true" className="container-site select-none">
+        <div className="flex items-end justify-between gap-6 border-t border-border pt-6">
+          <span className="type-label text-quiet">© {fullName}</span>
+          <span className="type-label hidden text-quiet sm:inline">{website.label}</span>
+        </div>
+        <p className="mt-2 -mb-[0.2em] text-[clamp(4.5rem,19vw,17rem)] leading-[0.8] font-medium tracking-[-0.06em] text-transparent [-webkit-text-stroke:1px_var(--border-strong)]">
+          {site.name}
+        </p>
+      </div>
     </footer>
   );
 }

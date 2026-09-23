@@ -7,21 +7,32 @@ type WorkIndexProps = {
 };
 
 /**
- * The hero's four-line index of the featured work (design-spec §5.2): a `<nav>` of anchors to
- * the lineup rows, hairlines between rows, the title in ink 18 px/500 and the description in
- * muted 15 px. The whole row is the link; hover and focus underline the title.
+ * The hero's index of the featured work: numbered like parts on a drawing, hairlines between
+ * rows, the title in ink and the description in muted. The whole row is the link.
  */
 export function WorkIndex({ label, items, className }: WorkIndexProps) {
   return (
     <nav aria-label={label} className={className}>
-      <ul className="divide-y divide-border">
-        {items.map((item) => (
-          <li key={item.href}>
-            <a href={item.href} className="group flex flex-col gap-y-0.5 py-3">
-              <span className="text-[18px] font-medium leading-snug text-ink underline decoration-1 decoration-transparent underline-offset-4 transition-[text-decoration-color] duration-150 group-hover:decoration-ink group-focus-visible:decoration-ink">
-                {item.title}
+      <ul className="border-t border-border">
+        {items.map((item, i) => (
+          <li key={item.href} className="border-b border-border">
+            <a
+              href={item.href}
+              className="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-baseline gap-x-2 py-3.5"
+            >
+              <span className="type-label text-quiet transition-colors duration-150 group-hover:text-accent group-focus-visible:text-accent">
+                {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="type-caption">{item.description}</span>
+              <span className="flex flex-col gap-0.5">
+                <span className="text-[17px] leading-snug font-medium text-ink">{item.title}</span>
+                <span className="type-caption text-[14px]">{item.description}</span>
+              </span>
+              <span
+                aria-hidden="true"
+                className="type-label translate-x-[-4px] opacity-0 transition-[opacity,transform] duration-200 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100"
+              >
+                ↓
+              </span>
             </a>
           </li>
         ))}

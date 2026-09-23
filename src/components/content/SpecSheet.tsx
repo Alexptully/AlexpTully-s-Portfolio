@@ -21,13 +21,29 @@ type SpecSheetProps = {
  */
 export function SpecSheet({ rows, renderValue, className }: SpecSheetProps) {
   return (
-    <dl className={cn("divide-y divide-border border-y border-border", className)}>
+    <dl
+      className={cn(
+        "grid overflow-hidden rounded-plate border border-border bg-[linear-gradient(180deg,color-mix(in_oklch,var(--surface)_70%,transparent),transparent)] md:grid-cols-2",
+        className,
+      )}
+    >
       {rows.map((row, i) => {
         const isRole = row.term === site.labels.role;
         return (
-          <div key={row.term} className="grid gap-1 py-4 md:grid-cols-12 md:gap-x-5 md:py-5">
-            <dt className="type-caption md:col-span-4">{row.term}</dt>
-            <dd className={cn(isRole ? "type-role" : "type-value", "md:col-span-8")}>
+          <div
+            key={row.term}
+            className={cn(
+              "flex flex-col gap-2 border-border px-5 py-5 md:px-6",
+              // Title-block cells: hairlines between every cell, the role across the full width.
+              i > 0 && "border-t",
+              isRole ? "md:col-span-2" : "md:[&:nth-child(odd)]:border-l",
+            )}
+          >
+            <dt className="type-label flex items-center gap-2">
+              {isRole ? <span aria-hidden="true" className="led" /> : null}
+              {row.term}
+            </dt>
+            <dd className={cn(isRole ? "type-role text-[clamp(1.125rem,1rem+0.5vw,1.375rem)] tracking-[-0.01em]" : "type-value")}>
               {renderValue ? renderValue(row, i) : row.value}
             </dd>
           </div>

@@ -70,7 +70,7 @@ export default async function WorkPage(props: PageProps<"/work/[slug]">) {
           },
         }}
       />
-      <CaseStudy project={project} next={nextProject(project.slug)} />
+      <CaseStudy project={project} next={nextProject(project.slug)} number={projects.indexOf(project) + 1} />
     </>
   );
 }

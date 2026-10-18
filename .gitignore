@@ -44,3 +44,9 @@ next-env.d.ts
 /content/source/essays/
 /content/source/resume/
 /content/source/cerapiper/user-study-paper/
+
+# video files and design-reference material: large, and the reference is never published.
+/content/source/**/*.mp4
+/content/source/**/*.mov
+/content/source/**/*.webm
+/content/reference/

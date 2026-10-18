@@ -63,3 +63,23 @@ Alex's own one-page project summaries: role, design notes, awards.
 | File | Contents |
 |---|---|
 | `college-essays-private.txt` | Alex's private college essay drafts and notes. Use only to confirm facts, such as awards, outreach numbers, and prosthetic backstory. Never quote or paraphrase essay passages on the site |
+
+## Internal documents not in this repo
+Facts for the fall 2026 projects come from Alex's internal documents. They stay where they
+live and are never copied here: this repo is public. Each one is cited by its title only. One
+fact per bullet, with that title as the source, is recorded in
+`content/notes/sections/14-new-projects.md`. Never commit their raw text, file IDs or links,
+and never name teammates from them.
+
+| Title | Where it lives | Covers | Publication rule |
+|---|---|---|---|
+| Pando Surgical team meeting notes, 30 September 2026 (internal) | Meeting notes | Alex introduced as Pando's new PM; Pando as a surgical-ergonomics medtech startup; the task system he built | Pando NDA: public basics only (root `CLAUDE.md`, Pando Surgical). No quotes, no names, nothing from the never-publish list |
+| Pando Surgical Executive Summary (internal) | Google Drive | The LapRotator (patent pending): one-handed laparoscope rotation | Pando NDA: the LapRotator description only. Nothing else from this document may be used |
+| Pando Surgical Task Hub (Notion, internal) | Notion | The Notion task hub with per-person views that Alex set up | Cite only as evidence that the task system exists. No screenshots, task contents or names |
+| Bloom PRD F26, Terra Labs (internal) | Google Drive | Bloom v0.2 (22 September 2026): microphone and voice-ID concept | Facts only. Do not name the voice-ID app |
+| Bloom PRD F26 v2 (NFC), Terra Labs (internal) | Google Drive | Bloom v0.3: concept, Alex's role, versions, bracelet and station hardware, targets, dates | Facts by title. Targets labelled as targets. Demo date to be confirmed |
+| Bloom BOM F26 v2 (NFC), Terra Labs (internal) | Google Drive | Bill of materials; budget and per-bracelet targets; breadboard prototype parts | Only the targets and part names already in `14-new-projects.md`. No line-item prices or supplier links |
+| Bloom Task Sheet F26 v2 (NFC), Terra Labs (internal) | Google Drive | Build tasks and the breadboard bracelet v0 status | Status facts only. No names or assignments |
+| Bloom Terra Video.mp4 (September 2026) | Google Drive | Alex's Bloom concept video | Stills approved by Alex: bracelet or hands only, no faces, no text overlays. Chosen stills go in `bloom/video-stills/`. The video file is never committed (gitignored) |
+| Terra Labs project notes, October 2026 (internal) | Meeting notes (30 September to 15 October 2026) | Robotic-arm flower: concept, wristband control, Alex's role, status and open questions | Facts by title. The working name "Chorus" is not public until Alex confirms. No names |
+| Design reference screen recording (supplied by Alex) | Google Drive; local working copy in `content/reference/` (gitignored) | Transitions, interactions and layout studied for the redesign | Never committed. Never name or link the reference portfolio. Copy none of its text, images, logos or code |

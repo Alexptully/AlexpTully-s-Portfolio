@@ -98,3 +98,26 @@
 - Whether pre-high-school ventures (Alex's Magnets and Stickers, Locos Logos, Cookie Road, Void Electronics), athletics/LASU/wellbeing-council entries, the chicken-parm countdown site, and the post-application projects (bridge design, chess variant, NJ K–8 curriculum, FTC coding algorithm) belong on the site.
 - Whether the microphone-blocking device is a real second Tully Tech product; Mastery teacher name spelling (Schwartzott/Schwartzoff) if credited; whether nTop was sponsor, mentor, or tool vendor.
 - Confirm the CLO expansion and reconcile "Octura"/Bank-of-America-partner vs "Octora"/CLO-trading-startup before using financial jargon; confirm the Stevens and Octura internships' summer-2024 overlap.
+
+### New projects (fall 2026)
+
+Facts and sources for these projects are in `content/notes/sections/14-new-projects.md`.
+
+**Pando Surgical**
+- TODO(alex): Which Pando images, if any, are cleared to show. Until then the page uses `todoPhotos` and an authored task illustration only.
+- TODO(alex): Pando's position in the Selected work list (currently second, after AntiCam).
+- TODO(alex): Sign off on the exact Pando copy before launch, since the company is under an NDA.
+
+**Bloom**
+- TODO(alex): Photos of the breadboard bracelet prototype (the "NFC light-up prototype").
+- TODO(alex): Confirm the 4 December 2026 demo day.
+- TODO(alex): Whether "Terra Labs" and "Halo" are public names, plus a one-line public description of Terra Labs.
+- TODO(alex): Stills from "Bloom Terra Video.mp4" are approved but the download was blocked; upload the video or 3–4 stills (bracelet or hands only, no faces, no text overlays).
+
+**Robotic-arm flower**
+- TODO(alex): The public name (the working name in the notes is "Chorus"). Until then the page is titled "Robotic-arm flower".
+- TODO(alex): Photos; none exist yet, so the page uses `todoPhotos` and the authored `ArmFlower` SVG.
+
+**Other**
+- TODO(alex): Robotics season years for each robot, needed for the Year column in the Selected work list (see the FTC season/year item above).
+- TODO(alex): Cosmo AI details, later; the project is deferred.

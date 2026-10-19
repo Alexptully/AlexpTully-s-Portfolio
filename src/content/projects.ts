@@ -1,4 +1,5 @@
 import type {
+  BriefProject,
   ContactSheetItem,
   HomeHero,
   ImageRef,
@@ -8,6 +9,7 @@ import type {
   ProjectSlug,
   Source,
   SvgRef,
+  Work,
 } from "./types";
 
 /**
@@ -22,6 +24,12 @@ import type {
  * - Team figures carry `attribution: "team"`; the renderer prints "(team measurement)".
  * - Superscript digits inside prose strings are 1-based indices into that page's `sources`
  *   array. `Stat` renderers add their own footnote link and carry no superscript in `value`.
+ * - Pando Surgical is under an NDA: its brief uses the public basics in
+ *   `content/notes/sections/14-new-projects.md#pando-surgical` and nothing else, cites internal
+ *   documents by title only, and carries no image.
+ *
+ * The side projects (Bloom, the robotic-arm flower), `allWork`, `workBySlug` and `nextWork` are
+ * in `side-projects.ts`, which imports `workOrder` from here (one direction, no cycle).
  */
 
 /* ============================================================ sources ==== */
@@ -102,7 +110,7 @@ const S = {
   ep6: { name: "Tritonics engineering portfolio, page 6", path: "content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-6.png" },
   slideC: { name: "Tritonics championship presentation, sustainability slide", path: "content/source/robotics/championships-presentation/slide-c.png" },
   slideE: { name: "Tritonics championship presentation, team roster slide", path: "content/source/robotics/championships-presentation/slide-e.jpg" },
-  slideF: { name: "Tritonics championship presentation, budget slide", path: "content/source/robotics/championships-presentation/slide-f.png" },
+  slideF: { name: "Tritonics championship presentation, budget slide", path: "content/source/robotics/championships-presentation/slide-f.jpg" },
   posterA: { name: "Tritonics poster A", path: "content/source/robotics/posters/poster-a.png" },
   posterF: { name: "Tritonics poster F", path: "content/source/robotics/posters/poster-f.png" },
   deckP1: { name: "Tritonics poster deck, page 1", path: "content/source/robotics/posters/poster-deck/text.md#page-1" },
@@ -234,6 +242,23 @@ const FC = {
     claim: "Version 2.1 cut Onshape API requests to about one per import",
   } satisfies Source,
   paper: F.scfPaper,
+};
+
+/** Sources for each list row's Year (`listing.yearSource`). Printed in the home Sources list. */
+const Y = {
+  anticam: {
+    ...S.cb15,
+    claim: "AntiCam’s earliest dated test, 7 June 2023",
+    note: "The range runs to the AntiCam pitch deck of fall 2026 (content/source/anticam/pitch-deck-build.js).",
+  } satisfies Source,
+  prostheticArm: {
+    ...S.resume,
+    claim: "Research assistant on the prosthetic arm, Stevens Institute of Technology, summer 2024",
+  } satisfies Source,
+  cerapiper: {
+    ...S.resume,
+    claim: "Research intern on CeraPiper, Cornell Tech x Technion, summer 2026",
+  } satisfies Source,
 };
 
 /* ============================================================= images ==== */
@@ -838,6 +863,7 @@ const anticamContactSheet: ContactSheetItem[] = [
 ];
 
 const anticam: Project = {
+  kind: "case",
   slug: "anticam",
   title: "AntiCam",
   oneLine:
@@ -846,6 +872,19 @@ const anticam: Project = {
   // "Sole" is not in any source: content-map §3 records that no source states he worked
   // alone, and the page's own "What others did" says only that no collaborator is named.
   role: "Founder, Tully Tech. Designer and builder.",
+  listing: {
+    year: "2023–2026",
+    yearSource: Y.anticam,
+    type: "Wearable privacy device",
+    role: "Founder, designer and builder",
+    status: "Prototype",
+    cover: ac01,
+  },
+  highlights: [
+    "30+ prototypes and four major versions, from laser-cut discs to clear acrylic pins.¹",
+    "Tested against a live Ring doorbell camera at night: the sensor recorded a glowing orb where the face should be.²",
+    "It works with light, not radio: unlike a jammer, which is illegal, it jams and damages nothing.⁶",
+  ],
   proof: {
     value: "30+ prototypes, four major versions, tested against a live doorbell camera",
     label: "AntiCam build record",
@@ -1029,12 +1068,26 @@ const anticam: Project = {
 /* =================================================== Prosthetic arm ====== */
 
 const prostheticArm: Project = {
+  kind: "case",
   slug: "prosthetic-arm",
   title: "Low-cost prosthetic arm",
   oneLine:
     "A 3D-printable lower-arm prosthetic: servos pull tendon-style cords, a myoelectric sensor reads the muscle, and the model is sized to the wearer from seven hand measurements.",
   lead: "A 3D-printable lower-arm prosthetic, hand and forearm, built from off-the-shelf parts, driven by servos through tendon-style cords, controlled by a myoelectric sensor, and sized to the wearer from hand measurements.",
   role: "Research assistant, Stevens Institute of Technology, summer 2024, under faculty supervision; continued through Avenues’ Mastery Program.",
+  listing: {
+    year: "2024",
+    yearSource: Y.prostheticArm,
+    type: "Prosthetic arm, research",
+    role: "Research assistant",
+    status: "Working build",
+    cover: pa01,
+  },
+  highlights: [
+    "90+ prototypes, from PLA finger test prints to a full printed hand and forearm.¹",
+    "Servos in the forearm pull Kevlar cords to close each finger; elastic cords open it again.",
+    "Sized to the wearer: the parametric model is built on seven hand measurements.⁴",
+  ],
   proof: {
     value: "90+",
     unit: "prototypes",
@@ -1204,6 +1257,7 @@ const prostheticArm: Project = {
 /* =========================================================== Robotics ==== */
 
 const robotics: Project = {
+  kind: "case",
   slug: "robotics",
   title: "Robotics, FIRST Tech Challenge",
   // The home row carries no footnote list of its own, so the sourced figure stays on the case
@@ -1212,6 +1266,20 @@ const robotics: Project = {
     "Five competition robots across two teams, from a first iteration cut entirely in wooden plates to a modular metal robot whose subsystems lift off one at a time.",
   lead: "I captain FIRST Tech Challenge team Tritonics #17253 and was electrical lead on #14712, where we won first in NYC and took the 2nd-place Think Award at the World Championship.",
   role: "Captain and operations lead, Tritonics #17253; earlier electrical lead, #14712, and fabrication lead.",
+  listing: {
+    // TODO(alex): open question 6 — no source dates any season or robot, so this row has no
+    // year. Give the season years and the Year column fills in (it needs a source too).
+    yearFallback: "FTC",
+    type: "Competition robots",
+    role: "Captain, operations lead",
+    status: "Season under way",
+    cover: rb08,
+  },
+  highlights: [
+    "With Honu, #14712, we won 1st in NYC and the 2nd-place Think Award at the World Championship.",
+    "After half the team graduated, we grew from 7 to 14 members in one season.⁴",
+    "Every subsystem follows an 8-screw rule, so each one comes off in 45 seconds at most.⁶",
+  ],
   proof: {
     value:
       "With Honu, #14712, we won 1st in NYC and the 2nd-place Think Award at the FTC World Championship",
@@ -1518,12 +1586,26 @@ const hexPipeHero: SvgRef = {
 };
 
 const cerapiper: Project = {
+  kind: "case",
   slug: "cerapiper",
   title: "CeraPiper",
   oneLine:
     "A CAD tool for custom hollow ceramic pipes that assemble into structures which cool a room by evaporating water. It runs inside Onshape, compiles the feature tree into an extrusion sequence, and prints a paper blueprint that runs under the clay.",
   lead: "I was a research intern on CeraPiper, a CAD tool for designing custom hollow ceramic pipes that assemble into structures which cool a space by evaporating water.",
   role: "Research intern, Cornell Tech x Technion, summer 2026.",
+  listing: {
+    year: "2026",
+    yearSource: Y.cerapiper,
+    type: "CAD tool, research",
+    role: "Research intern",
+    status: "Version 2.2",
+    cover: hexPipeHero,
+  },
+  highlights: [
+    "An Onshape extension that compiles the feature tree into an extrusion sequence for a custom ceramic printer.",
+    "The tool holds the machine’s limits: 40–78 mm diameters, 30° rotation steps, a 150 mm span advisory.¹",
+    "A printed paper blueprint runs under the clay, marking where to cut and where to hand-cut connector holes.",
+  ],
   proof: {
     value:
       "The earlier CAM version was published at ACM SCF 2025; the CAD layer is written up in a paper currently under review",
@@ -1732,10 +1814,144 @@ const cerapiper: Project = {
   sources: [FC.constraints, FC.apiRequests, FC.paper],
 };
 
+/* ====================================================== Pando Surgical ==== */
+/*
+ * Template `brief`. Pando is under an NDA: this object holds the public basics recorded in
+ * content/notes/sections/14-new-projects.md#pando-surgical and nothing else (root CLAUDE.md,
+ * Pando Surgical, lists what may never appear). No Pando image is cleared, so nothing here is
+ * an ImageRef: the hero and the list cover are an authored drawing of the task, not the device.
+ * Internal documents are cited by title only.
+ * TODO(alex): sign off on this exact copy before launch.
+ */
+
+const PANDO_NOTES = "content/notes/sections/14-new-projects.md#pando-surgical";
+const INTERNAL_NOTE =
+  "An internal document, cited by title only; its facts are recorded in the site’s content notes.";
+
+/** Pando page footnotes, in `<ol>` order. */
+const FPS = {
+  role: {
+    name: "Pando Surgical team meeting notes, 30 September 2026 (internal)",
+    path: PANDO_NOTES,
+    claim:
+      "Product Manager at Pando Surgical, a medtech startup working on surgical ergonomics; introduced to the team as its new PM on 30 September 2026; the task system",
+    note: INTERNAL_NOTE,
+  } satisfies Source,
+  via: {
+    ...S.root,
+    claim: "TroyLabs BUILD, USC’s student accelerator, PM division, fall 2026",
+  } satisfies Source,
+  laprotator: {
+    name: "Pando Surgical Executive Summary (internal)",
+    path: PANDO_NOTES,
+    claim: "The LapRotator, patent pending: one-handed rotation of a laparoscope, whose angled tip makes rotation change the view",
+    note: INTERNAL_NOTE,
+  } satisfies Source,
+  taskSystem: {
+    name: "Pando Surgical Task Hub (Notion, internal)",
+    path: PANDO_NOTES,
+    claim:
+      "The task system: a shared tracker that pushes each person’s tasks to their calendar, and a Notion task hub with per-person views",
+    note: "An internal document, cited by title only. The team meeting notes of 30 September 2026 describe the same system.",
+  } satisfies Source,
+  site: {
+    name: "Pando Surgical, public website",
+    href: "https://www.pandosurgical.com",
+    claim: "The company and the LapRotator, as Pando describes them publicly",
+  } satisfies Source,
+};
+
+const pandoTask: SvgRef = {
+  kind: "svg",
+  component: "LapRotatorTask",
+  labels: { twoHands: "Two hands", oneHand: "One hand", rotate: "Rotate" },
+  alt: "Line drawing of the task: a laparoscope with an angled tip passes through a port, and its field of view swings as the scope turns; an inset compares turning it with a second hand and turning it with one",
+  caption:
+    "The task, not the device. Turning an angled scope swings the view; the LapRotator lets the surgeon make that turn with one hand. No image of the device is cleared.",
+  source: FPS.laprotator,
+};
+
+const pandoSurgical: BriefProject = {
+  kind: "brief",
+  slug: "pando-surgical",
+  title: "Pando Surgical",
+  oneLine:
+    "I’m Product Manager at Pando Surgical, a medtech startup working on surgical ergonomics. Its product, the LapRotator, lets a surgeon rotate a laparoscope with one hand.",
+  lead: "Pando Surgical is a medtech startup working on surgical ergonomics. I joined as its Product Manager in fall 2026, through TroyLabs BUILD’s PM division.",
+  role: "Product Manager",
+  listing: {
+    year: "2026",
+    yearSource: FPS.role,
+    type: "Medtech startup",
+    role: "Product Manager",
+    status: "Current role",
+    cover: pandoTask,
+  },
+  hero: pandoTask,
+  facts: [
+    { term: "Role", value: "Product Manager", sources: [FPS.role] },
+    {
+      term: "Company",
+      value: "Pando Surgical, Inc., a medtech startup working on surgical ergonomics",
+      sources: [FPS.role],
+    },
+    {
+      term: "Via",
+      value: "TroyLabs BUILD, USC’s student accelerator, PM division",
+      sources: [FPS.via, FPS.role],
+    },
+    {
+      term: "Since",
+      value: "Fall 2026; introduced to the team as its new PM on 30 September 2026",
+      sources: [FPS.role],
+    },
+    { term: "Website", value: "pandosurgical.com", sources: [FPS.site] },
+  ],
+  sections: [
+    {
+      id: "the-task",
+      heading: "The task",
+      paragraphs: [
+        "Laparoscopes commonly have an angled tip, so rotating the scope changes the view.³",
+        "Pando’s product is the LapRotator, which is patent pending: an attachment that lets a surgeon rotate the laparoscope with one hand, instead of setting down an instrument to rotate it with the other.³,⁵",
+      ],
+    },
+    {
+      id: "what-i-do",
+      heading: "What I do there",
+      paragraphs: [
+        "As Product Manager, I built the team’s task system.¹",
+        "A shared tracker, organised by date and department, pushes each person’s assigned tasks to their own calendar, from Google Sheets to Google Calendar. A Notion task hub gives each person their own view.⁴",
+      ],
+    },
+  ],
+  link: { label: "pandosurgical.com", href: "https://www.pandosurgical.com" },
+  ndaNote: "Pando is under an NDA, so this page sticks to my role and what is public.",
+  // TODO(alex): which Pando images, if any, are cleared. None are, so none is used.
+  todoPhotos: [
+    "Cleared Pando images, if any. Until then the page shows only the task illustration, never the device.",
+  ],
+  status: "Product Manager since fall 2026.¹",
+  sources: [FPS.role, FPS.via, FPS.laprotator, FPS.taskSystem, FPS.site],
+};
+
 /* ============================================================ exports ==== */
 
-/** Lineup order, fixed. Home rows, case-study "Next" links and the sitemap all follow it. */
+/**
+ * The four case studies in lineup order. The current `/work/[slug]` route, its OG images and
+ * the sitemap still read this; the redesigned pages read `workOrder` and `allWork`.
+ */
 export const projects: Project[] = [anticam, prostheticArm, robotics, cerapiper];
+
+/** The Pando brief, for pages that need it by name. */
+export { pandoSurgical };
+
+/**
+ * Selected work, in list order: home rows, previews and the next-project cycle follow it.
+ * The side projects follow it in `allWork` (`side-projects.ts`).
+ * TODO(alex): Pando's position in this list. It sits second, after AntiCam, for now.
+ */
+export const workOrder: Work[] = [anticam, pandoSurgical, prostheticArm, robotics, cerapiper];
 
 export const projectBySlug: Record<ProjectSlug, Project> = {
   anticam,

@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * The task Pando Surgical's first product exists for, drawn without the product. Sources:
+ * The task Pando Surgical's LapRotator exists for, drawn without the product. Sources:
  * "Pando Surgical Executive Summary (internal)"; www.pandosurgical.com.
  *
  * A laparoscope enters the body through a port. Its tip is cut at an angle, so the scope looks
@@ -48,7 +48,7 @@ export type LapRotatorTaskProps = {
 /* ------------------------------------------------------------------------------------------ */
 
 const W = 400;
-const H = 436;
+const H = 438;
 
 const LINE = "var(--muted)";
 const QUIET = "var(--border-strong)";
@@ -189,12 +189,12 @@ function handFor(cx: number, r: number, toolAngle: number): { spec: HandSpec; fl
 }
 
 const FINGERS = [
-  { dx: -15.6, reach: -2.5 }, // little
-  { dx: -5.2, reach: 0.5 }, // ring
-  { dx: 5.2, reach: 1.5 }, // middle
-  { dx: 15.6, reach: 0 }, // index, nearest the tip
+  { dx: -15.3, reach: -2.5 }, // little
+  { dx: -5.1, reach: 0.5 }, // ring
+  { dx: 5.1, reach: 1.5 }, // middle
+  { dx: 15.3, reach: 0 }, // index, nearest the tip
 ] as const;
-const FINGER_W = 10.2;
+const FINGER_W = 9.8;
 
 function handGeometry({ cx, r, forearm: f }: HandSpec) {
   const across: Pt = [-f[1], f[0]]; // perpendicular to the forearm, pointing towards +x
@@ -234,12 +234,6 @@ function HandBack({ spec }: { spec: HandSpec }) {
       />
       <path d={pts([cuffA, cuffB])} {...HAIRLINE} />
       <path d={back} fill={GLOVE} {...HAIRLINE} />
-      {/* Two tendons on the back of the hand: enough to read as a hand, no more. */}
-      <path
-        d={`M${n2(cx + 9)} ${n2(k - 3)} Q${n2(g.wristFront[0] + 2)} ${n2(g.wristFront[1] + 14)} ${n2(g.wristFront[0] - 3)} ${n2(g.wristFront[1] + 6)}`}
-        stroke={QUIET}
-        {...HAIRLINE}
-      />
     </g>
   );
 }
@@ -253,7 +247,8 @@ function HandFront({ spec }: { spec: HandSpec }) {
       <path d={capsule([cx + 12, -r + 1], [cx + 36, -r + 2.5], 9.5)} fill={GLOVE} {...HAIRLINE} />
       {FINGERS.map(({ dx, reach }) => {
         const top: Pt = [cx + dx, k - 1];
-        const tip: Pt = [cx + dx + 1.4, r - 3.5 + reach];
+        // Fingertips stop just inside the far edge: the fingers wrap the cylinder, not pass it.
+        const tip: Pt = [cx + dx + 1.4, r - 6.5 + reach];
         const joint = (top[1] + tip[1]) / 2 + 1;
         return (
           <g key={dx}>
@@ -364,21 +359,23 @@ const ROTATE_AT = add(toPage([RING.x + 4, -RING.ry]), [14, 8]);
 /* The inset: the same scope and hand, small, twice                                            */
 /* ------------------------------------------------------------------------------------------ */
 
-const PANEL = { y: 314, w: 190, h: 112, gap: 20, labelY: 98 };
-const MINI = 0.34;
-/** Mini scope frame origin, inside a panel. */
-const MINI_ORIGIN: Pt = [52, 30];
+const PANEL = { y: 312, w: 190, h: 124, gap: 20, labelY: 113 };
+/** The pictogram area of a panel ends here; the label sits below it. */
+const PANEL_ART_H = PANEL.labelY - 21;
+const MINI = 0.4;
+/** Mini scope frame origin, inside a panel: centres the scope with room to its right. */
+const MINI_ORIGIN: Pt = [62, 38];
 
 /** A laparoscopic grasper, in its own frame: handle at the origin, jaws at +x. */
-const GRASPER = { len: 190, r: 2.8 };
-function Grasper({ dashed = false }: { dashed?: boolean }) {
-  const dash = dashed ? { strokeDasharray: "3 3" } : {};
+const GRASPER = { len: 135, r: 3.6 };
+/** `idle` is the instrument put down: same shape, drawn back in the quiet tone. */
+function Grasper({ idle = false }: { idle?: boolean }) {
   const L = GRASPER.len;
   return (
-    <g stroke={dashed ? QUIET : LINE}>
-      <rect x={-34} y={-6} width={34} height={12} rx={4} fill={dashed ? "none" : STEEL_DARK} {...dash} {...HAIRLINE} />
-      <rect x={0} y={-GRASPER.r} width={L} height={GRASPER.r * 2} fill={dashed ? "none" : STEEL} {...dash} {...HAIRLINE} />
-      <path d={`M${L} ${-GRASPER.r} L${L + 16} ${-6} M${L} ${GRASPER.r} L${L + 16} 4`} {...dash} {...HAIRLINE} />
+    <g stroke={idle ? QUIET : LINE}>
+      <rect x={-34} y={-7} width={34} height={14} rx={4} fill={idle ? "var(--bg)" : STEEL_DARK} {...HAIRLINE} />
+      <rect x={0} y={-GRASPER.r} width={L} height={GRASPER.r * 2} fill={idle ? "var(--bg)" : STEEL} {...HAIRLINE} />
+      <path d={`M${L} ${-GRASPER.r} L${L + 18} ${-8} M${L} ${GRASPER.r} L${L + 18} 5`} strokeLinecap="round" {...HAIRLINE} />
     </g>
   );
 }
@@ -400,12 +397,12 @@ function Panel({
     <g transform={`translate(${x} ${PANEL.y})`}>
       <defs>
         <clipPath id={clipId}>
-          <rect x={0} y={0} width={PANEL.w} height={PANEL.labelY - 20} rx={6} />
+          <rect x={0} y={0} width={PANEL.w} height={PANEL_ART_H} rx={6} />
         </clipPath>
       </defs>
       <rect x={0.5} y={0.5} width={PANEL.w - 1} height={PANEL.h - 1} rx={6} stroke={QUIET} {...HAIRLINE} />
       <g clipPath={`url(#${clipId})`}>{children}</g>
-      <path d={`M0.5 ${PANEL.labelY - 20} L${PANEL.w - 0.5} ${PANEL.labelY - 20}`} stroke="var(--border)" {...HAIRLINE} />
+      <path d={`M0.5 ${PANEL_ART_H} L${PANEL.w - 0.5} ${PANEL_ART_H}`} stroke="var(--border)" {...HAIRLINE} />
       <text
         x={PANEL.w / 2}
         y={PANEL.labelY}
@@ -452,6 +449,7 @@ export function LapRotatorTask({
   const hatchId = `${id}-hatch`;
   const cavityId = `${id}-cavity`;
   const viewId = `${id}-view`;
+  const depthId = `${id}-depth`;
 
   const heldAngle = 180 - SCOPE_ANGLE;
   const held = handFor(-20, GRASPER.r + 3, heldAngle);
@@ -477,12 +475,18 @@ export function LapRotatorTask({
         <clipPath id={cavityId}>
           <path d={CAVITY} />
         </clipPath>
+        <linearGradient id={depthId} x1={0} y1={WALL.apexY} x2={0} y2={PANEL.y - 8} gradientUnits="userSpaceOnUse">
+          <stop offset="0" style={{ stopColor: "var(--ink)", stopOpacity: 0.07 }} />
+          <stop offset="1" style={{ stopColor: "var(--ink)", stopOpacity: 0 }} />
+        </linearGradient>
         <radialGradient id={viewId} cx={LENS[0]} cy={LENS[1]} r={CONE.len} gradientUnits="userSpaceOnUse">
           <stop offset="0" style={{ stopColor: "var(--accent)", stopOpacity: 0.42 }} />
           <stop offset="1" style={{ stopColor: "var(--accent)", stopOpacity: 0 }} />
         </radialGradient>
       </defs>
 
+      {/* Inside the body: a tint that fades with depth, so the cavity reads as a space. */}
+      <path d={CAVITY} fill={`url(#${depthId})`} stroke="none" />
       {/* The body wall in section, with the port through it. */}
       <path d={WALL_BAND} fill={WALL_FILL} stroke="none" />
       <path d={WALL_BAND} fill={`url(#${hatchId})`} stroke="none" />
@@ -516,13 +520,15 @@ export function LapRotatorTask({
 
       {/* The inset: turning with a second hand, an instrument set down — and with one hand. */}
       <Panel x={0} label={labels.twoHands} emphasis={false} clipId={`${id}-panel-a`}>
-        <g transform={`translate(${118} ${58}) scale(${MINI})`}>
-          <Grasper dashed />
+        {/* The instrument the second hand had to put down, resting on the tray. */}
+        <path d="M92 36 L180 36" stroke={QUIET} {...HAIRLINE} />
+        <g transform={`translate(${108} ${32.6}) scale(${MINI})`}>
+          <Grasper idle />
         </g>
         <MiniScope secondHand ring={LINE} />
       </Panel>
       <Panel x={PANEL.w + PANEL.gap} label={labels.oneHand} emphasis clipId={`${id}-panel-b`}>
-        <g transform={`translate(${170} ${22}) rotate(${heldAngle}) scale(${MINI})`}>
+        <g transform={`translate(${166} ${20}) rotate(${heldAngle}) scale(${MINI})`}>
           <g transform={held.flip ? "scale(1 -1)" : undefined}>
             <HandBack spec={held.spec} />
           </g>

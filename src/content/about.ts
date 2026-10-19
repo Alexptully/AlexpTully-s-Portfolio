@@ -46,7 +46,7 @@ const slideE: Source = {
 };
 const slideF: Source = {
   name: "Tritonics championship presentation, budget slide",
-  path: "content/source/robotics/championships-presentation/slide-f.png",
+  path: "content/source/robotics/championships-presentation/slide-f.jpg",
 };
 const posterF: Source = {
   name: "Tritonics poster F",
@@ -101,6 +101,19 @@ const F = {
   microFunding: {
     ...slideF,
     claim: "The FTC micro-funding site, launched after a mid-season budget cut",
+  } satisfies Source,
+  // Fall 2026. Internal documents are cited by title only; their facts are recorded in
+  // content/notes/sections/14-new-projects.md. Pando is under an NDA: public basics only.
+  pando: {
+    name: "Pando Surgical team meeting notes, 30 September 2026 (internal)",
+    path: "content/notes/sections/14-new-projects.md#pando-surgical",
+    claim: "Product Manager at Pando Surgical since fall 2026, through TroyLabs BUILD’s PM division",
+    note: "An internal document, cited by title only; its facts are recorded in the site’s content notes.",
+  } satisfies Source,
+  terraLabs: {
+    ...root,
+    claim: "Terra Labs side projects, fall 2026: Bloom (PM and systems) and the robotic-arm flower (electrical and firmware)",
+    note: "From “Bloom PRD F26 v2 (NFC), Terra Labs (internal)” and “Terra Labs project notes, October 2026 (internal)”, cited by title only.",
   } satisfies Source,
 };
 
@@ -171,6 +184,17 @@ export const about: About = {
         when: "Fall 2026",
         what: "USC Iovine and Young Academy; TroyLabs BUILD, PM division.",
         source: { ...root, claim: "USC and TroyLabs BUILD, fall 2026" },
+      },
+      {
+        when: "Fall 2026",
+        what: "Product Manager at Pando Surgical, a medtech startup working on surgical ergonomics; joined through TroyLabs BUILD’s PM division.",
+        source: F.pando,
+      },
+      {
+        when: "Fall 2026",
+        // TODO(alex): whether "Terra Labs" is a public name.
+        what: "Side projects at Terra Labs: Bloom, as PM and systems, and the robotic-arm flower, on electrical and firmware.",
+        source: F.terraLabs,
       },
       {
         when: "FIRST Tech Challenge",
@@ -341,5 +365,7 @@ export const about: About = {
     F.costCeiling,
     F.limits,
     F.microFunding,
+    F.pando,
+    F.terraLabs,
   ],
 };

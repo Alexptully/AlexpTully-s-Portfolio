@@ -1,8 +1,13 @@
 /**
- * Content model for the site (design spec §4.3, extended for §5–§9).
+ * Content model for the site (design spec §4.3, extended for §5–§9 and the October 2026
+ * redesign: `content/notes/redesign-spec.md`).
  *
- * Every word of site copy lives in `projects.ts`, `about.ts` and `site.ts`. Components
- * render this data and hold no copy of their own.
+ * Every word of site copy lives in `projects.ts` (case studies and the Pando brief),
+ * `side-projects.ts` (Bloom, the robotic-arm flower), `home.ts`, `about.ts` and `site.ts`.
+ * Components render this data and hold no copy of their own.
+ *
+ * Work pages come in three templates, picked by `kind`: `case` (`Project`), `brief`
+ * (`BriefProject`, Pando Surgical) and `side` (`SideProject`). `Work` is their union.
  *
  * Footnote convention: each page exposes an ordered `sources` array that renders as the
  * page's numbered `<ol>`. Superscript digits written inside prose strings (¹ ² ³ …) are
@@ -35,6 +40,11 @@ export type Stat = {
   label: string;
   source: Source;
   attribution?: "alex" | "team" | "external";
+  /**
+   * `target` is a goal the source sets, not a result, and must be printed with a visible
+   * "Target" label. Omitted means `measurement`: something that was measured or happened.
+   */
+  kind?: "measurement" | "target";
 };
 
 /** How a crop sits in its plate. See §12.1. */
@@ -69,17 +79,39 @@ export type SvgComponent =
   | "FingerLinkage"
   | "DriveDiagram"
   | "RegressionChart"
-  | "PinPoster";
+  | "PinPoster"
+  | "LapRotatorTask"
+  | "BloomBracelet"
+  | "ArmFlower";
 
-/** An authored drawing standing in for a photograph that does not exist or is not cleared. */
-export type SvgRef = {
+type SvgRefBase = {
   kind: "svg";
-  component: SvgComponent;
   /** Accessible name for the figure. */
   alt: string;
   caption: string;
   source: Source;
 };
+
+/** Words drawn inside `svg/LapRotatorTask`. About 18 characters each: every label is one line. */
+export type LapRotatorTaskCopy = { twoHands: string; oneHand: string; rotate: string };
+
+/** Optional callouts drawn inside `svg/ArmFlower`. A word or two each. */
+export type ArmFlowerCopy = { wristband?: string; arm?: string; flower?: string };
+
+/**
+ * An authored drawing standing in for a photograph that does not exist or is not cleared.
+ * Drawings with words or state inside them carry that here, so no copy lives in a component.
+ */
+export type SvgRef =
+  | (SvgRefBase & {
+      component: Exclude<SvgComponent, "LapRotatorTask" | "BloomBracelet" | "ArmFlower">;
+    })
+  /** The task the LapRotator exists for, drawn without the device (it is not cleared). */
+  | (SvgRefBase & { component: "LapRotatorTask"; labels: LapRotatorTaskCopy })
+  /** `lit`: how many of the five LEDs are lit, 0–5. */
+  | (SvgRefBase & { component: "BloomBracelet"; lit: number })
+  /** `openness`: 0 is a closed bud, 1 fully open. */
+  | (SvgRefBase & { component: "ArmFlower"; openness: number; labels?: ArmFlowerCopy });
 
 /** Two frames stacked in one plate, with a cleared stand-in until both frames are cleared. */
 export type DiptychRef = {
@@ -121,6 +153,7 @@ export type Version = {
   tag: string;
   /** Exactly as the source prints it, or "date not recorded". */
   date?: string;
+  /** Superscripts index the page's `sources`. */
   sentence: string;
   measurement?: Stat;
   tile?: ImageRef;
@@ -145,6 +178,19 @@ export type ArchitectureLayer = {
   lines?: string[];
   /** `physical` draws the layer on paper stock instead of as an outline. */
   kind?: "software" | "physical";
+};
+
+/**
+ * A layered system drawing for `svg/Architecture`: the CeraPiper stack, the Bloom
+ * bracelet-to-projection path, the robotic-arm flower's wristband-to-flower path.
+ */
+export type ArchitectureSpec = {
+  alt: string;
+  caption: string;
+  source: Source;
+  layers: ArchitectureLayer[];
+  /** What passes from one layer to the next. One fewer item than `layers`. */
+  links: string[];
 };
 
 /** The four named marks on the CeraPiper paper blueprint (§7.4). */
@@ -286,14 +332,7 @@ export type HowBlock =
       /** The one advisory string, shown when the span passes the tool's own limit. */
       spanWarning: string;
       translation: TwoColumnTable;
-      architecture: {
-        alt: string;
-        caption: string;
-        source: Source;
-        layers: ArchitectureLayer[];
-        /** What passes from one layer to the next. One fewer item than `layers`. */
-        links: string[];
-      };
+      architecture: ArchitectureSpec;
       blueprint: {
         alt: string;
         caption: string;
@@ -309,9 +348,45 @@ export type HowBlock =
       source: Source;
     };
 
-export type ProjectSlug = "anticam" | "prosthetic-arm" | "robotics" | "cerapiper";
+/* ------------------------------------------------------------------ work */
 
+/**
+ * One row of the home work list, and the meta row (Role, Year, Type, Status) on a work page.
+ * `year` prints only with its `yearSource`; a project no source dates (robotics) has none.
+ */
+export type Listing = {
+  year?: string;
+  /** Required whenever `year` is set (`npm run check:content` fails otherwise). */
+  yearSource?: Source;
+  /** Printed in the Year column instead, when no source dates the work. Not a date. */
+  yearFallback?: string;
+  /** What the thing is, e.g. "Wearable privacy device". */
+  type: string;
+  /** Alex's role, short enough for a list row, e.g. "Product Manager". */
+  role: string;
+  /** One to three words for the row's status, e.g. "Prototype". From the page's own status. */
+  status?: string;
+  /** The list row's hover preview and the next-project link's preview. */
+  cover: ImageRef | SvgRef;
+};
+
+/** A titled block of short prose, with an optional figure. Superscripts index `sources`. */
+export type Section = {
+  /** Fragment id, unique on the page. */
+  id: string;
+  heading: string;
+  paragraphs: string[];
+  figure?: ImageRef | SvgRef;
+};
+
+export type ProjectSlug = "anticam" | "prosthetic-arm" | "robotics" | "cerapiper";
+export type BriefSlug = "pando-surgical";
+export type SideProjectSlug = "bloom" | "arm-flower";
+export type WorkSlug = ProjectSlug | BriefSlug | SideProjectSlug;
+
+/** A case study (`/work/[slug]`, template `case`). */
 export type Project = {
+  kind: "case";
   slug: ProjectSlug;
   /** Case-study h1 and lineup title. */
   title: string;
@@ -321,6 +396,13 @@ export type Project = {
   lead: string;
   /** Alex's role, in the words the spec sheet uses. */
   role: string;
+  /** The home list row and the page's meta row. */
+  listing: Listing;
+  /**
+   * At most three short lines under the intro, 20 words or fewer each, using only facts
+   * already on this page. Superscripts index `sources`.
+   */
+  highlights?: string[];
   /** The one figure the lineup row shows under "Proof". */
   proof: Stat;
   /** Case-study hero visual. */
@@ -366,6 +448,80 @@ export type Project = {
   /** The page's numbered `<ol>`, in footnote order. */
   sources: Source[];
 };
+
+/** Pando Surgical (`/work/pando-surgical`, template `brief`). Public basics only: an NDA applies. */
+export type BriefProject = {
+  kind: "brief";
+  slug: BriefSlug;
+  title: string;
+  /** One sentence for the list row, metadata and previews. */
+  oneLine: string;
+  lead: string;
+  role: string;
+  listing: Listing;
+  /** An authored drawing of the task, never the device: no Pando image is cleared. */
+  hero: SvgRef;
+  /** The meta block: Role, Company, Via, Since, Website. */
+  facts: SpecRow[];
+  /** "The task", "What I do there". */
+  sections: Section[];
+  /** The company's public site. */
+  link: { label: string; href: string };
+  /** One line saying why the page stops where it does. */
+  ndaNote: string;
+  /** Photos the page is waiting for. Never rendered; `check:content` prints them as warnings. */
+  todoPhotos?: string[];
+  status: string;
+  /** The page's numbered `<ol>`. Every source on the page is in it, by reference. */
+  sources: Source[];
+};
+
+/** The page's interactive moment on Bloom: tap to light the bracelet's LEDs, 0–5. */
+export type BloomCounterMoment = {
+  component: "BloomCounter";
+  intro: string;
+  /** Accessible name and visible text of the tap button. */
+  label: string;
+  /** Text of the button that puts the count back to 0. */
+  resetLabel: string;
+  /** Live-region and `aria-valuetext` template: `{n}` is replaced by the number lit, 0–5. */
+  valueText: string;
+  source: Source;
+};
+
+/** A Terra Labs side project (`/work/[slug]`, template `side`). */
+export type SideProject = {
+  kind: "side";
+  slug: SideProjectSlug;
+  title: string;
+  /** One sentence for the list row, metadata and previews. */
+  oneLine: string;
+  lead: string;
+  role: string;
+  /** Where and when, e.g. "Terra Labs, fall 2026". */
+  context: string;
+  listing: Listing;
+  hero: ImageRef | SvgRef;
+  /** The compact facts block. */
+  facts: SpecRow[];
+  sections: Section[];
+  versions?: Version[];
+  /** Goals, never results: every one has `kind: "target"` and prints a "Target" label. */
+  targets: Stat[];
+  /** The system drawing, rendered by `svg/Architecture`. */
+  architecture: ArchitectureSpec;
+  moment?: BloomCounterMoment;
+  /** Photos the page is waiting for. Never rendered; `check:content` prints them as warnings. */
+  todoPhotos?: string[];
+  /** Where it honestly stands. Superscripts index `sources`. */
+  status: string;
+  next: string;
+  /** The page's numbered `<ol>`. Every source on the page is in it, by reference. */
+  sources: Source[];
+};
+
+/** Anything with a page under `/work/`. */
+export type Work = Project | BriefProject | SideProject;
 
 /* ------------------------------------------------------------------ home */
 
@@ -435,6 +591,50 @@ export type ContactBand = {
   line: string;
   lineSource: Source;
   link: { label: string; href: string };
+};
+
+/** One numbered item of "What I do" on the home page. */
+export type Service = {
+  id: string;
+  title: string;
+  /** One first-person line. */
+  body: string;
+  tools: string[];
+  /** Each one is in `home.sources`, by reference. */
+  sources: Source[];
+};
+
+/** The home page (redesign spec §2). Every source on it is in `sources`, by reference. */
+export type Home = {
+  hero: {
+    /** Short role labels for the mono row above the name. */
+    labels: string[];
+    /** The name as set in the display lines, one string per line. */
+    nameLines: string[];
+    /** First person. */
+    headline: string;
+    /** First person. */
+    lead: string;
+    cta: { label: string; href: string };
+    scrollHint: string;
+    sources: Source[];
+  };
+  /** Words for the marquee band: what Alex does. */
+  marquee: string[];
+  services: { heading: string; items: Service[] };
+  workHeading: string;
+  sideHeading: string;
+  about: { heading: string; text: string; link: { label: string; href: string }; sources: Source[] };
+  now: { heading: string; rows: DefinitionRow[] };
+  contact: {
+    heading: string;
+    email: string;
+    website: { label: string; href: string };
+    line: string;
+    lineSource: Source;
+  };
+  /** The home page's numbered `<ol>`. */
+  sources: Source[];
 };
 
 /* ----------------------------------------------------------------- about */
@@ -517,6 +717,13 @@ export type Site = {
     status: string;
     sources: string;
     nextPrefix: string;
+    /** Brief and side templates. */
+    facts: string;
+    versions: string;
+    targets: string;
+    /** Heading over the `Architecture` system drawing on a side page. */
+    system: string;
+    nextProject: string;
   };
   /** Labels the spec sheet and ledger renderers need. */
   labels: {
@@ -534,6 +741,12 @@ export type Site = {
     versionChange: string;
     versionMeasurement: string;
     versionDate: string;
+    /** The meta row on a work page and the columns of the home work list. */
+    year: string;
+    type: string;
+    status: string;
+    /** Printed beside every `Stat` with `kind: "target"`, so a goal never reads as a result. */
+    target: string;
   };
   heroMode: HeroMode;
 };

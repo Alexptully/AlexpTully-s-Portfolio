@@ -19,7 +19,7 @@ projects (fall 2026)".
 - Pando Surgical is a medtech startup working on surgical ergonomics ("Pando Surgical team meeting notes, 30 September 2026 (internal)").
 - He joined Pando through TroyLabs BUILD, USC's student accelerator, in its PM division, in fall 2026 ("Pando Surgical team meeting notes, 30 September 2026 (internal)"; CLAUDE.md — Who Alex is).
 - He was introduced to the team as its new PM on 30 September 2026 ("Pando Surgical team meeting notes, 30 September 2026 (internal)").
-- Pando's first product is the LapRotator ("Pando Surgical Executive Summary (internal)"; www.pandosurgical.com).
+- Pando's product is the LapRotator ("Pando Surgical Executive Summary (internal)"; www.pandosurgical.com).
 - The LapRotator is patent pending ("Pando Surgical Executive Summary (internal)"; www.pandosurgical.com).
 - The LapRotator is an attachment that lets a surgeon rotate a laparoscope with one hand, instead of setting down an instrument to rotate it with the other ("Pando Surgical Executive Summary (internal)"; www.pandosurgical.com).
 - Laparoscopes commonly have an angled tip, so rotating the scope changes the view ("Pando Surgical Executive Summary (internal)"; www.pandosurgical.com).

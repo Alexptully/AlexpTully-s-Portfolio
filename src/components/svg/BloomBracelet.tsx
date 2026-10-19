@@ -42,7 +42,7 @@ const VH = 372;
 const C: Pt = [300, 178];
 /** Outer radius, link depth (radial), half the band's height, all in drawing units. */
 const R = 206;
-const DEPTH = 11;
+const DEPTH = 8;
 const HALF_H = 32;
 /** Seen from this far above the band's plane. */
 const ELEV = (30 * Math.PI) / 180;
@@ -154,7 +154,8 @@ const BAND: Piece[] = (() => {
       key: `top-${i}`,
       depth,
       d: topEdge(t0 + ct, t1 - ct),
-      fill: tint(13 + 12 * lambert([0, 0, 1])),
+      // The far tops sit in the band's own shade, so they read as an edge, not a lid.
+      fill: near ? tint(13 + 12 * lambert([0, 0, 1])) : tint(8 + 7 * lambert([0, 0, 1])),
       stroke: LINE,
     });
 
@@ -180,7 +181,8 @@ const BAND: Piece[] = (() => {
       pieces.push({
         key: `inner-${i}`,
         depth: depth + 0.001,
-        d: panel(rho, tc - STEP / 2 + GAP / rho / 2, tc + STEP / 2 - GAP / rho / 2, -HALF_H, HALF_H, CORNER),
+        // Same angular span as the outer face, so the top edge meets this face corner to corner.
+        d: panel(rho, t0, t1, -HALF_H, HALF_H, CORNER * (rho / R)),
         fill: tint(3 + 6 * lambert(normal)),
         stroke: LINE,
       });

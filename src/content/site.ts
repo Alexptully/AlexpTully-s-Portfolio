@@ -2,7 +2,7 @@ import type { Site, HeroMode } from "./types";
 
 /**
  * Site-level copy: identity, navigation, footer, shared section headings.
- * Page copy lives in `projects.ts` and `about.ts`.
+ * Page copy lives in `projects.ts`, `side-projects.ts`, `home.ts` and `about.ts`.
  */
 export const site: Site = {
   name: "Alex Tully",
@@ -17,24 +17,14 @@ export const site: Site = {
 
   metaTitle: "Alex Tully — hardware designer and builder",
   metaDescription:
-    "I design and build hardware: a privacy wearable, a low-cost prosthetic arm, competition robots, and a CAD tool for clay.",
+    "Alex Tully: hardware founder, product designer and Product Manager at Pando Surgical. I design and build hardware, from a privacy wearable to a low-cost prosthetic arm.",
 
   skipLinkLabel: "Skip to content",
 
   nav: [
     { label: "Work", href: "/#work" },
     { label: "About", href: "/about" },
-    {
-      label: "Email",
-      href: "mailto:alexptully@gmail.com",
-      ariaLabel: "Email Alex Tully",
-    },
-    {
-      label: "tullytech.com",
-      href: "https://tullytech.com",
-      external: true,
-      desktopOnly: true,
-    },
+    { label: "Contact", href: "/#contact" },
   ],
 
   footer: {
@@ -56,6 +46,11 @@ export const site: Site = {
     status: "Status",
     sources: "Sources",
     nextPrefix: "Next",
+    facts: "Facts",
+    versions: "Versions",
+    targets: "Targets",
+    system: "How it fits together",
+    nextProject: "Next project",
   },
 
   labels: {
@@ -71,6 +66,10 @@ export const site: Site = {
     versionChange: "What changed",
     versionMeasurement: "Measurement",
     versionDate: "Date",
+    year: "Year",
+    type: "Type",
+    status: "Status",
+    target: "Target",
   },
 
   // The 3D pin ships enabled, with the SVG poster and the V1 photograph as fallbacks (§10.1).

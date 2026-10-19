@@ -355,7 +355,7 @@
       "id": "ac-14-cap-brim",
       "slug": "anticam",
       "ground": "photo",
-      "cleared": false,
+      "cleared": true,
       "width": 300,
       "height": 365,
       "cropWidth": 241,
@@ -363,9 +363,13 @@
       "canvasWidth": 300,
       "canvasHeight": 365,
       "borderMedian": "#FEFEFE",
-      "files": [],
+      "files": [
+        "/images/anticam/ac-14-cap-brim.jpg",
+        "/images/anticam/ac-14-cap-brim.webp",
+        "/images/anticam/ac-14-cap-brim.avif"
+      ],
       "alt": "The underside of a black cap brim with about six small LEDs set into a reflective lining",
-      "usage": "AntiCam contact sheet \"Cap V2\"",
+      "usage": "AntiCam gallery \"Cap V2, under the brim\"",
       "src": "content/source/anticam/camera-blinder-presentation/pages/page-17.jpg",
       "crop": {
         "left": 513,
@@ -373,7 +377,7 @@
         "width": 241,
         "height": 335
       },
-      "note": "TODO(alex): the cap images on this slide look like stock product photographs with the emitters composited in; confirm this is a real prototype and that the base photograph may be published (open question 2). Held out of public/."
+      "note": "Cleared by Alex, 19 October 2026: the cap is the final version."
     },
     {
       "id": "ac-15-v2-parts-angled",
@@ -426,6 +430,201 @@
         "height": 624
       },
       "note": "Deeply out of focus in the source; usable only as the small \"Light test\" ledger tile at 160 px. TODO(alex): a sharp photograph of the first light test would replace it."
+    },
+    {
+      "id": "ac-17-cap-v2-front",
+      "slug": "anticam",
+      "ground": "photo",
+      "cleared": true,
+      "width": 830,
+      "height": 600,
+      "cropWidth": 830,
+      "cropHeight": 600,
+      "canvasWidth": 830,
+      "canvasHeight": 600,
+      "borderMedian": "#0A0D12",
+      "files": [
+        "/images/anticam/ac-17-cap-v2-front.jpg",
+        "/images/anticam/ac-17-cap-v2-front.webp",
+        "/images/anticam/ac-17-cap-v2-front.avif"
+      ],
+      "alt": "A black baseball cap seen from the front, with two small emitters and a sensor set under the brim",
+      "usage": "AntiCam version timeline: Cap V2, the final version",
+      "src": "content/source/anticam/build-application-deck/pages/page-04.jpg",
+      "crop": {
+        "left": 50,
+        "top": 350,
+        "width": 830,
+        "height": 600
+      }
+    },
+    {
+      "id": "cp-01-cooling-screen",
+      "slug": "cerapiper",
+      "ground": "photo",
+      "cleared": true,
+      "width": 720,
+      "height": 885,
+      "cropWidth": 720,
+      "cropHeight": 885,
+      "canvasWidth": 720,
+      "canvasHeight": 885,
+      "borderMedian": "#959388",
+      "files": [
+        "/images/cerapiper/cp-01-cooling-screen.jpg",
+        "/images/cerapiper/cp-01-cooling-screen.webp",
+        "/images/cerapiper/cp-01-cooling-screen.avif"
+      ],
+      "alt": "An assembled terracotta cooling screen standing on a concrete floor: ribbed hexagonal clay pipes bend into an arch over a straight base pipe",
+      "usage": "CeraPiper hero",
+      "src": "content/source/cerapiper/user-study-paper/pages/page-09.jpg",
+      "crop": {
+        "left": 955,
+        "top": 250,
+        "width": 720,
+        "height": 885
+      },
+      "note": "Figure 7 of the SCF 2026 paper (Berman et al.)."
+    },
+    {
+      "id": "cp-02-arch",
+      "slug": "cerapiper",
+      "ground": "photo",
+      "cleared": true,
+      "width": 523,
+      "height": 307,
+      "cropWidth": 523,
+      "cropHeight": 307,
+      "canvasWidth": 523,
+      "canvasHeight": 307,
+      "borderMedian": "#7E6D5E",
+      "files": [
+        "/images/cerapiper/cp-02-arch.jpg",
+        "/images/cerapiper/cp-02-arch.webp",
+        "/images/cerapiper/cp-02-arch.avif"
+      ],
+      "alt": "A ribbed terracotta clay arch standing in front of a bamboo fence and plants",
+      "usage": "CeraPiper gallery: an assembled arch",
+      "src": "content/source/cerapiper/user-study-paper/pages/page-01.jpg",
+      "crop": {
+        "left": 1152,
+        "top": 1149,
+        "width": 523,
+        "height": 307
+      },
+      "note": "Figure 1(e) of the SCF 2026 paper."
+    },
+    {
+      "id": "cp-03-blueprint-extrusion",
+      "slug": "cerapiper",
+      "ground": "photo",
+      "cleared": true,
+      "width": 404,
+      "height": 666,
+      "cropWidth": 404,
+      "cropHeight": 666,
+      "canvasWidth": 404,
+      "canvasHeight": 666,
+      "borderMedian": "#4D4238",
+      "files": [
+        "/images/cerapiper/cp-03-blueprint-extrusion.jpg",
+        "/images/cerapiper/cp-03-blueprint-extrusion.webp",
+        "/images/cerapiper/cp-03-blueprint-extrusion.avif"
+      ],
+      "alt": "Hands guide a ribbed clay pipe onto the printed paper blueprint, which is labelled with the mandrel size",
+      "usage": "CeraPiper gallery: extruding onto the blueprint",
+      "src": "content/source/cerapiper/user-study-paper/pages/page-01.jpg",
+      "crop": {
+        "left": 743,
+        "top": 790,
+        "width": 404,
+        "height": 666
+      },
+      "note": "Figure 1(c) of the SCF 2026 paper."
+    },
+    {
+      "id": "cp-04-hand-bending",
+      "slug": "cerapiper",
+      "ground": "photo",
+      "cleared": true,
+      "width": 719,
+      "height": 430,
+      "cropWidth": 719,
+      "cropHeight": 430,
+      "canvasWidth": 719,
+      "canvasHeight": 430,
+      "borderMedian": "#584E45",
+      "files": [
+        "/images/cerapiper/cp-04-hand-bending.jpg",
+        "/images/cerapiper/cp-04-hand-bending.webp",
+        "/images/cerapiper/cp-04-hand-bending.avif"
+      ],
+      "alt": "Two hands bend a ribbed clay pipe along the cut lines of a printed blueprint on a workbench",
+      "usage": "CeraPiper gallery: bending by hand along the blueprint",
+      "src": "content/source/cerapiper/user-study-paper/pages/page-09.jpg",
+      "crop": {
+        "left": 162,
+        "top": 1214,
+        "width": 719,
+        "height": 430
+      },
+      "note": "Figure 6(c) of the SCF 2026 paper."
+    },
+    {
+      "id": "cp-05-participant-designs",
+      "slug": "cerapiper",
+      "ground": "photo",
+      "cleared": true,
+      "width": 1200,
+      "height": 769,
+      "cropWidth": 1513,
+      "cropHeight": 969,
+      "canvasWidth": 1513,
+      "canvasHeight": 970,
+      "borderMedian": "#B3B3B3",
+      "files": [
+        "/images/cerapiper/cp-05-participant-designs.jpg",
+        "/images/cerapiper/cp-05-participant-designs.webp",
+        "/images/cerapiper/cp-05-participant-designs.avif"
+      ],
+      "alt": "Renders of twelve cooling-screen designs in terracotta pipes on the walls and window of a grey room: coils, arches, grids and branching forms",
+      "usage": "CeraPiper gallery: designs from the user study",
+      "src": "content/source/cerapiper/user-study-paper/pages/page-13.jpg",
+      "crop": {
+        "left": 162,
+        "top": 250,
+        "width": 1513,
+        "height": 969
+      },
+      "note": "Figure 12 of the SCF 2026 paper."
+    },
+    {
+      "id": "cp-06-machine-extrusion",
+      "slug": "cerapiper",
+      "ground": "photo",
+      "cleared": true,
+      "width": 818,
+      "height": 287,
+      "cropWidth": 818,
+      "cropHeight": 287,
+      "canvasWidth": 818,
+      "canvasHeight": 287,
+      "borderMedian": "#99866F",
+      "files": [
+        "/images/cerapiper/cp-06-machine-extrusion.jpg",
+        "/images/cerapiper/cp-06-machine-extrusion.webp",
+        "/images/cerapiper/cp-06-machine-extrusion.avif"
+      ],
+      "alt": "A ribbed hexagonal clay pipe comes out of the shape-shifting die onto the conveyor of the extruder",
+      "usage": "CeraPiper gallery: extrusion on the machine",
+      "src": "content/source/cerapiper/cerapipes-readme/pages/page-03.jpg",
+      "crop": {
+        "left": 225,
+        "top": 1149,
+        "width": 818,
+        "height": 287
+      },
+      "note": "From the CeraPipes repository README."
     },
     {
       "id": "er-01-electric-road-model",
@@ -749,6 +948,90 @@
         "width": 478,
         "height": 500
       }
+    },
+    {
+      "id": "pd-01-laprotator-product",
+      "slug": "pando-surgical",
+      "ground": "photo",
+      "cleared": true,
+      "width": 1400,
+      "height": 630,
+      "cropWidth": 1870,
+      "cropHeight": 841,
+      "canvasWidth": 1870,
+      "canvasHeight": 842,
+      "borderMedian": "#000000",
+      "files": [
+        "/images/pando-surgical/pd-01-laprotator-product.jpg",
+        "/images/pando-surgical/pd-01-laprotator-product.webp",
+        "/images/pando-surgical/pd-01-laprotator-product.avif"
+      ],
+      "alt": "Render of the LapRotator: a white attachment with three buttons on top, mounted on a laparoscope whose long shaft runs off to the lower left",
+      "usage": "Pando Surgical hero; list cover",
+      "src": "content/source/pando/site-laprotator-product.png",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 1870,
+        "height": 841
+      },
+      "note": "From www.pandosurgical.com. Cleared by Alex, 19 October 2026."
+    },
+    {
+      "id": "pd-02-two-handed",
+      "slug": "pando-surgical",
+      "ground": "photo",
+      "cleared": true,
+      "width": 860,
+      "height": 502,
+      "cropWidth": 860,
+      "cropHeight": 502,
+      "canvasWidth": 860,
+      "canvasHeight": 502,
+      "borderMedian": "#0F0E0F",
+      "files": [
+        "/images/pando-surgical/pd-02-two-handed.jpg",
+        "/images/pando-surgical/pd-02-two-handed.webp",
+        "/images/pando-surgical/pd-02-two-handed.avif"
+      ],
+      "alt": "A gloved hand grips a laparoscope's camera head while the scope is turned by its light post: the two-handed rotation",
+      "usage": "Pando Surgical, The task: without the LapRotator",
+      "src": "content/source/pando/deck-slide-04-laprotator.jpg",
+      "crop": {
+        "left": 165,
+        "top": 282,
+        "width": 860,
+        "height": 502
+      },
+      "note": "Photo only, from the deck's product slide; no other part of the deck is used. Cleared by Alex, 19 October 2026."
+    },
+    {
+      "id": "pd-03-one-handed",
+      "slug": "pando-surgical",
+      "ground": "photo",
+      "cleared": true,
+      "width": 862,
+      "height": 502,
+      "cropWidth": 862,
+      "cropHeight": 502,
+      "canvasWidth": 862,
+      "canvasHeight": 502,
+      "borderMedian": "#141215",
+      "files": [
+        "/images/pando-surgical/pd-03-one-handed.jpg",
+        "/images/pando-surgical/pd-03-one-handed.webp",
+        "/images/pando-surgical/pd-03-one-handed.avif"
+      ],
+      "alt": "A gloved hand holds a laparoscope fitted with the white LapRotator attachment, turning the scope with the same hand",
+      "usage": "Pando Surgical, The task: with the LapRotator",
+      "src": "content/source/pando/deck-slide-04-laprotator.jpg",
+      "crop": {
+        "left": 1150,
+        "top": 282,
+        "width": 862,
+        "height": 502
+      },
+      "note": "Photo only, from the deck's product slide. Cleared by Alex, 19 October 2026."
     },
     {
       "id": "rb-01-monty-render-white",
@@ -1180,6 +1463,61 @@
         "top": 213,
         "width": 235,
         "height": 147
+      }
+    },
+    {
+      "id": "rb-20-monti-full-render",
+      "slug": "robotics",
+      "ground": "photo",
+      "cleared": true,
+      "width": 1100,
+      "height": 958,
+      "cropWidth": 1320,
+      "cropHeight": 1150,
+      "canvasWidth": 1320,
+      "canvasHeight": 1150,
+      "borderMedian": "#032639",
+      "files": [
+        "/images/robotics/rb-20-monti-full-render.jpg",
+        "/images/robotics/rb-20-monti-full-render.webp",
+        "/images/robotics/rb-20-monti-full-render.avif"
+      ],
+      "alt": "Front render of Monti: blue machined side plates with Voronoi cutouts, a turret launcher on top, and three purple and green balls held in the intake",
+      "usage": "Robotics hero; Monti timeline tile",
+      "src": "content/source/robotics/tritonics-portfolio-2025-26/pages/page-09.jpg",
+      "crop": {
+        "left": 480,
+        "top": 445,
+        "width": 1320,
+        "height": 1150
+      },
+      "note": "From the cover of the Tritonics 17253 2025-2026 engineering portfolio."
+    },
+    {
+      "id": "rb-21-plate-fea",
+      "slug": "robotics",
+      "ground": "light",
+      "cleared": true,
+      "width": 900,
+      "height": 849,
+      "cropWidth": 1770,
+      "cropHeight": 1670,
+      "canvasWidth": 1770,
+      "canvasHeight": 1670,
+      "borderMedian": "#FFFFFF",
+      "files": [
+        "/images/robotics/rb-21-plate-fea.jpg",
+        "/images/robotics/rb-21-plate-fea.webp",
+        "/images/robotics/rb-21-plate-fea.avif"
+      ],
+      "alt": "Stress analysis of two robot plates in false colour, blue for low stress and red for high: a Voronoi-cut side plate above and a solid plate with a round cutout below",
+      "usage": "Robotics gallery: side-plate stress analysis",
+      "src": "content/source/robotics/tritonics-portfolio-2025-26/pages/page-08.jpg",
+      "crop": {
+        "left": 560,
+        "top": 90,
+        "width": 1770,
+        "height": 1670
       }
     }
   ]

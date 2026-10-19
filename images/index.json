@@ -655,6 +655,115 @@
       "note": "From the CeraPipes repository README."
     },
     {
+      "id": "cp-07-chandelier",
+      "slug": "cerapiper",
+      "ground": "dark",
+      "cleared": true,
+      "width": 816,
+      "height": 900,
+      "cropWidth": 816,
+      "cropHeight": 900,
+      "canvasWidth": 816,
+      "canvasHeight": 900,
+      "borderMedian": "#0B0E13",
+      "files": [
+        "/images/cerapiper/cp-07-chandelier.jpg",
+        "/images/cerapiper/cp-07-chandelier.webp",
+        "/images/cerapiper/cp-07-chandelier.avif"
+      ],
+      "alt": "An assembled terracotta cooling chandelier: three ribbed hexagonal clay arms curve up from a central column on a ribbed stem",
+      "usage": "CeraPiper hero; list cover",
+      "src": "content/source/cutouts/cp-07-chandelier.png",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 816,
+        "height": 900
+      }
+    },
+    {
+      "id": "cp-08-onshape-branch",
+      "slug": "cerapiper",
+      "ground": "photo",
+      "cleared": true,
+      "width": 1400,
+      "height": 713,
+      "cropWidth": 1920,
+      "cropHeight": 978,
+      "canvasWidth": 1920,
+      "canvasHeight": 978,
+      "borderMedian": "#FAFAFA",
+      "files": [
+        "/images/cerapiper/cp-08-onshape-branch.jpg",
+        "/images/cerapiper/cp-08-onshape-branch.webp",
+        "/images/cerapiper/cp-08-onshape-branch.avif"
+      ],
+      "alt": "Onshape screenshot: a branching ceramic pipe assembly in blue, grey and gold, with the feature list on the left and the dialog for a ribbed curved pipe open",
+      "usage": "CeraPiper gallery: the design layer in Onshape",
+      "src": "content/source/cerapiper/video-frames/onshape-branch.jpg",
+      "crop": {
+        "left": 0,
+        "top": 22,
+        "width": 1920,
+        "height": 978
+      }
+    },
+    {
+      "id": "cp-09-onshape-coil",
+      "slug": "cerapiper",
+      "ground": "photo",
+      "cleared": true,
+      "width": 1245,
+      "height": 780,
+      "cropWidth": 1245,
+      "cropHeight": 780,
+      "canvasWidth": 1245,
+      "canvasHeight": 780,
+      "borderMedian": "#FEFEFE",
+      "files": [
+        "/images/cerapiper/cp-09-onshape-coil.jpg",
+        "/images/cerapiper/cp-09-onshape-coil.webp",
+        "/images/cerapiper/cp-09-onshape-coil.avif"
+      ],
+      "alt": "Onshape screenshot: a long coiled assembly of ribbed hexagonal pipes, coloured by segment",
+      "usage": "CeraPiper gallery: composing an assembly",
+      "src": "content/source/cerapiper/video-frames/onshape-coil.jpg",
+      "crop": {
+        "left": 420,
+        "top": 200,
+        "width": 1245,
+        "height": 780
+      },
+      "note": "Frame at 18 s of the SCF 2026 video, the one moment the coil shows without a caption."
+    },
+    {
+      "id": "cp-10-cerapipes-app",
+      "slug": "cerapiper",
+      "ground": "photo",
+      "cleared": true,
+      "width": 1400,
+      "height": 788,
+      "cropWidth": 1920,
+      "cropHeight": 1080,
+      "canvasWidth": 1920,
+      "canvasHeight": 1081,
+      "borderMedian": "#FCF9EF",
+      "files": [
+        "/images/cerapiper/cp-10-cerapipes-app.jpg",
+        "/images/cerapiper/cp-10-cerapipes-app.webp",
+        "/images/cerapiper/cp-10-cerapipes-app.avif"
+      ],
+      "alt": "Screenshot of the CeraPipes app: a ribbed pipe in the 3D view, the list of components to extrude, and the paper blueprint with its print layers",
+      "usage": "CeraPiper gallery: the CeraPipes app",
+      "src": "content/source/cerapiper/video-frames/cerapipes-app.jpg",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 1920,
+        "height": 1080
+      }
+    },
+    {
       "id": "er-01-electric-road-model",
       "slug": "about",
       "ground": "photo",

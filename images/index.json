@@ -9,15 +9,15 @@
     {
       "id": "ac-01-v1-led-face",
       "slug": "anticam",
-      "ground": "light",
+      "ground": "dark",
       "cleared": true,
       "width": 500,
       "height": 475,
-      "cropWidth": 469,
-      "cropHeight": 402,
+      "cropWidth": 500,
+      "cropHeight": 475,
       "canvasWidth": 500,
       "canvasHeight": 475,
-      "borderMedian": "#EDEDF1",
+      "borderMedian": "#0B0E13",
       "files": [
         "/images/anticam/ac-01-v1-led-face.jpg",
         "/images/anticam/ac-01-v1-led-face.webp",
@@ -25,26 +25,26 @@
       ],
       "alt": "AntiCam V1 pin seen from the emitter side: a white plate with a 3-by-3 grid of emitters glowing magenta, inside a textured black rim and maroon body",
       "usage": "home hero (photo mode), AntiCam case hero",
-      "src": "content/source/anticam/camera-blinder-presentation/pages/page-12.jpg",
+      "src": "content/source/cutouts/ac-01-v1-led-face.png",
       "crop": {
-        "left": 738,
-        "top": 506,
-        "width": 469,
-        "height": 402
+        "left": 0,
+        "top": 0,
+        "width": 500,
+        "height": 475
       }
     },
     {
       "id": "ac-02-v1-lid-side",
       "slug": "anticam",
-      "ground": "light",
+      "ground": "dark",
       "cleared": true,
       "width": 490,
       "height": 380,
-      "cropWidth": 470,
-      "cropHeight": 340,
+      "cropWidth": 490,
+      "cropHeight": 380,
       "canvasWidth": 490,
       "canvasHeight": 380,
-      "borderMedian": "#EDEEF2",
+      "borderMedian": "#0B0E13",
       "files": [
         "/images/anticam/ac-02-v1-lid-side.jpg",
         "/images/anticam/ac-02-v1-lid-side.webp",
@@ -52,12 +52,12 @@
       ],
       "alt": "AntiCam V1 pin from the lid side: a blue lid with the Tully Tech mark engraved, black rim, maroon body",
       "usage": "AntiCam contact sheet, \"Final V1\"",
-      "src": "content/source/anticam/camera-blinder-presentation/pages/page-12.jpg",
+      "src": "content/source/cutouts/ac-02-v1-lid-side.png",
       "crop": {
-        "left": 192,
-        "top": 592,
-        "width": 470,
-        "height": 340
+        "left": 0,
+        "top": 0,
+        "width": 490,
+        "height": 380
       }
     },
     {
@@ -138,15 +138,15 @@
     {
       "id": "ac-06-v2-colorways",
       "slug": "anticam",
-      "ground": "light",
+      "ground": "dark",
       "cleared": true,
       "width": 690,
       "height": 240,
-      "cropWidth": 700,
-      "cropHeight": 232,
-      "canvasWidth": 700,
-      "canvasHeight": 243,
-      "borderMedian": "#E4E6EA",
+      "cropWidth": 690,
+      "cropHeight": 240,
+      "canvasWidth": 690,
+      "canvasHeight": 240,
+      "borderMedian": "#0B0E13",
       "files": [
         "/images/anticam/ac-06-v2-colorways.jpg",
         "/images/anticam/ac-06-v2-colorways.webp",
@@ -154,26 +154,26 @@
       ],
       "alt": "Three AntiCam V2 pins side by side: white, dark gray and navy, each with a clear top showing the emitter module",
       "usage": "home AntiCam plate (fallback while the Ring frames are uncleared); contact sheet \"Final V2\"",
-      "src": "content/source/anticam/camera-blinder-presentation/pages/page-15.jpg",
+      "src": "content/source/cutouts/ac-06-v2-colorways.png",
       "crop": {
-        "left": 526,
-        "top": 56,
-        "width": 700,
-        "height": 232
+        "left": 0,
+        "top": 0,
+        "width": 690,
+        "height": 240
       }
     },
     {
       "id": "ac-07-v2-flatlay",
       "slug": "anticam",
-      "ground": "light",
+      "ground": "dark",
       "cleared": true,
       "width": 620,
       "height": 460,
-      "cropWidth": 619,
-      "cropHeight": 464,
-      "canvasWidth": 625,
-      "canvasHeight": 464,
-      "borderMedian": "#BBC0BC",
+      "cropWidth": 620,
+      "cropHeight": 460,
+      "canvasWidth": 620,
+      "canvasHeight": 460,
+      "borderMedian": "#0B0E13",
       "files": [
         "/images/anticam/ac-07-v2-flatlay.jpg",
         "/images/anticam/ac-07-v2-flatlay.webp",
@@ -181,12 +181,12 @@
       ],
       "alt": "Six clear laser-cut acrylic plates for the AntiCam V2 pin laid flat: the LED plate with its module, a plate with four coin cells and a slide switch, spacer plates and the engraved lid",
       "usage": "version ledger V4 tile, contact sheet, canvas reference",
-      "src": "content/source/anticam/camera-blinder-presentation/pages/page-13.jpg",
+      "src": "content/source/cutouts/ac-07-v2-flatlay.png",
       "crop": {
-        "left": 36,
-        "top": 342,
-        "width": 619,
-        "height": 464
+        "left": 0,
+        "top": 0,
+        "width": 620,
+        "height": 460
       }
     },
     {
@@ -354,15 +354,15 @@
     {
       "id": "ac-14-cap-brim",
       "slug": "anticam",
-      "ground": "photo",
+      "ground": "dark",
       "cleared": true,
       "width": 300,
       "height": 365,
-      "cropWidth": 241,
-      "cropHeight": 335,
+      "cropWidth": 300,
+      "cropHeight": 365,
       "canvasWidth": 300,
       "canvasHeight": 365,
-      "borderMedian": "#FEFEFE",
+      "borderMedian": "#0B0E13",
       "files": [
         "/images/anticam/ac-14-cap-brim.jpg",
         "/images/anticam/ac-14-cap-brim.webp",
@@ -370,27 +370,27 @@
       ],
       "alt": "The underside of a black cap brim with about six small LEDs set into a reflective lining",
       "usage": "AntiCam gallery \"Cap V2, under the brim\"",
-      "src": "content/source/anticam/camera-blinder-presentation/pages/page-17.jpg",
+      "src": "content/source/cutouts/ac-14-cap-brim.png",
       "crop": {
-        "left": 513,
-        "top": 491,
-        "width": 241,
-        "height": 335
+        "left": 0,
+        "top": 0,
+        "width": 300,
+        "height": 365
       },
       "note": "Cleared by Alex, 19 October 2026: the cap is the final version."
     },
     {
       "id": "ac-15-v2-parts-angled",
       "slug": "anticam",
-      "ground": "photo",
+      "ground": "dark",
       "cleared": true,
       "width": 470,
       "height": 295,
-      "cropWidth": 467,
-      "cropHeight": 296,
-      "canvasWidth": 472,
-      "canvasHeight": 296,
-      "borderMedian": "#888580",
+      "cropWidth": 470,
+      "cropHeight": 295,
+      "canvasWidth": 470,
+      "canvasHeight": 295,
+      "borderMedian": "#0B0E13",
       "files": [
         "/images/anticam/ac-15-v2-parts-angled.jpg",
         "/images/anticam/ac-15-v2-parts-angled.webp",
@@ -398,12 +398,12 @@
       ],
       "alt": "The V2 clear acrylic parts laid out at an angle: cells and switch plate, LED plate, cutout plates, engraved lid",
       "usage": "AntiCam process card",
-      "src": "content/source/anticam/camera-blinder-presentation/pages/page-14.jpg",
+      "src": "content/source/cutouts/ac-15-v2-parts-angled.png",
       "crop": {
-        "left": 112,
-        "top": 260,
-        "width": 467,
-        "height": 296
+        "left": 0,
+        "top": 0,
+        "width": 470,
+        "height": 295
       },
       "note": "Reclassified from light to photo: the measured border median is #8A8680, a mid-grey table, not the white or light grey that §12.1 defines as a light ground. Levelling it to --plate-light washed the acrylic out, so it keeps its own ground on a dark plate."
     },
@@ -436,12 +436,12 @@
       "slug": "anticam",
       "ground": "photo",
       "cleared": true,
-      "width": 830,
-      "height": 600,
-      "cropWidth": 830,
-      "cropHeight": 600,
-      "canvasWidth": 830,
-      "canvasHeight": 600,
+      "width": 1660,
+      "height": 1200,
+      "cropWidth": 1660,
+      "cropHeight": 1200,
+      "canvasWidth": 1660,
+      "canvasHeight": 1200,
       "borderMedian": "#0A0D12",
       "files": [
         "/images/anticam/ac-17-cap-v2-front.jpg",
@@ -450,12 +450,40 @@
       ],
       "alt": "A black baseball cap seen from the front, with two small emitters and a sensor set under the brim",
       "usage": "AntiCam version timeline: Cap V2, the final version",
-      "src": "content/source/anticam/build-application-deck/pages/page-04.jpg",
+      "src": "content/source/anticam/build-application-deck/hires/page-04.jpg",
       "crop": {
-        "left": 50,
-        "top": 350,
-        "width": 830,
-        "height": 600
+        "left": 100,
+        "top": 700,
+        "width": 1660,
+        "height": 1200
+      },
+      "note": "Re-cropped from a 4x render of the deck slide (19 October 2026)."
+    },
+    {
+      "id": "ac-18-pin-v2-hero",
+      "slug": "anticam",
+      "ground": "dark",
+      "cleared": true,
+      "width": 1240,
+      "height": 1160,
+      "cropWidth": 1240,
+      "cropHeight": 1160,
+      "canvasWidth": 1240,
+      "canvasHeight": 1160,
+      "borderMedian": "#0B0E13",
+      "files": [
+        "/images/anticam/ac-18-pin-v2-hero.jpg",
+        "/images/anticam/ac-18-pin-v2-hero.webp",
+        "/images/anticam/ac-18-pin-v2-hero.avif"
+      ],
+      "alt": "The final AntiCam pin, version 2: a dark grey case with a clear acrylic window over the emitter module and its three-by-three grid of emitters",
+      "usage": "AntiCam case hero; home list cover",
+      "src": "content/source/cutouts/ac-18-pin-v2-hero.png",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 1240,
+        "height": 1160
       }
     },
     {
@@ -734,15 +762,15 @@
     {
       "id": "pa-02-arm-exploded-build",
       "slug": "prosthetic-arm",
-      "ground": "light",
+      "ground": "dark",
       "cleared": true,
       "width": 960,
       "height": 393,
-      "cropWidth": 1175,
-      "cropHeight": 450,
-      "canvasWidth": 1175,
-      "canvasHeight": 481,
-      "borderMedian": "#CACACA",
+      "cropWidth": 960,
+      "cropHeight": 393,
+      "canvasWidth": 960,
+      "canvasHeight": 393,
+      "borderMedian": "#0B0E13",
       "files": [
         "/images/prosthetic-arm/pa-02-arm-exploded-build.jpg",
         "/images/prosthetic-arm/pa-02-arm-exploded-build.webp",
@@ -750,12 +778,12 @@
       ],
       "alt": "The physical arm exploded on a light gray tray: white printed palm and fingers, glossy black forearm and wrist collar, loose knuckle caps and pins",
       "usage": "version ledger \"Final build\" tile, process plate",
-      "src": "content/source/prosthetic-arm/design-brief/pages/page-14.jpg",
+      "src": "content/source/cutouts/pa-02-arm-exploded-build.png",
       "crop": {
-        "left": 160,
-        "top": 255,
-        "width": 1175,
-        "height": 450
+        "left": 0,
+        "top": 0,
+        "width": 960,
+        "height": 393
       }
     },
     {
@@ -1117,7 +1145,7 @@
     {
       "id": "rb-04-transfer-render",
       "slug": "robotics",
-      "ground": "light",
+      "ground": "dark",
       "cleared": true,
       "width": 288,
       "height": 290,
@@ -1125,7 +1153,7 @@
       "cropHeight": 290,
       "canvasWidth": 288,
       "canvasHeight": 290,
-      "borderMedian": "#FFFFFF",
+      "borderMedian": "#0B0E13",
       "files": [
         "/images/robotics/rb-04-transfer-render.jpg",
         "/images/robotics/rb-04-transfer-render.webp",
@@ -1133,10 +1161,10 @@
       ],
       "alt": "Render of the transfer: three purple artifacts in a silver Voronoi frame with a tubing roller",
       "usage": "Monti section card",
-      "src": "content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-3.png",
+      "src": "content/source/cutouts/rb-04-transfer-render.png",
       "crop": {
-        "left": 406,
-        "top": 330,
+        "left": 0,
+        "top": 0,
         "width": 288,
         "height": 290
       }
@@ -1144,15 +1172,15 @@
     {
       "id": "rb-05-launcher-render",
       "slug": "robotics",
-      "ground": "light",
+      "ground": "dark",
       "cleared": true,
       "width": 340,
       "height": 228,
-      "cropWidth": 346,
-      "cropHeight": 232,
-      "canvasWidth": 346,
-      "canvasHeight": 232,
-      "borderMedian": "#FFFFFF",
+      "cropWidth": 340,
+      "cropHeight": 228,
+      "canvasWidth": 340,
+      "canvasHeight": 228,
+      "borderMedian": "#0B0E13",
       "files": [
         "/images/robotics/rb-05-launcher-render.jpg",
         "/images/robotics/rb-05-launcher-render.webp",
@@ -1160,12 +1188,12 @@
       ],
       "alt": "Render of the launcher: blue turret ring, adjustable hood and a weighted flywheel",
       "usage": "Monti section card",
-      "src": "content/source/robotics/tritonics-portfolio/nyc-champs-portfolio-4.png",
+      "src": "content/source/cutouts/rb-05-launcher-render.png",
       "crop": {
-        "left": 368,
-        "top": 363,
-        "width": 346,
-        "height": 232
+        "left": 0,
+        "top": 0,
+        "width": 340,
+        "height": 228
       }
     },
     {
@@ -1279,15 +1307,15 @@
     {
       "id": "rb-10-scorpion-render",
       "slug": "robotics",
-      "ground": "light",
+      "ground": "dark",
       "cleared": true,
       "width": 258,
       "height": 210,
-      "cropWidth": 229,
-      "cropHeight": 186,
+      "cropWidth": 258,
+      "cropHeight": 210,
       "canvasWidth": 258,
       "canvasHeight": 210,
-      "borderMedian": "#FFFFFF",
+      "borderMedian": "#0B0E13",
       "files": [
         "/images/robotics/rb-10-scorpion-render.jpg",
         "/images/robotics/rb-10-scorpion-render.webp",
@@ -1295,12 +1323,12 @@
       ],
       "alt": "Scorpion on mecanum wheels with its scissor lift raised",
       "usage": "robotics filmstrip, Scorpion section plate",
-      "src": "content/source/portfolio/05-scorpion-robot.jpg",
+      "src": "content/source/cutouts/rb-10-scorpion-render.png",
       "crop": {
-        "left": 644,
-        "top": 47,
-        "width": 229,
-        "height": 186
+        "left": 0,
+        "top": 0,
+        "width": 258,
+        "height": 210
       }
     },
     {
@@ -1468,15 +1496,15 @@
     {
       "id": "rb-20-monti-full-render",
       "slug": "robotics",
-      "ground": "photo",
+      "ground": "dark",
       "cleared": true,
-      "width": 1100,
-      "height": 958,
-      "cropWidth": 1320,
-      "cropHeight": 1150,
-      "canvasWidth": 1320,
-      "canvasHeight": 1150,
-      "borderMedian": "#032639",
+      "width": 1408,
+      "height": 1000,
+      "cropWidth": 1760,
+      "cropHeight": 1250,
+      "canvasWidth": 1760,
+      "canvasHeight": 1250,
+      "borderMedian": "#0B0E13",
       "files": [
         "/images/robotics/rb-20-monti-full-render.jpg",
         "/images/robotics/rb-20-monti-full-render.webp",
@@ -1484,27 +1512,27 @@
       ],
       "alt": "Front render of Monti: blue machined side plates with Voronoi cutouts, a turret launcher on top, and three purple and green balls held in the intake",
       "usage": "Robotics hero; Monti timeline tile",
-      "src": "content/source/robotics/tritonics-portfolio-2025-26/pages/page-09.jpg",
+      "src": "content/source/cutouts/rb-20-monti-full-render.png",
       "crop": {
-        "left": 480,
-        "top": 445,
-        "width": 1320,
-        "height": 1150
+        "left": 0,
+        "top": 0,
+        "width": 1760,
+        "height": 1250
       },
       "note": "From the cover of the Tritonics 17253 2025-2026 engineering portfolio."
     },
     {
       "id": "rb-21-plate-fea",
       "slug": "robotics",
-      "ground": "light",
+      "ground": "dark",
       "cleared": true,
       "width": 900,
       "height": 849,
-      "cropWidth": 1770,
-      "cropHeight": 1670,
-      "canvasWidth": 1770,
-      "canvasHeight": 1670,
-      "borderMedian": "#FFFFFF",
+      "cropWidth": 900,
+      "cropHeight": 849,
+      "canvasWidth": 900,
+      "canvasHeight": 849,
+      "borderMedian": "#0B0E13",
       "files": [
         "/images/robotics/rb-21-plate-fea.jpg",
         "/images/robotics/rb-21-plate-fea.webp",
@@ -1512,12 +1540,12 @@
       ],
       "alt": "Stress analysis of two robot plates in false colour, blue for low stress and red for high: a Voronoi-cut side plate above and a solid plate with a round cutout below",
       "usage": "Robotics gallery: side-plate stress analysis",
-      "src": "content/source/robotics/tritonics-portfolio-2025-26/pages/page-08.jpg",
+      "src": "content/source/cutouts/rb-21-plate-fea.png",
       "crop": {
-        "left": 560,
-        "top": 90,
-        "width": 1770,
-        "height": 1670
+        "left": 0,
+        "top": 0,
+        "width": 900,
+        "height": 849
       }
     }
   ]

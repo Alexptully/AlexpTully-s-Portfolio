@@ -6,17 +6,17 @@
 */
 :root {
   /* §2.1 core */
-  --bg: #0b0e13; /* oklch(0.163 0.012 260.6) */
-  --surface: #151a22; /* oklch(0.216 0.018 259.7) */
-  --border: #232b36; /* oklch(0.286 0.023 256.4) */
-  --border-strong: #5a6473; /* oklch(0.500 0.027 258.4) */
-  --ink: #f3efe7; /* oklch(0.953 0.011 84.6) */
-  --muted: #98a2ae; /* oklch(0.708 0.021 252.9) */
-  --quiet: #7b848f; /* oklch(0.610 0.020 253.4) */
+  --bg: #131313; /* oklch(0.163 0.012 260.6) */
+  --surface: #1b1b1b; /* oklch(0.216 0.018 259.7) */
+  --border: #292929; /* oklch(0.286 0.023 256.4) */
+  --border-strong: #4a4846; /* oklch(0.500 0.027 258.4) */
+  --ink: #e8e3e0; /* oklch(0.953 0.011 84.6) */
+  --muted: #9a9794; /* oklch(0.708 0.021 252.9) */
+  --quiet: #767472; /* oklch(0.610 0.020 253.4) */
   --accent: #ff3b6f; /* oklch(0.664 0.230 11.3) */
   --accent-text: #ff7a9c; /* oklch(0.743 0.164 5.8) */
   --plate-light: #e6e7e9; /* oklch(0.928 0.003 264.5) */
-  --ink-dark: #0b0e13; /* oklch(0.163 0.012 260.6) */
+  --ink-dark: #131313; /* oklch(0.163 0.012 260.6) */
 
   /* §2.2 content-only: never a link, border, heading or background */
   --render-blue: #4878c0; /* oklch(0.573 0.123 258.3) */
@@ -45,7 +45,9 @@
   --r-plate: 16px;
   --r-photo: 2px;
   --r-control: 6px;
-  --container: 1200px;
+  --container: 1312px;
+  --plate-dark: #0b0e13;
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --gutter: 16px;
   --hairline: 1px solid var(--border);
 
@@ -61,7 +63,7 @@
 
 @media (min-width: 1024px) {
   :root {
-    --gutter: 48px;
+    --gutter: 64px;
   }
 }
 
@@ -83,7 +85,8 @@
   --color-clay: var(--clay);
   --color-paper: var(--paper);
   --color-paper-ink: var(--paper-ink);
-  --font-sans: var(--font-host), ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --color-plate-dark: var(--plate-dark);
   --font-mono: var(--font-jbm), ui-monospace, "SF Mono", Menlo, monospace;
   --radius-plate: 16px;
   --radius-photo: 2px;
@@ -202,37 +205,41 @@
    Type roles (design-spec.md §3.2). Utilities so variants work (md:type-title).
    --------------------------------------------------------------------------- */
 @utility type-display {
-  font-size: clamp(2.75rem, 1.5rem + 5.2vw, 6.25rem);
-  font-weight: 500;
-  line-height: 0.94;
-  letter-spacing: -0.045em;
+  font-size: clamp(3.5rem, 1.2rem + 11vw, 15.5rem);
+  font-weight: 800;
+  font-stretch: 72%;
+  line-height: 0.86;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
   color: var(--ink);
-  text-wrap: balance;
 }
 
 @utility type-title {
-  font-size: clamp(2rem, 1.4rem + 2.4vw, 3.5rem);
-  font-weight: 500;
-  line-height: 1.02;
-  letter-spacing: -0.035em;
+  font-size: clamp(2.5rem, 1.4rem + 4.4vw, 6rem);
+  font-weight: 800;
+  font-stretch: 72%;
+  line-height: 0.9;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
   color: var(--ink);
   text-wrap: balance;
 }
 
 @utility type-heading {
-  font-size: clamp(1.25rem, 1.157rem + 0.381vw, 1.5rem);
-  font-weight: 500;
-  line-height: 1.2;
+  font-size: clamp(1.75rem, 1.3rem + 1.6vw, 3rem);
+  font-weight: 700;
+  font-stretch: 80%;
+  line-height: 1;
   letter-spacing: -0.02em;
   color: var(--ink);
   text-wrap: balance;
 }
 
 @utility type-lead {
-  font-size: clamp(1.125rem, 1.079rem + 0.19vw, 1.25rem);
+  font-size: clamp(1.1875rem, 1.05rem + 0.5vw, 1.5rem);
   font-weight: 400;
-  line-height: 1.45;
-  letter-spacing: 0;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
   color: var(--ink);
 }
 
@@ -293,24 +300,27 @@
 }
 
 @utility type-nav {
-  font-size: 1rem;
-  font-weight: 500;
+  font-family: var(--font-jbm), ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.875rem;
+  font-weight: 400;
   line-height: 1;
-  letter-spacing: 0;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--ink);
 }
 
 @utility type-button {
-  font-size: 0.9375rem;
+  font-family: var(--font-jbm), ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.875rem;
   font-weight: 500;
   line-height: 1;
-  letter-spacing: 0;
-  color: var(--ink);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 /* Body and lead measure (§3.2) */
 @utility measure {
-  max-width: 34rem;
+  max-width: 36rem;
 }
 
 /* ---------------------------------------------------------------------------
@@ -350,18 +360,22 @@
 
 /* Masthead item: no underline at rest, ink on hover, 2 px pink when current */
 @utility nav-link {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 6px;
-  text-decoration-color: transparent;
-  transition: text-decoration-color 150ms var(--ease-out);
+  position: relative;
+  transition: color 150ms var(--ease-out);
   &:hover,
   &:focus-visible {
-    text-decoration-color: var(--ink);
+    color: var(--accent);
   }
-  &[aria-current] {
-    text-decoration-thickness: 2px;
-    text-decoration-color: var(--accent);
+  &[aria-current]::before {
+    content: "";
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    margin-top: -3px;
+    border-radius: 999px;
+    background: var(--accent);
   }
 }
 
@@ -465,18 +479,106 @@
 }
 
 
+
+/* ---------------------------------------------------------------------------
+   Redesign primitives (content/notes/redesign-spec.md)
+   --------------------------------------------------------------------------- */
+@utility type-xl {
+  font-size: clamp(2.25rem, 1.2rem + 4.2vw, 5.5rem);
+  font-weight: 500;
+  font-stretch: 100%;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+@utility type-statement {
+  font-size: clamp(1.5rem, 1rem + 2vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+@utility type-marquee {
+  font-size: clamp(3rem, 1.5rem + 6vw, 8.5rem);
+  font-weight: 300;
+  font-stretch: 125%;
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+@utility pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  min-height: 44px;
+  padding: 0 1.5rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-jbm), ui-monospace, monospace;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background-color 200ms var(--ease-out), color 200ms var(--ease-out);
+  &:hover,
+  &:focus-visible {
+    background: var(--ink);
+    color: var(--bg);
+  }
+}
+
+@utility pill-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  min-height: 56px;
+  padding: 0 2.25rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  color: var(--ink);
+  font-family: var(--font-jbm), ui-monospace, monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: border-color 200ms var(--ease-out), background-color 200ms var(--ease-out), color 200ms var(--ease-out);
+  &:hover,
+  &:focus-visible {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+  }
+}
+
+@utility hairline-x {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* A media box on the image's own levelled ground; the image is never upscaled. */
+@utility media-ground {
+  background: var(--plate-dark);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
 /* ---------------------------------------------------------------------------
    Instrument layer (redesign). A mono voice for the things a drawing labels:
    part numbers, figure labels, spec terms, dates. Never for sentences.
    --------------------------------------------------------------------------- */
 @utility type-label {
   font-family: var(--font-jbm), ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 0.75rem;
-  font-weight: 500;
+  font-size: 0.8125rem;
+  font-weight: 400;
   line-height: 1.4;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--quiet);
   font-variant-numeric: tabular-nums;
 }
 
@@ -661,5 +763,239 @@
   article,
   figure {
     break-inside: avoid;
+  }
+}
+
+/* ===========================================================================
+   Shell (redesign-spec §1–3): wordmark, header, menu, footer, preloader, cursor.
+   Unlayered on purpose where it overrides the motion layer's component defaults.
+   =========================================================================== */
+:root {
+  --cursor-color: var(--accent);
+  --cursor-label-color: var(--bg);
+  --cursor-label-scale: 8;
+  --cursor-label-size: 0.6875rem;
+}
+
+.cursor__label {
+  font-family: var(--font-jbm), ui-monospace, monospace;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Wordmark: ALEX, then the pink box with an italic t, then italic ully */
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--ink);
+}
+.wordmark__first {
+  font-stretch: 72%;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.wordmark__box {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.08em;
+  padding: 0.02em 0.1em 0.06em 0.08em;
+  background: var(--accent);
+  color: var(--bg);
+  font-style: italic;
+  font-weight: 700;
+}
+.wordmark__rest {
+  margin-left: 0.03em;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.wordmark--giant {
+  display: flex;
+  font-size: clamp(4rem, 19.6vw, 18rem);
+  line-height: 0.82;
+  margin-bottom: -0.06em;
+}
+
+.footer-link {
+  transition: color 200ms var(--ease-out);
+}
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: var(--accent);
+}
+
+/* Menu overlay (below 1024 px) */
+.menu-overlay {
+  padding: 0 var(--gutter) 2rem;
+}
+.menu-overlay[data-open] {
+  display: flex;
+  flex-direction: column;
+}
+.menu-overlay__close {
+  align-self: flex-end;
+  min-height: 4rem;
+  font-family: var(--font-jbm), ui-monospace, monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.menu-overlay__close:hover,
+.menu-overlay__close:focus-visible {
+  color: var(--accent);
+}
+.menu-overlay__nav {
+  margin-top: auto;
+}
+.menu-overlay__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.menu-overlay__link {
+  display: inline-block;
+  font-size: clamp(3.5rem, 16vw, 7rem);
+  font-weight: 800;
+  font-stretch: 72%;
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: color 200ms var(--ease-out);
+}
+.menu-overlay__link:hover,
+.menu-overlay__link:focus-visible,
+.menu-overlay__link[aria-current] {
+  color: var(--accent);
+}
+.menu-overlay[data-open] .menu-overlay__item {
+  animation: menu-rise 0.6s var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 60ms + 80ms);
+}
+.menu-overlay__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 2rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+@keyframes menu-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.5em);
+  }
+}
+
+/* Preloader: rise, count to 100, the pink box fills the screen, the sheet slides left.
+   Total 1.15 s, under the 1.2 s cap in motion-config. */
+@property --pl-n {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+@counter-style pl-pad {
+  system: extends decimal;
+  pad: 3 "0";
+}
+.preloader-box {
+  overflow: hidden;
+  --preloader-dur: 1.15s;
+  --preloader-ease: linear;
+}
+html.motion-preload .preloader.preloader-box {
+  animation-name: preloader-slide;
+}
+.preloader-box__mark {
+  font-size: clamp(3rem, 12vw, 9rem);
+}
+.preloader-box__mark > span {
+  animation: pl-rise 0.55s var(--ease-out) both;
+}
+.preloader-box__mark > span:nth-child(2) {
+  animation-delay: 0.06s;
+}
+.preloader-box__mark > span:nth-child(3) {
+  animation-delay: 0.12s;
+}
+.preloader-box .wordmark__box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  animation: pl-fill 1.15s linear both;
+}
+.preloader-box__lines {
+  position: absolute;
+  left: var(--gutter);
+  bottom: 1.5rem;
+  color: var(--muted);
+}
+.preloader-box__count {
+  position: absolute;
+  right: var(--gutter);
+  bottom: 1.25rem;
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 800;
+  font-stretch: 72%;
+  line-height: 0.8;
+  font-variant-numeric: tabular-nums;
+  counter-reset: pl var(--pl-n);
+  animation: pl-count 0.6s cubic-bezier(0.33, 1, 0.68, 1) both;
+}
+.preloader-box__count::after {
+  content: counter(pl, pl-pad);
+}
+@keyframes preloader-slide {
+  0%,
+  70% {
+    transform: translateX(0);
+    visibility: visible;
+    animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  100% {
+    transform: translateX(-100%);
+    visibility: hidden;
+  }
+}
+@keyframes pl-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.35em);
+  }
+}
+@keyframes pl-fill {
+  0%,
+  44% {
+    transform: scale(1);
+    animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+  70%,
+  100% {
+    transform: scale(45);
+  }
+}
+@keyframes pl-count {
+  from {
+    --pl-n: 0;
+  }
+  to {
+    --pl-n: 100;
+  }
+}
+@media print {
+  .preloader,
+  .cursor,
+  .menu-overlay {
+    display: none !important;
+  }
+  .site-header {
+    position: static;
   }
 }

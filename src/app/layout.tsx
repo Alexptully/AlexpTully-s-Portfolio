@@ -1,28 +1,33 @@
 import type { Metadata } from "next";
-import { Host_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Archivo, JetBrains_Mono } from "next/font/google";
 import { site } from "@/content/site";
 import { siteOrigin } from "@/lib/site-url";
 import { SkipLink } from "@/components/layout/SkipLink";
-import { Masthead } from "@/components/layout/Masthead";
-import { Footer } from "@/components/layout/Footer";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { SitePreloader } from "@/components/layout/SitePreloader";
+import { MotionInitScript } from "@/components/motion/MotionInitScript";
+import { MotionRoot } from "@/components/motion/MotionRoot";
+import { Cursor } from "@/components/motion/Cursor";
 import "./globals.css";
+import "./motion.css";
 
-// One family for the whole site (design-spec §3.1). Downloaded and self-hosted at build
-// time; the browser never contacts Google. `adjustFontFallback` builds a metric-compatible
-// fallback from Arial so spec sheets do not reflow when the woff2 arrives.
-const host = Host_Grotesk({
+// Display, body and marquee: Archivo, a variable grotesk with a width axis (62–125), so the
+// condensed caps, the body and the wide italic marquee are one family (redesign-spec §2).
+const archivo = Archivo({
   subsets: ["latin"],
-  weight: "variable",
-  style: ["normal"],
+  axes: ["wdth"],
+  style: ["normal", "italic"],
   display: "swap",
   adjustFontFallback: true,
-  variable: "--font-host",
+  variable: "--font-archivo",
 });
 
 // The instrument voice: part numbers, figure labels, spec terms, dates. Never body copy.
 const mono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
+  adjustFontFallback: true,
   display: "swap",
   variable: "--font-jbm",
 });
@@ -56,16 +61,25 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${host.variable} ${mono.variable} h-full antialiased`}
+      className={`${archivo.variable} ${mono.variable} h-full antialiased`}
       style={{ colorScheme: "dark" }}
+      // The head script adds `motion` / `motion-preload` to <html> before React hydrates.
+      suppressHydrationWarning
     >
-      <body className="grain flex min-h-full flex-col bg-bg font-sans text-ink">
-        <SkipLink />
-        <Masthead />
-        <main id="content" tabIndex={-1} className="flex flex-1 flex-col outline-none">
-          {children}
-        </main>
-        <Footer />
+      <head>
+        <MotionInitScript />
+      </head>
+      <body className="flex min-h-full flex-col bg-bg font-sans text-ink">
+        <MotionRoot>
+          <SkipLink />
+          <SiteHeader />
+          <main id="content" tabIndex={-1} className="flex flex-1 flex-col outline-none">
+            {children}
+          </main>
+          <SiteFooter />
+          <Cursor />
+        </MotionRoot>
+        <SitePreloader />
       </body>
     </html>
   );

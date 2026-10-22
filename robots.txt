@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://alexptully.github.io/sitemap.xml
+Sitemap: https://tullytech.com/AlexTullys-Portfolio/sitemap.xml

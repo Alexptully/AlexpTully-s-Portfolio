@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://tullytech.com/AlexTullys-Portfolio/sitemap.xml

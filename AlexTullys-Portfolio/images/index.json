@@ -1089,7 +1089,7 @@
     {
       "id": "pd-01-laprotator-product",
       "slug": "pando-surgical",
-      "ground": "photo",
+      "ground": "dark",
       "cleared": true,
       "width": 1400,
       "height": 630,
@@ -1097,7 +1097,7 @@
       "cropHeight": 841,
       "canvasWidth": 1870,
       "canvasHeight": 842,
-      "borderMedian": "#000000",
+      "borderMedian": "#0B0E13",
       "files": [
         "/images/pando-surgical/pd-01-laprotator-product.jpg",
         "/images/pando-surgical/pd-01-laprotator-product.webp",
@@ -1105,7 +1105,7 @@
       ],
       "alt": "Render of the LapRotator: a white attachment with three buttons on top, mounted on a laparoscope whose long shaft runs off to the lower left",
       "usage": "Pando Surgical hero; list cover",
-      "src": "content/source/pando/site-laprotator-product.png",
+      "src": "content/source/cutouts/pd-01-laprotator-product.png",
       "crop": {
         "left": 0,
         "top": 0,

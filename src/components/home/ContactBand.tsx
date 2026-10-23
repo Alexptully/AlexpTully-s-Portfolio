@@ -6,11 +6,11 @@ type ContactBandProps = ContactBandData;
 
 /**
  * The closing contact band (design-spec §5.5, graft 4): a full-bleed `--surface` band with the
- * name at display size, the email as the viewport's one pink element, tullytech.com with an
- * ink underline, the USC and BUILD line in muted 15 px, and "About me". Content in columns
- * 1–8 at `lg`; left-aligned and stacked on phone. No motion.
+ * name at display size, the email as the viewport's one pink element, tullytech.com and
+ * LinkedIn with an ink underline, the USC and BUILD line in muted 15 px, and "About me". Content
+ * in columns 1–8 at `lg`; left-aligned and stacked on phone. No motion.
  */
-export function ContactBand({ name, email, site, line, link }: ContactBandProps) {
+export function ContactBand({ name, email, site, linkedin, line, link }: ContactBandProps) {
   const headingId = "contact-heading";
   return (
     <section
@@ -48,6 +48,16 @@ export function ContactBand({ name, email, site, line, link }: ContactBandProps)
                 className="underline decoration-1 decoration-ink underline-offset-4 transition-[text-decoration-color] duration-150 hover:decoration-muted focus-visible:decoration-muted"
               >
                 {site.label}
+              </a>
+            </li>
+            <li className="type-lead">
+              <a
+                href={linkedin.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-1 decoration-ink underline-offset-4 transition-[text-decoration-color] duration-150 hover:decoration-muted focus-visible:decoration-muted"
+              >
+                {linkedin.label}
               </a>
             </li>
           </ul>

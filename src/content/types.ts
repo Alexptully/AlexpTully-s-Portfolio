@@ -588,6 +588,7 @@ export type ContactBand = {
   name: string;
   email: string;
   site: { label: string; href: string };
+  linkedin: { label: string; href: string };
   line: string;
   lineSource: Source;
   link: { label: string; href: string };

@@ -2065,6 +2065,7 @@ export const contactBand: ContactBand = {
   name: "Alex Tully",
   email: "alexptully@gmail.com",
   site: { label: "tullytech.com", href: "https://tullytech.com" },
+  linkedin: { label: "LinkedIn", href: "https://www.linkedin.com/in/alex-tully-607b6a2a8" },
   line: "USC Iovine and Young Academy, fall 2026. TroyLabs BUILD, PM division.",
   lineSource: S.root,
   link: { label: "About me", href: "/about" },

@@ -818,6 +818,90 @@
       }
     },
     {
+      "id": "fn-01-booth-mt-fuji",
+      "slug": "fold-with-nara",
+      "ground": "photo",
+      "cleared": true,
+      "width": 600,
+      "height": 740,
+      "cropWidth": 600,
+      "cropHeight": 740,
+      "canvasWidth": 600,
+      "canvasHeight": 740,
+      "borderMedian": "#443128",
+      "files": [
+        "/images/fold-with-nara/fn-01-booth-mt-fuji.jpg",
+        "/images/fold-with-nara/fn-01-booth-mt-fuji.webp",
+        "/images/fold-with-nara/fn-01-booth-mt-fuji.avif"
+      ],
+      "alt": "The Fold with Nara booth: a pale wooden stand holds an iPad showing “You folded Mt. Fuji!” above a folding tray with a blue and white paper Mt. Fuji on it, and a projector clipped to the top of the stand",
+      "usage": "Fold with Nara hero; list cover",
+      "src": "content/source/fold-with-nara/booth-mt-fuji.jpg",
+      "crop": {
+        "left": 60,
+        "top": 120,
+        "width": 600,
+        "height": 740
+      },
+      "note": "Supplied by Alex, 27 October 2026, for the Fold with Nara page."
+    },
+    {
+      "id": "fn-02-booth-start-screen",
+      "slug": "fold-with-nara",
+      "ground": "photo",
+      "cleared": true,
+      "width": 560,
+      "height": 760,
+      "cropWidth": 560,
+      "cropHeight": 760,
+      "canvasWidth": 560,
+      "canvasHeight": 760,
+      "borderMedian": "#766759",
+      "files": [
+        "/images/fold-with-nara/fn-02-booth-start-screen.jpg",
+        "/images/fold-with-nara/fn-02-booth-start-screen.webp",
+        "/images/fold-with-nara/fn-02-booth-start-screen.avif"
+      ],
+      "alt": "The booth's iPad on its start screen: Nara, a cartoon deer, waves above the words “Fold with Nara” and a green “Tap to start” button",
+      "usage": "Fold with Nara, The booth",
+      "src": "content/source/fold-with-nara/booth-start-screen.jpg",
+      "crop": {
+        "left": 40,
+        "top": 170,
+        "width": 560,
+        "height": 760
+      },
+      "note": "Supplied by Alex, 27 October 2026, for the Fold with Nara page."
+    },
+    {
+      "id": "fn-03-demo-team",
+      "slug": "fold-with-nara",
+      "ground": "photo",
+      "cleared": true,
+      "width": 960,
+      "height": 720,
+      "cropWidth": 960,
+      "cropHeight": 720,
+      "canvasWidth": 960,
+      "canvasHeight": 720,
+      "borderMedian": "#937761",
+      "files": [
+        "/images/fold-with-nara/fn-03-demo-team.jpg",
+        "/images/fold-with-nara/fn-03-demo-team.webp",
+        "/images/fold-with-nara/fn-03-demo-team.avif"
+      ],
+      "alt": "The five-person team at the demo in a USC classroom, each holding up a folded paper Mt. Fuji, with the booth in front of them",
+      "usage": "Fold with Nara, The demo",
+      "src": "content/source/fold-with-nara/demo-team.jpg",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 960,
+        "height": 720
+      },
+      "note": "Supplied by Alex, 27 October 2026, for the Fold with Nara page. Alex cleared the presentation and demo photos for the site; no one in them is named."
+    },
+    {
       "id": "ou-01-ewaste",
       "slug": "about",
       "ground": "photo",
